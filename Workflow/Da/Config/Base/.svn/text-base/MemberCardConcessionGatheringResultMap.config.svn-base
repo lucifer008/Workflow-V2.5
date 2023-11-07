@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="MemberCardConcessionGatheringResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="MemberCardConcessionGathering" type="Workflow.Da.Domain.MemberCardConcessionGathering, Workflow.Support" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="selectResult" class="MemberCardConcessionGathering">
+			<result property="Id" column="ID" dbType="bigint"/> 
+			
+			<result property="MemberCardId" column="MEMBER_CARD_ID" dbType="bigint"/> 
+			
+			<result property="MemberCardConcessionId" column="MEMBER_CARD_CONCESSION_ID" dbType="bigint"/> 
+			
+			<result property="MemberCardDiscountConcessionId" column="MEMBER_CARD_DISCOUNT_CONCESSION_ID" dbType="bigint"/> 
+			
+			<result property="ChargeAmount" column="CHARGE_AMOUNT" dbType="decimal"/> 
+			
+			<result property="PayType" column="PAY_TYPE" dbType="char"/> 
+			
+			<result property="InsertDateTime" column="INSERT_DATE_TIME" dbType="datetime"/> 
+			
+			<result property="InsertUser" column="INSERT_USER" dbType="bigint"/> 
+			
+			<result property="UpdateDateTime" column="UPDATE_DATE_TIME" dbType="datetime"/> 
+			
+			<result property="UpdateUser" column="UPDATE_USER" dbType="bigint"/> 
+			
+			<result property="Version" column="VERSION" dbType="int"/> 
+			
+			<result property="Deleted" column="DELETED" dbType="char"/> 
+			
+			<result property="CompanyId" column="COMPANY_ID" dbType="bigint"/> 
+			
+			<result property="BranchShopId" column="BRANCH_SHOP_ID" dbType="bigint"/> 
+			
+
+		</resultMap>
+	</resultMaps>
+</sqlMap>

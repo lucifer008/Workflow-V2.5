@@ -1,0 +1,40 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Service/SystemPermission/PositionManage/Impl
+http://192.168.0.6/svn/workflow
+
+
+
+2010-01-15T01:11:40.093750Z
+2924
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+PositionServiceImpl.cs
+file
+
+
+
+
+2010-03-25T07:11:16.875000Z
+93c50f847e0135f0bdb859ba484cab39
+2010-01-15T01:11:40.093750Z
+2924
+zhangxiaolin
+

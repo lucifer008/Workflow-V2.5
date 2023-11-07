@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/workflow/!svn/ver/3477/trunk/v2.5/Workflow.Web/js/finance
+END
+amendmentOrder.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3366/trunk/v2.5/Workflow.Web/js/finance/amendmentOrder.js
+END
+selectAmendmentOrder.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/js/finance/selectAmendmentOrder.js
+END
+smallTicketPrintConfirm.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3333/trunk/v2.5/Workflow.Web/js/finance/smallTicketPrintConfirm.js
+END
+amendmentBalanceOrder.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3429/trunk/v2.5/Workflow.Web/js/finance/amendmentBalanceOrder.js
+END
+selectOrder.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3477/trunk/v2.5/Workflow.Web/js/finance/selectOrder.js
+END
+payforOrder.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3338/trunk/v2.5/Workflow.Web/js/finance/payforOrder.js
+END
+prepayHandler.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/js/finance/prepayHandler.js
+END
+SearchMatureOrder.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/js/finance/SearchMatureOrder.js
+END
+drawticket.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3314/trunk/v2.5/Workflow.Web/js/finance/drawticket.js
+END
+mortgageOrder.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3465/trunk/v2.5/Workflow.Web/js/finance/mortgageOrder.js
+END
+finance.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/workflow/!svn/ver/3437/trunk/v2.5/Workflow.Web/js/finance/finance.js
+END

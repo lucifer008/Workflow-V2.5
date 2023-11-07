@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="HandOverResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="HandOver" type="Workflow.Da.Domain.HandOver, Workflow.Support" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="selectResult" class="HandOver">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="HandOverDateTime" column="HAND_OVER_DATE_TIME" dbType="datetime"/>
+			<result property="Memo" column="MEMO" dbType="nvarchar"/>
+			<result property="HandOverStatus" column="HAND_OVER_STATUS" dbType="char"/>
+			<result property="HandOverType" column="HAND_OVER_TYPE" dbType="char"/>
+			<result property="InsertUser" column="INSERT_USER" dbType="bigint"/>
+			<result property="InsertDateTime" column="INSERT_DATE_TIME" dbType="datetime"/>
+			<result property="UpdateDateTime" column="UPDATE_DATE_TIME" dbType="datetime"/>
+			<result property="UpdateUser" column="UPDATE_USER" dbType="bigint"/>
+			<result property="Deleted" column="DELETED" dbType="char"/>
+			<result property="Version" column="VERSION" dbType="int"/>
+			<result property="BranchShopId" column="BRANCH_SHOP_ID" dbType="bigint"/>
+			<result property="CompanyId" column="COMPANY_ID" dbType="bigint"/>
+			<result property="OtherEmployee" column="OTHER_EMPLOYEE_ID" select="EmployeeBase.SelectByPk" nullValue="0" lazyLoad="true"/>
+			<result property="HandOverMemberCardList" column="ID" select="HandOverBase.SelectHandOverMemberCard" nullValue="0" lazyLoad="true"/>
+			<result property="HandOverOrderList" column="ID" select="HandOverBase.SelectHandOverOrder" nullValue="0" lazyLoad="true"/>
+			<result property="Employee" column="EMPLOYEE_ID" select="EmployeeBase.SelectByPk" nullValue="0" lazyLoad="true"/>
+		</resultMap>
+	</resultMaps>
+</sqlMap>

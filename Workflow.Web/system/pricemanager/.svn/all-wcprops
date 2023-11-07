@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/workflow/!svn/ver/3512/trunk/v2.5/Workflow.Web/system/pricemanager
+END
+EditSpecialPrice.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/EditSpecialPrice.aspx
+END
+BaseSetPrice.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/BaseSetPrice.aspx
+END
+AddPrice.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/AddPrice.aspx
+END
+BatchUpdatePrice.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/BatchUpdatePrice.aspx.cs
+END
+SetPrice.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/SetPrice.aspx
+END
+TradePriceSetting.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/TradePriceSetting.aspx
+END
+BatchAddPrice.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/BatchAddPrice.aspx.cs
+END
+SetPrice.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/SetPrice.aspx.cs
+END
+SelectStandardPriceNext.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/SelectStandardPriceNext.aspx
+END
+SelectStandardPrice.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/SelectStandardPrice.aspx
+END
+TradePriceSetting.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/workflow/!svn/ver/3146/trunk/v2.5/Workflow.Web/system/pricemanager/TradePriceSetting.aspx.cs
+END
+SelectStandardPriceNext.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/SelectStandardPriceNext.aspx.cs
+END
+SalesRoomPriceSetting.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/SalesRoomPriceSetting.aspx.cs
+END
+BatchUpdateMemberPrice.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/BatchUpdateMemberPrice.aspx
+END
+BusinessType.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/BusinessType.aspx.cs
+END
+MemberCarcPriceSettings.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/MemberCarcPriceSettings.aspx
+END
+SpecialPriceSetting.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3146/trunk/v2.5/Workflow.Web/system/pricemanager/SpecialPriceSetting.aspx.cs
+END
+AddBusinessType.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/AddBusinessType.aspx
+END
+EditBusinessType.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/EditBusinessType.aspx.cs
+END
+BatchUpdatePrice.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/BatchUpdatePrice.aspx
+END
+MemberCarcPriceSettings.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/workflow/!svn/ver/3512/trunk/v2.5/Workflow.Web/system/pricemanager/MemberCarcPriceSettings.aspx.cs
+END
+AddBusinessType.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/AddBusinessType.aspx.cs
+END
+BatchAddPrice.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/BatchAddPrice.aspx
+END
+BaseSetPrice.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/BaseSetPrice.aspx.cs
+END
+EditSpecialPrice.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/EditSpecialPrice.aspx.cs
+END
+AddPrice.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/AddPrice.aspx.cs
+END
+SalesRoomPriceSetting.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/SalesRoomPriceSetting.aspx
+END
+SelectStandardPrice.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/SelectStandardPrice.aspx.cs
+END
+BusinessType.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/BusinessType.aspx
+END
+SpecialPriceSetting.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3146/trunk/v2.5/Workflow.Web/system/pricemanager/SpecialPriceSetting.aspx
+END
+EditBusinessType.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/EditBusinessType.aspx
+END
+BatchUpdateMemberPrice.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/system/pricemanager/BatchUpdateMemberPrice.aspx.cs
+END

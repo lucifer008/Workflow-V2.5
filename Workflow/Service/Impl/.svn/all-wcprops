@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/workflow/!svn/ver/3401/trunk/v2.5/Workflow/Service/Impl
+END
+MasterDataServiceImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3401/trunk/v2.5/Workflow/Service/Impl/MasterDataServiceImpl.cs
+END
+ApplicationPropertyImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Service/Impl/ApplicationPropertyImpl.cs
+END

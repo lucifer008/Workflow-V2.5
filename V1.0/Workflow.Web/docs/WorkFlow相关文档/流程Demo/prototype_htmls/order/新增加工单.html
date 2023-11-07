@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>新增工单</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../js/新增工单.js"></script>
+<script type="text/javascript" src="../js/calendar.js" charset="utf-8"></script>
+<link rel="stylesheet" href="../css/calendar-blue.css"  type="text/css" />
+<script type="text/javascript" src="../js/calendar-zh.js" charset="utf-8"></script>
+<script	type="text/javascript" src="../js/calendar-setup.js" charset="utf-8"></script>
+<script type="text/javascript" src="../js/checkCalendar.js" charset="utf-8"></script>
+<style type="text/css">
+<!--
+.STYLE1 {color: #CC0000}
+-->
+</style>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+<table width="99%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#CCCCCC">
+  <tr>
+    <td bgcolor="#FFFFFF"><table width="100%" border="0" cellpadding="0" cellspacing="3" bgcolor="#F8F8F8">
+      <tr>
+        <td><table width="100%" border="0" cellpadding="0" cellspacing="0" background="../images/index_13.gif">
+          <tr>
+            <td width="4%" height="25" align="center"><img alt="" src="../images/index_17.gif" width="11" height="11" /></td>
+            <td width="49%">您当前位置:工单管理 / 新增工单</td>
+            <td width="47%">&nbsp;</td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="center"><table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#F0F0F0">
+          <tr>
+            <td align="left" bgcolor="#FFFFFF"><table width="100%" border="0" cellpadding="2" cellspacing="2">
+                <tr>
+                  <td colspan="9" align="left" class="ctrl_menu_title">填写信息:</td>
+                </tr>
+                <tr>
+                  <td align="right">会员卡号:</td>
+                  <td width="257" colspan="2" align="left"><input name="textfield22" type="text" class="biaodan" value="M000011" />　
+                  </td>
+                  <td align="right">真实姓名:</td>
+                  <td width="109" colspan="2" align="left"><input name="textfield32" type="text" class="biaodan" value="刘正阳" /></td>
+                  <td width="109" align="left"><span class="STYLE1">**</span></td>
+                  <td align="right">送货方式:</td>
+                  <td width="214" align="left"><table width="125" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td><select name="select2" class="biaodan">
+                          <option>自取</option>
+                          <option>立等</option>
+                          <option>送货</option>
+                                                </select></td>
+                        </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td align="right">客户名称:</td>
+                  <td align="left"><input name="textfield7" type="text" class="biaodan" value="西北建筑设计院" />
+                    <a href="javascript:newCustomer()">新增</a> <a href="javascript:selectCustomer()">选择...</a></td>
+                  <td align="left"><span class="STYLE1">**</span></td>
+                  <td align="right">联系电话:</td>
+                  <td colspan="3" align="left"><input name="textfield42" type="text" class="biaodan" value="13892845456" /></td>
+                  <td align="right">送货时间:</td>
+                  <td>    
+                  	<div>
+					<input id="Text1" type="text" maxlength="16" />
+					<img alt=""  id="img alt=""btn" src="../images/cal.gif" width="20" height="14" border="0" alt="Click Here to Pick up the date" />
+					<script type="text/javascript">
+						Calendar.setup({
+							firstDay       :    0,                  // first day of the week
+							inputField     :    "Text1",     				// id of the input field
+							button         :    "img alt=""btn",  					// trigger for the calendar (button ID)
+							align          :    "Tl",           		// alignment (defaults to "Bl")
+							//singleClick  :    true,
+							showsTime      :    "true",
+							ifFormat       :    "%Y-%m-%d %H:%M"    // our date only format
+							 });
+							 window
+					</script>			
+		    		</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">客户类型:</td>
+                  <td align="left"><select name="select" class="biaodan">
+                    <option>会员</option>
+                    <option>散客</option>
+                    <option>学生</option>
+                                    </select></td>
+                  <td align="left"><span class="STYLE1">**</span></td>
+                  <td align="right">预收款:</td>
+                  <td align="left"><input name="checkbox" type="checkbox" value="checkbox" checked="checked" />
+                    是                      </td>
+                  <td colspan="2" align="left"><input name="textfield522" type="text" class="biaodan" value="3000" /></td>
+                  <td align="right">&nbsp;</td>
+                  <td align="left">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right">项目名称:</td>
+                  <td colspan="2" align="left"><input name="textfield52" type="text" class="biaodan" value="平面图" /></td>
+                  <td align="right">支付方式:</td>
+                  <td colspan="3" align="left"><select name="select4" class="biaodan">
+                      <option>现金</option>
+                      <option>记账</option>
+                  </select></td>
+                  <td align="right">发　　票:</td>
+                  <td align="left"><table width="60" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td align="center"><input name="checkbox222" type="checkbox" value="checkbox" /></td>
+                        <td align="center"> 需要</td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td align="right" valign="top">备　　注:</td>
+                  <td colspan="3" align="left"><textarea name="textarea" cols="40" rows="3" class="biaodan" ></textarea></td>
+                  <td colspan="5" align="left" valign="bottom">&nbsp;</td>
+                  </tr>
+				
+				
+            </table></td>
+          </tr>
+        </table>
+		
+
+          <table width="99%" border="0" cellspacing="1" bgcolor="#CCCCCC">
+		  <tr width="100%"><td  align="left" colspan="11" bgcolor="#FFFFFF">非会员消费</td></tr>
+            <tr>
+              <td width="5%" height="20" align="center" bgcolor="#DBDBDB">NO</td>
+              <td width="8%" height="20" align="center" bgcolor="#DBDBDB">业务类型</td>
+              <td width="10%" height="20" align="center" bgcolor="#DBDBDB">加工内容</td>
+              <td width="9%" height="20" align="center" bgcolor="#DBDBDB">机器</td>
+              <td width="5%" height="20" align="center" bgcolor="#DBDBDB">纸型</td>
+              <td width="10%" height="20" align="center" bgcolor="#DBDBDB">纸质</td>
+              <td width="5%" height="20" align="center" bgcolor="#DBDBDB">数量</td>
+              <td width="5%" height="20" align="center" bgcolor="#DBDBDB">单价</td>
+              <td width="5%" height="20" align="center" bgcolor="#DBDBDB">金额</td>
+              <td width="10%" height="20" align="center" bgcolor="#DBDBDB">制作要求</td>
+              <td width="24%" height="20" align="center" bgcolor="#DBDBDB">&nbsp;</td>
+            </tr>
+            <tr>
+              <td height="20" align="center" bgcolor="#EEEEEE">1</td>
+              <td height="20" bgcolor="#EEEEEE"><select name="select5" class="biaodan">
+                <option>打印</option>
+                <option>扫描</option>
+                            </select></td>
+              <td height="20" bgcolor="#EEEEEE"><select name="select6" class="biaodan">
+                <option>彩色打印</option>
+                <option>黑白打印</option>
+                            </select></td>
+              <td height="20" bgcolor="#EEEEEE"><select name="select7" class="biaodan">
+                <option>DC-8000</option>
+                <option>DC-900</option>
+                            </select></td>
+              <td height="20" bgcolor="#EEEEEE"><select name="select8" class="biaodan">
+                <option>A3</option>
+                <option>A4</option>
+                            </select></td>
+              <td height="20" bgcolor="#EEEEEE"><select name="select9" class="biaodan">
+                <option>157g铜板</option>
+                <option>200g铜板</option>
+                            </select></td>
+              <td height="20" align="right" bgcolor="#EEEEEE"><input name="textfield" type="text" value="50" width="30" />
+                </td>
+              <td height="20" align="right" bgcolor="#EEEEEE">3.0</td>
+              <td height="20" align="right" bgcolor="#EEEEEE">140</td>
+              <td height="20" align="center" bgcolor="#EEEEEE"><a href="javascript:printRequest()">单面</a></td>
+              <td height="20" bgcolor="#EEEEEE"><a href="javascript:addOrderFormList()">编辑</a> 删除</td>
+            </tr>
+            <tr>
+              <td height="20" align="center" bgcolor="#FFFFFF">2</td>
+              <td height="20" bgcolor="#FFFFFF"><select name="select10" class="biaodan">
+                <option>打印</option>
+                <option>扫描</option>
+              </select></td>
+              <td height="20" bgcolor="#FFFFFF"><select name="select11" class="biaodan">
+                <option>彩色打印</option>
+                <option>黑白打印</option>
+              </select></td>
+              <td height="20" bgcolor="#FFFFFF"><select name="select12" class="biaodan">
+                <option selected="selected">DC-900</option>
+                <option>DC-8000</option>
+                                                        </select></td>
+              <td height="20" bgcolor="#FFFFFF"><select name="select13" class="biaodan">
+                <option>A4</option>
+                <option>A3</option>
+                                          </select></td>
+              <td height="20" bgcolor="#FFFFFF"><select name="select14" class="biaodan">
+                <option selected="selected">250g铜板</option>
+                <option>157g铜板</option>
+                            </select></td>
+              <td height="20" align="right" bgcolor="#FFFFFF"><input name="textfield2" type="text" value="10" width="30" /></td>
+              <td height="20" align="right" bgcolor="#FFFFFF">3.5</td>
+              <td height="20" align="right" bgcolor="#FFFFFF">35</td>
+              <td height="20" align="center" bgcolor="#FFFFFF"><a href="javascript:printRequest()">选择...</a></td>
+              <td height="20" bgcolor="#FFFFFF"><a href="javascript:addOrderFormList()">编辑</a> 删除</td>
+            </tr>
+            <tr>
+              <td height="20" align="center" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" align="right" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" align="right" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" align="right" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+            <tr>
+              <td height="20" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" align="right" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" align="right" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" align="right" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+            </tr>
+            <tr>
+              <td height="20" align="center" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" align="right" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" align="right" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" align="right" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+            <tr>
+              <td height="20" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" align="right" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" align="right" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" align="right" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+            </tr>
+            
+          </table></td>
+      </tr>
+      <tr>
+        <td align="left">会员卡消费</td>
+      </tr>
+	  
+	  <tr>
+	  <td>
+         <table width="99%" border="0" cellspacing="1" bgcolor="#CCCCCC">
+            <tr>
+              <td width="5%" height="20" align="center" bgcolor="#DBDBDB">NO</td>
+              <td width="8%" height="20" align="center" bgcolor="#DBDBDB">业务类型</td>
+              <td width="10%" height="20" align="center" bgcolor="#DBDBDB">加工内容</td>
+              <td width="9%" height="20" align="center" bgcolor="#DBDBDB">机器</td>
+              <td width="5%" height="20" align="center" bgcolor="#DBDBDB">纸型</td>
+              <td width="10%" height="20" align="center" bgcolor="#DBDBDB">纸质</td>
+              <td width="5%" height="20" align="center" bgcolor="#DBDBDB">数量</td>
+              <td width="10%" height="20" align="center" bgcolor="#DBDBDB">制作要求</td>
+              <td width="24%" height="20" align="center" bgcolor="#DBDBDB">&nbsp;</td>
+            </tr>
+            <tr>
+              <td height="20" align="center" bgcolor="#EEEEEE">1</td>
+              <td height="20" bgcolor="#EEEEEE"><select name="select5" class="biaodan">
+                <option>打印</option>
+                <option>扫描</option>
+                            </select></td>
+              <td height="20" bgcolor="#EEEEEE"><select name="select6" class="biaodan">
+                <option>彩色打印</option>
+                <option>黑白打印</option>
+                            </select></td>
+              <td height="20" bgcolor="#EEEEEE"><select name="select7" class="biaodan">
+                <option>DC-8000</option>
+                <option>DC-900</option>
+                            </select></td>
+              <td height="20" bgcolor="#EEEEEE"><select name="select8" class="biaodan">
+                <option>A3</option>
+                <option>A4</option>
+                            </select></td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE"><input name="textfield" type="text" value="30" width="30" />                </td>
+              <td height="20" align="center" bgcolor="#EEEEEE"><a href="javascript:printRequest()">双面 拼版</a></td>
+              <td height="20" bgcolor="#EEEEEE"><a href="javascript:addOrderFormList()">编辑</a> 删除</td>
+            </tr>
+            <tr>
+              <td height="20" align="center" bgcolor="#FFFFFF">2</td>
+              <td height="20" bgcolor="#FFFFFF"><select name="select10" class="biaodan">
+                <option>打印</option>
+                <option>扫描</option>
+              </select></td>
+              <td height="20" bgcolor="#FFFFFF"><select name="select11" class="biaodan">
+                <option>彩色打印</option>
+                <option>黑白打印</option>
+              </select></td>
+              <td height="20" bgcolor="#FFFFFF"><select name="select15" class="biaodan">
+                <option selected="selected">DC-900</option>
+                <option>DC-8000</option>
+              </select></td>
+              <td height="20" bgcolor="#FFFFFF"><select name="select16" class="biaodan">
+                <option>A4</option>
+                <option>A3</option>
+              </select></td>
+              <td height="20" bgcolor="#FFFFFF"><select name="select17" class="biaodan">
+                <option>200g铜板</option>
+                <option>157g铜板</option>
+              </select></td>
+              <td height="20" bgcolor="#FFFFFF"><input name="textfield2" type="text" value="20" width="30" /></td>
+              <td height="20" align="center" bgcolor="#FFFFFF"><a href="javascript:printRequest()">选择...</a></td>
+              <td height="20" bgcolor="#FFFFFF"><a href="javascript:addOrderFormList()">编辑</a> 删除</td>
+            </tr>
+            <tr>
+              <td height="20" align="center" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+            <tr>
+              <td height="20" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+            </tr>
+            <tr>
+              <td height="20" align="center" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+              <td height="20" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+            <tr>
+              <td height="20" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+              <td height="20" bgcolor="#FFFFFF">&nbsp;</td>
+            </tr>
+          </table>	  
+	  </td>
+	  
+	  </tr>
+      <tr>
+        <td align="right">　
+          <input name="Submit34" type="submit" class="btn" onclick="printOrderForm()" value="保存" />　
+          <input name="Submit3342" type="submit" class="btn" onclick="prepareOrderForm()" value="分配&amp;打印" /></td></tr>
+    </table>
+	
+	</td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

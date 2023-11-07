@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/finance
+END
+DrawTicket.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/finance/DrawTicket.aspx.cs
+END
+RecevableAccount.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/finance/RecevableAccount.aspx
+END
+RecevableAccount.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/finance/RecevableAccount.aspx.cs
+END
+selectOrder.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/finance/selectOrder.aspx
+END
+PayForOrder.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/finance/PayForOrder.aspx
+END
+Accredit.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/finance/Accredit.aspx
+END
+PrepayHandler.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/finance/PrepayHandler.aspx
+END
+DrawTicketConfirm.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/finance/DrawTicketConfirm.aspx
+END
+selectOrder.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/finance/selectOrder.aspx.cs
+END
+PayForOrder.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/finance/PayForOrder.aspx.cs
+END
+DrawTicket.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/finance/DrawTicket.aspx
+END
+Accredit.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/finance/Accredit.aspx.cs
+END
+PrepayHandler.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/finance/PrepayHandler.aspx.cs
+END
+DrawTicketConfirm.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/finance/DrawTicketConfirm.aspx.cs
+END

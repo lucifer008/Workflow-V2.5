@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>拼版</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../js/财务处理.js"></script>
+<script type="text/javascript" src="../js/calendar.js" charset="utf-8"></script>
+<link rel="stylesheet" href="../css/calendar-blue.css"  type="text/css" />
+<script type="text/javascript" src="../js/calendar-zh.js" charset="utf-8"></script>
+<script	type="text/javascript" src="../js/calendar-setup.js" charset="utf-8"></script>
+<script type="text/javascript" src="../js/checkCalendar.js" charset="utf-8"></script>
+</head>
+
+<body   style="text-align:center">
+<div align="center" style="width:100%" bgcolor="#ffffff" id="container">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="12"><img alt="" src="../images/white_main_top_left.gif"
+			width="12" height="11" border="0"></td>
+      <td width="99%" bgcolor="#FFFFFF"><img alt="" src="../images/spacer_10_x_10.gif"
+			width="10" height="10"></td>
+      <td width="12"><img alt="" src="../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+    </tr>
+    <tr>
+      <td colspan="3" bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+            <td align="left" bgcolor="#eeeeee">首页 -&gt; 财务处理 -&gt; 拼版</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="caption" align="center">拼版</td>
+          </tr>
+<tr>
+            <td width="3%">&nbsp;</td>
+            <td align="center">
+<table width="100%" border="0" cellpadding="2" cellspacing="1">
+          <tr>
+            <th scope="col"><div align="left">NO.00001155</div></th>
+            <th scope="col"><div align="right">2007-7-19 10:25 </div></th>
+          </tr>
+        </table>			</td>
+            <td width="3%">&nbsp;</td>
+		 </tr>          <tr>
+            <td width="3%">&nbsp;</td>
+            <td align="center">
+<table width="100%" border="1" cellpadding="2" cellspacing="1">
+              <tr>
+                <td nowrap class="item_caption">会员卡号:</td>
+                <td class="item_content"><input name="textfield7" type="text" class="texts" value="M0000011" />                </td>
+                <td colspan="2" align="left">&nbsp;</td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">客户名称:</td>
+                <td  class="item_content"><input name="textfield22" type="text" class="texts" value="西北建筑设计院" /></td>
+                <td  nowrap class="item_caption">联 系 人:</td>
+                <td class="item_content"><input name="textfield32" type="text" class="texts" value="刘正阳" size="15" />                </td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">联系电话:</td>
+                <td class="item_content"><input name="textfield42" type="text"  class="tel" value="13892845456" />                </td>
+                <td  nowrap class="item_caption">项目名称:</td>
+                <td  class="item_content"><input name="textfield52" type="text" class="texts" value="平面图"  />                </td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">送货方式:</td>
+                <td class="item_content"><input type="radio" name="radio1" class="radios" value="radiobutton" id="radio" checked="checked" />
+                    <label for="radio">自取</label>
+                    <input type="radio" name="radio1" id="radio2" class="radios" value="radiobutton" />
+                    <label for="radio2"> 送货</label>                </td>
+                <td  nowrap class="item_caption">送货时间:</td>
+                <td  class="item_content"><div>
+					<input id="txtFrom" type="text" class="datetexts" readonly="true"/>
+					<img id="imgbtnFrom" src="../images/cal.gif" width="20" height="14" border="0" alt="Click Here to Pick up the date" />
+					</div>
+					<div>
+					<script type="text/javascript">
+						Calendar.setup({
+							firstDay       :    0,                  // first day of the week
+							inputField     :    "txtFrom",     				// id of the input field
+							button         :    "img alt=""btnFrom",  					// trigger for the calendar (button ID)
+							align          :    "Tl",           		// alignment (defaults to "Bl")
+							//singleClick  :    true,
+							showsTime      :    "true",
+							ifFormat       :    "%Y-%m-%d"    // our date only format
+							 });
+							 window
+					</script>			
+</div>
+</td>
+              </tr>
+              <tr>
+                <td  nowrap class="item_caption">支付方式:</td>
+                <td class="item_content"><select name="select3">
+                    <option>现金</option>
+                    <option>记账</option>
+                  </select>                </td>
+                <td nowrap class="item_caption">发票:</td>
+                <td  class="item_content"><input type="radio" name="radio2" class="radios" value="radiobutton" id="radio3" checked="checked" />
+                    <label for="radio3">不需要</label>
+                    <input type="radio" name="radio2" value="radiobutton" class="radios" id="radio4"/>
+                    <label for="radio4">需要</label>                </td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">备注:</td>
+                <td colspan="3"  class="item_content"><textarea name="textarea" cols="90" rows="3" ></textarea>                </td>
+              </tr>
+            </table>			</td>
+            <td width="3%">&nbsp;</td>
+			
+		</tr>
+          <tr>
+            <td width="3%">&nbsp;</td>
+            <td align="center">
+<table width="100%" border="1" cellpadding="2" cellspacing="1">
+          <tr>
+            <th width="1%" nowrap>&nbsp;NO&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;业务类型&nbsp;&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;加工内容&nbsp;&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机器&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;&nbsp;&nbsp;纸型&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;纸质&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;数量&nbsp;&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;单位&nbsp;&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;单位&nbsp;&nbsp;</th>
+            <th width="30%" nowrap align="center">制作要求</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+          </tr>
+          <tr  class="detailRow">
+            <td align="center">1</td>
+            <td align="center">打印</td>
+            <td align="center">彩色打印</td>
+            <td align="center">DC-8000</td>
+            <td align="center">A3</td>
+            <td align="center">157g铜板</td>
+            <td class="num">80</td>
+            <td align="center">张</td>
+            <td align="center">张</td>
+            <td  align="left"><a href="javascript:printRequest()">选择</a></td>
+            <td align="left">编辑</td>
+          </tr>
+          <tr  class="detailRow">
+            <td align="center">2</td>
+            <td align="center">装订</td>
+            <td align="center">胶状</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td class="num">20</td>
+            <td align="center">张</td>
+            <td align="center">本</td>
+            <td align="left"><a href="javascript:printRequest()">选择</a></td>
+            <td align="left">编辑</td>
+          </tr>
+        </table>			</td>
+            <td width="3%">&nbsp;</td>
+			
+		</tr>
+		<tr  class="emptyButtonsUpperRowHight">
+				<td colspan="4"></td>
+			</tr>		  
+          <tr>
+            <td width="3%">&nbsp;</td>
+            <td align="center" class="bottombuttons">
+<input name="Submit3342" type="button" class="buttons" onclick="window.open('UpdateOrder.html');" value="修正工单" />&nbsp;&nbsp;&nbsp;
+              <input name="Submit33422" type="button" class="buttons" onclick="window.open('CancellationPaper.html');" value="废稿" />&nbsp;&nbsp;&nbsp;
+              <input name="Submit33422222" type="button" class="buttons" onclick="window.close()" value="保存">              &nbsp;&nbsp;&nbsp;
+              <input name="Submit33423" type="button" class="buttons" onclick="window.close()" value="取消" />			</td>
+            <td width="3%">&nbsp;</td>
+			
+		</tr>				
+          <tr height="5">
+            <td><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+            <td bgcolor="#eeeeee">&nbsp;</td>
+            <td><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+          </tr>		
+		</table>
+	</td>
+	</tr>
+    <tr>
+      <td width="12"><img alt="" src="../images/white_main_bottom_left.gif"
+			width="12" height="11"></td>
+      <td bgcolor="#FFFFFF"><img alt="" src="../images/spacer_10_x_10.gif"
+			width="10" height="10"></td>
+      <td width="12"><img alt="" src="../images/white_main_bottom_right.gif"
+			width="12" height="11"></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

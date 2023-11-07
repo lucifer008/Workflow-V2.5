@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--表PERMISSION [权限许可]的基本增删改查操作，此配置文件不允许修改-->
+<sqlMap namespace="PermissionBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		
+			<!--查询表PERMISSION [权限许可]的基本操作-->		 
+			<select id="SelectAll" resultMap="PermissionResultMap.selectResult"  cacheModel="Permission.PermissionCache">
+			SELECT  ID,PERMISSION_IDENTITY,PERMISSION_TYPE,MEMO,INSERT_DATE_TIME,INSERT_USER,UPDATE_DATE_TIME,UPDATE_USER,VERSION,DELETED,COMPANY_ID,BRANCH_SHOP_ID	FROM PERMISSION Order by ID
+			</select>
+
+			<!--按照主键查询表PERMISSION [权限许可]的基本操作-->
+			<select id="SelectByPk" parameterClass="long" resultMap="PermissionResultMap.selectResult" cacheModel="Permission.PermissionCache">
+			SELECT 
+			ID,
+			PERMISSION_IDENTITY,
+			PERMISSION_TYPE,
+			MEMO,
+			INSERT_DATE_TIME,
+			INSERT_USER,
+			UPDATE_DATE_TIME,
+			UPDATE_USER,
+			VERSION,
+			DELETED,
+			COMPANY_ID,
+			BRANCH_SHOP_ID
+			FROM PERMISSION
+			WHERE ID = #Id# 
+			</select>
+
+			<!--插入表PERMISSION [权限许可]的基本操作-->
+			<insert id="Insert" parameterClass="Permission">
+			INSERT INTO PERMISSION
+			(
+				ID,
+				PERMISSION_IDENTITY,
+				PERMISSION_TYPE,
+				MEMO,
+				INSERT_DATE_TIME,
+				INSERT_USER,
+				UPDATE_DATE_TIME,
+				UPDATE_USER,
+				VERSION,
+				DELETED,
+				COMPANY_ID,
+				BRANCH_SHOP_ID
+			) VALUES
+			( 
+				#Id#,
+				#PermissionIdentity#,
+				#PermissionType#,
+				#Memo#,
+				#InsertDateTime#,
+				#InsertUser#,
+				#UpdateDateTime#,
+				#UpdateUser#,
+				#Version#,
+				#Deleted#,
+				#CompanyId#,
+				#BranchShopId#
+			)
+			</insert>
+			
+			<!--更新表PERMISSION [权限许可]的基本操作-->
+			<update id="Update" parameterClass="Permission">
+			UPDATE PERMISSION
+			SET
+				PERMISSION_IDENTITY=#PermissionIdentity#,
+				PERMISSION_TYPE=#PermissionType#,
+				MEMO=#Memo#,
+				INSERT_DATE_TIME=#InsertDateTime#,
+				INSERT_USER=#InsertUser#,
+				UPDATE_DATE_TIME=#UpdateDateTime#,
+				UPDATE_USER=#UpdateUser#,
+				VERSION=#Version#,
+				DELETED=#Deleted#,
+				COMPANY_ID=#CompanyId#,
+				BRANCH_SHOP_ID=#BranchShopId#
+			WHERE ID = #Id#
+			</update>
+
+			<!--逻辑删除表PERMISSION [权限许可]的基本操作-->
+			<update id="LogicDelete" parameterClass="long">
+				UPDATE PERMISSION
+				SET	VERSION = VERSION + 1,DELETED = '1'	WHERE ID = #Id#
+			</update>
+
+			<!--物理删除表PERMISSION [权限许可]的基本操作-->
+			<delete id="Delete" parameterClass="long">
+				DELETE FROM PERMISSION WHERE ID = #Id#
+			</delete>
+
+		</statements>
+</sqlMap>

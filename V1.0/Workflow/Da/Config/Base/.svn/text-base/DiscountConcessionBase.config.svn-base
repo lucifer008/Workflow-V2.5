@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--表DISCOUNT_CONCESSION [打折的优惠活动]的基本增删改查操作，此配置文件不允许修改-->
+<sqlMap namespace="DiscountConcessionBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		
+			<!--查询表DISCOUNT_CONCESSION [打折的优惠活动]的基本操作-->		 
+			<select id="SelectAll" resultMap="DiscountConcessionResultMap.selectResult"  cacheModel="DiscountConcession.DiscountConcessionCache">
+			SELECT  ID,CAMPAIGN_ID,NAME,MEMO,CHARGE_AMOUNT,INSERT_DATE_TIME,INSERT_USER,UPDATE_DATE_TIME,UPDATE_USER,DELETED,VERSION,COMPANY_ID,BRANCH_SHOP_ID	FROM DISCOUNT_CONCESSION Order by ID
+			</select>
+
+			<!--按照主键查询表DISCOUNT_CONCESSION [打折的优惠活动]的基本操作-->
+			<select id="SelectByPk" parameterClass="long" resultMap="DiscountConcessionResultMap.selectResult" cacheModel="DiscountConcession.DiscountConcessionCache">
+			SELECT 
+			ID,
+			CAMPAIGN_ID,
+			NAME,
+			MEMO,
+			CHARGE_AMOUNT,
+			INSERT_DATE_TIME,
+			INSERT_USER,
+			UPDATE_DATE_TIME,
+			UPDATE_USER,
+			DELETED,
+			VERSION,
+			COMPANY_ID,
+			BRANCH_SHOP_ID
+			FROM DISCOUNT_CONCESSION
+			WHERE ID = #Id# 
+			</select>
+
+			<!--插入表DISCOUNT_CONCESSION [打折的优惠活动]的基本操作-->
+			<insert id="Insert" parameterClass="DiscountConcession">
+			INSERT INTO DISCOUNT_CONCESSION
+			(
+				ID,
+				CAMPAIGN_ID,
+				NAME,
+				MEMO,
+				CHARGE_AMOUNT,
+				INSERT_DATE_TIME,
+				INSERT_USER,
+				UPDATE_DATE_TIME,
+				UPDATE_USER,
+				DELETED,
+				VERSION,
+				COMPANY_ID,
+				BRANCH_SHOP_ID
+			) VALUES
+			( 
+				#Id#,
+				#CampaignId#,
+				#Name#,
+				#Memo#,
+				#ChargeAmount#,
+				#InsertDateTime#,
+				#InsertUser#,
+				#UpdateDateTime#,
+				#UpdateUser#,
+				#Deleted#,
+				#Version#,
+				#CompanyId#,
+				#BranchShopId#
+			)
+			</insert>
+			
+			<!--更新表DISCOUNT_CONCESSION [打折的优惠活动]的基本操作-->
+			<update id="Update" parameterClass="DiscountConcession">
+			UPDATE DISCOUNT_CONCESSION
+			SET
+				CAMPAIGN_ID=#CampaignId#,
+				NAME=#Name#,
+				MEMO=#Memo#,
+				CHARGE_AMOUNT=#ChargeAmount#,
+				INSERT_DATE_TIME=#InsertDateTime#,
+				INSERT_USER=#InsertUser#,
+				UPDATE_DATE_TIME=#UpdateDateTime#,
+				UPDATE_USER=#UpdateUser#,
+				DELETED=#Deleted#,
+				VERSION=#Version#,
+				COMPANY_ID=#CompanyId#,
+				BRANCH_SHOP_ID=#BranchShopId#
+			WHERE ID = #Id#
+			</update>
+
+			<!--逻辑删除表DISCOUNT_CONCESSION [打折的优惠活动]的基本操作-->
+			<update id="LogicDelete" parameterClass="long">
+				UPDATE DISCOUNT_CONCESSION
+				SET	VERSION = VERSION + 1,DELETED = '1'	WHERE ID = #Id#
+			</update>
+
+			<!--物理删除表DISCOUNT_CONCESSION [打折的优惠活动]的基本操作-->
+			<delete id="Delete" parameterClass="long">
+				DELETE FROM DISCOUNT_CONCESSION WHERE ID = #Id#
+			</delete>
+
+			<!--目标表DISCOUNT_CONCESSION_MACHINE_TYPE_PAPER_SPEC的信息查询-->
+			<select id="SelectDiscountConcessionMachineTypePaperSpec" parameterClass="long" resultMap="DiscountConcessionMachineTypePaperSpecResultMap.selectResult" >
+				SELECT
+				*
+				FROM DISCOUNT_CONCESSION_MACHINE_TYPE_PAPER_SPEC
+				WHERE DISCOUNT_CONCESSION_ID = #value#
+				ORDER BY ID
+			</select>			
+		</statements>
+</sqlMap>

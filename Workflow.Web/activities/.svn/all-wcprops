@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/workflow/!svn/ver/3228/trunk/v2.5/Workflow.Web/activities
+END
+BuySendList.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3201/trunk/v2.5/Workflow.Web/activities/BuySendList.aspx
+END
+DiscountConcessionList.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/DiscountConcessionList.aspx
+END
+BuySendList.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3201/trunk/v2.5/Workflow.Web/activities/BuySendList.aspx.cs
+END
+CampaignList.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/CampaignList.aspx
+END
+AddConcession.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/AddConcession.aspx
+END
+DiscountConcessionList.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/DiscountConcessionList.aspx.cs
+END
+CampaignList.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/CampaignList.aspx.cs
+END
+AddConcession.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/AddConcession.aspx.cs
+END
+AddPreferentialProject.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/AddPreferentialProject.aspx
+END
+AddBuySend.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3201/trunk/v2.5/Workflow.Web/activities/AddBuySend.aspx
+END
+SelectStandardPrice.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/SelectStandardPrice.aspx
+END
+AddPreferentialProject.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/AddPreferentialProject.aspx.cs
+END
+AddDiscountConcession.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/AddDiscountConcession.aspx
+END
+AddBuySend.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3228/trunk/v2.5/Workflow.Web/activities/AddBuySend.aspx.cs
+END
+ModifyCampaign.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/ModifyCampaign.aspx
+END
+SelectStandardPrice.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/SelectStandardPrice.aspx.cs
+END
+AddCampaign.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/AddCampaign.aspx
+END
+AddDiscountConcession.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/AddDiscountConcession.aspx.cs
+END
+ModifyCampaign.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/ModifyCampaign.aspx.cs
+END
+AddCampaign.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/AddCampaign.aspx.cs
+END
+ConcessionList.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/ConcessionList.aspx
+END
+ConcessionList.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/activities/ConcessionList.aspx.cs
+END

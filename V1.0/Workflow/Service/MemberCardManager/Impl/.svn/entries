@@ -1,0 +1,52 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow/Service/MemberCardManager/Impl
+http://192.168.0.6/svn/workflow
+
+
+
+2009-06-20T09:49:50.546875Z
+2624
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+MemberCardServiceImpl.cs
+file
+
+
+
+
+2010-03-25T07:09:43.921875Z
+a2703071e2f3593b7cc7150c6a622452
+2009-06-20T09:49:50.546875Z
+2624
+zhangxiaolin
+
+SearchMemberCardServiceImpl.cs
+file
+
+
+
+
+2010-03-25T07:09:43.937500Z
+fba04158545c8fb24b433200f1c6d42e
+2009-04-20T10:10:58.187500Z
+2463
+zhangxiaolin
+

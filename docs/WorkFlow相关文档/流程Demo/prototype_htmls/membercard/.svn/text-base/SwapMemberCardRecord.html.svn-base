@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>会员换卡记录</title>
+    <link href="../css/css.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../js/calendar.js"></script>
+
+    <link rel="stylesheet" href="../css/calendar-blue.css" type="text/css" />
+
+    <script type="text/javascript" src="../js/calendar-zh.js"></script>
+
+    <script type="text/javascript" src="../js/calendar-setup.js"></script>
+
+    <script type="text/javascript" src="../js/checkCalendar.js"></script>
+
+    <link href="../css/thickbox.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="text-align: center">
+    <div align="center" style="width: 99%; background-color: #FFFFFF;" id="container">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+            <tr>
+                <td width="11">
+                    <img alt="" src="../images/white_main_top_left.gif"></td>
+                <td width="99%">
+                    <img alt="" src="../images/spacer_10_x_10.gif" height="10"></td>
+                <td width="10">
+                    <img alt="" src="../images/white_main_top_right.gif" width="12" height="11"></td>
+            </tr>
+            <tr>
+                <td colspan="3" bgcolor="#FFFFFF">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="3%">
+                            </td>
+                            <td align="left" bgcolor="#eeeeee">
+                                首页&nbsp;-&gt;&nbsp;会员管理&nbsp;-&gt;&nbsp;会员查询&nbsp;-&gt;&nbsp;会员换卡记录</td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="caption" align="center">
+                                会员换卡记录</td>
+                        </tr>
+                        <tr>
+                            <td width="3%">
+                            </td>
+                            <td align="center">
+                                <table border="1" cellpadding="3" cellspacing="1" width="100%" align="left">
+                                    <tr>
+                                        <td nowrap class="item_caption">
+                                            时间:</td>
+                                        <td class="item_content">
+                                            <div>
+                                                <input class="datetexts" id="txtFrom" type="text" maxlength="10" readonly="true" value="2007-08-01"/>
+                               <img alt="" src="../images/cal.gif" alt="Click Here to Pick up the date" name="img alt=""btnFrom"
+                                                    width="16" height="16" border="0" id="img alt=""btnFrom" />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;至 &nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                <script type="text/javascript">
+						Calendar.setup({
+							firstDay       :    0,                  // first day of the week
+							inputField     :    "txtFrom",     				// id of the input field
+							button         :    "img alt=""btnFrom",  					// trigger for the calendar (button ID)
+							align          :    "Tl",           		// alignment (defaults to "Bl")
+							//singleClick  :    true,
+							showsTime      :    "true",
+							ifFormat       :    "%Y-%m-%d"    // our date only format
+							 });
+							 window
+                                                </script>
+
+                                                <input class="datetexts" name="txtTo" type="text" maxlength="10" readonly="true" value="2007-08-31"/>
+        <img alt="" src="../images/cal.gif" alt="Click Here to Pick up the date" name="img alt=""btnTo"
+                                                    width="16" height="16" border="0" id="img alt=""btnTo" /></div>
+                                            <div>
+
+                                                <script type="text/javascript">
+						Calendar.setup({
+							firstDay       :    0,                  // first day of the week
+							inputField     :    "txtTo",     				// id of the input field
+							button         :    "img alt=""btnTo",  					// trigger for the calendar (button ID)
+							align          :    "Tl",           		// alignment (defaults to "Bl")
+							//singleClick  :    true,
+							showsTime      :    "true",
+							ifFormat       :    "%Y-%m-%d"    // our date only format
+							 });
+							 window
+                                                </script>
+
+                                            </div>
+                                        </td>
+                                        <td nowrap class="item_caption">
+                                            卡号:</td>
+                                        <td class="item_content" colspan="2">
+                                            <input class="texts" id="Text1" type="text" />
+                                            <input type="button" disabled="disabled" class="buttons searchbuttons" value="检索" /></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="3%">
+                            </td>
+                        </tr>
+                        <tr class="emptyButtonsUpperRowHight">
+                            <td colspan="3">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="3%">
+                            </td>
+                            <td align="left">
+                                查询结果（共3项）</td>
+                            <td width="3%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="3%">
+                            </td>
+                            <td align="center">
+                                <table border="1" cellpadding="3" cellspacing="1" width="100%" align="left">
+                                    <tr>
+                                        <th width="1%" nowrap align="center">
+                                            &nbsp;NO&nbsp;</th>
+                                        <th width="30%" nowrap align="center">
+                                            客户名称</th>
+                                        <th width="1%" nowrap align="center">
+                                            原卡号</th>
+                                        <th width="1%" nowrap align="center">
+                                            新卡号</th>
+                                        <th width="1%" nowrap align="center">
+                                            时间</th>
+                                        <th width="20%" nowrap align="center">
+                                            备注</th>
+                                    </tr>
+                                    <tr class="detailRow">
+                                        <td align="center" nowrap>
+                                            1</td>
+                                        <td align="left" nowrap>
+                                            西北建筑设计院</td>
+                                        <td align="left" nowrap>
+                                            M000009</td>
+                                        <td align="left" nowrap>
+                                            M000011</td>
+                                        <td align="center" nowrap>
+                                            2007-06-26</td>
+                                        <td align="left" nowrap>&nbsp;
+                                            </td>
+                                    </tr>
+                                    <tr class="detailRow">
+                                        <td align="center" nowrap>
+                                            2</td>
+                                        <td align="left" nowrap>
+                                            交大设计院</td>
+                                        <td align="left" nowrap>
+                                            M000005</td>
+                                        <td align="left" nowrap>
+                                            M000012</td>
+                                        <td align="center" nowrap>
+                                            2007-06-01</td>
+                                        <td align="left" nowrap>&nbsp;
+                                            </td>
+                                    </tr>
+                                    <tr class="detailRow">
+                                        <td align="center" nowrap>
+                                            3</td>
+                                        <td align="left" nowrap>
+                                            建大设计院</td>
+                                        <td align="left" nowrap>
+                                            M000007</td>
+                                        <td align="left" nowrap>
+                                            M000013</td>
+                                        <td align="center" nowrap>
+                                            2007-06-02</td>
+                                        <td align="left" nowrap>&nbsp;
+                                            </td>
+                                    </tr>
+                                    <tr class="detailRow">
+                                        <td align="center" nowrap>
+                                           </td>
+                                        <td>&nbsp;
+                                            </td>
+                                        <td>&nbsp;
+                                            </td>
+                                        <td>&nbsp;
+                                            </td>
+                                        <td>&nbsp;
+                                            </td>
+                                        <td>&nbsp;
+                                            </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="3%">
+                            </td>
+                        </tr>
+                        <tr class="emptyButtonsUpperRowHight">
+                            <td colspan="3">
+                            </td>
+                        </tr>
+                        <tr height="5">
+                            <td style="height: 5px">
+                                <img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+                            <td bgcolor="#eeeeee" style="height: 5px">&nbsp;
+                                </td>
+                            <td style="height: 5px">
+                                <img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="11">
+                    <img alt="" src="../images/white_main_bottom_left.gif"></td>
+                <td width="99%">
+                    <img alt="" src="../images/spacer_10_x_10.gif"></td>
+                <td width="10">
+                    <img alt="" src="../images/white_main_bottom_right.gif"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

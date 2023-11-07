@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/popedomManagement/role
+END
+ModifyRole.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/popedomManagement/role/ModifyRole.aspx
+END
+ModifyRole.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/popedomManagement/role/ModifyRole.aspx.cs
+END
+RoleList.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/popedomManagement/role/RoleList.aspx
+END
+RoleList.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/popedomManagement/role/RoleList.aspx.cs
+END

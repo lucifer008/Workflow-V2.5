@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="SecondaryTrade" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+    <cacheModels>
+        <cacheModel id="SecondaryTradeCache" implementation="LRU">
+            <flushInterval hours="24"/>
+            <flushOnExecute statement="SecondaryTradeBase.Insert"/>
+            <flushOnExecute statement="SecondaryTradeBase.Update"/>
+            <flushOnExecute statement="SecondaryTradeBase.LogicDelete"/>
+            <flushOnExecute statement="SecondaryTradeBase.Delete"/>
+            <property name="CacheSize" value="100" />
+        </cacheModel>
+    </cacheModels>
+	<resultMaps>
+    <resultMap id="SearchSecondaryTradeMap" class="SecondaryTrade">
+      <result property="Id" column="Id"/>
+      <result property="MasterTradeId" column="Master_Trade_Id"/>
+      <result property="Name" column="Name"/>
+      <result property="No" column="MasterTradeName"/>
+    </resultMap>
+	</resultMaps>
+	<statements>
+		<select id="SelectAll" resultMap="SecondaryTradeResultMap.selectResult">
+			SELECT
+				*
+			FROM SECONDARY_TRADE
+			ORDER BY ID ASC
+		</select>
+    <select id="SearchSecondaryTrade" resultMap="SearchSecondaryTradeMap">
+      select top(#InsertUser#) a.Id,a.Name,a.Master_Trade_Id,b.Name MasterTradeName
+      from secondary_trade a
+      Inner join master_trade b on a.master_trade_Id=b.Id
+      where a.deleted='0'
+      and a.company_Id=#CompanyId#
+      and a.branch_shop_Id=#BranchShopId#
+      and a.Id not in(
+      select top(#InsertUser#*#UpdateUser#) a.Id
+      from secondary_trade a
+      Inner join master_trade b on a.master_trade_Id=b.Id
+      where a.deleted='0'
+      and a.company_Id=#CompanyId#
+      and a.branch_shop_Id=#BranchShopId#
+      )
+    </select>
+    <select id="SearchSecondaryTradeRowCount" resultClass="long">
+      select count(a.id)
+      from secondary_trade a
+      Inner join master_trade b on a.master_trade_Id=b.Id
+      where a.deleted='0'
+      and a.company_Id=#CompanyId#
+      and a.branch_shop_Id=#BranchShopId#
+    </select>
+	</statements>
+</sqlMap>

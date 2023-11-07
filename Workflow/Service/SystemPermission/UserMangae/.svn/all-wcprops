@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3299/trunk/v2.5/Workflow/Service/SystemPermission/UserMangae
+END
+IUserPermissionCheckService.cs
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Service/SystemPermission/UserMangae/IUserPermissionCheckService.cs
+END
+IUserService.cs
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3299/trunk/v2.5/Workflow/Service/SystemPermission/UserMangae/IUserService.cs
+END

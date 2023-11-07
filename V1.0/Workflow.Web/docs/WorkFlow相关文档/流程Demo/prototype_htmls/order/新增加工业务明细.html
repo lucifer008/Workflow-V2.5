@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>新增加工业务明细</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../js/新增工单.js"></script>
+</head>
+
+<body>
+<table width="500" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#CCCCCC">
+  <tr>
+    <td width="642" bgcolor="#FFFFFF"><table width="100%" border="0" cellpadding="3" cellspacing="3" bgcolor="#FFFFFF">
+      <tr>
+        <td><table width="100%" border="0" cellpadding="0" cellspacing="0" background="../images/index_13.gif">
+          <tr>
+            <td width="4%" height="25" align="center"><img alt="" src="../images/index_17.gif" width="11" height="11" /></td>
+            <td>新增工单 > 加工业务明细</td>
+            </tr>
+        </table></td>
+      </tr>
+      
+      
+      <tr>
+        <td align="center"><table width="100%" border="0" cellpadding="2" cellspacing="1" bgcolor="#EEEEEE">
+          <tr>
+            <td width="15%" height="30" align="right" bgcolor="#FFFFFF">业务类型:</td>
+            <td width="18%" bgcolor="#FFFFFF"><select name="select">
+                <option>打印</option>
+                <option>扫描</option>
+                <option>复印</option>
+              </select>            </td>
+            <td width="15%" align="right" bgcolor="#FFFFFF">加工内容:</td>
+            <td width="19%" bgcolor="#FFFFFF"><select name="select4">
+                <option>彩色打印</option>
+                <option>黑白打印</option>
+            </select></td>
+            <td width="15%" align="right" bgcolor="#FFFFFF">单位:</td>
+            <td width="18%" bgcolor="#FFFFFF"><select name="select3">
+              <option>张</option>
+              <option>个</option>
+              <option>本</option>
+              <option>册</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td height="30" align="right" bgcolor="#FFFFFF">机器:</td>
+            <td bgcolor="#FFFFFF"><select name="select2">
+                <option>DC8000</option>
+                <option>DC2060</option>
+                <option>DC900</option>
+            </select></td>
+            <td align="right" bgcolor="#FFFFFF">纸型:</td>
+            <td bgcolor="#FFFFFF"><select name="select5">
+                <option>A3</option>
+                <option>A4</option>
+            </select></td>
+            <td align="right" bgcolor="#FFFFFF">单价:</td>
+            <td bgcolor="#FFFFFF">2.3</td>
+          </tr>
+          <tr>
+            <td height="30" align="right" bgcolor="#FFFFFF">数量:</td>
+            <td bgcolor="#FFFFFF"><input name="textfield32" type="text" value="10" size="8" /></td>
+            <td align="right" bgcolor="#FFFFFF">纸质:</td>
+            <td bgcolor="#FFFFFF"><select name="select6">
+                <option>157g铜板</option>
+            </select></td>
+            <td align="right" bgcolor="#FFFFFF">制作要求:</td>
+            <td bgcolor="#FFFFFF">单面<a href="javascript:printRequest()">选择...</a></td>
+          </tr>
+          <tr>
+            <td height="30" align="right" bgcolor="#FFFFFF">金额:</td>
+            <td colspan="5" bgcolor="#FFFFFF" align="left"><input name="textfield2" type="text" value="23" /></td>
+          </tr>
+
+        </table></td>
+      </tr>
+      
+      <tr>
+        <td align="center"><table width="141" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="69" align="center" class="btn"><a href="#">提交</a></td>
+            <td width="69" align="center">&nbsp;</td>
+            <td width="69" align="center" class="btn"><a href="#">重填</a></td>
+            </tr>
+        </table></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+  <add key="datasource" value="PHOOK-XMWANG\SQLEXPRESS"/>
+  <add key="database" value="Test2"/>
+  <add key="username" value="sa"/>
+  <add key="password" value="1"/>
+</settings>

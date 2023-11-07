@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--表HAND_OVER [交班]的基本增删改查操作，此配置文件不允许修改-->
+<sqlMap namespace="HandOverBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		
+			<!--查询表HAND_OVER [交班]的基本操作-->		 
+			<select id="SelectAll" resultMap="HandOverResultMap.selectResult">
+			SELECT  ID,EMPLOYEE_ID,EMPLOYEE_ID2,HAND_OVER_DATE_TIME,MEMO,HAND_OVER_STATUS,HAND_OVER_TYPE,INSERT_USER,INSERT_DATE_TIME,UPDATE_DATE_TIME,UPDATE_USER,DELETED,VERSION,BRANCH_SHOP_ID,COMPANY_ID	FROM HAND_OVER Order by ID
+			</select>
+
+			<!--按照主键查询表HAND_OVER [交班]的基本操作-->
+			<select id="SelectByPk" parameterClass="long" resultMap="HandOverResultMap.selectResult">
+			SELECT 
+			ID,
+			EMPLOYEE_ID,
+			EMPLOYEE_ID2,
+			HAND_OVER_DATE_TIME,
+			MEMO,
+			HAND_OVER_STATUS,
+			HAND_OVER_TYPE,
+			INSERT_USER,
+			INSERT_DATE_TIME,
+			UPDATE_DATE_TIME,
+			UPDATE_USER,
+			DELETED,
+			VERSION,
+			BRANCH_SHOP_ID,
+			COMPANY_ID
+			FROM HAND_OVER
+			WHERE ID = #Id# 
+			</select>
+
+			<!--插入表HAND_OVER [交班]的基本操作-->
+			<insert id="Insert" parameterClass="HandOver">
+			INSERT INTO HAND_OVER
+			(
+				ID,
+				EMPLOYEE_ID,
+				EMPLOYEE_ID2,
+				HAND_OVER_DATE_TIME,
+				MEMO,
+				HAND_OVER_STATUS,
+				HAND_OVER_TYPE,
+				INSERT_USER,
+				INSERT_DATE_TIME,
+				UPDATE_DATE_TIME,
+				UPDATE_USER,
+				DELETED,
+				VERSION,
+				BRANCH_SHOP_ID,
+				COMPANY_ID
+			) VALUES
+			( 
+				#Id#,
+				#EmployeeId#,
+				#EmployeeId2#,
+				#HandOverDateTime#,
+				#Memo#,
+				#HandOverStatus#,
+				#HandOverType#,
+				#InsertUser#,
+				#InsertDateTime#,
+				#UpdateDateTime#,
+				#UpdateUser#,
+				#Deleted#,
+				#Version#,
+				#BranchShopId#,
+				#CompanyId#
+			)
+			</insert>
+			
+			<!--更新表HAND_OVER [交班]的基本操作-->
+			<update id="Update" parameterClass="HandOver">
+			UPDATE HAND_OVER
+			SET
+				EMPLOYEE_ID=#EmployeeId#,
+				EMPLOYEE_ID2=#EmployeeId2#,
+				HAND_OVER_DATE_TIME=#HandOverDateTime#,
+				MEMO=#Memo#,
+				HAND_OVER_STATUS=#HandOverStatus#,
+				HAND_OVER_TYPE=#HandOverType#,
+				INSERT_USER=#InsertUser#,
+				INSERT_DATE_TIME=#InsertDateTime#,
+				UPDATE_DATE_TIME=#UpdateDateTime#,
+				UPDATE_USER=#UpdateUser#,
+				DELETED=#Deleted#,
+				VERSION=#Version#,
+				BRANCH_SHOP_ID=#BranchShopId#,
+				COMPANY_ID=#CompanyId#
+			WHERE ID = #Id#
+			</update>
+
+			<!--逻辑删除表HAND_OVER [交班]的基本操作-->
+			<update id="LogicDelete" parameterClass="long">
+				UPDATE HAND_OVER
+				SET	VERSION = VERSION + 1,DELETED = '1'	WHERE ID = #Id#
+			</update>
+
+			<!--物理删除表HAND_OVER [交班]的基本操作-->
+			<delete id="Delete" parameterClass="long">
+				DELETE FROM HAND_OVER WHERE ID = #Id#
+			</delete>
+
+			<!--目标表HAND_OVER_ORDERS的信息查询-->
+			<select id="SelectHandOverOrder" parameterClass="long" resultMap="HandOverOrderResultMap.selectResult" >
+				SELECT
+				*
+				FROM HAND_OVER_ORDER
+				WHERE HAND_OVER_ID = #value#
+				ORDER BY ID
+			</select>			
+			<!--目标表HAND_OVER_MEMBER_CARD的信息查询-->
+			<select id="SelectHandOverMemberCard" parameterClass="long" resultMap="HandOverMemberCardResultMap.selectResult" >
+				SELECT
+				*
+				FROM HAND_OVER_MEMBER_CARD
+				WHERE HAND_OVER_ID = #value#
+				ORDER BY ID
+			</select>			
+		</statements>
+</sqlMap>

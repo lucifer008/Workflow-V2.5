@@ -1,0 +1,79 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow/Action/Order
+http://192.168.0.6/svn/workflow
+
+
+
+2009-11-12T09:17:13.734375Z
+2658
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+Model
+dir
+
+SearchOrderAction.cs
+file
+
+
+
+
+2010-03-25T07:10:12.421875Z
+492c24fd1b456343d31ceaf0cd1ae2d1
+2009-01-22T03:32:27.375000Z
+2262
+zhangxiaolin
+
+NewOrderAction.cs
+file
+
+
+
+
+2010-03-25T07:10:12.421875Z
+14c1e2f12c80c4c6726eb9c843ef5eac
+2009-08-25T08:30:03.484375Z
+2636
+zhangxiaolin
+
+TakeWorkAction.cs
+file
+
+
+
+
+2010-03-25T07:10:12.453125Z
+91c650c9b5ddef9492bc45247206c417
+2009-01-22T01:55:48.937500Z
+2261
+fuqiang
+
+BaseAction.cs
+file
+
+
+
+
+2010-03-25T07:10:12.468750Z
+b366c333930392129186e8a2286d3227
+2007-10-15T06:32:53.371189Z
+1341
+fuqiang
+

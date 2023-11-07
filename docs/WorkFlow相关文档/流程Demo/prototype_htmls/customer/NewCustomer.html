@@ -1,0 +1,139 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>新增客户</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/calendar-blue.css"  type="text/css" />
+<script type="text/javascript" src="../js/calendar.js"></script>
+<script type="text/javascript" src="../js/calendar-zh.js"></script>
+<script	type="text/javascript" src="../js/calendar-setup.js"></script>
+<script type="text/javascript" src="../js/checkCalendar.js"></script>
+<script language="javascript" src="../js/jquery.js"></script>
+<script language="javascript" src="../js/default.js"></script>
+<style type="text/css">
+<!--
+.STYLE1 {color: #FF0000}
+-->
+</style>
+</head>
+
+<body style="text-align:center">
+<div align="center" style="width:100%; background-color:#FFFFFF;" id="container">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+	<tr>
+		<td width="11"><img alt="" src="../images/white_main_top_left.gif"></td>
+		<td width="99%"><img alt="" src="../images/spacer_10_x_10.gif" height="10"></td>
+		<td width="10"><img alt="" src="../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+	</tr>
+  <tr>
+    <td colspan="3" bgcolor="#FFFFFF">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="3%"></td>
+		<td align="left" bgcolor="#eeeeee">首页&nbsp;-&gt;&nbsp;客户管理&nbsp;-&gt;&nbsp;新增客户</td>
+		<td width="3%"></td>
+      </tr>      
+      <tr>
+        <td colspan="3" class="caption" align="center">新增客户</td>
+       </tr>
+      <tr>
+        <td width="3%">&nbsp;</td>
+        <td align="center">
+            <table border="1" cellpadding="3" cellspacing="1" width="100%"
+					align="left">
+              
+              <tr>
+                <td nowrap class="item_caption">客户名称<span class="STYLE1">*</span>:</td>
+                <td class="item_content"><input class="texts" type="text" value="中铁一局" />                  </td>
+                <td nowrap class="item_caption">简拼:</td>
+                <td colspan="2" class="item_content"><input class="texts" type="text" value="ZJP" /></td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">所属行业<span class="STYLE1">*</span>:</td>
+                <td class="item_content"><select name="select5">
+                  <option>印艺</option>
+                  <option>图文</option>
+                </select>                  </td>
+                <td nowrap class="item_caption">客户级别:</td>
+                <td colspan="2" class="item_content"><select name="select">
+                    <option>普通</option>
+                    <option>VIP</option>
+                  </select>                </td>
+              </tr>
+			  <tr>
+                <td nowrap class="item_caption">通讯地址:</td>
+                <td class="item_content"><input class="texts" name="textfield3" type="text" value="西安市太乙路109号" />                </td>
+                <td nowrap class="item_caption">单位电话<span class="STYLE1">*</span>:</td>
+                <td colspan="2" class="item_content"><input class="texts" name="textfield32" type="text" value="029-85663211" />                  </td>
+              </tr>
+			  <tr>
+                <td nowrap class="item_caption">姓名<span class="STYLE1">*</span>:</td>
+                <td class="item_content"><input class="texts" name="textfield3" type="text" value="钱伟民" />                   </td>
+                <td nowrap class="item_caption">性别<span class="STYLE1">*</span>:</td>
+                <td colspan="2" class="item_content">
+                    <input name="rdbtPage" type="radio" class="radios" id="rdbtn1" value="radiobutton" checked />
+                    男
+                    <input class="radios" name="rdbtPage" id="rdbtn2" value="radiobutton" type="radio" />女</td>
+              </tr>
+			  <tr>
+                <td nowrap class="item_caption">身份证号:</td>
+                <td class="item_content"><input class="texts" name="textfield3" type="text" value="610102197708225623" />                </td>
+                <td nowrap class="item_caption">职务:</td>
+                <td colspan="2" class="item_content"><input class="texts" name="textfield322" type="text" value="设计科科长" /></td>
+              </tr>
+			  <tr>
+                <td nowrap class="item_caption">年龄:</td>
+                <td class="item_content"><input class="texts" name="textfield33" type="text" value="40" /></td>
+                <td nowrap class="item_caption">爱好:</td>
+                <td colspan="2" class="item_content"><input class="texts" name="textfield822" type="text" value="旅游" /></td>
+              </tr>
+			  <tr>
+                <td nowrap class="item_caption">手机:</td>
+			    <td class="item_content"><input class="texts" name="textfield3" type="text" value="13892863665" />                </td>
+			    <td nowrap class="item_caption">EMAIL:</td>
+			    <td colspan="2" class="item_content"><input class="texts" name="textfield82" type="text" value="qianweimin@sina.com" /></td>
+			    </tr>
+			 
+			  <tr>
+			    <td nowrap class="item_caption">发票<span class="STYLE1">*</span>:</td>
+			    <td class="item_content" colspan="4">
+                    <input id="Checkbox1" type="checkbox" />
+                    需要</td>
+			    </tr>
+              <tr>
+                <td nowrap class="item_caption">客户说明:</td>
+                <td colspan="4" class="item_content"><textarea name="textfield10" rows="3" cols="85">经常性业务为工程出图，标书也比较平凡</textarea>                </td>
+              </tr>
+            </table>        
+        </td>        
+        <td width="3%"></td>
+      </tr>
+      <tr class="emptyButtonsUpperRowHight">
+				<td colspan="3"></td>
+			</tr>
+      <tr>
+        <td width="3%" style="height: 24px"></td>
+        <td align="center" class="bottombuttons" style="height: 24px"><input type="button" class="buttons" onClick="window.close();" value="确定" />
+            &nbsp;<input  type="button" class="buttons" onClick="window.close();" value="取消" />&nbsp;
+          <input type="button" class="buttons" onClick="showPage('NewCustomerLinkMan.html', null, 800, 500, false, true);" value="增加联系人" />&nbsp;
+          <input type="button" class="buttons" onClick="showPage('../membercard/NewMemberCard.html', null, 800, 680, false, true);" value="发卡" /></td>
+        <td width="3%" style="height: 24px"></td>
+      </tr> 
+      <tr height="5">
+				<td style="height: 5px"><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+				<td bgcolor="#eeeeee" style="height: 5px">&nbsp;</td>
+				<td style="height: 5px"><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+			</tr>     
+    </table></td>
+  </tr>
+	<tr>
+		<td width="11"><img alt="" src="../images/white_main_bottom_left.gif"></td>
+		<td width="99%"><img alt="" src="../images/spacer_10_x_10.gif"></td>
+		<td width="10"><img alt="" src="../images/white_main_bottom_right.gif"></td>
+	</tr>
+</table>
+</div> 
+</body>
+</html>

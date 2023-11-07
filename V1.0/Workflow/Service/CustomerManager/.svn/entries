@@ -1,0 +1,55 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow/Service/CustomerManager
+http://192.168.0.6/svn/workflow
+
+
+
+2009-02-11T10:11:25.281250Z
+2325
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+ICustomerService.cs
+file
+
+
+
+
+2010-03-25T07:09:43.796875Z
+d7826120cf2bcb8591af0fae9508ade5
+2009-01-22T03:32:27.375000Z
+2262
+zhangxiaolin
+
+Impl
+dir
+
+ISearchCustomerService.cs
+file
+
+
+
+
+2010-03-25T07:09:43.812500Z
+d5501606d632dfe2e4fcf1a2471e6b07
+2009-02-11T10:11:25.281250Z
+2325
+zhangxiaolin
+

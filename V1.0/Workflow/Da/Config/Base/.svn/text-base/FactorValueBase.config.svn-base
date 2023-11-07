@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="FactorValueBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="FactorValueResultMap.selectResult"
+			cacheModel="FactorValue.FactorValueCache">
+			SELECT
+				ID, PRICE_FACTOR_ID, VALUE, TEXT, SORT_NO, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, COMPANY_ID, BRANCH_SHOP_ID
+			FROM FACTOR_VALUE
+			Where DELETED = '0'
+				AND COMPANY_ID = #CompanyId#
+				AND BRANCH_SHOP_ID = #BranchShopId#
+			ORDER BY SORT_NO
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="FactorValueResultMap.selectResult"
+			cacheModel="FactorValue.FactorValueCache">
+			SELECT
+				ID, PRICE_FACTOR_ID, VALUE, TEXT, SORT_NO, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, COMPANY_ID, BRANCH_SHOP_ID
+			FROM FACTOR_VALUE
+			WHERE ID = #Id# AND DELETED = '0' 
+
+		</select>
+		<insert id="Insert" parameterClass="FactorValue">
+			INSERT INTO FACTOR_VALUE
+				(
+				  ID, PRICE_FACTOR_ID, VALUE, TEXT, SORT_NO, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, COMPANY_ID, BRANCH_SHOP_ID
+				)
+				VALUES
+				(
+				  #Id # , #PriceFactorId# , #Value# , #Text# , #SortNo# , #InsertDateTime# , #InsertUser# , #UpdateDateTime# , #UpdateUser# , #Version# , #Deleted# , #CompanyId# , #BranchShopId# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="FactorValue">
+			UPDATE FACTOR_VALUE
+				SET
+					PRICE_FACTOR_ID = #PriceFactorId# ,VALUE = #Value#  ,TEXT = #Text#  ,SORT_NO = #SortNo#  ,UPDATE_DATE_TIME = #UpdateDateTime#  ,UPDATE_USER = #UpdateUser#  ,VERSION = VERSION + 1  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE FACTOR_VALUE
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM FACTOR_VALUE WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

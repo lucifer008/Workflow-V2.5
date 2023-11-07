@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="DailyRecordMachine" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+		<resultMap id="selectWatchResult" class="DailyRecordMachine">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="MachineTypeId" column="MACHINE_TYPE_ID" dbType="bigint"/>
+			<result property="MachineTypeName" column="MACHINE_TYPE_NAME" dbType="varchar" />
+			<result property="PaperSpecificationId" column="PAPER_SPECIFICATION_ID" dbType="bigint"/>
+			<result property="PaperSpecificationName" column="PAPER_SPECIFICATION_NAME" dbType="varchar" />
+			<result property="ColorType" column="COLOR_TYPE" dbType="char"/>
+			<result property="InWatchCount" column="IN_WATCH_COUNT" dbType="decimal"/>
+			<result property="MakeCount" column="MAKE_COUNT" dbType="decimal"/>
+			<result property="CashCount" column="CASH_COUNT" dbType="decimal"/>
+			<result property="PatchCount" column="PATCH_COUNT" dbType="decimal"/>
+		</resultMap>
+	</resultMaps>
+	<!--注意：请对每个statements段增加注释。说明处理的业务-->
+	<!--查询表DAILY_RECORD_MACHINE [每次抄表基本信息记录中的所有记录]-->
+	<statements>
+		<select id="SelectAll" resultMap="DailyRecordMachineResultMap.selectResult">
+			SELECT
+			*
+			FROM DAILY_RECORD_MACHINE
+			ORDER BY ID ASC
+		</select>
+
+		<select id="GetRecordMachineWatchResult" parameterClass="int" resultMap="selectWatchResult">
+			select a.ID,a.MACHINE_TYPE_ID,b.NAME as MACHINE_TYPE_NAME,a.PAPER_SPECIFICATION_ID,c.NAME as PAPER_SPECIFICATION_NAME,
+			a.COLOR_TYPE,a.IN_WATCH_COUNT,a.MAKE_COUNT,a.CASH_COUNT,a.PATCH_COUNT
+			from DAILY_RECORD_MACHINE a inner join
+			machine_type b  on a.machine_type_id=b.id inner join
+			PAPER_SPECIFICATION c on a.PAPER_SPECIFICATION_ID=c.id
+			where a.record_machine_watch_id=#value#
+		</select>
+	</statements>
+</sqlMap>

@@ -1,0 +1,230 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>门市价格设定</title>
+<link href="../../css/css.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../../js/jquery.js"></script>
+<script language="javascript" src="../../js/default.js"></script>
+</head>
+
+<body style="text-align:center">
+<div align="center" style="width:99%" bgcolor="#ffffff" id="container">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+	<tr>
+		<td width="11"><img alt="" src="../../images/white_main_top_left.gif" /></td>
+		<td width="99%"><img alt="" src="../../images/spacer_10_x_10.gif" height="10" /></td>
+		<td width="10"><img alt="" src="../../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+	</tr>
+	<tr>
+		<td colspan="3" bgcolor="#FFFFFF">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td bgcolor="#FFFFFF">
+		<table width="100%" border="0" cellspacing="0">
+			<tr>
+				<td></td>
+				<td align="left" bgcolor="#eeeeee">首页 -&gt; 系统管理 -&gt; 价格管理 -&gt; 门市价格设定</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="3" class="caption" align="center">门市价格设定</td>
+			</tr>
+			<tr>
+				<td width="3%">&nbsp;</td>
+				<td align="center"><table width="100%" border="1" cellpadding="3" cellspacing="1">
+                  <tr>
+                    <td nowrap="nowrap" class="item_caption">业务类型:</td>
+                    <td class="item_content"><select name="select">
+                      <option>不限</option>
+                      <option>复印</option>
+                      <option>印刷</option>
+                                        </select></td>
+                  </tr>
+
+                  <tr class="querybuttons">
+                    <td colspan="2" nowrap="nowrap"><input name="Submit4" disabled="disabled" type="button" class="buttons" value="查询" /></td>
+                  </tr>
+                </table></td>
+				<td width="3%">&nbsp;</td>
+			</tr>
+			
+			<tr>
+				<td width="3%">&nbsp;</td>
+				<td align="left"><input name="sltPrice" type="button" class="buttons" onClick="showPage('AddPrice.html', null, 812, 435, false, true);" value="新增价格" /></td>
+				<td width="3%">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="3%">&nbsp;</td>
+				<td align="center">
+				<table width="100%" border="1" cellpadding="3" cellspacing="1">
+                  <tr>
+                    <th width="1%" nowrap="nowrap">&nbsp;NO&nbsp;</th>
+                    <th width="1%" nowrap="nowrap">加工内容</th>
+                    <th width="1%" nowrap="nowrap">机器</th>
+                    <th width="1%" nowrap="nowrap">纸型</th>
+                    <th width="1%" nowrap="nowrap">纸质</th>
+                    <th width="1%" nowrap="nowrap">发票</th>
+                    <th width="1%" nowrap="nowrap">数量下限</th>
+                    <th width="1%" nowrap="nowrap">数量上限</th>
+                    <th width="1%" nowrap="nowrap">单位</th>
+                    <th width="1%" nowrap="nowrap">成本<br/>价格</th>
+                    <th width="1%" nowrap="nowrap">标准<br/>价格</th>
+                    <th width="1%" nowrap="nowrap">活动<br/>价格</th>
+                    <th width="1%" nowrap="nowrap">备用<br/>价格</th>
+                    <th nowrap="nowrap">备注</th>
+                    <th width="1%" nowrap="nowrap">&nbsp;</th>
+                  </tr>
+                  <tr class="detailRow">
+                    <td width="1%" align="center" nowrap="nowrap">1</td>
+                    <td width="1%" align="center" nowrap="nowrap">彩色打印</td>
+                    <td width="1%" align="center" nowrap="nowrap">DC8000</td>
+                    <td width="1%" align="center" nowrap="nowrap">A3</td>
+                    <td width="1%" align="center" nowrap="NOWRAP">70g复印纸</td>
+                    <td width="1%" align="center" nowrap="nowrap">要</td>
+                    <td width="1%" nowrap="nowrap" class="num">1</td>
+                    <td width="1%" nowrap="nowrap" class="num">9</td>
+                    <td width="1%" align="center" nowrap="nowrap">张</td>
+                    <td width="1%" nowrap="nowrap" class="num">2.0</td>
+                    <td width="1%" nowrap="nowrap" class="num">2.5</td>
+                    <td width="1%" nowrap="nowrap" class="num">2.4</td>
+                    <td width="1%" nowrap="nowrap" class="num">2.5</td>
+                    <td width="1%" nowrap="nowrap" class="num">&nbsp;</td>
+                    <td width="1%" align="left" nowrap="nowrap"><a href="#" onClick="showPage('SetPrice.html', null, 800, 465, false, true);">编辑</a> 删除</td>
+                  </tr>
+                  <tr class="detailRow">
+                    <td align="center">2</td>
+                    <td align="center">彩色打印</td>
+                    <td align="center">DC8000</td>
+                    <td align="center">A3</td>
+                    <td width="1%" align="center" nowrap="nowrap">160g彩砖纸</td>
+                    <td align="center">要</td>
+                    <td class="num">1</td>
+                    <td class="num">9</td>
+                    <td align="center">张</td>
+                    <td class="num">3.0</td>
+                    <td class="num">3.5</td>
+                    <td class="num">3.4</td>
+                    <td class="num">3.5</td>
+                    <td class="num">&nbsp;</td>
+                    <td align="left"><a href="#" onClick="showPage('SetPrice.html', null, 800, 465, false, true);">编辑</a> 删除</td>
+                  </tr>
+                  <tr class="detailRow">
+                    <td align="center">3</td>
+                    <td align="center">彩色打印</td>
+                    <td align="center">DC2060</td>
+                    <td align="center">A3</td>
+                    <td width="1%" align="center" nowrap="nowrap">160g彩砖纸</td>
+                    <td align="center">要</td>
+                    <td class="num">10</td>
+                    <td class="num">50</td>
+                    <td align="center">张</td>
+                    <td class="num">3.0</td>
+                    <td class="num">3.4</td>
+                    <td class="num">3.3</td>
+                    <td class="num">3.4</td>
+                    <td class="num">&nbsp;</td>
+                    <td align="left"><a href="#" onClick="showPage('SetPrice.html', null, 800, 465, false, true);">编辑</a> 删除</td>
+                  </tr>
+                  <tr class="detailRow">
+                    <td align="center">4</td>
+                    <td align="center">彩色打印</td>
+                    <td align="center">DC2060</td>
+                    <td align="center">A3</td>
+                    <td width="1%" align="center" nowrap="nowrap">160g彩砖纸</td>
+                    <td align="center">要</td>
+                    <td class="num">51</td>
+                    <td class="num">150</td>
+                    <td align="center">张</td>
+                    <td class="num">3.0</td>
+                    <td class="num">3.3</td>
+                    <td class="num">3.2</td>
+                    <td class="num">3.3</td>
+                    <td class="num">&nbsp;</td>
+                    <td align="left"><a href="#" onClick="showPage('SetPrice.html', null, 800, 465, false, true);">编辑</a> 删除</td>
+                  </tr>
+                  <tr class="detailRow">
+                    <td align="center">5</td>
+                    <td align="center">彩色打印</td>
+                    <td align="center">DC2060</td>
+                    <td align="center">A3</td>
+                    <td width="1%" align="center" nowrap="nowrap">160g彩砖纸</td>
+                    <td align="center">要</td>
+                    <td class="num">151</td>
+                    <td class="num">300</td>
+                    <td align="center">张</td>
+                    <td class="num">3.0</td>
+                    <td class="num">3.2</td>
+                    <td class="num">3.1</td>
+                    <td class="num">3.2</td>
+                    <td class="num">&nbsp;</td>
+                    <td align="left"><a href="#" onClick="showPage('SetPrice.html', null, 800, 465, false, true);">编辑</a> 删除</td>
+                  </tr>
+                  <tr class="detailRow">
+                    <td align="center">6</td>
+                    <td align="center">彩色打印</td>
+                    <td align="center">DC8000</td>
+                    <td align="center">A3</td>
+                    <td width="1%" align="center" nowrap="nowrap">160g彩砖纸</td>
+                    <td align="center">要</td>
+                    <td class="num">300</td>
+                    <td class="num">500</td>
+                    <td align="center">张</td>
+                    <td class="num">3.0</td>
+                    <td class="num">3.1</td>
+                    <td class="num">3.0</td>
+                    <td class="num">3.1</td>
+                    <td class="num">&nbsp;</td>
+                    <td align="left"><a href="#" onClick="showPage('SetPrice.html', null, 800, 465, false, true);">编辑</a> 删除</td>
+                  </tr>
+                  <tr class="detailRow">
+                    <td align="center">7</td>
+                    <td align="center">彩色打印</td>
+                    <td align="center">DC8000</td>
+                    <td align="center">A3</td>
+                    <td width="1%" align="center" nowrap="nowrap">160g彩砖纸</td>
+                    <td align="center">要</td>
+                    <td class="num">500</td>
+                    <td class="num">1,000</td>
+                    <td align="center">张</td>
+                    <td class="num">3.0</td>
+                    <td class="num">3.0</td>
+                    <td class="num">3.0</td>
+                    <td class="num">3.0</td>
+                    <td class="num">&nbsp;</td>
+                    <td align="left"><a href="#" onClick="showPage('SetPrice.html', null, 800, 465, false, true);">编辑</a> 删除</td>
+                  </tr>
+                </table></td>
+				<td width="3%">&nbsp;</td>
+			</tr>
+			<tr class="emptyButtonsUpperRowHight">
+				<td colspan="3"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center" class="bottombuttons"><input name="Submit34" class="buttons"
+					value="保存" disabled="disabled" type="button">
+				&nbsp;&nbsp;&nbsp;<input
+					name="Submit3342" class="buttons"
+					value="取消" disabled="disabled" type="button"></td>
+			</tr>
+			<tr height="5">
+				<td><img alt="" src="../../images/spacer_5_x_5.gif" width="5" height="5"></td>
+				<td bgcolor="#eeeeee">&nbsp;</td>
+				<td><img alt="" src="../../images/spacer_5_x_5.gif" width="5" height="5"></td>
+			</tr>
+		</table>
+
+		</td>
+	</tr>
+</table>
+  </td>
+  </tr>
+  	<tr>
+		<td width="11"><img alt="" src="../../images/white_main_bottom_left.gif"></td>
+		<td width="99%"><img alt="" src="../../images/spacer_10_x_10.gif"></td>
+		<td width="10"><img alt="" src="../../images/white_main_bottom_right.gif"></td>
+	</tr>
+</table>
+</div>
+</body>
+</html>

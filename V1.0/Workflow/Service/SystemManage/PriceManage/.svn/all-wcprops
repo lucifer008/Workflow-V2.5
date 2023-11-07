@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/SystemManage/PriceManage
+END
+IPriceService.cs
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/SystemManage/PriceManage/IPriceService.cs
+END
+ISelectActiveFactorService.cs
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/SystemManage/PriceManage/ISelectActiveFactorService.cs
+END

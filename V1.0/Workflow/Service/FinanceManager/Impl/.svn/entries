@@ -1,0 +1,52 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow/Service/FinanceManager/Impl
+http://192.168.0.6/svn/workflow
+
+
+
+2009-11-17T01:02:13.390625Z
+2663
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+FinanceServiceImpl.cs
+file
+
+
+
+
+2010-03-25T07:09:45.562500Z
+0c7d298c176393373cff8253ccb5a480
+2009-11-09T08:14:19.312500Z
+2653
+zhangxiaolin
+
+FindFinanceServiceImpl.cs
+file
+
+
+
+
+2010-03-25T07:09:45.578125Z
+b2c1ac215ed03f5bb60cec7e72899a92
+2009-11-17T01:02:13.390625Z
+2663
+zhangxiaolin
+

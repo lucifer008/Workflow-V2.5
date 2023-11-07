@@ -1,0 +1,1157 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{22F7625E-CBC1-48D5-A9BD-28667029DD1D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Workflow</RootNamespace>
+    <AssemblyName>Workflow.Support</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="antlr.runtime, Version=2.7.6.2, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\antlr.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy, Version=1.1.5.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Castle.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net, Version=1.2.0.2, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Common.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.Common, Version=1.6.1.0, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\IBatisNet.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.Common.Logging.Log4Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\IBatisNet.Common.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.DataMapper, Version=1.6.1.0, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\IBatisNet.DataMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Intelligencia.UrlRewriter, Version=2.0.0.6, Culture=neutral, PublicKeyToken=0573f3650687980d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Intelligencia.UrlRewriter.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=4.1.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="JSONSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\JSONSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Microsoft.Vsa" />
+    <Reference Include="Spring.Aop, Version=1.1.0.2, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.1.0.2, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data, Version=1.1.0.2, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data.IBatis, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Spring.Data.IBatis.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web, Version=1.1.0.2, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Spring.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Web.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Action\Achievement\AdjustAchievementAction.cs" />
+    <Compile Include="Action\Achievement\Model\AdjustAchievementModel.cs" />
+    <Compile Include="Action\Achievement\SearchAchievementAction.cs" />
+    <Compile Include="Action\Activities\CampaignAction.cs" />
+    <Compile Include="Action\Activities\ConcessionAction.cs" />
+    <Compile Include="Action\Activities\Model\CampaignModel.cs" />
+    <Compile Include="Action\Activities\Model\ConcessionModel.cs" />
+    <Compile Include="Action\Activities\DiscountConcessionAction.cs" />
+    <Compile Include="Action\Activities\Model\DiscountConcessionModel.cs" />
+    <Compile Include="Action\Ajax\AdjustOrderItemPersonAjax.cs" />
+    <Compile Include="Action\Ajax\CancelNotPaidTicketAjax.cs" />
+    <Compile Include="Action\Ajax\CheckFieldIsExistAjax.cs" />
+    <Compile Include="Action\Ajax\CheckLoginAjax.cs" />
+    <Compile Include="Action\Ajax\CheckUserIsNotUseAjax.cs" />
+    <Compile Include="Action\Ajax\CheckUserPassWorkAjax.cs" />
+    <Compile Include="Action\Ajax\GetArrearageOrderAjax.cs" />
+    <Compile Include="Action\Ajax\GetBaseBusinessTypePriceSetByIdAjax.cs" />
+    <Compile Include="Action\Ajax\GetBasePriceSetAjax.cs" />
+    <Compile Include="Action\Ajax\GetBusinessTypeDetalAjax.cs" />
+    <Compile Include="Action\Ajax\GetBusinessTypePriceFactorAjax.cs" />
+    <Compile Include="Action\Ajax\GetConcessionSum.cs" />
+    <Compile Include="Action\Ajax\GetCurrentUserPermissionAjax.cs" />
+    <Compile Include="Action\Ajax\GetCustomerIdInOrdersAjax.cs" />
+    <Compile Include="Action\Ajax\GetCustomerInfoAjax.cs" />
+    <Compile Include="Action\Ajax\GetCustomerInfoByNameAjax.cs" />
+    <Compile Include="Action\Ajax\GetCustomerPayTypeAjax.cs" />
+    <Compile Include="Action\Ajax\GetEmployeeByPositionIdAjax.cs" />
+    <Compile Include="Action\Ajax\GetMemberCardAjax.cs" />
+    <Compile Include="Action\Ajax\GetMemberCardDetailByNoAjax.cs" />
+    <Compile Include="Action\Ajax\GetMemberCardDiffInfoAjax.cs" />
+    <Compile Include="Action\Ajax\GetMemberCardIdInOrdersAjax.cs" />
+    <Compile Include="Action\Ajax\GetMemberCardNoAjax.cs" />
+    <Compile Include="Action\Ajax\GetOrderFactorAjax.cs" />
+    <Compile Include="Action\Ajax\GetOrderItemAjax.cs" />
+    <Compile Include="Action\Ajax\GetPriceAjax.cs" />
+    <Compile Include="Action\Ajax\GetPrintDemandListAjax.cs" />
+    <Compile Include="Action\Ajax\GetServerDate.cs" />
+    <Compile Include="Action\Ajax\LogoutUserAjax.cs" />
+    <Compile Include="Action\Ajax\ReturnOrderAjax.cs" />
+    <Compile Include="Action\Ajax\ReworkPasswordAjax.cs" />
+    <Compile Include="Action\Ajax\SystemMaintenance\CheckFieldIsUseAjax.cs" />
+    <Compile Include="Action\Ajax\SystemMaintenance\GetPriceFactorListAjax.cs" />
+    <Compile Include="Action\Customer\NewCustomerAction.cs" />
+    <Compile Include="Action\Employee\EmployeeAction.cs" />
+    <Compile Include="Action\Employee\Model\EmployeeModel.cs" />
+    <Compile Include="Action\Finance\FinanceAction.cs" />
+    <Compile Include="Action\Finance\FindFinanceAction.cs" />
+    <Compile Include="Action\Finance\Model\FinanceModel.cs" />
+    <Compile Include="Action\Finance\Model\FindFinanceModel.cs" />
+    <Compile Include="Action\LogCounters\CheckCounterAction.cs" />
+    <Compile Include="Action\LogCounters\CopyCounterAction.cs" />
+    <Compile Include="Action\LogCounters\EditProductionPaperAmountAction.cs" />
+    <Compile Include="Action\LogCounters\LogCountersAction.cs" />
+    <Compile Include="Action\LogCounters\Model\CheckCounterModel.cs" />
+    <Compile Include="Action\LogCounters\Model\CopyCounterModel.cs" />
+    <Compile Include="Action\LogCounters\Model\EditProductionPaperAmountModel.cs" />
+    <Compile Include="Action\LogCounters\Model\LogCountersModel.cs" />
+    <Compile Include="Action\Login\LoginAction.cs" />
+    <Compile Include="Action\Login\Model\LoginModel.cs" />
+    <Compile Include="Action\Membercard\MemberCardAction.cs" />
+    <Compile Include="Action\Membercard\SearchMemberCardAction.cs" />
+    <Compile Include="Action\Order\BaseAction.cs" />
+    <Compile Include="Action\Customer\Model\NewCustomerModel.cs" />
+    <Compile Include="Action\Customer\Model\SelectCustomerModel.cs" />
+    <Compile Include="Action\Customer\SelectCustomerAction.cs" />
+    <Compile Include="Action\HandOver\CashHandOverAction.cs" />
+    <Compile Include="Action\HandOver\HandOverQueryAction.cs" />
+    <Compile Include="Action\HandOver\Model\HandOverQueryModel.cs" />
+    <Compile Include="Action\HandOver\StageHandOverAction.cs" />
+    <Compile Include="Action\HandOver\Model\CashHandOverModel.cs" />
+    <Compile Include="Action\HandOver\Model\StageHandOverModel.cs" />
+    <Compile Include="Action\ManagePrice\BaseBusinessTypePriceSetAction.cs" />
+    <Compile Include="Action\ManagePrice\BusinessTypePriceSetAction.cs" />
+    <Compile Include="Action\ManagePrice\PriceAction.cs" />
+    <Compile Include="Action\Membercard\Model\MemberCardModel.cs" />
+    <Compile Include="Action\ManagePrice\Model\BaseBusinessTypePriceSetModel.cs" />
+    <Compile Include="Action\ManagePrice\Model\BusinessTypePriceSetModel.cs" />
+    <Compile Include="Action\ManagePrice\Model\PriceModel.cs" />
+    <Compile Include="Action\Order\Model\OrderModel.cs" />
+    <Compile Include="Action\Order\Model\TakeWorkModel.cs" />
+    <Compile Include="Action\Order\SearchOrderAction.cs" />
+    <Compile Include="Action\Order\TakeWorkAction.cs" />
+    <Compile Include="Action\Order\NewOrderAction.cs" />
+    <Compile Include="Action\Permission\Model\PermissionModel.cs" />
+    <Compile Include="Action\SystemMaintenance\OrderBaseData\Model\OrderBaseDataModel.cs" />
+    <Compile Include="Action\SystemMaintenance\OrderBaseData\OrderBaseDataAction.cs" />
+    <Compile Include="Action\SystemMaintenance\OrderBaseData\SearchOrderBaseDataAction.cs" />
+    <Compile Include="Action\SystemMaintenance\PriceBaseData\Model\PriceBaseDataModel.cs" />
+    <Compile Include="Action\SystemMaintenance\PriceBaseData\PriceBaseDataAction.cs" />
+    <Compile Include="Action\SystemMaintenance\PriceBaseData\SearchPriceBaseDataAction.cs" />
+    <Compile Include="Action\SystemMaintenance\System\Model\SystemModel.cs" />
+    <Compile Include="Action\SystemMaintenance\System\SearchSystemAction.cs" />
+    <Compile Include="Action\SystemMaintenance\System\SystemAction.cs" />
+    <Compile Include="Action\User\Model\UserModel.cs" />
+    <Compile Include="Action\Permission\PermissionAction.cs" />
+    <Compile Include="Action\User\UserAction.cs" />
+    <Compile Include="Action\Positions\Model\PositionModel.cs" />
+    <Compile Include="Action\Positions\PositionAction.cs" />
+    <Compile Include="Action\Roles\Model\RoleModel.cs" />
+    <Compile Include="Action\Roles\RoleAction.cs" />
+    <Compile Include="Da\Base\DaoBaseImpl.cs" />
+    <Compile Include="Da\Base\IDaoBase.cs" />
+    <Compile Include="Da\Base\LabelValue.cs" />
+    <Compile Include="Da\Domain\AccreditRecord.cs" />
+    <Compile Include="Da\Domain\Achievement.cs" />
+    <Compile Include="Da\Domain\AmountSegment.cs" />
+    <Compile Include="Da\Domain\ApplicationProperty.cs" />
+    <Compile Include="Da\Domain\BaseBusinessTypePriceSet.cs" />
+    <Compile Include="Da\Domain\Base\AccreditRecordBase.cs" />
+    <Compile Include="Da\Domain\Base\AchievementBase.cs" />
+    <Compile Include="Da\Domain\Base\AmountSegmentBase.cs" />
+    <Compile Include="Da\Domain\Base\ApplicationPropertyBase.cs" />
+    <Compile Include="Da\Domain\Base\BaseBusinessTypePriceSetBase.cs" />
+    <Compile Include="Da\Domain\Base\BlankOutReasonBase.cs" />
+    <Compile Include="Da\Domain\Base\BranchShopBase.cs" />
+    <Compile Include="Da\Domain\Base\BranchStoreBase.cs" />
+    <Compile Include="Da\Domain\Base\BusinessModuleBase.cs" />
+    <Compile Include="Da\Domain\Base\BusinessModuleGroupBase.cs" />
+    <Compile Include="Da\Domain\Base\BusinessTypeBase.cs" />
+    <Compile Include="Da\Domain\Base\BusinessTypePriceFactorBase.cs" />
+    <Compile Include="Da\Domain\Base\BusinessTypePriceSetBase.cs" />
+    <Compile Include="Da\Domain\Base\CampaignBase.cs" />
+    <Compile Include="Da\Domain\Base\CashHandOverBase.cs" />
+    <Compile Include="Da\Domain\Base\CashHandOverOrderBase.cs" />
+    <Compile Include="Da\Domain\Base\ChangeMemberCardBase.cs" />
+    <Compile Include="Da\Domain\Base\CompanyBase.cs" />
+    <Compile Include="Da\Domain\Base\CompensateEmployeeBase.cs" />
+    <Compile Include="Da\Domain\Base\CompensateUsedPaperBase.cs" />
+    <Compile Include="Da\Domain\Base\ConcessionBase.cs" />
+    <Compile Include="Da\Domain\Base\ConcessionDifferencePriceBase.cs" />
+    <Compile Include="Da\Domain\Base\ConcessionMemberCardLevelBase.cs" />
+    <Compile Include="Da\Domain\Base\CustomerBase.cs" />
+    <Compile Include="Da\Domain\Base\CustomerLevelBase.cs" />
+    <Compile Include="Da\Domain\Base\CustomerTypeBase.cs" />
+    <Compile Include="Da\Domain\Base\DailyRecordMachineBase.cs" />
+    <Compile Include="Da\Domain\Base\DeliveryOrderBase.cs" />
+    <Compile Include="Da\Domain\Base\DiscountConcessionBase.cs" />
+    <Compile Include="Da\Domain\Base\DiscountConcessionMachineTypePaperSpecBase.cs" />
+    <Compile Include="Da\Domain\Base\DutyEmployeeBase.cs" />
+    <Compile Include="Da\Domain\Base\EmployeeBase.cs" />
+    <Compile Include="Da\Domain\Base\EmployeePositionBase.cs" />
+    <Compile Include="Da\Domain\Base\FactorRelationBase.cs" />
+    <Compile Include="Da\Domain\Base\FactorRelationValueBase.cs" />
+    <Compile Include="Da\Domain\Base\FactorValueBase.cs" />
+    <Compile Include="Da\Domain\Base\GatheringBase.cs" />
+    <Compile Include="Da\Domain\Base\GatheringOrderBase.cs" />
+    <Compile Include="Da\Domain\Base\HandOverBase.cs" />
+    <Compile Include="Da\Domain\Base\HandOverMemberCardBase.cs" />
+    <Compile Include="Da\Domain\Base\HandOverOrderBase.cs" />
+    <Compile Include="Da\Domain\Base\IdGeneratorBase.cs" />
+    <Compile Include="Da\Domain\Base\LinkManBase.cs" />
+    <Compile Include="Da\Domain\Base\LogoffMemberCardBase.cs" />
+    <Compile Include="Da\Domain\Base\MachineBase.cs" />
+    <Compile Include="Da\Domain\Base\MachineTypeBase.cs" />
+    <Compile Include="Da\Domain\Base\MachineWatchBase.cs" />
+    <Compile Include="Da\Domain\Base\MachineWatchConversionPaperBase.cs" />
+    <Compile Include="Da\Domain\Base\MachineWatchRecordLogBase.cs" />
+    <Compile Include="Da\Domain\Base\MachineWatchScaleBase.cs" />
+    <Compile Include="Da\Domain\Base\MarkingSettingBase.cs" />
+    <Compile Include="Da\Domain\Base\MasterTradeBase.cs" />
+    <Compile Include="Da\Domain\Base\MemberCardBase.cs" />
+    <Compile Include="Da\Domain\Base\MemberCardConcessionBase.cs" />
+    <Compile Include="Da\Domain\Base\MemberCardConcessionGatheringBase.cs" />
+    <Compile Include="Da\Domain\Base\MemberCardDiscountConcessionBase.cs" />
+    <Compile Include="Da\Domain\Base\MemberCardLevelBase.cs" />
+    <Compile Include="Da\Domain\Base\MemberCardOrderItemCounteractLogBase.cs" />
+    <Compile Include="Da\Domain\Base\MemberOperateLogBase.cs" />
+    <Compile Include="Da\Domain\Base\OrderBase.cs" />
+    <Compile Include="Da\Domain\Base\OrderItemBase.cs" />
+    <Compile Include="Da\Domain\Base\OrderItemEmployeeBase.cs" />
+    <Compile Include="Da\Domain\Base\OrderItemFactorValueBase.cs" />
+    <Compile Include="Da\Domain\Base\OrderItemPrintRequireDetailBase.cs" />
+    <Compile Include="Da\Domain\Base\OrdersDutyBase.cs" />
+    <Compile Include="Da\Domain\Base\OrdersForRecordMachineSumBase.cs" />
+    <Compile Include="Da\Domain\Base\OrdersStatusAlterBase.cs" />
+    <Compile Include="Da\Domain\Base\OtherGatheringAndRefundmentRecordBase.cs" />
+    <Compile Include="Da\Domain\Base\PaperSpecificationBase.cs" />
+    <Compile Include="Da\Domain\Base\PaperSpecificationSimilarityBase.cs" />
+    <Compile Include="Da\Domain\Base\PaperTypeBase.cs" />
+    <Compile Include="Da\Domain\Base\PaymentConcessionBase.cs" />
+    <Compile Include="Da\Domain\Base\PermissionBase.cs" />
+    <Compile Include="Da\Domain\Base\PermissionGroupBase.cs" />
+    <Compile Include="Da\Domain\Base\PermissionGroupDetailBase.cs" />
+    <Compile Include="Da\Domain\Base\PositionBase.cs" />
+    <Compile Include="Da\Domain\Base\PriceFactorBase.cs" />
+    <Compile Include="Da\Domain\Base\PrintDemandBase.cs" />
+    <Compile Include="Da\Domain\Base\PrintDemandDetailBase.cs" />
+    <Compile Include="Da\Domain\Base\PrintRequireDetailBase.cs" />
+    <Compile Include="Da\Domain\Base\ProcessContentAchievementRateBase.cs" />
+    <Compile Include="Da\Domain\Base\ProcessContentBase.cs" />
+    <Compile Include="Da\Domain\Base\RealOrderItemBase.cs" />
+    <Compile Include="Da\Domain\Base\RealOrderItemEmployeeBase.cs" />
+    <Compile Include="Da\Domain\Base\RealOrderItemFactorValueBase.cs" />
+    <Compile Include="Da\Domain\Base\RealOrderItemPrintRequireBase.cs" />
+    <Compile Include="Da\Domain\Base\RealOrderItemTrashReasonBase.cs" />
+    <Compile Include="Da\Domain\Base\RecordMachineWatchBase.cs" />
+    <Compile Include="Da\Domain\Base\RelationEmployeeBase.cs" />
+    <Compile Include="Da\Domain\Base\ReportLessModeBase.cs" />
+    <Compile Include="Da\Domain\Base\ReportLossMemberCardBase.cs" />
+    <Compile Include="Da\Domain\Base\RequireAccountingInfoBase.cs" />
+    <Compile Include="Da\Domain\Base\RoleBase.cs" />
+    <Compile Include="Da\Domain\Base\RolePermissionGroupBase.cs" />
+    <Compile Include="Da\Domain\Base\SecondaryTradeBase.cs" />
+    <Compile Include="Da\Domain\Base\TakeWorkBase.cs" />
+    <Compile Include="Da\Domain\Base\TrashPaperEmployeeBase.cs" />
+    <Compile Include="Da\Domain\Base\TrashReasonBase.cs" />
+    <Compile Include="Da\Domain\Base\UncompleteOrdersUsedPaperBase.cs" />
+    <Compile Include="Da\Domain\Base\UnitBase.cs" />
+    <Compile Include="Da\Domain\Base\UserBase.cs" />
+    <Compile Include="Da\Domain\Base\UserConcessionRangeBase.cs" />
+    <Compile Include="Da\Domain\Base\UserRoleBase.cs" />
+    <Compile Include="Da\Domain\BlankOutReason.cs" />
+    <Compile Include="Da\Domain\BranchShop.cs" />
+    <Compile Include="Da\Domain\BranchStore.cs" />
+    <Compile Include="Da\Domain\BusinessModule.cs" />
+    <Compile Include="Da\Domain\BusinessModuleGroup.cs" />
+    <Compile Include="Da\Domain\BusinessType.cs" />
+    <Compile Include="Da\Domain\BusinessTypePriceFactor.cs" />
+    <Compile Include="Da\Domain\BusinessTypePriceSet.cs" />
+    <Compile Include="Da\Domain\Campaign.cs" />
+    <Compile Include="Da\Domain\CashHandOver.cs" />
+    <Compile Include="Da\Domain\CashHandOverOrder.cs" />
+    <Compile Include="Da\Domain\ChangeMemberCard.cs" />
+    <Compile Include="Da\Domain\Company.cs" />
+    <Compile Include="Da\Base\MetaData.cs" />
+    <Compile Include="Da\Domain\CompensateEmployee.cs" />
+    <Compile Include="Da\Domain\CompensateUsedPaper.cs" />
+    <Compile Include="Da\Domain\Concession.cs" />
+    <Compile Include="Da\Domain\ConcessionDifferencePrice.cs" />
+    <Compile Include="Da\Domain\ConcessionMemberCardLevel.cs" />
+    <Compile Include="Da\Domain\Customer.cs" />
+    <Compile Include="Da\Domain\CustomerLevel.cs" />
+    <Compile Include="Da\Domain\CustomerType.cs" />
+    <Compile Include="Da\Domain\DailyRecordMachine.cs" />
+    <Compile Include="Da\Domain\DeliveryOrder.cs" />
+    <Compile Include="Da\Domain\DiscountConcession.cs" />
+    <Compile Include="Da\Domain\DiscountConcessionMachineTypePaperSpec.cs" />
+    <Compile Include="Da\Domain\DutyEmployee.cs" />
+    <Compile Include="Da\Domain\Employee.cs" />
+    <Compile Include="Da\Domain\EmployeePosition.cs" />
+    <Compile Include="Da\Domain\FactorRelation.cs" />
+    <Compile Include="Da\Domain\FactorRelationValue.cs" />
+    <Compile Include="Da\Domain\FactorValue.cs" />
+    <Compile Include="Da\Domain\Gathering.cs" />
+    <Compile Include="Da\Domain\GatheringOrder.cs" />
+    <Compile Include="Da\Domain\HandOver.cs" />
+    <Compile Include="Da\Domain\HandOverMemberCard.cs" />
+    <Compile Include="Da\Domain\HandOverOrder.cs" />
+    <Compile Include="Da\Domain\IdGenerator.cs" />
+    <Compile Include="Da\Domain\LinkMan.cs" />
+    <Compile Include="Da\Domain\LogoffMemberCard.cs" />
+    <Compile Include="Da\Domain\Machine.cs" />
+    <Compile Include="Da\Domain\MachineType.cs" />
+    <Compile Include="Da\Domain\MachineWatch.cs" />
+    <Compile Include="Da\Domain\MachineWatchConversionPaper.cs" />
+    <Compile Include="Da\Domain\MachineWatchRecordLog.cs" />
+    <Compile Include="Da\Domain\MachineWatchScale.cs" />
+    <Compile Include="Da\Domain\MarkingSetting.cs" />
+    <Compile Include="Da\Domain\MasterTrade.cs" />
+    <Compile Include="Da\Domain\MemberCard.cs" />
+    <Compile Include="Da\Domain\MemberCardConcession.cs" />
+    <Compile Include="Da\Domain\MemberCardConcessionGathering.cs" />
+    <Compile Include="Da\Domain\MemberCardDiscountConcession.cs" />
+    <Compile Include="Da\Domain\MemberCardLevel.cs" />
+    <Compile Include="Da\Domain\MemberCardOrderItemCounteractLog.cs" />
+    <Compile Include="Da\Domain\MemberOperateLog.cs" />
+    <Compile Include="Da\Domain\Order.cs" />
+    <Compile Include="Da\Domain\OrderItem.cs" />
+    <Compile Include="Da\Domain\OrderItemEmployee.cs" />
+    <Compile Include="Da\Domain\OrderItemFactorValue.cs" />
+    <Compile Include="Da\Domain\OrderItemPrintRequireDetail.cs" />
+    <Compile Include="Da\Domain\OrdersDuty.cs" />
+    <Compile Include="Da\Domain\OrdersForRecordMachineSum.cs" />
+    <Compile Include="Da\Domain\OrdersStatusAlter.cs" />
+    <Compile Include="Da\Domain\OtherGatheringAndRefundmentRecord.cs" />
+    <Compile Include="Da\Domain\PaperSpecification.cs" />
+    <Compile Include="Da\Domain\PaperSpecificationSimilarity.cs" />
+    <Compile Include="Da\Domain\PaperType.cs" />
+    <Compile Include="Da\Domain\PaymentConcession.cs" />
+    <Compile Include="Da\Domain\Permission.cs" />
+    <Compile Include="Da\Domain\PermissionGroup.cs" />
+    <Compile Include="Da\Domain\PermissionGroupDetail.cs" />
+    <Compile Include="Da\Domain\Position.cs" />
+    <Compile Include="Da\Domain\PriceFactor.cs" />
+    <Compile Include="Da\Domain\PrintDemand.cs" />
+    <Compile Include="Da\Domain\PrintDemandDetail.cs" />
+    <Compile Include="Da\Domain\PrintRequireDetail.cs" />
+    <Compile Include="Da\Domain\ProcessContent.cs" />
+    <Compile Include="Da\Domain\ProcessContentAchievementRate.cs" />
+    <Compile Include="Da\Domain\RealOrderItem.cs" />
+    <Compile Include="Da\Domain\RealOrderItemEmployee.cs" />
+    <Compile Include="Da\Domain\RealOrderItemFactorValue.cs" />
+    <Compile Include="Da\Domain\RealOrderItemPrintRequire.cs" />
+    <Compile Include="Da\Domain\RealOrderItemTrashReason.cs" />
+    <Compile Include="Da\Domain\RecordMachineWatch.cs" />
+    <Compile Include="Da\Domain\RelationEmployee.cs" />
+    <Compile Include="Da\Domain\ReportLessMode.cs" />
+    <Compile Include="Da\Domain\ReportLossMemberCard.cs" />
+    <Compile Include="Da\Domain\RequireAccountingInfo.cs" />
+    <Compile Include="Da\Domain\Role.cs" />
+    <Compile Include="Da\Domain\RolePermissionGroup.cs" />
+    <Compile Include="Da\Domain\SecondaryTrade.cs" />
+    <Compile Include="Da\Domain\TakeWork.cs" />
+    <Compile Include="Da\Domain\TrashPaperEmployee.cs" />
+    <Compile Include="Da\Domain\TrashReason.cs" />
+    <Compile Include="Da\Domain\UncompleteOrdersUsedPaper.cs" />
+    <Compile Include="Da\Domain\Unit.cs" />
+    <Compile Include="Da\Domain\User.cs" />
+    <Compile Include="Da\Domain\UserConcessionRange.cs" />
+    <Compile Include="Da\Domain\UserRole.cs" />
+    <Compile Include="Da\IAccreditRecordDao.cs" />
+    <Compile Include="Da\IAchievementDao.cs" />
+    <Compile Include="Da\IAmountSegmentDao.cs" />
+    <Compile Include="Da\IApplicationPropertyDao.cs" />
+    <Compile Include="Da\IBaseBusinessTypePriceSetDao.cs" />
+    <Compile Include="Da\IBatis\SqlMapClientFactoryBean.cs" />
+    <Compile Include="Da\IBatis\SqlMapClientOperations.cs" />
+    <Compile Include="Da\IBlankOutReasonDao.cs" />
+    <Compile Include="Da\IBranchShopDao.cs" />
+    <Compile Include="Da\IBusinessModuleDao.cs" />
+    <Compile Include="Da\IBusinessModuleGroupDao.cs" />
+    <Compile Include="Da\IBusinessTypeDao.cs" />
+    <Compile Include="Da\IBusinessTypePriceFactorDao.cs" />
+    <Compile Include="Da\IBusinessTypePriceSetDao.cs" />
+    <Compile Include="Da\ICampaignDao.cs" />
+    <Compile Include="Da\ICashHandOverDao.cs" />
+    <Compile Include="Da\ICashHandOverOrderDao.cs" />
+    <Compile Include="Da\IChangeMemberCardDao.cs" />
+    <Compile Include="Da\ICompanyDao.cs" />
+    <Compile Include="Da\ICompensateEmployeeDao.cs" />
+    <Compile Include="Da\ICompensateUsedPaperDao.cs" />
+    <Compile Include="Da\IConcessionDao.cs" />
+    <Compile Include="Da\IConcessionDifferencePriceDao.cs" />
+    <Compile Include="Da\IConcessionMemberCardLevelDao.cs" />
+    <Compile Include="Da\ICustomerDao.cs" />
+    <Compile Include="Da\ICustomerLevelDao.cs" />
+    <Compile Include="Da\ICustomerTypeDao.cs" />
+    <Compile Include="Da\IDailyRecordMachineDao.cs" />
+    <Compile Include="Da\IDeliveryOrderDao.cs" />
+    <Compile Include="Da\IDiscountConcessionDao.cs" />
+    <Compile Include="Da\IDiscountConcessionMachineTypePaperSpecDao.cs" />
+    <Compile Include="Da\IDutyEmployeeDao.cs" />
+    <Compile Include="Da\IEmployeeDao.cs" />
+    <Compile Include="Da\IEmployeePositionDao.cs" />
+    <Compile Include="Da\IFactorRelationDao.cs" />
+    <Compile Include="Da\IFactorRelationValueDao.cs" />
+    <Compile Include="Da\IFactorValueDao.cs" />
+    <Compile Include="Da\IGatheringDao.cs" />
+    <Compile Include="Da\IGatheringOrderDao.cs" />
+    <Compile Include="Da\IHandOverDao.cs" />
+    <Compile Include="Da\IHandOverMemberCardDao.cs" />
+    <Compile Include="Da\IHandOverOrderDao.cs" />
+    <Compile Include="Da\IIdGeneratorDao.cs" />
+    <Compile Include="Da\ILinkManDao.cs" />
+    <Compile Include="Da\ILogoffMemberCardDao.cs" />
+    <Compile Include="Da\IMachineDao.cs" />
+    <Compile Include="Da\IMachineTypeDao.cs" />
+    <Compile Include="Da\IMachineWatchConversionPaperDao.cs" />
+    <Compile Include="Da\IMachineWatchDao.cs" />
+    <Compile Include="Da\IMachineWatchRecordLogDao.cs" />
+    <Compile Include="Da\IMachineWatchScaleDao.cs" />
+    <Compile Include="Da\IMarkingSettingDao.cs" />
+    <Compile Include="Da\IMasterTradeDao.cs" />
+    <Compile Include="Da\IMemberCardConcessionDao.cs" />
+    <Compile Include="Da\IMemberCardConcessionGatheringDao.cs" />
+    <Compile Include="Da\IMemberCardDao.cs" />
+    <Compile Include="Da\IMemberCardDiscountConcessionDao.cs" />
+    <Compile Include="Da\IMemberCardLevelDao.cs" />
+    <Compile Include="Da\IMemberCardOrderItemCounteractLogDao.cs" />
+    <Compile Include="Da\IMemberOperateLogDao.cs" />
+    <Compile Include="Da\Impl\AccreditRecordDaoImpl.cs" />
+    <Compile Include="Da\Impl\AchievementDaoImpl.cs" />
+    <Compile Include="Da\Impl\AmountSegmentDaoImpl.cs" />
+    <Compile Include="Da\Impl\ApplicationPropertyDaoImpl.cs" />
+    <Compile Include="Da\Impl\BaseBusinessTypePriceSetDaoImpl.cs" />
+    <Compile Include="Da\Impl\BlankOutReasonDaoImpl.cs" />
+    <Compile Include="Da\Impl\BranchShopDaoImpl.cs" />
+    <Compile Include="Da\Impl\BusinessModuleDaoImpl.cs" />
+    <Compile Include="Da\Impl\BusinessModuleGroupDaoImpl.cs" />
+    <Compile Include="Da\Impl\BusinessTypeDaoImpl.cs" />
+    <Compile Include="Da\Impl\BusinessTypePriceFactorDaoImpl.cs" />
+    <Compile Include="Da\Impl\BusinessTypePriceSetDaoImpl.cs" />
+    <Compile Include="Da\Impl\CampaignDaoImpl.cs" />
+    <Compile Include="Da\Impl\CashHandOverDaoImpl.cs" />
+    <Compile Include="Da\Impl\CashHandOverOrderDaoImpl.cs" />
+    <Compile Include="Da\Impl\ChangeMemberCardDaoImpl.cs" />
+    <Compile Include="Da\Impl\CompanyDaoImpl.cs" />
+    <Compile Include="Da\Impl\CompensateEmployeeDaoImpl.cs" />
+    <Compile Include="Da\Impl\CompensateUsedPaperDaoImpl.cs" />
+    <Compile Include="Da\Impl\ConcessionDaoImpl.cs" />
+    <Compile Include="Da\Impl\ConcessionDifferencePriceDaoImpl.cs" />
+    <Compile Include="Da\Impl\ConcessionMemberCardLevelDaoImpl.cs" />
+    <Compile Include="Da\Impl\CustomerDaoImpl.cs" />
+    <Compile Include="Da\Impl\CustomerLevelDaoImpl.cs" />
+    <Compile Include="Da\Impl\CustomerTypeDaoImpl.cs" />
+    <Compile Include="Da\Impl\DailyRecordMachineDaoImpl.cs" />
+    <Compile Include="Da\Impl\DeliveryOrderDaoImpl.cs" />
+    <Compile Include="Da\Impl\DiscountConcessionDaoImpl.cs" />
+    <Compile Include="Da\Impl\DiscountConcessionMachineTypePaperSpecDaoImpl.cs" />
+    <Compile Include="Da\Impl\DutyEmployeeDaoImpl.cs" />
+    <Compile Include="Da\Impl\EmployeeDaoImpl.cs" />
+    <Compile Include="Da\Impl\EmployeePositionDaoImpl.cs" />
+    <Compile Include="Da\Impl\FactorRelationDaoImpl.cs" />
+    <Compile Include="Da\Impl\FactorRelationValueDaoImpl.cs" />
+    <Compile Include="Da\Impl\FactorValueDaoImpl.cs" />
+    <Compile Include="Da\Impl\GatheringDaoImpl.cs" />
+    <Compile Include="Da\Impl\GatheringOrderDaoImpl.cs" />
+    <Compile Include="Da\Impl\HandOverDaoImpl.cs" />
+    <Compile Include="Da\Impl\HandOverMemberCardDaoImpl.cs" />
+    <Compile Include="Da\Impl\HandOverOrderDaoImpl.cs" />
+    <Compile Include="Da\Impl\IdGeneratorDaoImpl.cs" />
+    <Compile Include="Da\Impl\LinkManDaoImpl.cs" />
+    <Compile Include="Da\Impl\LogoffMemberCardDaoImpl.cs" />
+    <Compile Include="Da\Impl\MachineDaoImpl.cs" />
+    <Compile Include="Da\Impl\MachineTypeDaoImpl.cs" />
+    <Compile Include="Da\Impl\MachineWatchConversionPaperDaoImpl.cs" />
+    <Compile Include="Da\Impl\MachineWatchDaoImpl.cs" />
+    <Compile Include="Da\Impl\MachineWatchRecordLogDaoImpl.cs" />
+    <Compile Include="Da\Impl\MachineWatchScaleDaoImpl.cs" />
+    <Compile Include="Da\Impl\MarkingSettingDaoImpl.cs" />
+    <Compile Include="Da\Impl\MasterTradeDaoImpl.cs" />
+    <Compile Include="Da\Impl\MemberCardConcessionDaoImpl.cs" />
+    <Compile Include="Da\Impl\MemberCardConcessionGatheringDaoImpl.cs" />
+    <Compile Include="Da\Impl\MemberCardDaoImpl.cs" />
+    <Compile Include="Da\Impl\MemberCardDiscountConcessionDaoImpl.cs" />
+    <Compile Include="Da\Impl\MemberCardLevelDaoImpl.cs" />
+    <Compile Include="Da\Impl\MemberCardOrderItemCounteractLogDaoImpl.cs" />
+    <Compile Include="Da\Impl\MemberOperateLogDaoImpl.cs" />
+    <Compile Include="Da\Impl\OrderDaoImpl.cs" />
+    <Compile Include="Da\Impl\OrderItemDaoImpl.cs" />
+    <Compile Include="Da\Impl\OrderItemEmployeeDaoImpl.cs" />
+    <Compile Include="Da\Impl\OrderItemFactorValueDaoImpl.cs" />
+    <Compile Include="Da\Impl\OrderItemPrintRequireDetailDaoImpl.cs" />
+    <Compile Include="Da\Impl\OrdersDutyDaoImpl.cs" />
+    <Compile Include="Da\Impl\OrdersForRecordMachineSumDaoImpl.cs" />
+    <Compile Include="Da\Impl\OrdersStatusAlterDaoImpl.cs" />
+    <Compile Include="Da\Impl\OtherGatheringAndRefundmentRecordDaoImpl.cs" />
+    <Compile Include="Da\Impl\PaperSpecificationDaoImpl.cs" />
+    <Compile Include="Da\Impl\PaperSpecificationSimilarityDaoImpl.cs" />
+    <Compile Include="Da\Impl\PaperTypeDaoImpl.cs" />
+    <Compile Include="Da\Impl\PaymentConcessionDaoImpl.cs" />
+    <Compile Include="Da\Impl\PermissionDaoImpl.cs" />
+    <Compile Include="Da\Impl\PermissionGroupDaoImpl.cs" />
+    <Compile Include="Da\Impl\PermissionGroupDetailDaoImpl.cs" />
+    <Compile Include="Da\Impl\PositionDaoImpl.cs" />
+    <Compile Include="Da\Impl\PriceFactorDaoImpl.cs" />
+    <Compile Include="Da\Impl\PrintDemandDaoImpl.cs" />
+    <Compile Include="Da\Impl\PrintDemandDetailDaoImpl.cs" />
+    <Compile Include="Da\Impl\PrintRequireDetailDaoImpl.cs" />
+    <Compile Include="Da\Impl\ProcessContentAchievementRateDaoImpl.cs" />
+    <Compile Include="Da\Impl\ProcessContentDaoImpl.cs" />
+    <Compile Include="Da\Impl\RealOrderItemDaoImpl.cs" />
+    <Compile Include="Da\Impl\RealOrderItemEmployeeDaoImpl.cs" />
+    <Compile Include="Da\Impl\RealOrderItemFactorValueDaoImpl.cs" />
+    <Compile Include="Da\Impl\RealOrderItemPrintRequireDaoImpl.cs" />
+    <Compile Include="Da\Impl\RealOrderItemTrashReasonDaoImpl.cs" />
+    <Compile Include="Da\Impl\RecordMachineWatchDaoImpl.cs" />
+    <Compile Include="Da\Impl\RelationEmployeeDaoImpl.cs" />
+    <Compile Include="Da\Impl\ReportLessModeDaoImpl.cs" />
+    <Compile Include="Da\Impl\ReportLossMemberCardDaoImpl.cs" />
+    <Compile Include="Da\Impl\RequireAccountingInfoDaoImpl.cs" />
+    <Compile Include="Da\Impl\RoleDaoImpl.cs" />
+    <Compile Include="Da\Impl\RolePermissionGroupDaoImpl.cs" />
+    <Compile Include="Da\Impl\SecondaryTradeDaoImpl.cs" />
+    <Compile Include="Da\Impl\TakeWorkDaoImpl.cs" />
+    <Compile Include="Da\Impl\TrashPaperEmployeeDaoImpl.cs" />
+    <Compile Include="Da\Impl\TrashReasonDaoImpl.cs" />
+    <Compile Include="Da\Impl\UncompleteOrdersUsedPaperDaoImpl.cs" />
+    <Compile Include="Da\Impl\UnitDaoImpl.cs" />
+    <Compile Include="Da\Impl\UserConcessionRangeDaoImpl.cs" />
+    <Compile Include="Da\Impl\UserDaoImpl.cs" />
+    <Compile Include="Da\Impl\UserRoleDaoImpl.cs" />
+    <Compile Include="Da\IOrderDao.cs" />
+    <Compile Include="Da\IOrderItemDao.cs" />
+    <Compile Include="Da\IOrderItemEmployeeDao.cs" />
+    <Compile Include="Da\IOrderItemFactorValueDao.cs" />
+    <Compile Include="Da\IOrderItemPrintRequireDetailDao.cs" />
+    <Compile Include="Da\IOrdersDutyDao.cs" />
+    <Compile Include="Da\IOrdersForRecordMachineSumDao.cs" />
+    <Compile Include="Da\IOrdersStatusAlterDao.cs" />
+    <Compile Include="Da\IOtherGatheringAndRefundmentRecordDao.cs" />
+    <Compile Include="Da\IPaperSpecificationDao.cs" />
+    <Compile Include="Da\IPaperSpecificationSimilarityDao.cs" />
+    <Compile Include="Da\IPaperTypeDao.cs" />
+    <Compile Include="Da\IPaymentConcessionDao.cs" />
+    <Compile Include="Da\IPermissionDao.cs" />
+    <Compile Include="Da\IPermissionGroupDao.cs" />
+    <Compile Include="Da\IPermissionGroupDetailDao.cs" />
+    <Compile Include="Da\IPositionDao.cs" />
+    <Compile Include="Da\IPriceFactorDao.cs" />
+    <Compile Include="Da\IPrintDemandDao.cs" />
+    <Compile Include="Da\IPrintDemandDetailDao.cs" />
+    <Compile Include="Da\IPrintRequireDetailDao.cs" />
+    <Compile Include="Da\IProcessContentAchievementRateDao.cs" />
+    <Compile Include="Da\IProcessContentDao.cs" />
+    <Compile Include="Da\IRealOrderItemDao.cs" />
+    <Compile Include="Da\IRealOrderItemEmployeeDao.cs" />
+    <Compile Include="Da\IRealOrderItemFactorValueDao.cs" />
+    <Compile Include="Da\IRealOrderItemPrintRequireDao.cs" />
+    <Compile Include="Da\IRealOrderItemTrashReasonDao.cs" />
+    <Compile Include="Da\IRecordMachineWatchDao.cs" />
+    <Compile Include="Da\IRelationEmployeeDao.cs" />
+    <Compile Include="Da\IReportLessModeDao.cs" />
+    <Compile Include="Da\IReportLossMemberCardDao.cs" />
+    <Compile Include="Da\IRequireAccountingInfoDao.cs" />
+    <Compile Include="Da\IRoleDao.cs" />
+    <Compile Include="Da\IRolePermissionGroupDao.cs" />
+    <Compile Include="Da\ISecondaryTradeDao.cs" />
+    <Compile Include="Da\ITakeWorkDao.cs" />
+    <Compile Include="Da\ITrashPaperEmployeeDao.cs" />
+    <Compile Include="Da\ITrashReasonDao.cs" />
+    <Compile Include="Da\IUncompleteOrdersUsedPaperDao.cs" />
+    <Compile Include="Da\IUnitDao.cs" />
+    <Compile Include="Da\IUserConcessionRangeDao.cs" />
+    <Compile Include="Da\IUserDao.cs" />
+    <Compile Include="Da\IUserRoleDao.cs" />
+    <Compile Include="Da\Support\ForeignKeyTypeHandlerCallback.cs" />
+    <Compile Include="Da\Support\IdGeneratorSupport.cs" />
+    <Compile Include="Enums\OrderStatus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\PerformanceManage\Impl\AchievementServiceImpl.cs" />
+    <Compile Include="Service\PerformanceManage\IAchinevementService.cs" />
+    <Compile Include="Service\PerformanceManage\Impl\SearchAchievementServiceImpl.cs" />
+    <Compile Include="Service\PerformanceManage\ISearchAchievementService.cs" />
+    <Compile Include="Service\CampaignManage\Impl\SearchCampaignServiceImpl.cs" />
+    <Compile Include="Service\CampaignManage\ISearchCampaignService.cs" />
+    <Compile Include="Service\CustomerManager\Impl\SearchCustomerServiceImpl.cs" />
+    <Compile Include="Service\CustomerManager\ISearchCustomerService.cs" />
+    <Compile Include="Service\IApplicationProperty.cs" />
+    <Compile Include="Service\CampaignManage\ICampaignService.cs" />
+    <Compile Include="Service\CustomerManager\ICustomerService.cs" />
+    <Compile Include="Service\FinanceManager\IFinanceService.cs" />
+    <Compile Include="Service\LogCounterManage\ILogCountersService.cs" />
+    <Compile Include="Service\IMasterDataService.cs" />
+    <Compile Include="Service\MemberCardManager\IMemberCardService.cs" />
+    <Compile Include="Service\Impl\ApplicationPropertyImpl.cs" />
+    <Compile Include="Service\CampaignManage\Impl\CampaignServiceImpl.cs" />
+    <Compile Include="Service\CustomerManager\Impl\CustomerServiceImpl.cs" />
+    <Compile Include="Service\FinanceManager\Impl\FinanceServiceImpl.cs" />
+    <Compile Include="Service\FinanceManager\Impl\FindFinanceServiceImpl.cs" />
+    <Compile Include="Service\HandOver\Impl\HandOverServiceImpl.cs" />
+    <Compile Include="Service\HandOver\IHandOverService.cs" />
+    <Compile Include="Service\FinanceManager\IFindFinanceService.cs" />
+    <Compile Include="Service\LogCounterManage\Impl\LogCountersServiceImpl.cs" />
+    <Compile Include="Service\MemberCardManager\Impl\SearchMemberCardServiceImpl.cs" />
+    <Compile Include="Service\MemberCardManager\ISearchMemberCardService.cs" />
+    <Compile Include="Service\Impl\MasterDataServiceImpl.cs" />
+    <Compile Include="Service\MemberCardManager\Impl\MemberCardServiceImpl.cs" />
+    <Compile Include="Service\OrderManage\Impl\NoGeneratorImpl.cs" />
+    <Compile Include="Service\OrderManage\Impl\OrderServiceImpl.cs" />
+    <Compile Include="Service\OrderManage\Impl\SearchOrderServiceImpl.cs" />
+    <Compile Include="Service\OrderManage\Impl\TakeWorkServiceImpl.cs" />
+    <Compile Include="Service\SystemMaintenance\OrderBaseData\Impl\OrderBaseDataServiceImpl.cs" />
+    <Compile Include="Service\SystemMaintenance\OrderBaseData\Impl\SearchOrderBaseDataServiceImpl.cs" />
+    <Compile Include="Service\SystemMaintenance\OrderBaseData\IOrderBaseDataService.cs" />
+    <Compile Include="Service\SystemMaintenance\OrderBaseData\ISearchOrderBaseDataService.cs" />
+    <Compile Include="Service\SystemMaintenance\PriceBaseData\Impl\PriceBaseServiceImpl.cs" />
+    <Compile Include="Service\SystemMaintenance\PriceBaseData\Impl\SearchPriceBaseServiceImpl.cs" />
+    <Compile Include="Service\SystemMaintenance\PriceBaseData\IPriceBaseService.cs" />
+    <Compile Include="Service\SystemMaintenance\PriceBaseData\ISearchPriceBaseService.cs" />
+    <Compile Include="Service\SystemMaintenance\System\Impl\SearchSystemServiceImpl.cs" />
+    <Compile Include="Service\SystemMaintenance\System\Impl\SystemServiceImpl.cs" />
+    <Compile Include="Service\SystemMaintenance\System\ISearchSystemService.cs" />
+    <Compile Include="Service\SystemMaintenance\System\ISystemService.cs" />
+    <Compile Include="Service\SystemPermission\UserMangae\Impl\UserPermissionCheckServiceImpl.cs" />
+    <Compile Include="Service\OrderManage\IOrderService.cs" />
+    <Compile Include="Service\OrderManage\INoGenerator.cs" />
+    <Compile Include="Service\OrderManage\ITakeWorkService.cs" />
+    <Compile Include="Service\SystemPermission\UserMangae\IUserPermissionCheckService.cs" />
+    <Compile Include="Service\OrderManage\ISearchOrderService.cs" />
+    <Compile Include="Service\SystemManage\PriceManage\Impl\PriceServiceImpl.cs" />
+    <Compile Include="Service\SystemManage\PriceManage\Impl\SelectActiveFactorServiceImpl.cs" />
+    <Compile Include="Service\SystemManage\PriceManage\IPriceService.cs" />
+    <Compile Include="Service\SystemManage\PriceManage\ISelectActiveFactorService.cs" />
+    <Compile Include="Service\SystemPermission\EmployeeManage\IEmployeeService.cs" />
+    <Compile Include="Service\SystemPermission\EmployeeManage\Impl\EmployeeServiceImpl.cs" />
+    <Compile Include="Service\SystemPermission\PermissionManage\Impl\PermissionServiceImpl.cs" />
+    <Compile Include="Service\SystemPermission\PermissionManage\IPermissionService.cs" />
+    <Compile Include="Service\SystemPermission\PositionManage\Impl\PositionServiceImpl.cs" />
+    <Compile Include="Service\SystemPermission\PositionManage\IPositionService.cs" />
+    <Compile Include="Service\SystemPermission\RoleManage\Impl\RoleServiceImpl.cs" />
+    <Compile Include="Service\SystemPermission\RoleManage\IRoleService.cs" />
+    <Compile Include="Service\SystemPermission\UserMangae\Impl\UserServiceImpl.cs" />
+    <Compile Include="Service\SystemPermission\UserMangae\IUserService.cs" />
+    <Compile Include="Support\Ajax\AjaxProcess.cs" />
+    <Compile Include="Action\Ajax\DemoAjaxProcess.cs" />
+    <Compile Include="Support\Attributes\DeletePermissionAttribute.cs" />
+    <Compile Include="Support\Attributes\InsertPermissionAttribute.cs" />
+    <Compile Include="Support\Attributes\SelectPermissionAttribute.cs" />
+    <Compile Include="Support\Attributes\UpdatePermissionAttribute.cs" />
+    <Compile Include="Support\ClientShowData.cs" />
+    <Compile Include="Support\Constants.cs" />
+    <Compile Include="Support\Encrypt\EncryptUtils.cs" />
+    <Compile Include="Support\Exception\DbStateException.cs" />
+    <Compile Include="Support\Exception\PermissionDeniedException.cs" />
+    <Compile Include="Support\Exception\WorkflowException.cs" />
+    <Compile Include="Support\Log\LogHelper.cs" />
+    <Compile Include="Support\Report\Achievement\ReportAchievement.cs" />
+    <Compile Include="Support\Report\Achievement\ReportAchievementShoperOrManagerSum.cs" />
+    <Compile Include="Support\Report\Achievement\ReportCustomerAchievement.cs" />
+    <Compile Include="Support\Report\Achievement\ReportOrdersAchievement.cs" />
+    <Compile Include="Support\Report\Base\ReportBase.cs" />
+    <Compile Include="Support\Report\Finance\ReportAccountReceivableTotal.cs" />
+    <Compile Include="Support\Report\Finance\ReportArreage.cs" />
+    <Compile Include="Support\Report\Finance\ReportDailyPaper.cs" />
+    <Compile Include="Support\Report\Finance\ReportMonthPaper.cs" />
+    <Compile Include="Support\Report\Finance\ReportPrepay.cs" />
+    <Compile Include="Support\Report\Finance\ReportSearchArrear.cs" />
+    <Compile Include="Support\Report\Finance\ReportSearchConcession.cs" />
+    <Compile Include="Support\Report\Finance\ReportSearchOrderByCushPerson.cs" />
+    <Compile Include="Support\Report\Finance\ReportSearchOrderCountByEmployee.cs" />
+    <Compile Include="Support\Report\HandOver\ReportCasherHandOver.cs" />
+    <Compile Include="Support\Report\HandOver\ReportStageHandOver.cs" />
+    <Compile Include="Support\Report\Logcounters\ReportSearchCounter.cs" />
+    <Compile Include="Support\Report\MemberCard\ReportMemberCardConsumeSum.cs" />
+    <Compile Include="Support\Report\MemberCard\ReportOperationRecord.cs" />
+    <Compile Include="Support\Report\MemberCard\ReportSwapMemberCardRecord.cs" />
+    <Compile Include="Support\Report\ReportOrder.cs" />
+    <Compile Include="Support\Report\ReportOrderQuery\ReportOrderQuery.cs" />
+    <Compile Include="Support\Security\CommonPermission.cs" />
+    <Compile Include="Support\Security\IPermission.cs" />
+    <Compile Include="Support\Security\PermissionException.cs" />
+    <Compile Include="Support\Security\PermissionFactory.cs" />
+    <Compile Include="Support\Spring\ActionObjectFactory.cs" />
+    <Compile Include="Support\Spring\SecurityInterceptor.cs" />
+    <Compile Include="Support\Spring\SecurityThrowsAdvice.cs" />
+    <Compile Include="Util\ComputeFormula.cs" />
+    <Compile Include="Util\DateUtils.cs" />
+    <Compile Include="Util\JSONUtils.cs" />
+    <Compile Include="Util\NumericUtils.cs" />
+    <Compile Include="Util\StringUtils.cs" />
+    <Compile Include="Util\ThreadLocalUtils.cs" />
+    <Compile Include="Support\UserContext.cs" />
+    <Compile Include="Support\WorkflowHttpModule.cs" />
+    <Compile Include="Web\Resources\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\UserControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Company.config" />
+    <EmbeddedResource Include="Web\Resources\Messages.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Web\Resources\Strings.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\ApplicationProperty.config" />
+    <EmbeddedResource Include="Da\Config\Base\ApplicationPropertyBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\BranchShopBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\BusinessTypeBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\ChangeMemberCardBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\CompanyBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\CustomerBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\FactorRelationBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\FactorRelationValueBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\FactorValueBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\LinkManBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\LogoffMemberCardBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\MachineBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\MachineTypeBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\MasterTradeBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\MemberCardBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\MemberCardLevelBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\MemberOperateLogBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\OrderBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\OrderItemBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\OrderItemFactorValueBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\PermissionBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\PriceFactorBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\PrintDemandBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\PrintDemandDetailBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\PrintRequireDetailBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\ProcessContentBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\ReportLossMemberCardBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\RoleBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\SecondaryTradeBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\UserBase.config" />
+    <EmbeddedResource Include="Da\Config\BranchShop.config" />
+    <EmbeddedResource Include="Da\Config\BusinessType.config" />
+    <EmbeddedResource Include="Da\Config\ChangeMemberCard.config" />
+    <EmbeddedResource Include="Da\Config\Customer.config" />
+    <EmbeddedResource Include="Da\Config\FactorRelation.config" />
+    <EmbeddedResource Include="Da\Config\FactorRelationValue.config" />
+    <EmbeddedResource Include="Da\Config\FactorValue.config" />
+    <EmbeddedResource Include="Da\Config\LinkMan.config" />
+    <EmbeddedResource Include="Da\Config\LogoffMemberCard.config" />
+    <EmbeddedResource Include="Da\Config\Machine.config" />
+    <EmbeddedResource Include="Da\Config\MachineType.config" />
+    <EmbeddedResource Include="Da\Config\MasterTrade.config" />
+    <EmbeddedResource Include="Da\Config\MemberCard.config" />
+    <EmbeddedResource Include="Da\Config\MemberCardLevel.config" />
+    <EmbeddedResource Include="Da\Config\MemberOperateLog.config" />
+    <EmbeddedResource Include="Da\Config\Order.config" />
+    <EmbeddedResource Include="Da\Config\OrderItem.config" />
+    <EmbeddedResource Include="Da\Config\OrderItemFactorValue.config" />
+    <EmbeddedResource Include="Da\Config\Permission.config" />
+    <EmbeddedResource Include="Da\Config\PriceFactor.config" />
+    <EmbeddedResource Include="Da\Config\PrintDemand.config" />
+    <EmbeddedResource Include="Da\Config\PrintDemandDetail.config" />
+    <EmbeddedResource Include="Da\Config\PrintRequireDetail.config" />
+    <EmbeddedResource Include="Da\Config\ProcessContent.config" />
+    <EmbeddedResource Include="Da\Config\ReportLossMemberCard.config" />
+    <EmbeddedResource Include="Da\Config\Role.config" />
+    <EmbeddedResource Include="Da\Config\SecondaryTrade.config" />
+    <EmbeddedResource Include="Da\Config\User.config" />
+    <EmbeddedResource Include="Da\Config\BaseBusinessTypePriceSet.config" />
+    <EmbeddedResource Include="Da\Config\Base\BaseBusinessTypePriceSetBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\BlankOutReasonBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\BusinessTypePriceSetBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\CustomerTypeBase.config" />
+    <EmbeddedResource Include="Da\Config\BlankOutReason.config" />
+    <EmbeddedResource Include="Da\Config\BusinessTypePriceSet.config" />
+    <EmbeddedResource Include="Da\Config\CustomerType.config" />
+    <EmbeddedResource Include="Da\Config\AmountSegment.config" />
+    <EmbeddedResource Include="Da\Config\Base\AmountSegmentBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\PaperSpecificationBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\PaperTypeBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\UnitBase.config" />
+    <EmbeddedResource Include="Da\Config\PaperSpecification.config" />
+    <EmbeddedResource Include="Da\Config\PaperType.config" />
+    <EmbeddedResource Include="Da\Config\Unit.config" />
+    <EmbeddedResource Include="Da\Config\Base\AmountSegmentResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\ApplicationPropertyResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\BaseBusinessTypePriceSetResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\BlankOutReasonResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\BranchShopResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\BusinessTypePriceSetResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\BusinessTypeResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\ChangeMemberCardResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\CompanyResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\CustomerResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\CustomerTypeResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\FactorRelationResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\FactorRelationValueResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\FactorValueResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\LinkManResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\LogoffMemberCardResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\MachineResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\MachineTypeResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\MasterTradeResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\MemberCardLevelResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\MemberCardResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\MemberOperateLogResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\OrderItemFactorValueResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\OrderItemResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\OrderResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\PaperSpecificationResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\PaperTypeResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\PermissionResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\PriceFactorResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\PrintDemandDetailResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\PrintDemandResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\PrintRequireDetailResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\ProcessContentResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\ReportLossMemberCardResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\RoleResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\SecondaryTradeResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\UnitResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\UserResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\CustomerLevelBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\CustomerLevelResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\IdGeneratorBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\IdGeneratorResultMap.config" />
+    <EmbeddedResource Include="Da\Config\CustomerLevel.config" />
+    <EmbeddedResource Include="Da\Config\IdGenerator.config" />
+    <EmbeddedResource Include="Da\Config\Base\BusinessTypePriceFactorBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\BusinessTypePriceFactorResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\OrderItemPrintRequireDetailBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\OrderItemPrintRequireDetailResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\UserRoleBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\UserRoleResultMap.config" />
+    <EmbeddedResource Include="Da\Config\BusinessTypePriceFactor.config" />
+    <EmbeddedResource Include="Da\Config\OrderItemPrintRequireDetail.config" />
+    <EmbeddedResource Include="Da\Config\UserRole.config" />
+    <EmbeddedResource Include="Da\Config\Base\EmployeeBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\EmployeePositionBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\EmployeePositionResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\EmployeeResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\OrderItemEmployeeBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\OrderItemEmployeeResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\PositionBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\PositionResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Employee.config" />
+    <EmbeddedResource Include="Da\Config\EmployeePosition.config" />
+    <EmbeddedResource Include="Da\Config\Position.config" />
+    <EmbeddedResource Include="Da\Config\Base\OrdersStatusAlterBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\OrdersStatusAlterResultMap.config" />
+    <EmbeddedResource Include="Da\Config\OrdersStatusAlter.config" />
+    <EmbeddedResource Include="Da\Config\Base\DutyEmployeeBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\DutyEmployeeResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\OrdersDutyBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\OrdersDutyResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\RelationEmployeeBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\RelationEmployeeResultMap.config" />
+    <EmbeddedResource Include="Da\Config\DutyEmployee.config" />
+    <EmbeddedResource Include="Da\Config\OrdersDuty.config" />
+    <EmbeddedResource Include="Da\Config\RelationEmployee.config" />
+    <EmbeddedResource Include="Da\Config\Base\CampaignBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\CampaignResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\ConcessionBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\ConcessionDifferencePriceBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\ConcessionDifferencePriceResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\ConcessionMemberCardLevelBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\ConcessionMemberCardLevelResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\ConcessionResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Campaign.config" />
+    <EmbeddedResource Include="Da\Config\Concession.config" />
+    <EmbeddedResource Include="Da\Config\ConcessionDifferencePrice.config" />
+    <EmbeddedResource Include="Da\Config\ConcessionMemberCardLevel.config" />
+    <EmbeddedResource Include="Da\Config\Base\DeliveryOrderBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\DeliveryOrderResultMap.config" />
+    <EmbeddedResource Include="Da\Config\DeliveryOrder.config" />
+    <EmbeddedResource Include="Da\Config\Base\MemberCardConcessionBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\MemberCardConcessionResultMap.config" />
+    <EmbeddedResource Include="Da\Config\MemberCardConcession.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\ReportLessModeBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\ReportLessModeResultMap.config" />
+    <EmbeddedResource Include="Da\Config\ReportLessMode.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\RealOrderItemBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\RealOrderItemResultMap.config" />
+    <EmbeddedResource Include="Da\Config\RealOrderItem.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\TrashPaperEmployeeBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\TrashPaperEmployeeResultMap.config" />
+    <EmbeddedResource Include="Da\Config\TrashPaperEmployee.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\CashHandOverBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\CashHandOverOrderBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\CashHandOverOrderResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\CashHandOverResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\HandOverBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\HandOverMemberCardBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\HandOverMemberCardResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\HandOverOrderBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\HandOverOrderResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\HandOverResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\TakeWorkBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\TakeWorkResultMap.config" />
+    <EmbeddedResource Include="Da\Config\CashHandOver.config" />
+    <EmbeddedResource Include="Da\Config\CashHandOverOrder.config" />
+    <EmbeddedResource Include="Da\Config\HandOver.config" />
+    <EmbeddedResource Include="Da\Config\HandOverMemberCard.config" />
+    <EmbeddedResource Include="Da\Config\HandOverOrder.config" />
+    <EmbeddedResource Include="Da\Config\TakeWork.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\RealOrderItemTrashReasonBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\RealOrderItemTrashReasonResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\TrashReasonBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\TrashReasonResultMap.config" />
+    <EmbeddedResource Include="Da\Config\OrderItemEmployee.config" />
+    <EmbeddedResource Include="Da\Config\RealOrderItemTrashReason.config" />
+    <EmbeddedResource Include="Da\Config\TrashReason.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\RealOrderItemEmployeeBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\RealOrderItemEmployeeResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\RealOrderItemFactorValueBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\RealOrderItemFactorValueResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\RealOrderItemPrintRequireBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\RealOrderItemPrintRequireResultMap.config" />
+    <EmbeddedResource Include="Da\Config\RealOrderItemEmployee.config" />
+    <EmbeddedResource Include="Da\Config\RealOrderItemFactorValue.config" />
+    <EmbeddedResource Include="Da\Config\RealOrderItemPrintRequire.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\GatheringBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\GatheringOrderBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\GatheringOrderResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\GatheringResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Gathering.config" />
+    <EmbeddedResource Include="Da\Config\GatheringOrder.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\CompensateEmployeeBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\CompensateEmployeeResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\CompensateUsedPaperBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\CompensateUsedPaperResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\MachineWatchBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\MachineWatchConversionPaperBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\MachineWatchConversionPaperResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\MachineWatchRecordLogBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\MachineWatchRecordLogResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\MachineWatchResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\RecordMachineWatchBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\RecordMachineWatchResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\UncompleteOrdersUsedPaperBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\UncompleteOrdersUsedPaperResultMap.config" />
+    <EmbeddedResource Include="Da\Config\CompensateEmployee.config" />
+    <EmbeddedResource Include="Da\Config\CompensateUsedPaper.config" />
+    <EmbeddedResource Include="Da\Config\MachineWatch.config" />
+    <EmbeddedResource Include="Da\Config\MachineWatchConversionPaper.config" />
+    <EmbeddedResource Include="Da\Config\MachineWatchRecordLog.config" />
+    <EmbeddedResource Include="Da\Config\RecordMachineWatch.config" />
+    <EmbeddedResource Include="Da\Config\UncompleteOrdersUsedPaper.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\PaymentConcession.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\PaymentConcessionBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\PaymentConcessionResultMap.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\MachineWatchScaleBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\MachineWatchScaleResultMap.config" />
+    <EmbeddedResource Include="Da\Config\MachineWatchScale.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\DailyRecordMachineBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\DailyRecordMachineResultMap.config" />
+    <EmbeddedResource Include="Da\Config\DailyRecordMachine.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\PaperSpecificationSimilarityBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\PaperSpecificationSimilarityResultMap.config" />
+    <EmbeddedResource Include="Da\Config\PaperSpecificationSimilarity.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\OrdersForRecordMachineSumBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\OrdersForRecordMachineSumResultMap.config" />
+    <EmbeddedResource Include="Da\Config\OrdersForRecordMachineSum.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\PermissionGroupBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\PermissionGroupDetailBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\PermissionGroupDetailResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\PermissionGroupResultMap.config" />
+    <EmbeddedResource Include="Da\Config\PermissionGroup.config" />
+    <EmbeddedResource Include="Da\Config\PermissionGroupDetail.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\RequireAccountingInfoBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\RequireAccountingInfoResultMap.config" />
+    <EmbeddedResource Include="Da\Config\RequireAccountingInfo.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Achievement.config" />
+    <EmbeddedResource Include="Da\Config\Base\AchievementBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\AchievementResultMap.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\AccreditRecord.config" />
+    <EmbeddedResource Include="Da\Config\BusinessModule.config" />
+    <EmbeddedResource Include="Da\Config\BusinessModuleGroup.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\AccreditRecordBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\AccreditRecordResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\BusinessModuleBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\BusinessModuleGroupBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\BusinessModuleGroupResultMap.config" />
+    <EmbeddedResource Include="Da\Config\Base\BusinessModuleResultMap.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\UserConcessionRangeBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\UserConcessionRangeResultMap.config" />
+    <EmbeddedResource Include="Da\Config\UserConcessionRange.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\RolePermissionGroupBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\RolePermissionGroupResultMap.config" />
+    <EmbeddedResource Include="Da\Config\RolePermissionGroup.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\ProcessContentAchievementRateBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\ProcessContentAchievementRateResultMap.config" />
+    <EmbeddedResource Include="Da\Config\ProcessContentAchievementRate.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\DiscountConcessionBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\DiscountConcessionResultMap.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\DiscountConcession.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\MemberCardDiscountConcession.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\MemberCardDiscountConcessionBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\MemberCardDiscountConcessionResultMap.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\DiscountConcessionMachineTypePaperSpecBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\DiscountConcessionMachineTypePaperSpecResultMap.config" />
+    <EmbeddedResource Include="Da\Config\DiscountConcessionMachineTypePaperSpec.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\MemberCardConcessionGathering.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\MemberCardConcessionGatheringBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\MemberCardConcessionGatheringResultMap.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\MemberCardOrderItemCounteractLog.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\MemberCardOrderItemCounteractLogBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\MemberCardOrderItemCounteractLogResultMap.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\MarkingSettingBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\MarkingSettingResultMap.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\MarkingSetting.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\OtherGatheringAndRefundmentRecord.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Da\Config\Base\OtherGatheringAndRefundmentRecordBase.config" />
+    <EmbeddedResource Include="Da\Config\Base\OtherGatheringAndRefundmentRecordResultMap.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

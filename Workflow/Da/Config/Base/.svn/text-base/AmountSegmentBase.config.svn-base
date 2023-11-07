@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="AmountSegmentBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="AmountSegmentResultMap.selectResult"
+			cacheModel="AmountSegment.AmountSegmentCache">
+			SELECT
+				ID, NO, NAME, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, BRANCH_SHOP_ID, COMPANY_ID
+			FROM AMOUNT_SEGMENT
+			Where DELETED = '0'
+				AND COMPANY_ID = #CompanyId#
+				AND BRANCH_SHOP_ID = #BranchShopId#
+			ORDER BY NO
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="AmountSegmentResultMap.selectResult"
+			cacheModel="AmountSegment.AmountSegmentCache">
+			SELECT
+				ID, NO, NAME, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, BRANCH_SHOP_ID, COMPANY_ID
+			FROM AMOUNT_SEGMENT
+			WHERE ID = #Id# AND DELETED = '0' 
+
+		</select>
+		<insert id="Insert" parameterClass="AmountSegment">
+			INSERT INTO AMOUNT_SEGMENT
+				(
+				  ID, NO, NAME, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, BRANCH_SHOP_ID, COMPANY_ID
+				)
+				VALUES
+				(
+				  #Id # , #No# , #Name# , #InsertDateTime# , #InsertUser# , #UpdateDateTime# , #UpdateUser# , #Version# , #Deleted# , #BranchShopId# , #CompanyId# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="AmountSegment">
+			UPDATE AMOUNT_SEGMENT
+				SET
+					NO = #No# ,NAME = #Name#  ,UPDATE_DATE_TIME = #UpdateDateTime#  ,UPDATE_USER = #UpdateUser#  ,VERSION = VERSION + 1  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE AMOUNT_SEGMENT
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM AMOUNT_SEGMENT WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

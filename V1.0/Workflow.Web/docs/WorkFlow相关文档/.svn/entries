@@ -1,0 +1,68 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3
+http://192.168.0.6/svn/workflow
+
+
+
+2008-12-15T02:29:31.890625Z
+1912
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+业务调整
+dir
+
+开发规约
+dir
+
+详细设计
+dir
+
+现有DataBase
+dir
+
+字汇对照表
+dir
+
+概要设计
+dir
+
+流程Demo
+dir
+
+需求文档
+dir
+
+快印网络解决方案.xls
+file
+
+
+
+
+2010-03-25T07:09:16.421875Z
+721f7a10ad54c5b2ac19b30b3b3cd3a3
+2008-12-15T02:29:31.890625Z
+1912
+zhangxiaolin
+has-props
+
+业务规则
+dir
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="OrderItemFactorValueBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="OrderItemFactorValueResultMap.selectResult">
+			SELECT
+				ID, PRICE_FACTOR_ID, ORDER_ITEM_ID, VALUE
+			FROM ORDER_ITEM_FACTOR_VALUE
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="OrderItemFactorValueResultMap.selectResult">
+			SELECT
+				ID, PRICE_FACTOR_ID, ORDER_ITEM_ID, VALUE
+			FROM ORDER_ITEM_FACTOR_VALUE
+			WHERE ID = #Id# 
+		</select>
+		<insert id="Insert" parameterClass="OrderItemFactorValue">
+			INSERT INTO ORDER_ITEM_FACTOR_VALUE
+				(
+				  ID, PRICE_FACTOR_ID, ORDER_ITEM_ID, VALUE
+				)
+				VALUES
+				(
+				  #Id # , #PriceFactorId# , #OrderItemId# , #Value# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="OrderItemFactorValue">
+			UPDATE ORDER_ITEM_FACTOR_VALUE
+				SET
+					PRICE_FACTOR_ID = #PriceFactorId# ,ORDER_ITEM_ID = #OrderItemId#  ,VALUE = #Value#  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE ORDER_ITEM_FACTOR_VALUE
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM ORDER_ITEM_FACTOR_VALUE WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

@@ -1,0 +1,52 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Service/SystemMaintenance/System/Impl
+http://192.168.0.6/svn/workflow
+
+
+
+2010-07-15T07:41:57.671875Z
+3401
+baixiaoyu
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+SearchSystemServiceImpl.cs
+file
+
+
+
+
+2010-03-25T07:11:13.265625Z
+8ab7de0e506358f9a364aa1ffaf1a4c4
+2009-10-30T09:24:56.312500Z
+2652
+zhangxiaolin
+
+SystemServiceImpl.cs
+file
+
+
+
+
+2010-08-02T02:09:48.562500Z
+48598d53ad29def43c208326b3595f26
+2010-07-15T07:41:57.671875Z
+3401
+baixiaoyu
+

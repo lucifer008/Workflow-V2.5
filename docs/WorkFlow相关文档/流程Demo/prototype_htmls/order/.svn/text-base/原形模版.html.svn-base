@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>新增工单</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../js/新增工单.js"></script>
+<link href="../css/thickbox.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../js/jquery.js"></script>
+<script language="javascript" src="../js/thickbox.js"></script>
+</head>
+
+<body style="text-align:center">
+<div align="center" style="width:99%" bgcolor="#ffffff" id="container">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"">	
+	<tr>
+		<td width="11"><img alt="" src="../images/white_main_top_left.gif"></td>
+		<td width="99%"><img alt="" src="../images/spacer_10_x_10.gif" height="10"></td>
+		<td width="10"><img alt="" src="../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+	</tr>
+	<tr>
+		<td colspan="3" bgcolor="#FFFFFF">
+		<table width="100%" border="0" cellspacing="0" cellpadding="5">
+			<tr>
+				<td></td>
+				<td align="left" bgcolor="#eeeeee">首页 -&gt; 本日工单 -&gt; 新增工单</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="3" class="caption">新增工单</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td align="center">
+				<table border="1" cellpadding="3" cellspacing="1" width="100%"
+					align="left">
+					<tr>
+						<td nowrap class="item_caption">会员卡号:</td>
+						<td colspan="5" class="item_content"><input type="text" /></td>
+					</tr>
+					<tr>
+						<td nowrap class="item_caption">客户名称:</td>
+						<td colspan="5" class="item_content"><input type="text"
+							size="50" /></td>
+					</tr>
+					<tr>
+						<td nowrap class="item_caption">客户类型:</td>
+						<td class="item_content"><select name="select">
+							<option>会员</option>
+							<option>散客</option>
+							<option>学生</option>
+						</select></td>
+						<td nowrap class="item_caption">真实姓名:</td>
+						<td class="item_content"><input type="text" /></td>
+						<td nowrap class="item_caption">联系电话:</td>
+						<td class="item_content"><input type="text" /></td>
+					</tr>
+					<tr>
+						<td nowrap class="item_caption">项目名称:</td>
+						<td class="item_content"><input type="text" /></td>
+						<td nowrap class="item_caption">支付方式:</td>
+						<td class="item_content"><select name="select4">
+							<option>现金</option>
+							<option>记账</option>
+						</select></td>
+						<td nowrap class="item_caption">预收款:</td>
+						<td class="item_content"><input name="checkbox222"
+							id="needPrepareMoney" type="checkbox">&nbsp;<label
+							for="needPrepareMoney">需要</label>&nbsp;<input type="text"
+							size="9" /></td>
+					</tr>
+					<tr>
+						<td nowrap class="item_caption">发票:</td>
+						<td class="item_content"><input id="needTicket"
+							type="checkbox">&nbsp;<label for="needTicket">需要</label></td>
+						<td nowrap class="item_caption">送货方式:</td>
+						<td class="item_content"><select name="select2">
+							<option>自取</option>
+							<option selected="selected">立等</option>
+							<option>送货</option>
+						</select></td>
+						<td nowrap class="item_caption">送货时间:</td>
+						<td class="item_content"><input type="text" /></td>
+					</tr>
+					<tr>
+						<td nowrap class="item_caption">备注:</td>
+						<td nowrap colspan="5" align="left"><textarea
+							rows="3" cols="95"></textarea></td>
+					</tr>
+				</table>
+				</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td align="center">
+				<table border="1" cellpadding="3" cellspacing="1" width="100%"
+					align="left">
+					<tr>
+						<th width="1%" nowrap>&nbsp;NO&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;业务类型&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;加工内容&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;机器&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;纸型&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;纸质&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;数量&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;单价&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;金额&nbsp;</th>
+						<th>制作要求</th>
+						<th width="1%" nowrap></th>
+					</tr>
+					<tr class="detailRow">
+						<td align="center">1</td>
+						<td><select name="select5" class="biaodan">
+							<option>工程图文</option>
+							<option>打印</option>
+							<option>扫描</option>
+						</select></td>
+						<td><select name="select6" class="biaodan">
+							<option>彩色打印</option>
+							<option>黑白打印</option>
+						</select></td>
+						<td><select name="select7" class="biaodan">
+							<option>DC-8000</option>
+							<option>DC-900</option>
+						</select></td>
+						<td><select name="select8" class="biaodan">
+							<option>A3</option>
+							<option>A4</option>
+						</select></td>
+						<td><select name="select9" class="biaodan">
+							<option>157g铜板</option>
+							<option>200g铜板</option>
+						</select></td>
+						<td><input type="text" size="4" class="num" value="100" /></td>
+						<td class="num">&nbsp;$10000.00</td>
+						<td class="num">&nbsp;$1000000.00</td>
+						<td>制作要求</td>
+						<td nowrap>&nbsp;&nbsp;<a href="">删除</a>&nbsp;&nbsp;</td>
+					</tr>
+
+					<tr class="detailRow">
+						<td align="center">2</td>
+						<td><select name="select5" class="biaodan">
+							<option>工程图文</option>
+							<option>打印</option>
+							<option>扫描</option>
+						</select></td>
+						<td><select name="select6" class="biaodan">
+							<option>彩色打印</option>
+							<option>黑白打印</option>
+						</select></td>
+						<td><select name="select7" class="biaodan">
+							<option>DC-8000</option>
+							<option>DC-900</option>
+						</select></td>
+						<td><select name="select8" class="biaodan">
+							<option>A3</option>
+							<option>A4</option>
+						</select></td>
+						<td><select name="select9" class="biaodan">
+							<option>157g铜板</option>
+							<option>200g铜板</option>
+						</select></td>
+						<td><input type="text" size="4" class="num" value="100" /></td>
+						<td class="num">&nbsp;$10000.00</td>
+						<td class="num">&nbsp;$1000000.00</td>
+						<td>制作要求</td>
+						<td nowrap>&nbsp;&nbsp;<a href="">删除</a>&nbsp;&nbsp;</td>
+					</tr>
+
+					<tr class="detailRow">
+						<td align="center">3</td>
+						<td><select name="select5" class="biaodan">
+							<option>工程图文</option>
+							<option>打印</option>
+							<option>扫描</option>
+						</select></td>
+						<td><select name="select6" class="biaodan">
+							<option>彩色打印</option>
+							<option>黑白打印</option>
+						</select></td>
+						<td><select name="select7" class="biaodan">
+							<option>DC-8000</option>
+							<option>DC-900</option>
+						</select></td>
+						<td><select name="select8" class="biaodan">
+							<option>A3</option>
+							<option>A4</option>
+						</select></td>
+						<td><select name="select9" class="biaodan">
+							<option>157g铜板</option>
+							<option>200g铜板</option>
+						</select></td>
+						<td><input type="text" size="4" class="num" value="100" /></td>
+						<td class="num">&nbsp;$10000.00</td>
+						<td class="num">&nbsp;$1000000.00</td>
+						<td>制作要求</td>
+						<td nowrap>&nbsp;&nbsp;<a href="">删除</a>&nbsp;&nbsp;</td>
+					</tr>
+				</table>
+				</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr class="emptyButtonsUpperRowHight">
+				<td colspan="3"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><input name="Submit34" class="btn"
+					onclick="printOrderForm()" value="保存" type="submit">&nbsp;&nbsp;&nbsp;<input
+					name="Submit3342" class="buttons" onclick="prepareOrderForm()"
+					value="分配&amp;打印" type="button"></td>
+			</tr>
+			<tr height="5">
+				<td><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+				<td bgcolor="#eeeeee">&nbsp;</td>
+				<td><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td width="11"><img alt="" src="../images/white_main_bottom_left.gif"></td>
+		<td width="99%"><img alt="" src="../images/spacer_10_x_10.gif"></td>
+		<td width="10"><img alt="" src="../images/white_main_bottom_right.gif"></td>
+	</tr>
+</table>
+</div>
+</body>
+</html>

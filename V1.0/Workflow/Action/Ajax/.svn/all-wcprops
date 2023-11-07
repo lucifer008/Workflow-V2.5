@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax
+END
+GetBusinessTypeDetalAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetBusinessTypeDetalAjax.cs
+END
+GetCustomerInfoByNameAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetCustomerInfoByNameAjax.cs
+END
+GetBasePriceSetAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetBasePriceSetAjax.cs
+END
+GetOrderFactorAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetOrderFactorAjax.cs
+END
+ReturnOrderAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/ReturnOrderAjax.cs
+END
+GetMemberCardDetailByNoAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetMemberCardDetailByNoAjax.cs
+END
+GetEmployeeByPositionIdAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetEmployeeByPositionIdAjax.cs
+END
+GetBusinessTypePriceFactorAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetBusinessTypePriceFactorAjax.cs
+END
+DemoAjaxProcess.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/DemoAjaxProcess.cs
+END
+GetMemberCardIdInOrdersAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetMemberCardIdInOrdersAjax.cs
+END
+GetCustomerIdInOrdersAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetCustomerIdInOrdersAjax.cs
+END
+GetArrearageOrderAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetArrearageOrderAjax.cs
+END
+CheckFieldIsExistAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/CheckFieldIsExistAjax.cs
+END
+AdjustOrderItemPersonAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/AdjustOrderItemPersonAjax.cs
+END
+GetMemberCardNoAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetMemberCardNoAjax.cs
+END
+GetPrintDemandListAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetPrintDemandListAjax.cs
+END
+GetPriceAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetPriceAjax.cs
+END
+CheckUserPassWorkAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/CheckUserPassWorkAjax.cs
+END
+CancelNotPaidTicketAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/CancelNotPaidTicketAjax.cs
+END
+LogoutUserAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/LogoutUserAjax.cs
+END
+GetCustomerInfoAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetCustomerInfoAjax.cs
+END
+GetCustomerPayTypeAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetCustomerPayTypeAjax.cs
+END
+GetConcessionSum.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetConcessionSum.cs
+END
+GetCurrentUserPermissionAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetCurrentUserPermissionAjax.cs
+END
+GetOrderItemAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetOrderItemAjax.cs
+END
+ReworkPasswordAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/ReworkPasswordAjax.cs
+END
+GetBaseBusinessTypePriceSetByIdAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetBaseBusinessTypePriceSetByIdAjax.cs
+END
+GetServerDate.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetServerDate.cs
+END
+GetMemberCardAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetMemberCardAjax.cs
+END
+CheckUserIsNotUseAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/CheckUserIsNotUseAjax.cs
+END
+CheckLoginAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/CheckLoginAjax.cs
+END
+GetMemberCardDiffInfoAjax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Ajax/GetMemberCardDiffInfoAjax.cs
+END

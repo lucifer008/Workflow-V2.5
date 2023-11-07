@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/HandOver/Model
+END
+StageHandOverModel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/HandOver/Model/StageHandOverModel.cs
+END
+HandOverQueryModel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/HandOver/Model/HandOverQueryModel.cs
+END
+CashHandOverModel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/HandOver/Model/CashHandOverModel.cs
+END

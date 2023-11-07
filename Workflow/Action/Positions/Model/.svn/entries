@@ -1,0 +1,40 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Action/Positions/Model
+http://192.168.0.6/svn/workflow
+
+
+
+2009-01-14T08:33:07.890625Z
+2146
+chenruyin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+PositionModel.cs
+file
+
+
+
+
+2010-03-25T07:11:40.171875Z
+385351e48f54803b0bce58472d6c121c
+2009-01-14T08:33:07.890625Z
+2146
+chenruyin
+

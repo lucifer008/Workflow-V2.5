@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--表MEMBER_CARD_BUY_SEND [会员卡买M送N]的基本增删改查操作，此配置文件不允许修改-->
+<sqlMap namespace="MemberCardBuySendBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		
+			<!--查询表MEMBER_CARD_BUY_SEND [会员卡买M送N]的基本操作-->		 
+			<select id="SelectAll" resultMap="MemberCardBuySendResultMap.selectResult">
+			SELECT  ID,MEMBER_CARD_ID,BUY_SEND_ID,JOIN_DATE_TIME,REST_PAPER_COUNT,PAPER_COUNT	FROM MEMBER_CARD_BUY_SEND Order by ID
+			</select>
+
+			<!--按照主键查询表MEMBER_CARD_BUY_SEND [会员卡买M送N]的基本操作-->
+			<select id="SelectByPk" parameterClass="long" resultMap="MemberCardBuySendResultMap.selectResult">
+			SELECT 
+			ID,
+			MEMBER_CARD_ID,
+			BUY_SEND_ID,
+			JOIN_DATE_TIME,
+			REST_PAPER_COUNT,
+			PAPER_COUNT
+			FROM MEMBER_CARD_BUY_SEND
+			WHERE ID = #Id# 
+			</select>
+
+			<!--插入表MEMBER_CARD_BUY_SEND [会员卡买M送N]的基本操作-->
+			<insert id="Insert" parameterClass="MemberCardBuySend">
+			INSERT INTO MEMBER_CARD_BUY_SEND
+			(
+				ID,
+				MEMBER_CARD_ID,
+				BUY_SEND_ID,
+				JOIN_DATE_TIME,
+				REST_PAPER_COUNT,
+				PAPER_COUNT
+			) VALUES
+			( 
+				#Id#,
+				#MemberCardId#,
+				#BuySendId#,
+				#JoinDateTime#,
+				#RestPaperCount#,
+				#PaperCount#
+			)
+			</insert>
+			
+			<!--更新表MEMBER_CARD_BUY_SEND [会员卡买M送N]的基本操作-->
+			<update id="Update" parameterClass="MemberCardBuySend">
+			UPDATE MEMBER_CARD_BUY_SEND
+			SET
+				MEMBER_CARD_ID=#MemberCardId#,
+				BUY_SEND_ID=#BuySendId#,
+				JOIN_DATE_TIME=#JoinDateTime#,
+				REST_PAPER_COUNT=#RestPaperCount#,
+				PAPER_COUNT=#PaperCount#
+			WHERE ID = #Id#
+			</update>
+
+			<!--逻辑删除表MEMBER_CARD_BUY_SEND [会员卡买M送N]的基本操作-->
+			<update id="LogicDelete" parameterClass="long">
+				UPDATE MEMBER_CARD_BUY_SEND
+				SET	VERSION = VERSION + 1,DELETED = '1'	WHERE ID = #Id#
+			</update>
+
+			<!--物理删除表MEMBER_CARD_BUY_SEND [会员卡买M送N]的基本操作-->
+			<delete id="Delete" parameterClass="long">
+				DELETE FROM MEMBER_CARD_BUY_SEND WHERE ID = #Id#
+			</delete>
+
+		</statements>
+</sqlMap>

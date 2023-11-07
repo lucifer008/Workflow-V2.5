@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>新增工单</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../js/新增工单.js"></script>
+<link href="../css/thickbox.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../js/jquery.js"></script>
+<script language="javascript" src="../js/thickbox.js"></script>
+<script type="text/javascript" src="../js/calendar.js" charset="utf-8"></script>
+<link rel="stylesheet" href="../css/calendar-blue.css"  type="text/css" />
+<script type="text/javascript" src="../js/calendar-zh.js" charset="utf-8"></script>
+<script	type="text/javascript" src="../js/calendar-setup.js" charset="utf-8"></script>
+<script	type="text/javascript" src="../js/checkCalendar.js" charset="utf-8"></script>
+<script language="javascript" src="../js/default.js"></script>
+<script language="javascript">
+	function showSelectPrintRequest() {
+		showPage('PrintRequest.html', null, 800, 485, false, true);
+	}
+	function showSelectCustomer() {
+		showPage('../customer/SelectCustomer.html', null, 743,453, false, true);
+	}
+	function showNewCustomer() {
+		showPage('../customer/NewCustomer.html', null, 765, 549, false, true);
+	}	
+	$(document).ready(function() {
+		$("a[@innerHTML=选择]").attr("href","javascript:showSelectPrintRequest();");
+		//$("a[@innerHTML=选择客户]").attr("href", "javascript:showSelectCustomer();");
+		//$("a[@innerHTML=新增客户]").attr("href", "javascript:showNewCustomer();");
+		$("input:button[@value=选择客户]").click(showSelectCustomer);
+		$("input:button[@value=新增客户]").click(showNewCustomer);
+	});
+</script>
+<style type="text/css">
+<!--
+.STYLE1 {color: #CC0000}
+-->
+</style>
+</head>
+
+<body style="text-align:center">
+<div align="center" style="width:100%" bgcolor="#ffffff"  id="container">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="12"><img alt="" src="../images/white_main_top_left.gif"
+			width="12" height="11" border="0"></td>
+		<td width="99%" bgcolor="#FFFFFF"><img alt="" src="../images/spacer_10_x_10.gif"
+			width="10" height="10"></td>
+		<td width="12"><img alt="" src="../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+	</tr>
+	<tr>		<td bgcolor="#FFFFFF" colspan="3">
+		<table width="100%" border="0" cellspacing="2" cellpadding="0">
+			<tr>
+				<td></td>
+				<td align="left" bgcolor="#eeeeee">首页 -&gt; 本日工单 -&gt; 新增工单</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="3" class="caption" align="center">新增工单</td>
+			</tr>
+			<tr>
+				<td width="3%">&nbsp;</td>
+				<td align="center">
+				<table border="1" cellpadding="3" cellspacing="1" width="100%"
+					align="left">
+					<tr>
+						<td nowrap class="item_caption">会员卡号:</td>
+						<td colspan="5" class="item_content"><input type="text" class="texts" value="M0000011" /></td>
+					</tr>
+					<tr>
+						<td nowrap class="item_caption">客户名称<font color="#FF0000">*</font>:</td>
+					  <td colspan="5" class="item_content"><input type="text" value="西北建筑设计院" class="texts" size="50" /> <input name="" type="button" class="buttons selectButtons"  value="选择客户" />
+					  <input type="button" name="Submit" class="buttons selectButtons" value="新增客户" />
+					  </a></td>
+					</tr>
+					<tr>
+						<td nowrap class="item_caption">客户类型<font color="#FF0000">*</font>:</td>
+						<td class="item_content"><select name="select">
+							<option>会员</option>
+							<option>散客</option>
+							<option>学生</option>
+						</select></td>
+						<td nowrap class="item_caption">真实姓名<font color="#FF0000">*</font>:</td>
+						<td class="item_content"><input type="text" class="texts" value="刘正阳" /></td>
+						<td nowrap class="item_caption">联系电话:</td>
+						<td class="item_content"><input type="text" class="tel" value="13892845456" /></td>
+					</tr>
+					<tr>
+						<td nowrap class="item_caption">项目名称:</td>
+						<td class="item_content"><input type="text" class="texts" value="新天地2期设计" /></td>
+						<td nowrap class="item_caption">支付方式:</td>
+						<td class="item_content"><select name="select4">
+							<option>现金</option>
+							<option>记账</option>
+						</select></td>
+						<td nowrap class="item_caption">预收款:</td>
+						<td class="item_content"><input name="checkbox222" class="checks"
+							id="needPrepareMoney" type="checkbox">&nbsp;<label
+							for="needPrepareMoney">需要</label>&nbsp;<input type="text" class="texts"
+							size="9" /></td>
+					</tr>
+					<tr>
+						<td nowrap class="item_caption">发票:</td>
+						<td class="item_content"><input
+							type="checkbox" class="checks" id="needTicket" checked="checked">
+						&nbsp;<label for="needTicket">需要</label></td>
+						<td nowrap class="item_caption">送货方式:</td>
+						<td class="item_content"><select name="select2">
+							<option>自取</option>
+							<option selected="selected">立等</option>
+							<option>送货</option>
+						</select></td>
+						<td nowrap class="item_caption">送货时间:</td>
+						<td class="item_content">						<div>
+					<input class="datetimetexts" type="text" id="Text1" size="15" maxlength="16" readonly="true" />
+					<img alt=""  id="img alt=""btn1" src="../images/cal.gif" width="20" border="0" alt="Click Here to Pick up the date" />
+					<script type="text/javascript">
+						Calendar.setup({
+							firstDay       :    0,                  // first day of the week
+							inputField     :    "Text1",     				// id of the input field
+							button         :    "img alt=""btn1",  					// trigger for the calendar (button ID)
+							align          :    "Tl",           		// alignment (defaults to "Bl")
+							//singleClick  :    true,
+							showsTime      :    "true",
+							ifFormat       :    "%Y-%m-%d %H:%M"    // our date only format
+							 });
+							 window
+					</script>			
+		    		</div></td>
+					</tr>
+					<tr>
+						<td nowrap class="item_caption">备注:</td>
+						<td nowrap colspan="5" align="left"> <textarea name="textarea" class="textarea" cols="90" rows="3" ></textarea>						</td>
+					</tr>
+			</table>			</tr>
+<tr><td width="3%">&nbsp;</td>
+<td align="center" ><table width="100%"><tr><td width="25%" align="left"><input type="button" disabled="disabled" class="buttons" value="新增业务明细" /></td><td width="50%" align="center"><input name="Submit342" onclick="window.close()" class="buttons" value="保存" type="button" />&nbsp;&nbsp;&nbsp;
+<input	name="Submit33422" class="buttons" value="分配&amp;打印" onclick="prepareOrderForm()" type="button" /></td><td width="25%"></td></tr></table>
+
+</td>
+<td></td></tr>	
+			
+			<tr>
+				<td width="3%">&nbsp;</td>
+				<td align="center">
+				<table border="1" cellpadding="3" cellspacing="1" width="100%"
+					align="left">
+					<tr>
+						<th width="1%" nowrap>&nbsp;NO&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;业务类型&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;加工内容&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;机器&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;纸型&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;纸质&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;数量&nbsp;</th>
+						<th width="1%" nowrap>单位</th>
+						<th width="1%" nowrap>&nbsp;单价&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;金额&nbsp;</th>
+						<th nowrap align="left">制作要求</th>
+						<th width="1%" nowrap>&nbsp;</th>
+					</tr>
+					<tr class="detailRow">
+						<td align="center">1</td>
+			    <td align="center"><select name="select5" class="biaodan" style="display:none">
+							<option selected="selected">工程图文</option>
+							<option>打印</option>
+							<option>扫描</option>
+						</select>
+					    打印</td>
+						<td  align="center"><select name="select6" class="biaodan" style="display:none">
+							<option>彩色打印</option>
+							<option>黑白打印</option>
+						</select>
+					    彩色打印</td>
+						<td  align="center" nowrap><select name="select7" class="biaodan" style="display:none">
+							<option>DC-8000</option>
+							<option>DC-900</option>
+						</select>
+					    DC-8000</td>
+						<td  align="center"><select name="select8" class="biaodan" style="display:none">
+							<option>A3</option>
+							<option>A4</option>
+						</select>
+					    A3</td>
+						<td  align="center" nowrap><select name="select9" class="biaodan" style="display:none">
+							<option>157g铜板</option>
+							<option>200g铜板</option>
+						</select>
+					    157g铜板</td>
+						<td class="num"><input type="text" size="4" class="num" value="100" style="display:none"/>
+						50</td>
+						<td align="center">张</td>
+						<td class="num">&nbsp;2.3</td>
+						<td class="num">115</td>
+						<td align="left"><a href="#" onclick="showSelectPrintRequest();">单面,原文件尺寸</a></td>
+						<td nowrap>&nbsp;&nbsp;删除&nbsp;&nbsp;</td>
+					</tr>
+
+					<tr class="detailRow">
+						<td align="center">2</td>
+				    <td align="center"><select name="select5" class="biaodan" style="display:none">
+							<option>工程图文</option>
+							<option selected="selected">打印</option>
+							<option>扫描</option>
+						</select>
+					    打印</td>
+						<td  align="center"><select name="select6" class="biaodan" style="display:none">
+							<option selected="selected">彩色打印</option >
+							<option>黑白打印</option>
+						</select>
+					    彩色打印</td>
+						<td  align="center"><select name="select7" class="biaodan" style="display:none">
+							<option>DC-8000</option>
+							<option>DC-900</option>
+						</select>
+					    DC-2060</td>
+						<td  align="center"><select name="select8" class="biaodan" style="display:none">
+							<option selected="selected">A3</option>
+							<option>A4</option>
+						</select>
+					    A3</td>
+						<td  align="center"><select name="select9" class="biaodan" style="display:none">
+							<option selected="selected">157g铜板</option>
+							<option>200g铜板</option>
+						</select>
+					    157g铜板</td>
+						<td class="num"><input type="text" size="4" class="num" value="100" style="display:none" />
+						100</td>
+						<td align="center">张</td>
+						<td class="num">2.3</td>
+						<td class="num">230</td>
+						<td align="left"><a href="#" onclick="showSelectPrintRequest();">单面，缩放，骑马订</a></td>
+						<td nowrap>&nbsp;&nbsp;删除&nbsp;&nbsp;</td>
+					</tr>
+
+					<tr class="detailRow">
+						<td align="center">3</td>
+					  <td  align="center"><select name="select3" class="biaodan" style="display:none">
+                          <option>工程图文</option>
+                          <option>打印</option>
+                          <option>扫描</option>
+                        </select>
+					    打印</td>
+						<td  align="center"><select name="select6" class="biaodan" style="display:none">
+							<option>彩色打印</option>
+							<option>黑白打印</option>
+						</select>
+					    黑白打印</td>
+						<td  align="center"><select name="select7" class="biaodan" style="display:none">
+							<option>DC-8000</option>
+							<option>DC-900</option>
+						</select>
+					    DC-8000</td>
+						<td  align="center"><select name="select8" class="biaodan" style="display:none">
+							<option>A3</option>
+							<option>A4</option>
+						</select>
+					    A3</td>
+						<td  align="center"><select name="select9" class="biaodan" style="display:none">
+							<option>157g铜板</option>
+							<option>200g铜板</option>
+						</select>
+					    200g铜板</td>
+						<td class="num"><input type="text" size="4" class="num" value="100" style="display:none" />
+						100</td>
+						<td align="center">张</td>
+						<td class="num">2.6</td>
+						<td class="num">260</td>
+						<td align="left"><a href="#" onclick="showSelectPrintRequest();">双面，缩放，骑马订</a></td>
+						<td nowrap>&nbsp;&nbsp;删除&nbsp;&nbsp;</td>
+					</tr>
+					<tr class="detailRow">
+						<td align="center">4</td>
+					    <td  align="center"><select name="select3" class="biaodan" style="display:none">
+                          <option>工程图文</option>
+                          <option>打印</option>
+                          <option>扫描</option>
+                        </select>
+					    打印</td>
+						<td  align="center"><select name="select6" class="biaodan" style="display:none">
+							<option>彩色打印</option>
+							<option>黑白打印</option>
+						</select>
+					    黑白打印</td>
+						<td  align="center"><select name="select7" class="biaodan" style="display:none">
+							<option>DC-8000</option>
+							<option>DC-900</option>
+						</select>
+					    DC-900</td>
+						<td  align="center"><select name="select8" class="biaodan" style="display:none">
+							<option>A3</option>
+							<option>A4</option>
+						</select>
+					    A3</td>
+						<td  align="center"><select name="select9" class="biaodan" style="display:none">
+							<option>157g铜板</option>
+							<option>200g铜板</option>
+						</select>
+					    200g铜板</td>
+						<td class="num"><input type="text" size="4" class="num" value="100" style="display:none" />
+						100</td>
+						<td align="center">张</td>
+						<td class="num">1.1</td>
+						<td class="num">110</td>
+						<td align="left"><a href="#">选择</a></td>
+						<td nowrap>&nbsp;&nbsp;删除&nbsp;&nbsp;</td>
+					</tr>
+					<tr class="detailRow">
+						<td align="center">5</td>
+					    <td  align="center"><select name="select3" class="biaodan" style="display:none">
+                          <option>工程图文</option>
+                          <option>打印</option>
+                          <option>扫描</option>
+                        </select>
+					    装订</td>
+					  <td  align="center"><select name="select6" class="biaodan" style="display:none">
+							<option>彩色打印</option>
+							<option>黑白打印</option>
+						</select>
+					    简装</td>
+						<td  align="center"><select name="select7" class="biaodan" style="display:none">
+							<option>DC-8000</option>
+							<option>DC-900</option>
+						</select>
+					    -</td>
+					  <td  align="center"><select name="select8" class="biaodan" style="display:none">
+							<option>A3</option>
+							<option>A4</option>
+						</select>
+					    -</td>
+						<td  align="center"><select name="select9" class="biaodan" style="display:none">
+							<option>157g铜板</option>
+							<option>200g铜板</option>
+						</select>
+						  -</td>
+						<td class="num"><input type="text" size="4" class="num" value="100" style="display:none" />
+						100</td>
+						<td align="center">本</td>
+						<td class="num">15</td>
+						<td class="num">1,500</td>
+						<td align="left"><a href="#">选择</a></td>
+						<td nowrap>&nbsp;&nbsp;删除&nbsp;&nbsp;</td>
+					</tr>
+					<tr class="detailRow">
+						<td align="center">6</td>
+					    <td  align="center"><select name="select3" class="biaodan" >
+                          <option>请选择</option>
+                          <option selected="selected">工程图文</option>
+                          <option>打印</option>
+                          <option>扫描</option>
+                        </select></td>
+						<td  align="center"><select name="select6" class="biaodan">
+						  <option selected="selected">请选择</option>
+							<option>彩色打印</option>
+							<option>黑白打印</option>
+						</select>					    </td>
+						<td  align="center"><select name="select7" class="biaodan">
+						  <option selected="selected">请选择</option>
+							<option>DC-8000</option>
+							<option>DC-900</option>
+						</select>						  </td>
+						<td  align="center"><select name="select8" class="biaodan">
+						  <option>请选择</option>
+							<option>A3</option>
+							<option>A4</option>
+						</select>					   </td>
+						<td  align="center"><select name="select9" class="biaodan" >
+						  <option selected="selected">请选择</option>
+							<option>157g铜板</option>
+							<option>200g铜板</option>
+						</select>					    </td>
+						<td class="num"><input type="text" size="6" class="num" value="0"  />						</td>
+						<td align="center">张</td>
+						<td class="num">0.00</td>
+						<td class="num">0.00</td>
+						<td align="left"><a href="#">选择</a></td>
+						<td nowrap>&nbsp;&nbsp;删除&nbsp;&nbsp;</td>
+					</tr>															
+				</table>				</td>
+				<td width="3%">&nbsp;</td>
+			</tr>
+			<tr  class="emptyButtonsUpperRowHight">
+				<td colspan="3"></td>
+			</tr>
+<tr><td width="3%">&nbsp;</td>
+<td align="center" ><table width="100%"><tr><td width="25%" align="left"><input type="button" disabled="disabled" class="buttons" value="新增业务明细" /></td><td width="50%" align="center"><input name="Submit342" onclick="window.close()" class="buttons" value="保存" type="button" />&nbsp;&nbsp;&nbsp;
+<input	name="Submit33422" class="buttons" value="分配&amp;打印" onclick="prepareOrderForm()" type="button" /></td><td width="25%"></td></tr></table>
+
+</td>
+<td></td></tr>
+		
+			<tr height="5">
+				<td><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+				<td bgcolor="#eeeeee">&nbsp;</td>
+				<td><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+			</tr>
+		</table>
+
+		</td>
+	</tr>
+	<tr>
+		<td width="12"><img alt="" src="../images/white_main_bottom_left.gif"
+			width="12" height="11"></td>
+		<td bgcolor="#FFFFFF"><img alt="" src="../images/spacer_10_x_10.gif"
+			width="10" height="10"></td>
+		<td width="12"><img alt="" src="../images/white_main_bottom_right.gif"
+			width="12" height="11"></td>
+	</tr>
+</table>
+</div>
+</body>
+</html>

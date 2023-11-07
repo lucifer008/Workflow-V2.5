@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="LinkMan" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+	</resultMaps>
+	<statements>
+		<select id="SelectAll" resultMap="LinkManResultMap.selectResult">
+			SELECT
+				*
+			FROM LINK_MAN
+			ORDER BY ID ASC
+		</select>
+		<update id="ConbinationUpdateCustomerId" parameterClass="map">
+			update link_man set customer_id = #NewCustomerId# where customer_id = #OldCustomerId#
+		</update>
+		<select id="SelectLinkManCount" parameterCalss="long"  resultClass="int">
+			SELECT
+			count(*)
+			FROM LINK_MAN
+			where customer_id = #CustomerId# and  deleted='0'
+		</select>
+		<select id="SelectLinkManByCustomerId" parameterClass ="long" resultMap ="LinkManResultMap.selectResult">
+			select * from link_man where customer_id = #CustomerId# and deleted='0'
+		</select>
+	</statements>
+</sqlMap>

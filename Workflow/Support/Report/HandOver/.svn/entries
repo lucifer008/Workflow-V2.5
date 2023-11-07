@@ -1,0 +1,52 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Support/Report/HandOver
+http://192.168.0.6/svn/workflow
+
+
+
+2010-05-18T03:20:03.468750Z
+3295
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+ReportStageHandOver.cs
+file
+
+
+
+
+2010-05-13T02:29:14.109375Z
+376f22a1b1daae44daaea2a531bc8b32
+2010-05-18T03:20:03.468750Z
+3295
+zhangxiaolin
+
+ReportCasherHandOver.cs
+file
+
+
+
+
+2010-05-13T02:21:42.671875Z
+47376f5c4be820a72d2837dc6d108bb4
+2010-05-18T03:20:03.468750Z
+3295
+zhangxiaolin
+

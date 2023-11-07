@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Support/Security
+END
+PermissionFactory.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Support/Security/PermissionFactory.cs
+END
+CommonPermission.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Support/Security/CommonPermission.cs
+END
+IPermission.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Support/Security/IPermission.cs
+END
+PermissionException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Support/Security/PermissionException.cs
+END

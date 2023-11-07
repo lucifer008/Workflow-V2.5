@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Support/Spring
+END
+ActionObjectFactory.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Support/Spring/ActionObjectFactory.cs
+END
+SecurityInterceptor.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Support/Spring/SecurityInterceptor.cs
+END
+SecurityThrowsAdvice.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Support/Spring/SecurityThrowsAdvice.cs
+END

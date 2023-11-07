@@ -1,0 +1,158 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>新增价格</title>
+<link href="../../css/css.css" rel="stylesheet" type="text/css" />
+<link href="../../css/thickbox.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../../js/jquery.js"></script>
+<script language="javascript" src="../../js/thickbox.js"></script>
+</head>
+<body style="text-align:center">
+<div align="center" style="width:99%" bgcolor="#ffffff" id="container">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+	<tr>
+		<td width="11"><img alt="" src="../../images/white_main_top_left.gif" /></td>
+		<td width="99%"><img alt="" src="../../images/spacer_10_x_10.gif" height="10" /></td>
+		<td width="10"><img alt="" src="../../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+	</tr>
+	<tr>
+		<td colspan="3" bgcolor="#FFFFFF">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td bgcolor="#FFFFFF">
+		<table width="100%" border="0" cellspacing="0">
+			<tr>
+				<td></td>
+				<td align="left" bgcolor="#eeeeee">首页 -&gt; 系统管理 -&gt; 价格管理 -&gt; 新增价格</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="3" class="caption" align="center">新增价格</td>
+			</tr>
+			<tr>
+				<td width="3%">&nbsp;</td>
+				<td align="center">
+				<table border="1" cellpadding="3" cellspacing="1" width="100%"
+					align="left">
+					<tr>
+						<td nowrap class="item_caption">业务类型:</td>
+						<td colspan="3" class="item_content"><select name="select" >
+							<option>请选择</option>
+							<option>打印</option>
+							<option>复印</option>
+							<option>印刷</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td nowrap class="item_caption">加工类型:</td>
+						<td class="item_content"><select name="select" >
+							<option selected>请选择</option>
+							<option>彩色打印</option>
+							<option>黑白打印</option>
+						  </select></td>
+						<td nowrap class="item_caption">机器:</td>
+						<td class="item_content"><select name="select" >
+							<option selected>请选择</option>
+							<option>DC8000</option>
+							<option>DC2060</option>
+							<option>DC1050</option>
+							<option>DC1055</option>
+							<option>DC900</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td nowrap class="item_caption">纸型:</td>
+						<td class="item_content"><select name="select" >
+							<option>请选择</option>
+							<option>A3</option>
+							<option>A4</option>
+						</select></td>
+						<td nowrap class="item_caption">纸质:</td>
+						<td class="item_content"><select name="select" >
+						  <option selected>请选择</option>
+						<option>70g复印纸</option>
+						<option>160g彩砖</option>
+						<option>157g铜板</option>
+						<option>200g铜板</option>
+						<option>250g铜板</option>
+						<option>157g亚粉</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td nowrap class="item_caption">数量上下限:</td>
+						<td colspan="3" class="item_content"><select name="select2" >
+						  <option selected>请选择</option>
+						  <option>1－9</option>
+						  <option>10-99</option>
+						  <option>100-999</option>
+                                                                        </select></td>
+					  </tr>
+					<tr>
+						<td nowrap class="item_caption">发票:</td>
+						<td class="item_content"><select name="select" >
+							<option>请选择</option>
+							<option>要</option>
+							<option>不要</option>
+						</select></td>
+						<td nowrap class="item_caption">单位:</td>
+						<td nowrap class="item_content"><select name="select6" >
+							<option>请选择</option>
+							<option>张</option>
+							<option>个</option>
+							<option>册</option>
+							<option>本</option>
+						</select></td>
+					  </tr>
+					  <tr>
+						<td nowrap class="item_caption">成本价格:</td>
+						<td nowrap class="item_content"><input name="textfield3" type="text" class="num" value="3.0" size="10"/></td>
+						<td nowrap class="item_caption">标准价格:</td>
+						<td nowrap class="item_content"><input name="textfield32" type="text" class="num" value="3.5" size="10" /></td>
+					  </tr>
+					  <tr>
+						<td nowrap class="item_caption">活动价格:</td>
+						<td nowrap class="item_content"><input name="textfield34" type="text" class="num" value="3.4" size="10"/></td>
+						<td nowrap class="item_caption">备用价格:</td>
+						<td nowrap class="item_content"><input name="textfield33" type="text" class="num" value="3.5" size="10"/></td>
+					  </tr>
+					<tr>
+						<td nowrap class="item_caption">备注:</td>
+						<td colspan="3" align="left" nowrap><span class="item_content" style="padding-top: 2px; padding-bottom: 2px;">
+						  <textarea name="textarea" cols="95"
+							rows="3"></textarea>
+					  </span></td>
+					</tr>
+				</table>
+			</tr>
+			<tr class="emptyButtonsUpperRowHight">
+				<td colspan="3"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center" class="bottombuttons"><input name="Submit34" class="buttons"
+					value="保存" type="button" onClick="window.close();">
+				&nbsp;&nbsp;&nbsp;<input
+					name="Submit3342" class="buttons"
+					value="取消" onclick="window.close();" type="button"></td>
+			</tr>
+			<tr height="5">
+				<td><img alt="" src="../../images/spacer_5_x_5.gif" width="5" height="5"></td>
+				<td bgcolor="#eeeeee">&nbsp;</td>
+				<td><img alt="" src="../../images/spacer_5_x_5.gif" width="5" height="5"></td>
+			</tr>
+		</table>
+
+		</td>
+	</tr>
+</table>
+  </td>
+  </tr>
+  	<tr>
+		<td width="11"><img alt="" src="../../images/white_main_bottom_left.gif"></td>
+		<td width="99%"><img alt="" src="../../images/spacer_10_x_10.gif"></td>
+		<td width="10"><img alt="" src="../../images/white_main_bottom_right.gif"></td>
+	</tr>
+</table>
+</div>
+</body>
+</html>

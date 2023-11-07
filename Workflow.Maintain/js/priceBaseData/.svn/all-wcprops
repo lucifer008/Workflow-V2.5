@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/js/priceBaseData
+END
+addFactorValue.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/js/priceBaseData/addFactorValue.js
+END
+addFactorRelation.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/js/priceBaseData/addFactorRelation.js
+END
+addBusinessType.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/js/priceBaseData/addBusinessType.js
+END
+addBusinessTypePriceFactor.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/js/priceBaseData/addBusinessTypePriceFactor.js
+END
+addPriceFactor.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/js/priceBaseData/addPriceFactor.js
+END
+addMachine.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/js/priceBaseData/addMachine.js
+END
+addPaperSecifiation.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/js/priceBaseData/addPaperSecifiation.js
+END
+addMachineType.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/js/priceBaseData/addMachineType.js
+END
+addFactorRelationValue.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/js/priceBaseData/addFactorRelationValue.js
+END
+addPaperType.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/js/priceBaseData/addPaperType.js
+END
+addProcessContent.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/js/priceBaseData/addProcessContent.js
+END

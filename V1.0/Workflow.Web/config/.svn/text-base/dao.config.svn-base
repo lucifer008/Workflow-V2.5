@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<objects xmlns="http://www.springframework.net" xmlns:db="http://www.springframework.net/database">
+  <!--<db:provider id="DbProvider" 
+		provider="SqlServer-2.0" 
+		connectionString="Data Source=vm2003;Database=phooker_new;User ID=workflow;Password=workflow01;Trusted_Connection=False"/>
+
+    <object id="transactionManager" type="Spring.Data.Core.TxScopeTransactionManager, Spring.Data">
+	</object>-->
+  <object id="sqlMap" type="Spring.Data.IBatis.SqlMapperFactoryObject, Spring.Data.IBatis">
+    <property name="Config" value="config/SqlMap.config" />
+  </object>
+  <object id="transactionManager" type="Spring.Data.IBatis.IbatisPlatformTransactionManager, Spring.Data.IBatis">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <object id="autoProxyCreator" type="Spring.Aop.Framework.AutoProxy.DefaultAdvisorAutoProxyCreator, Spring.Aop">
+  </object>
+  <object id="transactionAttributeSource" type="Spring.Transaction.Interceptor.AttributesTransactionAttributeSource, Spring.Data">
+  </object>
+  <object id="transactionInterceptor" type="Spring.Transaction.Interceptor.TransactionInterceptor, Spring.Data">
+    <property name="TransactionManager" ref="transactionManager" />
+    <property name="TransactionAttributeSource" ref="transactionAttributeSource" />
+  </object>
+  <object id="transactionAdvisor" type="Spring.Transaction.Interceptor.TransactionAttributeSourceAdvisor, Spring.Data">
+    <property name="TransactionInterceptor" ref="transactionInterceptor" />
+    <property name="Order" value="10" />
+  </object>
+  <!-- 未完工工单用纸情况 -->
+  <object id="UncompleteOrdersUsedPaperDao" type="Workflow.Da.Impl.UncompleteOrdersUsedPaperDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 废张原因 -->
+  <object id="TrashReasonDao" type="Workflow.Da.Impl.TrashReasonDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 基本业务类别的价格分类 -->
+  <object id="BaseBusinessTypePriceSetDao" type="Workflow.Da.Impl.BaseBusinessTypePriceSetDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 换卡 -->
+  <object id="ChangeMemberCardDao" type="Workflow.Da.Impl.ChangeMemberCardDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 收款记录 -->
+  <object id="GatheringDao" type="Workflow.Da.Impl.GatheringDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 客户级别 -->
+  <object id="CustomerLevelDao" type="Workflow.Da.Impl.CustomerLevelDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 付款优惠 -->
+  <object id="PaymentConcessionDao" type="Workflow.Da.Impl.PaymentConcessionDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 权限许可 -->
+  <object id="PermissionDao" type="Workflow.Da.Impl.PermissionDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 雇员岗位 -->
+  <object id="EmployeePositionDao" type="Workflow.Da.Impl.EmployeePositionDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 工单责任 -->
+  <object id="OrdersDutyDao" type="Workflow.Da.Impl.OrdersDutyDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 因素之间的依赖关系 -->
+  <object id="FactorRelationDao" type="Workflow.Da.Impl.FactorRelationDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 实际工单明细 -->
+  <object id="RealOrderItemDao" type="Workflow.Da.Impl.RealOrderItemDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 抄表 -->
+  <object id="RecordMachineWatchDao" type="Workflow.Da.Impl.RecordMachineWatchDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 挂失 -->
+  <object id="ReportLossMemberCardDao" type="Workflow.Da.Impl.ReportLossMemberCardDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 实际工单明细的因素值 -->
+  <object id="RealOrderItemFactorValueDao" type="Workflow.Da.Impl.RealOrderItemFactorValueDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 工单明细印制要求 -->
+  <object id="OrderItemPrintRequireDetailDao" type="Workflow.Da.Impl.OrderItemPrintRequireDetailDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 业务类型包含的价格因素 -->
+  <object id="BusinessTypePriceFactorDao" type="Workflow.Da.Impl.BusinessTypePriceFactorDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 工单中抄表数据的汇总 -->
+  <object id="OrdersForRecordMachineSumDao" type="Workflow.Da.Impl.OrdersForRecordMachineSumDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 挂失方式 -->
+  <object id="ReportLessModeDao" type="Workflow.Da.Impl.ReportLessModeDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 业绩 -->
+  <object id="AchievementDao" type="Workflow.Da.Impl.AchievementDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 加工内容 -->
+  <object id="ProcessContentDao" type="Workflow.Da.Impl.ProcessContentDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 权限许可组 -->
+  <object id="PermissionGroupDao" type="Workflow.Da.Impl.PermissionGroupDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 工单明细的因素值 -->
+  <object id="OrderItemFactorValueDao" type="Workflow.Da.Impl.OrderItemFactorValueDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 纸型之间的类似关系 -->
+  <object id="PaperSpecificationSimilarityDao" type="Workflow.Da.Impl.PaperSpecificationSimilarityDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 机器上的表 -->
+  <object id="MachineWatchDao" type="Workflow.Da.Impl.MachineWatchDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 注销 -->
+  <object id="LogoffMemberCardDao" type="Workflow.Da.Impl.LogoffMemberCardDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 岗位 -->
+  <object id="PositionDao" type="Workflow.Da.Impl.PositionDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 实际工单明细雇员 -->
+  <object id="RealOrderItemEmployeeDao" type="Workflow.Da.Impl.RealOrderItemEmployeeDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 公司 -->
+  <object id="CompanyDao" type="Workflow.Da.Impl.CompanyDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 工单明细 -->
+  <object id="OrderItemDao" type="Workflow.Da.Impl.OrderItemDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 申请挂账信息 -->
+  <object id="RequireAccountingInfoDao" type="Workflow.Da.Impl.RequireAccountingInfoDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 机器 -->
+  <object id="MachineDao" type="Workflow.Da.Impl.MachineDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 卡级别 -->
+  <object id="MemberCardLevelDao" type="Workflow.Da.Impl.MemberCardLevelDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 收银交班 -->
+  <object id="CashHandOverDao" type="Workflow.Da.Impl.CashHandOverDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 交班中涉及的工单 -->
+  <object id="HandOverOrderDao" type="Workflow.Da.Impl.HandOverOrderDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 补单用纸情况 -->
+  <object id="CompensateUsedPaperDao" type="Workflow.Da.Impl.CompensateUsedPaperDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 子行业 -->
+  <object id="SecondaryTradeDao" type="Workflow.Da.Impl.SecondaryTradeDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 因素值 -->
+  <object id="FactorValueDao" type="Workflow.Da.Impl.FactorValueDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 主行业 -->
+  <object id="MasterTradeDao" type="Workflow.Da.Impl.MasterTradeDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 联系人 -->
+  <object id="LinkManDao" type="Workflow.Da.Impl.LinkManDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 数量段 -->
+  <object id="AmountSegmentDao" type="Workflow.Da.Impl.AmountSegmentDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- ID产生器 -->
+  <object id="IdGeneratorDao" type="Workflow.Da.Impl.IdGeneratorDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 雇员 -->
+  <object id="EmployeeDao" type="Workflow.Da.Impl.EmployeeDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 工单 -->
+  <object id="OrderDao" type="Workflow.Da.Impl.OrderDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+	<!--工单状态变更-->
+	<object id="OrdersStatusAlterDao" type="Workflow.Da.Impl.OrdersStatusAlterDaoImpl, Workflow.Support">
+		<property name="sqlMap" ref="sqlMap"/>
+	</object>
+  <!-- 责任人 -->
+  <object id="DutyEmployeeDao" type="Workflow.Da.Impl.DutyEmployeeDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 业务类别的价格分类 -->
+  <object id="BusinessTypePriceSetDao" type="Workflow.Da.Impl.BusinessTypePriceSetDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 业务类型 -->
+  <object id="BusinessTypeDao" type="Workflow.Da.Impl.BusinessTypeDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 印制要求明细 -->
+  <object id="PrintDemandDetailDao" type="Workflow.Da.Impl.PrintDemandDetailDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 优惠活动 -->
+  <object id="ConcessionDao" type="Workflow.Da.Impl.ConcessionDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 因素之间的依赖关系的值 -->
+  <object id="FactorRelationValueDao" type="Workflow.Da.Impl.FactorRelationValueDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 权限许可组明细 -->
+  <object id="PermissionGroupDetailDao" type="Workflow.Da.Impl.PermissionGroupDetailDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 工单的收款记录 -->
+  <object id="GatheringOrderDao" type="Workflow.Da.Impl.GatheringOrderDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 角色 -->
+  <object id="RoleDao" type="Workflow.Da.Impl.RoleDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 会员卡参加的优惠活动 -->
+  <object id="MemberCardConcessionDao" type="Workflow.Da.Impl.MemberCardConcessionDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 纸质 -->
+  <object id="PaperTypeDao" type="Workflow.Da.Impl.PaperTypeDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 机器上表的最新刻度 -->
+  <object id="MachineWatchScaleDao" type="Workflow.Da.Impl.MachineWatchScaleDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 实际工单明细印制要求 -->
+  <object id="RealOrderItemPrintRequireDao" type="Workflow.Da.Impl.RealOrderItemPrintRequireDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 营销活动 -->
+  <object id="CampaignDao" type="Workflow.Da.Impl.CampaignDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 客户类型 -->
+  <object id="CustomerTypeDao" type="Workflow.Da.Impl.CustomerTypeDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 交班 -->
+  <object id="HandOverDao" type="Workflow.Da.Impl.HandOverDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 分店 -->
+  <object id="BranchShopDao" type="Workflow.Da.Impl.BranchShopDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 另外规格价格的差价 -->
+  <object id="ConcessionDifferencePriceDao" type="Workflow.Da.Impl.ConcessionDifferencePriceDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 相关人员 -->
+  <object id="RelationEmployeeDao" type="Workflow.Da.Impl.RelationEmployeeDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 用户 -->
+  <object id="UserDao" type="Workflow.Da.Impl.UserDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 角色权限许可组 -->
+  <object id="RolePermissionGroupDao" type="Workflow.Da.Impl.RolePermissionGroupDaoImpl, Workflow.Support">
+		<property name="sqlMap" ref="sqlMap"/>
+	</object>
+  <!-- 用户角色 -->
+  <object id="UserRoleDao" type="Workflow.Da.Impl.UserRoleDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 作废原因 -->
+  <object id="BlankOutReasonDao" type="Workflow.Da.Impl.BlankOutReasonDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 优惠活动所适应的卡级别 -->
+  <object id="ConcessionMemberCardLevelDao" type="Workflow.Da.Impl.ConcessionMemberCardLevelDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 取活 -->
+  <object id="TakeWorkDao" type="Workflow.Da.Impl.TakeWorkDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 价格因素 -->
+  <object id="PriceFactorDao" type="Workflow.Da.Impl.PriceFactorDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 每次抄表基本信息记录 -->
+  <object id="DailyRecordMachineDao" type="Workflow.Da.Impl.DailyRecordMachineDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 机器型号 -->
+  <object id="MachineTypeDao" type="Workflow.Da.Impl.MachineTypeDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 工单明细废张原因 -->
+  <object id="RealOrderItemTrashReasonDao" type="Workflow.Da.Impl.RealOrderItemTrashReasonDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 客户 -->
+  <object id="CustomerDao" type="Workflow.Da.Impl.CustomerDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 单位 -->
+  <object id="UnitDao" type="Workflow.Da.Impl.UnitDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 印制要求 -->
+  <object id="PrintDemandDao" type="Workflow.Da.Impl.PrintDemandDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 废张责任人 -->
+  <object id="TrashPaperEmployeeDao" type="Workflow.Da.Impl.TrashPaperEmployeeDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 会员卡操作记录 -->
+  <object id="MemberOperateLogDao" type="Workflow.Da.Impl.MemberOperateLogDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 送货 -->
+  <object id="DeliveryOrderDao" type="Workflow.Da.Impl.DeliveryOrderDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 纸型 -->
+  <object id="PaperSpecificationDao" type="Workflow.Da.Impl.PaperSpecificationDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 补单责任人 -->
+  <object id="CompensateEmployeeDao" type="Workflow.Da.Impl.CompensateEmployeeDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 交班中涉及的会员卡 -->
+  <object id="HandOverMemberCardDao" type="Workflow.Da.Impl.HandOverMemberCardDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 工单明细雇员 -->
+  <object id="OrderItemEmployeeDao" type="Workflow.Da.Impl.OrderItemEmployeeDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 程序参数 -->
+  <object id="ApplicationPropertyDao" type="Workflow.Da.Impl.ApplicationPropertyDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 印制要求明细详情 -->
+  <object id="PrintRequireDetailDao" type="Workflow.Da.Impl.PrintRequireDetailDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 会员卡 -->
+  <object id="MemberCardDao" type="Workflow.Da.Impl.MemberCardDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 收银交班中涉及的预付定金的信息 -->
+  <object id="CashHandOverOrderDao" type="Workflow.Da.Impl.CashHandOverOrderDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 机器表抄表记录 -->
+  <object id="MachineWatchRecordLogDao" type="Workflow.Da.Impl.MachineWatchRecordLogDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+  <!-- 计数器换算纸张 -->
+  <object id="MachineWatchConversionPaperDao" type="Workflow.Da.Impl.MachineWatchConversionPaperDaoImpl, Workflow.Support">
+    <property name="sqlMap" ref="sqlMap" />
+  </object>
+	<!--授权记录-->
+	<object id="AccreditRedcordDao" type="Workflow.Da.Impl.AccreditRecordDaoImpl,Workflow.Support">
+		<property name="sqlMap" ref="sqlMap"/>
+	</object>
+	<!--用户优惠范围-->
+	<object id="UserConcessionRangeDao" type="Workflow.Da.Impl.UserConcessionRangeDaoImpl,Workflow.Support">
+		<property name="sqlMap" ref="sqlMap"/>
+	</object>
+
+	<!--业务模块组-->
+	<object id="BusinessModuleDao" type="Workflow.Da.Impl.BusinessModuleDaoImpl,Workflow.Support">
+		<property name="sqlMap" ref="sqlMap"/>
+	</object>
+	<!--业务模块-->
+	<object id="BusinessModuleGroup" type="Workflow.Da.Impl.BusinessModuleGroupDaoImpl,Workflow.Support">
+		<property name="sqlMap" ref="sqlMap"/>
+	</object>
+	<!--加工内容的业绩比例-->
+	<object id="ProcessContentAchievement" type="Workflow.Da.Impl.ProcessContentAchievementRateDaoImpl,Workflow.Support">
+		<property name="sqlMap" ref="sqlMap"/>
+	</object>
+	<!--打折活动-->
+	<object id="discountConcessionDao" type="Workflow.Da.Impl.DiscountConcessionDaoImpl,Workflow.Support">
+		<property name="sqlMap" ref="sqlMap"/>
+	</object>
+	<!--打折活动适用的机器和纸型-->
+	<object id="discountConcessionMachineTypePaperSpecDao" type="Workflow.Da.Impl.DiscountConcessionMachineTypePaperSpecDaoImpl,Workflow.Support">
+		<property name="sqlMap" ref="sqlMap"/>
+	</object>
+	<!--工单明细使用优惠活动的冲减明细-->
+	<object id="memberCardOrderItemCounteractLogDao" type="Workflow.Da.Impl.MemberCardOrderItemCounteractLogDaoImpl,Workflow.Support">
+		<property name="sqlMap" ref="sqlMap"/>
+	</object>
+	<!---->
+	<object id="markingSettingDao" type="Workflow.Da.Impl.MarkingSettingDaoImpl,Workflow.Support">
+		<property name="sqlMap" ref="sqlMap"/>
+	</object>
+	<!---->
+	<object id="otherGatheringAndRefundmentRecordDao" type="Workflow.Da.Impl.MarkingSettingDaoImpl,Workflow.Support">
+		<property name="sqlMap" ref="sqlMap"/>
+	</object>
+
+
+
+	<object id="idGeneratorSupport" type="Workflow.Da.Support.IdGeneratorSupport, Workflow.Support">
+    <property name="IdGeneratorDao" ref="idGeneratorDao" />
+    <property name="type2FlagNo">
+      <dictionary>
+        <!-- -->
+        <entry key="Workflow.Da.Domain.Achievement" value="ACHIEVEMENT" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.AmountSegment" value="AMOUNT_SEGMENT" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.ApplicationProperty" value="APPLICATION_PROPERTIES" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.BaseBusinessTypePriceSet" value="BASE_BUSINESS_TYPE_PRICE_SET" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.BlankOutReason" value="BLANK_OUT_REASON" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.BranchShop" value="BRANCH_SHOP" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.BranchStore" value="BRANCH_SHOP" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.BusinessType" value="BUSINESS_TYPE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.BusinessTypePriceFactor" value="BUSINESS_TYPE_PRICE_FACTOR" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.BusinessTypePriceSet" value="BUSINESS_TYPE_PRICE_SET" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.Campaign" value="CAMPAIGN" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.CashHandOver" value="CASH_HAND_OVER" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.CashHandOverOrder" value="CASH_HAND_OVER_ORDERS" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.ChangeMemberCard" value="CHANGE_MEMBER_CARD" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.Company" value="COMPANY" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.CompensateEmployee" value="COMPENSATE_EMPLOYEE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.CompensateUsedPaper" value="COMPENSATE_USED_PAPER" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.Concession" value="CONCESSION" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.ConcessionDifferencePrice" value="CONCESSION_DIFFERENCE_PRICE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.ConcessionMemberCardLevel" value="CONCESSION_MEMBER_CARD_LEVEL" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.Customer" value="CUSTOMER" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.CustomerLevel" value="CUSTOMER_LEVEL" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.CustomerType" value="CUSTOMER_TYPE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.DailyRecordMachine" value="DAILY_RECORD_MACHINE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.DeliveryOrder" value="DELIVERY_ORDER" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.DutyEmployee" value="DUTY_EMPLOYEE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.Employee" value="EMPLOYEE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.EmployeePosition" value="EMPLOYEE_POSITION" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.FactorRelation" value="FACTOR_RELATION" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.FactorRelationValue" value="FACTOR_RELATION_VALUES" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.FactorValue" value="FACTOR_VALUE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.Gathering" value="GATHERING" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.GatheringOrder" value="GATHERING_ORDERS" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.HandOver" value="HAND_OVER" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.HandOverMemberCard" value="HAND_OVER_MEMBER_CARD" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.HandOverOrder" value="HAND_OVER" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.IdGenerator" value="ID_GENERATOR" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.LinkMan" value="LINK_MAN" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.LogoffMemberCard" value="LOGOFF_MEMBER_CARD" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.Machine" value="MACHINE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.MachineType" value="MACHINE_TYPE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.MachineWatch" value="MACHINE_WATCH" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.MachineWatchConversionPaper" value="MACHINE_WATCH_CONVERSION_PAPER" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.MachineWatchRecordLog" value="MACHINE_WATCH_RECORD_LOG" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.MachineWatchScale" value="MACHINE_WATCH_SCALE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.MasterTrade" value="MASTER_TRADE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.MemberCard" value="MEMBER_CARD" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.MemberCardConcession" value="MEMBER_CARD_CONCESSION" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.MemberCardLevel" value="MEMBER_CARD_LEVEL" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.MemberOperateLog" value="MEMBER_OPERATE_LOG" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.Order" value="ORDERS" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.OrderItem" value="ORDER_ITEM" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.OrderItemEmployee" value="ORDER_ITEM_EMPLOYEE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.OrderItemFactorValue" value="ORDER_ITEM_FACTOR_VALUE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.OrderItemPrintRequireDetail" value="ORDER_ITEM_PRINT_REQUIRE_DETAIL" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.OrdersDuty" value="ORDERS_DUTY" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.OrdersForRecordMachineSum" value="ORDERS_FOR_RECORD_MACHINE_SUM" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.OrdersStatusAlter" value="ORDERS_STATUS_ALTER" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.PaperSpecification" value="PAPER_SPECIFICATION" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.PaperSpecificationSimilarity" value="PAPER_SPECIFICATION_SIMILARITY" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.PaperType" value="PAPER_TYPE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.PaymentConcession" value="PAYMENT_CONCESSION" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.Permission" value="PERMISSION" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.PermissionGroup" value="PERMISSION_GROUP" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.PermissionGroupDetail" value="PERMISSION_GROUP_DETAIL" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.Position" value="POSITION" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.PriceFactor" value="PRICE_FACTOR" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.PrintDemand" value="PRINT_DEMAND" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.PrintDemandDetail" value="PRINT_DEMAND_DETAIL" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.PrintRequireDetail" value="PRINT_REQUIRE_DETAIL" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.ProcessContent" value="PROCESS_CONTENT" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.RealOrderItem" value="REAL_ORDER_ITEM" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.RealOrderItemEmployee" value="REAL_ORDER_ITEM_EMPLOYEE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.RealOrderItemFactorValue" value="REAL_ORDER_ITEM_FACTOR_VALUE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.RealOrderItemPrintRequire" value="REAL_ORDER_ITEM_PRINT_REQUIRE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.RealOrderItemTrashReason" value="REAL_ORDER_ITEM_TRASH_REASON" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.RecordMachineWatch" value="RECORD_MACHINE_WATCH" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.RelationEmployee" value="RELATION_EMPLOYEE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.ReportLessMode" value="REPORT_LESS_MODE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.ReportLossMemberCard" value="REPORT_LOSS_MEMBER_CARD" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.RequireAccountingInfo" value="REQUIRE_ACCOUNTING_INFO" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.Role" value="ROLE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.SecondaryTrade" value="SECONDARY_TRADE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.TakeWork" value="TAKE_WORK" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.TrashPaperEmployee" value="TRASH_PAPER_EMPLOYEE" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.TrashReason" value="TRASH_REASON" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.UncompleteOrdersUsedPaper" value="UNCOMPLETE_ORDERS_USED_PAPER" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.Unit" value="UNIT" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.User" value="USERS" />
+        <!-- -->
+        <entry key="Workflow.Da.Domain.UserRole" value="USER_ROLE" />
+		<!-- -->
+		<entry key="Workflow.Da.Domain.UserConcessionRange" value="USER_CONCESSION_RANGE" />		  
+
+		<entry key="Workflow.Da.Domain.HandOverOrder" value="HAND_OVER_ORDERS" />
+		<entry key="Workflow.Da.Domain.AccreditRecord" value="ACCREDIT_RECORD" />
+	    <entry key="Workflow.Da.Domain.BusinessModule" value="BUSINESS_MODULE" />
+		<entry key="Workflow.Da.Domain.BusinessModuleGroup" value="BUSINESS_MODULE_GROUP" />
+		<entry key="Workflow.Da.Domain.RolePermissionGroup" value="ROLE_PERMISSION_GROUP" />
+		<entry key="Workflow.Da.Domain.ProcessContentAchievementRate" value="PROCESS_CONTENT_ACHIEVEMENT_RATE"/>
+		<!--打折活动-->
+		<entry key="Workflow.Da.Domain.DiscountConcession" value="DISCOUNT_CONCESSION"/>
+		<!--打折活动适用的机器和纸型-->
+		<entry key="Workflow.Da.Domain.DiscountConcessionMachineTypePaperSpec" value="DISCOUNT_CONCESSION_MACHINE_TYPE_PAPER_SPEC"/>
+        <!--工单明细使用优惠活动的冲减明细-->
+        <entry key="Workflow.Da.Domain.MemberCardOrderItemCounteractLog" value="MEMBER_CARD_ORDER_ITEM_COUNTERACT_LOG"/>
+
+		<entry key="Workflow.Da.Domain.MarkingSetting" value="MARKING_SETTING"/>
+		<entry key="Workflow.Da.Domain.OtherGatheringAndRefundmentRecord" value="OTHER_GATHERING_AND_REFUNDMENT_RECORD"/>
+	  </dictionary>
+    </property>
+  </object>
+</objects>

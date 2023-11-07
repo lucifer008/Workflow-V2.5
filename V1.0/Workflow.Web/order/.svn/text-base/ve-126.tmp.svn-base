@@ -1,0 +1,28 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="TodayOrder.aspx.cs" Inherits="TodayOrder" %>
+
+<%@ Register Src="~/order/usercontrols/DailyOrderList.ascx" TagName="DailyOrderList"
+    TagPrefix="uc" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>工单管理</title>
+    <link href="../css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" action="" method="post" runat="server">
+<div align="center" style="width:95%; background-color:#ffffff"  id="container">
+            <table width="100%">
+                <tr>
+                    <td align="left" style="height: 24px">
+                        <input type="button" class="buttons" value="刷新" disabled="disabled" />
+                    </td>
+                    <td align="right" style="height: 24px">
+                        <input type="button" class="buttons" value="过滤" disabled="disabled" />
+                    </td>
+                </tr>
+            </table>
+            <uc:DailyOrderList runat="server" ID='DailyOrder'></uc:DailyOrderList>
+        </div>
+    </form>
+</body>
+</html>

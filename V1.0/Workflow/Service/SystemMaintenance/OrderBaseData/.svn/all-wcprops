@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/SystemMaintenance/OrderBaseData
+END
+ISearchOrderBaseDataService.cs
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/SystemMaintenance/OrderBaseData/ISearchOrderBaseDataService.cs
+END
+IOrderBaseDataService.cs
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/SystemMaintenance/OrderBaseData/IOrderBaseDataService.cs
+END

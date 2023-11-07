@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="Concession" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+    <cacheModels>
+        <cacheModel id="ConcessionCache" implementation="LRU">
+            <flushInterval hours="24"/>
+            <property name="CacheSize" value="100" />
+            <flushOnExecute statement="ConcessionBase.Insert"/>
+            <flushOnExecute statement="ConcessionBase.Update"/>
+            <flushOnExecute statement="ConcessionBase.LogicDelete"/>
+            <flushOnExecute statement="ConcessionBase.Delete"/>
+			<flushOnExecute statement="ConcessionBase.DeleteConcessionByCampaignId"/>
+			<!--<flushOnExecute statement="ConcessionDifferencePrice.Insert"/>
+			<flushOnExecute statement="ConcessionMemberCardLevel.Insert"/>
+			<flushOnExecute statement="ConcessionBase.DeleteConcessionById"/>
+			<flushOnExecute statement="ConcessionDifferencePrice.DeletedConcessionDifferencePriceByConcessionId"/>
+			<flushOnExecute statement="ConcessionMemberCardLevel.DeleteConcessionMemberCardByConcessionId"/>-->
+        </cacheModel>
+    </cacheModels>
+	<resultMaps>
+    
+    <resultMap id="ConcessionMap" class="Concession">
+      <result property="Id" column="Id"/>
+      <result property="CampaignId" column="Campaign_Id"/>
+      <result property="CampaignName" column="CampaignName"/>
+      <result property="Name" column="Name"/>
+      <result property="BaseBusinessTypePriceSetId" column="BASE_BUSINESS_TYPE_PRICE_SET_Id"/>
+      <result property="ChargeAmount" column="CHARGE_AMOUNT"/>
+      <result property="PaperCount" column="PAPER_COUNT"/>
+      <result property="Description" column="DESCRIPTION"/>
+    </resultMap>
+	</resultMaps>
+	<statements>
+    <!--通过活动Id查询该活动的所有营销信息-->
+		<select id="SelectConcessionByCampaignId" resultMap="ConcessionResultMap.selectResult" parameterClss ="map">
+      SELECT
+      top(#RowCount#) *
+      FROM CONCESSION
+      where campaign_id = #CampaignId# and DELETED = '0'
+      And Company_Id=#CompanyId#
+      <isNotNull prepend="And" property="BranchShopId">
+        Branch_Shop_Id=#BranchShopId#
+      </isNotNull>
+      And Id not in
+      (
+        select
+        top(#RowCount#*#RowIndex#) Id
+        from CONCESSION
+        where campaign_id = #CampaignId# and DELETED = '0'
+        And Company_Id=#CompanyId#
+        <isNotNull prepend="And" property="BranchShopId">
+          Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        order by Id asc
+      )
+      ORDER BY ID ASC
+    </select>
+    <select id="SelectConcessionByCampaignIdRowCount" resultClass="long" parameterClass="map">
+      select
+      count(*)
+      from Concession
+      where campaign_id = #CampaignId# and DELETED = '0'
+      And Company_Id=#CompanyId#
+      <isNotNull prepend="And" property="BranchShopId">
+        Branch_Shop_Id=#BranchShopId#
+      </isNotNull>
+    </select>    
+    <!--根据方案Id删除方案-->
+		<update id="DeleteConcessionById" parameterClass="map">
+			<!--delete from concession where id = #Id#-->
+      update concession 
+      set deleted='1'
+      where id = #Id#
+      And Company_Id=#CompanyId#
+      And Branch_Shop_Id=#BranchShopId#
+    </update>
+   
+    <!--根据活动Id删除活动-->
+    <update id="DeleteCampaignById" parameterClass="map">
+      Update Campaign
+      set deleted='0'
+      where Id=#Id#
+      And Company_Id=#CompanyId#
+      And Branch_Shop_Id=#BranchShopId#
+    </update>
+		<delete id="DeleteConcessionByCampaignId" parameterClass="long">
+			delete concession
+			from concession as co inner join campaign as c on co.campaign_id = c.id
+			where c.id = #CampaignId#
+		</delete>
+		<select id="SelectCampaignNameByConcessionId" parameterCalss="long" resultClass="string">
+			select c.name
+			from  concession as co inner join campaign as c on co.campaign_id = c.id
+			where co.id = #Id# and co.DELETED = '0'
+		</select>
+    
+    <select id="GetAllConcessionListInfo" parameterClass="map" resultMap="ConcessionMap">
+      select top(#RowCount#)
+      a.Id,a.Campaign_Id,a.[Name],
+      b.[Name] as CampaignName,a.BASE_BUSINESS_TYPE_PRICE_SET_Id,
+      a.CHARGE_AMOUNT,a.PAPER_COUNT,DESCRIPTION
+      from Concession as a
+      Inner join Campaign as b on a.Campaign_Id=b.Id
+      where a.deleted='0' And b.deleted='0'
+      And a.Company_Id=#CompanyId#
+      <isNotNull prepend="And" property="BranchShopId">
+        a.Branch_Shop_Id=#BranchShopId#
+      </isNotNull>
+      And a.Id not in(
+      select top(#RowCount#*#RowIndex#)
+      a.Id
+      from Concession as a
+      Inner join Campaign as b on a.Campaign_Id=b.Id
+      where a.deleted='0' And b.deleted='0'
+      And a.Company_Id=#CompanyId#
+      <isNotNull prepend="And" property="BranchShopId">
+        a.Branch_Shop_Id=#BranchShopId#
+      </isNotNull>
+      )
+    </select>
+    <select id="GetAllConcessionListInfoRowCount" parameterClass="map" resultClass="long">
+      select
+      Count(*)
+      from Concession as a
+      Inner join Campaign as b on a.Campaign_Id=b.Id
+      where a.deleted='0' And b.deleted='0'
+      And a.Company_Id=#CompanyId#
+      <isNotNull prepend="And" property="BranchShopId">
+        a.Branch_Shop_Id=#BranchShopId#
+      </isNotNull>
+    </select>
+    
+    <select id="SearchConcessionList" parameterClass="Concession" resultMap="ConcessionResultMap.selectResult">
+      select * from Concession
+      where deleted='0'
+      And Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">
+          Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull prepend="And" property="Name">
+          Id=#Name#
+        </isNotNull>
+        <isNotNull prepend="And" property="Memo">
+          Campaign_Id=#Memo#
+        </isNotNull>
+      </dynamic>
+    </select>
+	</statements>
+</sqlMap>

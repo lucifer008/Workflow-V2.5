@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard
+END
+AjaxMemberCard.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/AjaxMemberCard.aspx
+END
+RepairMemberCard.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/RepairMemberCard.aspx.cs
+END
+AjaxMemberCard.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/AjaxMemberCard.aspx.cs
+END
+NewMemberCard.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/NewMemberCard.aspx
+END
+NewMemberCard.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/NewMemberCard.aspx.cs
+END
+MemberCardConsumeSum.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/MemberCardConsumeSum.aspx
+END
+MemberCardConsumeSum.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/MemberCardConsumeSum.aspx.cs
+END
+MemberCardDetail.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/MemberCardDetail.aspx
+END
+SearchMemberCard.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/SearchMemberCard.aspx
+END
+ChargeRecord.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/ChargeRecord.aspx
+END
+MemberCardDetail.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/MemberCardDetail.aspx.cs
+END
+CampaignCharge.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/CampaignCharge.aspx
+END
+SwapMemberCardRecord.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/SwapMemberCardRecord.aspx
+END
+SearchMemberCard.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/SearchMemberCard.aspx.cs
+END
+ReportLossRecovery.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/ReportLossRecovery.aspx
+END
+LogOutMemberCard.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/LogOutMemberCard.aspx
+END
+ChargeRecord.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/ChargeRecord.aspx.cs
+END
+MemberCardList.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/MemberCardList.aspx
+END
+CampaignCharge.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/CampaignCharge.aspx.cs
+END
+LogOutMemberCard.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/LogOutMemberCard.aspx.cs
+END
+OperationRecord.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/OperationRecord.aspx
+END
+ReportLossRecovery.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/ReportLossRecovery.aspx.cs
+END
+SwapMemberCardRecord.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/SwapMemberCardRecord.aspx.cs
+END
+MemberCardList.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/MemberCardList.aspx.cs
+END
+OperationRecord.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/OperationRecord.aspx.cs
+END
+RepairMemberCard.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/membercard/RepairMemberCard.aspx
+END

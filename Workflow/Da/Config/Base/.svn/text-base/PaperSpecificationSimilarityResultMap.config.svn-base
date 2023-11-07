@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="PaperSpecificationSimilarityResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="PaperSpecificationSimilarity" type="Workflow.Da.Domain.PaperSpecificationSimilarity, Workflow.Support" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="selectResult" class="PaperSpecificationSimilarity">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="ParentPaperSpecificationId" column="PARENT_PAPER_SPECIFICATION_ID" dbType="bigint"/>
+			<result property="ChildPaperSpecificationId" column="CHILD_PAPER_SPECIFICATION_ID" dbType="bigint"/>
+		</resultMap>
+	</resultMaps>
+</sqlMap>

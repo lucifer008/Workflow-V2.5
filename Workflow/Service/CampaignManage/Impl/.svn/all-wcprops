@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3227/trunk/v2.5/Workflow/Service/CampaignManage/Impl
+END
+CampaignServiceImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/workflow/!svn/ver/3227/trunk/v2.5/Workflow/Service/CampaignManage/Impl/CampaignServiceImpl.cs
+END
+SearchCampaignServiceImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Service/CampaignManage/Impl/SearchCampaignServiceImpl.cs
+END

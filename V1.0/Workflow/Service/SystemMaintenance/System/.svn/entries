@@ -1,0 +1,55 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow/Service/SystemMaintenance/System
+http://192.168.0.6/svn/workflow
+
+
+
+2009-10-30T09:24:56.312500Z
+2652
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+Impl
+dir
+
+ISystemService.cs
+file
+
+
+
+
+2010-03-25T07:09:42.187500Z
+5526107487aa4d224ce4dcb8d9411e3f
+2009-10-30T09:24:56.312500Z
+2652
+zhangxiaolin
+
+ISearchSystemService.cs
+file
+
+
+
+
+2010-03-25T07:09:42.203125Z
+e03bac02162208296358ba1550db4e49
+2009-10-30T09:24:56.312500Z
+2652
+zhangxiaolin
+

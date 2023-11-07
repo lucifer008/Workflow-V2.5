@@ -1,0 +1,40 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Action/SystemMaintenance/PriceBaseData/Model
+http://192.168.0.6/svn/workflow
+
+
+
+2009-08-10T02:01:34.187500Z
+2633
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+PriceBaseDataModel.cs
+file
+
+
+
+
+2010-03-25T07:11:39.968750Z
+7d704654fa881285d82d29d445df2894
+2009-08-10T02:01:34.187500Z
+2633
+zhangxiaolin
+

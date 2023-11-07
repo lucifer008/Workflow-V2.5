@@ -1,0 +1,64 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow
+http://192.168.0.6/svn/workflow
+
+
+
+2009-11-19T03:02:07.437500Z
+2670
+fuqiang
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+Service
+dir
+
+Da
+dir
+
+Enums
+dir
+
+Workflow.csproj
+file
+
+
+
+
+2010-03-25T07:10:13.562500Z
+1537ec9416cec06c0aac1082ddbb4926
+2009-11-17T01:02:13.390625Z
+2663
+zhangxiaolin
+
+Properties
+dir
+
+Support
+dir
+
+Action
+dir
+
+Util
+dir
+
+Web
+dir
+

@@ -1,0 +1,40 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow.FileCleaner/Log
+http://192.168.0.6/svn/workflow
+
+
+
+2008-12-08T07:11:17.625000Z
+1868
+fuqiang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+LogHelper.cs
+file
+
+
+
+
+2010-03-25T07:08:46.078125Z
+1200959cd4ed1c4fb760c28f08a8a574
+2008-12-08T07:11:17.625000Z
+1868
+fuqiang
+

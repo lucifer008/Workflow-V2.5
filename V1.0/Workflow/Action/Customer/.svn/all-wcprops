@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Customer
+END
+SelectCustomerAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Customer/SelectCustomerAction.cs
+END
+NewCustomerAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Customer/NewCustomerAction.cs
+END

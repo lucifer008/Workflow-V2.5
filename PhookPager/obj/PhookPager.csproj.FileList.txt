@@ -1,0 +1,10 @@
+bin\Debug\PhookPager.dll
+bin\Debug\PhookPager.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\PhookPager.dll
+obj\Debug\PhookPager.pdb
+bin\Release\PhookPager.dll
+bin\Release\PhookPager.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\PhookPager.dll
+obj\Release\PhookPager.pdb

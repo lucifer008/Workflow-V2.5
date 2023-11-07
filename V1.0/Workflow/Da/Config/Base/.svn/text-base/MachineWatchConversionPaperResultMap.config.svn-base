@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="MachineWatchConversionPaperResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="MachineWatchConversionPaper" type="Workflow.Da.Domain.MachineWatchConversionPaper, Workflow.Support" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="selectResult" class="MachineWatchConversionPaper">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="Name" column="NAME" dbType="nvarchar"/>
+			<result property="ComputeFormula" column="COMPUTE_FORMULA" dbType="varchar"/>
+			<result property="ColorType" column="COLOR_TYPE" dbType="char"/>
+			<result property="PaperSpecification" column="PAPER_SPECIFICATION_ID" select="PaperSpecificationBase.SelectByPk" nullValue="0" lazyLoad="true"/>
+			<result property="MachineType" column="MACHINE_TYPE_ID" select="MachineTypeBase.SelectByPk" nullValue="0" lazyLoad="true"/>
+		</resultMap>
+	</resultMaps>
+</sqlMap>

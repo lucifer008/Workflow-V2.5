@@ -1,0 +1,211 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>发卡</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/calendar-blue.css"  type="text/css" />
+<script type="text/javascript" src="../js/calendar.js"></script>
+<script type="text/javascript" src="../js/calendar-zh.js"></script>
+<script	type="text/javascript" src="../js/calendar-setup.js"></script>
+<script type="text/javascript" src="../js/checkCalendar.js"></script>
+<style type="text/css">
+<!--
+.STYLE1 {color: #FF0000}
+-->
+</style>
+</head>
+
+<body style="text-align:center">
+<div align="center" style="width:99%; background-color:#FFFFFF;" id="container">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+  <tr>
+		<td width="11"><img alt="" src="../images/white_main_top_left.gif"></td>
+		<td width="99%"><img alt="" src="../images/spacer_10_x_10.gif" height="10"></td>
+		<td width="10"><img alt="" src="../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+	</tr>
+  <tr>
+    <td colspan="3" bgcolor="#FFFFFF">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>       
+         <td width="3%"></td>
+         <td align="left" bgcolor="#eeeeee">首页&nbsp;-&gt;&nbsp;会员管理&nbsp;-&gt;&nbsp;卡管理&nbsp;-&gt;&nbsp;发卡</td>
+         <td width="3%"></td>        
+      </tr>
+      <tr>
+		<td colspan="3" class="caption" align="center">发卡</td>
+			</tr>
+      <tr>
+        <td width="3%">&nbsp;</td>
+        <td align="center">
+         <table border="1" cellpadding="3" cellspacing="1" width="100%"
+					align="left">
+              <tr>
+                <td nowrap class="item_caption">客户名称<span class="STYLE1">*</span>:</td>
+                <td class="item_content"><input name="textfield3" type="text" value="西北建筑设计院" style="width: 198px" />&nbsp;<input type="button" class="buttons" onClick="window.open('../customer/SelectCustomer.html')" value="选择" />
+                    </td>
+                <td nowrap class="item_caption">简拼:</td>
+                <td colspan="2" class="item_content" ><input class="texts" name="textfield22" type="text" value="XBJZSJY" />
+                </td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">所属行业<span class="STYLE1">*</span>:</td>
+                <td class="item_content" ><select name="select5">
+                    <option>印艺</option>
+                    <option>图文</option>
+                  </select>
+                    </td>
+                <td nowrap class="item_caption">客户级别:</td>
+                <td colspan="2" class="item_content" ><select name="select4">
+                    <option>普通</option>
+                    <option>VIP</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">通讯地址:</td>
+                <td class="item_content"><input class="texts" name="textfield3" type="text" value="西安市高新四路100号" />
+                </td>
+                <td nowrap class="item_caption">单位电话:</td>
+                <td colspan="2" class="item_content"><input class="texts" name="textfield32" type="text" value="02987887666" /></td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">姓名<span class="STYLE1">*</span>:</td>
+                <td class="item_content"><input class="texts" name="textfield3" type="text" value="刘正阳" />
+                    </td>
+                <td nowrap class="item_caption">性别<span class="STYLE1">*</span>:</td>
+                <td colspan="2" class="item_content">
+                    <input id="Radio1" class="radios" name="radioone" value="radiobutton" type="radio" />男
+                    <input id="Radio2" class="radios" name="radioone" value="radiobutton" type="radio" />女</td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">身份证号<span class="STYLE1">*</span>:</td>
+                <td class="item_content" ><input class="texts" name="textfield3" type="text" value="610303197506304521" />
+                  </td>
+                <td nowrap class="item_caption">职务:</td>
+                <td colspan="2" class="item_content"><input class="texts" name="textfield322" type="text" value="材料科科长" /></td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">年龄:</td>
+                <td class="item_content"><input class="texts" name="textfield33" type="text" value="32" /></td>
+                <td nowrap class="item_caption">爱好:</td>
+                <td colspan="2" class="item_content"><input class="texts" name="textfield822" type="text" value="旅游" /></td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">手机<span class="STYLE1">*</span>:</td>
+                <td class="item_content"><input class="texts" name="textfield3" type="text" value="13892865456" />
+                  </td>
+                <td nowrap class="item_caption">EMAIL:</td>
+                <td colspan="2" class="item_content"><input class="texts" name="textfield82" type="text" value="XBArt@163.com" /></td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">会籍起始日<span class="STYLE1">*</span>:</td>
+                <td class="item_content"><div>
+					          <input class="datetexts" id="txtFrom" type="text" maxlength="10" readonly="true" value="2007-08-01"/>
+					           <img alt=""  id="img alt=""btnFrom" src="../images/cal.gif" width="20" height="14" border="0" alt="Click Here to Pick up the date" />
+					            <script type="text/javascript">
+						Calendar.setup({
+							firstDay       :    0,                  // first day of the week
+							inputField     :    "txtFrom",     				// id of the input field
+							button         :    "img alt=""btnFrom",  					// trigger for the calendar (button ID)
+							align          :    "Tl",           		// alignment (defaults to "Bl")
+							//singleClick  :    true,
+							showsTime      :    "true",
+							ifFormat       :    "%Y-%m-%d"    // our date only format
+							 });
+							 window
+					</script>			
+	    		    </div>
+                  </td>
+                <td nowrap class="item_caption">会籍到期日:</td>
+                <td colspan="2" class="item_content"><div>
+					          <input class="datetexts" id="txtTo" name="txtTo" type="text" maxlength="10" readonly="true"/>
+					           <img alt=""  id="img alt=""btnTo" src="../images/cal.gif" width="20" height="14" border="0" alt="Click Here to Pick up the date" />
+					            <script type="text/javascript">
+						Calendar.setup({
+							firstDay       :    0,                  // first day of the week
+							inputField     :    "txtTo",     				// id of the input field
+							button         :    "img alt=""btnTo",  					// trigger for the calendar (button ID)
+							align          :    "Tl",           		// alignment (defaults to "Bl")
+							//singleClick  :    true,
+							showsTime      :    "true",
+							ifFormat       :    "%Y-%m-%d"    // our date only format
+							 });
+							 window
+					</script>			
+	    		    </div>
+                  </td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">
+                    发票:</td>
+                <td class="item_content" colspan="4">
+                    <input id="Checkbox1" type="checkbox" /><label for="Checkbox1">需要</label></td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">客户说明:</td>
+                <td colspan="4" class="item_content"><textarea name="textfield10" rows="3" cols="85"></textarea>
+                </td>
+              </tr>
+            </table>	
+		</td>
+		<td width="3%"></td>
+      </tr>
+      
+      <tr>
+        <td width="3%">&nbsp;</td>
+        <td align="center">
+         <table border="1" cellpadding="3" cellspacing="1" width="100%"
+					align="left">
+          <tr>
+            <td nowrap class="item_caption">卡号<span class="STYLE1">*</span>:</td>
+            <td class="item_content"><input class="texts" name="textfield" type="text" value="M0000011" />
+              </td>
+          </tr>
+          <tr>
+            <td nowrap class="item_caption">级别<span class="STYLE1">*</span>:</td>
+            <td class="item_content"><select name="select3">
+                <option>金卡</option>
+                <option>银卡</option>
+              </select>
+               </td>
+          </tr>
+          <tr>
+            <td nowrap class="item_caption">密码<span class="STYLE1">*</span>:</td>
+            <td class="item_content"><input class="texts" name="textfield2" type="password" value="0000000" />
+              </td>
+          </tr>
+          <tr>
+            <td nowrap class="item_caption">密码确认<span class="STYLE1">*</span>:</td>
+            <td class="item_content"><input class="texts" name="textfield2" type="password" value="0000000" />
+              </td>
+          </tr>
+
+        </table></td>
+        <td width="3%"></td>
+      </tr>
+      <tr class="emptyButtonsUpperRowHight">
+				<td colspan="3"></td>
+			</tr>
+      <tr>
+        <td width="3%">&nbsp;</td>
+        <td align="center" class="bottombuttons"><input type="button" class="buttons" disabled="disabled" value="发放" /></td>
+        <td width="3%"></td>
+      </tr> 
+      <tr height="5">
+				<td style="height: 5px"><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+				<td bgcolor="#eeeeee" style="height: 5px">&nbsp;</td>
+				<td style="height: 5px"><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+			</tr>     
+    </table></td>
+  </tr>
+  <tr>
+		<td width="11"><img alt="" src="../images/white_main_bottom_left.gif"></td>
+		<td width="99%"><img alt="" src="../images/spacer_10_x_10.gif"></td>
+		<td width="10"><img alt="" src="../images/white_main_bottom_right.gif"></td>
+	</tr>
+</table>
+</div>
+</body>
+</html>

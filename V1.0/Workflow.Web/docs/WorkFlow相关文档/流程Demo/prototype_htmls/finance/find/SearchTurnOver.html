@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>门店营业额查询</title>
+<link href="../../css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/calendar.js" charset="utf-8"></script>
+<link rel="stylesheet" href="../../css/calendar-blue.css"  type="text/css" />
+<script type="text/javascript" src="../../js/calendar-zh.js" charset="utf-8"></script>
+<script	type="text/javascript" src="../../js/calendar-setup.js" charset="utf-8"></script>
+<script type="text/javascript" src="../../js/checkCalendar.js" charset="utf-8"></script>
+</head>
+
+<body style="text-align:center">
+<div align="center" style="width:99%" bgcolor="#ffffff"   id="container">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="12"><img alt="" src="../../images/white_main_top_left.gif"
+			width="12" height="11" border="0"></td>
+      <td width="99%" bgcolor="#FFFFFF"><img alt="" src="../../images/spacer_10_x_10.gif"
+			width="10" height="10"></td>
+      <td width="12"><img alt="" src="../../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+    </tr>
+    <tr>
+      <td colspan="3" bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+            <td align="left" bgcolor="#eeeeee">首页 -> 财务处理 -> 财务查询 -> 门店营业额查询</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="caption" align="center">门店营业额查询</td>
+          </tr>
+          <tr>
+            <td width="3%">&nbsp;</td>
+            <td align="center">
+<table width="100%" border="1" cellpadding="2" cellspacing="1">
+          <tr>
+            <td  nowrap class="item_caption">时间段:</td>
+            <td class="item_content"><div>
+					<input type="text" class="datetexts" id="txtFrom" value="2007-09-01" readonly="true" />
+					<img alt=""  id="img alt=""btnFrom" src="../../images/cal.gif" width="20" height="14" border="0" 
+					alt="Click Here to Pick up thedate" /> &nbsp;&nbsp;&nbsp;&nbsp;至 			&nbsp;&nbsp;&nbsp;&nbsp;
+					<script type="text/javascript">
+						Calendar.setup({
+							firstDay       :    0,                  // first day of the week
+							inputField     :    "txtFrom",     				// id of the input field
+							button         :    "img alt=""btnFrom",  					// trigger for the calendar (button ID)
+							align          :    "Tl",           		// alignment (defaults to "Bl")
+							//singleClick  :    true,
+							showsTime      :    "true",
+							ifFormat       :    "%Y-%m-%d"    // our date only format
+							 });
+							 window
+					</script>			
+	    		    <input name="txtTo" type="text"  class="datetexts" value="2007-09-01" readonly="true"/>
+			        <img alt=""  id="img alt=""btnTo" src="../../images/cal.gif" width="20" height="14" border="0" alt="Click Here to Pick up the date" 
+
+/></div>
+			<div>
+			  <script type="text/javascript">
+						Calendar.setup({
+							firstDay       :    0,                  // first day of the week
+							inputField     :    "txtTo",     				// id of the input field
+							button         :    "img alt=""btnTo",  					// trigger for the calendar (button ID)
+							align          :    "Tl",           		// alignment (defaults to "Bl")
+							//singleClick  :    true,
+							showsTime      :    "true",
+							ifFormat       :    "%Y-%m-%d"    // our date only format
+							 });
+							 window
+					</script>			
+		    		</div></td>
+            <td width="36%" align="right" style="padding-right:10px"><input name="Submit3" disabled="disabled" class="buttons" type="button" value="查询" />
+            </td>
+          </tr>
+        </table>			</td>
+            <td width="3%">&nbsp;</td>		
+		</tr>
+          <tr>
+            <td width="3%">&nbsp;</td>
+            <td align="center">
+<table width="100%" border="1" cellpadding="2" cellspacing="1">
+          <tr>
+            <th width="1%" nowrap>&nbsp;NO&nbsp;</th>
+            <th width="25%" nowrap="nowrap">营业店名称</th>
+            <th width="1%" nowrap>工单总数</th>
+            <th width="1%" nowrap>应收款额</th>
+            <th width="1%" nowrap>实收款额</th>
+            <th width="1%" nowrap>欠款额</th>
+            <th nowrap>备注</th>
+            </tr>
+          <tr  class="detailRow">
+            <td align="center">1</td>
+            <td align="left">兰克高新店</td>
+            <td class="num">301</td>
+            <td class="num">31,800</td>
+            <td class="num">30,000</td>
+            <td class="num">1,800</td>
+            <td >&nbsp;</td>
+            </tr>
+          <tr  class="detailRow">
+            <td align="center">2</td>
+            <td>兰克建设路店</td>
+            <td class="num">325</td>
+            <td class="num">40,115</td>
+            <td class="num">40,100</td>
+            <td class="num">15</td>
+            <td>&nbsp;</td>
+            </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+          <tr  class="detailRow">
+            <td>合计</td>
+            <td>&nbsp;</td>
+            <td class="num">626</td>
+            <td class="num">71,915</td>
+            <td class="num">70,100</td>
+            <td class="num">1,815</td>
+            <td>&nbsp;</td>
+            </tr>
+        </table>			</td>
+		</tr>
+			<tr class="emptyButtonsUpperRowHight">
+				<td colspan="3"></td>
+			</tr>          <tr height="5">
+            <td><img alt="" src="../../images/spacer_5_x_5.gif" width="5" height="5"></td>
+            <td bgcolor="#eeeeee">&nbsp;</td>
+            <td><img alt="" src="../../images/spacer_5_x_5.gif" width="5" height="5"></td>
+          </tr>		
+	</table>
+	</td>
+	</tr>
+    <tr>
+      <td width="12"><img alt="" src="../../images/white_main_bottom_left.gif"
+			width="12" height="11"></td>
+      <td bgcolor="#FFFFFF"><img alt="" src="../../images/spacer_10_x_10.gif"
+			width="10" height="10"></td>
+      <td width="12"><img alt="" src="../../images/white_main_bottom_right.gif"
+			width="12" height="11"></td>
+    </tr>
+  </table>
+</body>
+</html>

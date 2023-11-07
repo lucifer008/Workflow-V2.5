@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="GatheringOrder" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+	</resultMaps>
+	<statements>
+		<select id="SelectAll" resultMap="GatheringOrderResultMap.selectResult">
+			SELECT
+				*
+			FROM GATHERING_ORDERS
+			ORDER BY ID ASC
+		</select>
+
+		<select id ="GetHasPrePaidAmount" parameterClass ="long" resultClass ="decimal">
+
+			SELECT     ISNULL(SUM(dbo.GATHERING.AMOUNT), 0) AS HasPrePay
+			FROM         dbo.GATHERING_ORDERS INNER JOIN
+			dbo.GATHERING ON dbo.GATHERING_ORDERS.GATHERING_ID = dbo.GATHERING.ID
+			WHERE     (dbo.GATHERING_ORDERS.PAY_KIND = 1) AND (dbo.GATHERING_ORDERS.ORDERS_ID = #value#)
+				 
+		</select>
+
+		<select id="GetGatheringOrderByOrderId" parameterClass="long" resultMap="GatheringOrderResultMap.selectResult">
+			<![CDATA[
+				select * from Gathering_orders where orders_id=#value#
+			]]>
+			
+		</select>
+		
+	</statements>
+</sqlMap>

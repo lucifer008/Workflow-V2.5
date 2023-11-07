@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+	<add key="datasource" value="ZHANGXIA-AE1380"/>
+	<!--<add key="database" value="workflow(高新店)"/>-->
+	<!--<add key="database" value="jianda"/>-->
+	<add key="database" value="gaoxin"/>
+	<!--<add key="database" value="workflow(经开店)"/>-->
+	<add key="username" value="sa"/>
+	<add key="password" value="sa"/>
+</settings>

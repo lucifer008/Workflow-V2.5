@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="PaperSpecification" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+    <cacheModels>
+        <cacheModel id="PaperSpecificationCache" implementation="LRU">
+            <flushInterval hours="24"/>
+            <property name="CacheSize" value="100" />
+            <flushOnExecute statement="PaperSpecificationBase.Insert"/>
+            <flushOnExecute statement="PaperSpecificationBase.Update"/>
+            <flushOnExecute statement="PaperSpecificationBase.LogicDelete"/>
+            <flushOnExecute statement="PaperSpecificationBase.Delete"/>
+        </cacheModel>
+    </cacheModels>
+	<resultMaps>
+    <resultMap id="SearchPaperSecificationMap" class="PaperSpecification">
+      <result property="Id" column="Id"/>
+      <result property="Name" column="Name"/>
+    </resultMap>
+	</resultMaps>
+	<statements>
+		<select id="SelectAll" resultMap="PaperSpecificationResultMap.selectResult">
+			SELECT
+				*
+			FROM PAPER_SPECIFICATION
+			ORDER BY ID ASC
+		</select>
+    <select id="SearchPaperSecification" resultMap="SearchPaperSecificationMap">
+      select
+      top (#Id#) a.Id,a.Name
+      from paper_specification a
+      where a.deleted='0'
+      and a.company_Id=#CompanyId#
+      and a.branch_shop_Id=#BranchShopId#
+      and a.Id not in(
+      select
+      top (#Id#*#InsertUser#) a.Id
+      from paper_specification a
+      where a.deleted='0'
+      and a.company_Id=#CompanyId#
+      and a.branch_shop_Id=#BranchShopId#
+      )
+    </select>
+    <select id="SearchPaperSecificationRowCount" resultClass="long">
+      select
+      count(a.Id)
+      from paper_specification a
+      where a.deleted='0'
+      and a.company_Id=#CompanyId#
+      and a.branch_shop_Id=#BranchShopId#
+    </select>
+	</statements>
+</sqlMap>

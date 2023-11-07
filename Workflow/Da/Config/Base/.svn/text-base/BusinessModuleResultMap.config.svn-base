@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="BusinessModuleResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="BusinessModule" type="Workflow.Da.Domain.BusinessModule, Workflow.Support" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="selectResult" class="BusinessModule">
+			<result property="Id" column="ID" dbType="bigint"/> 
+			
+			<result property="BusinessModuleGroupId" column="BUSINESS_MODULE_GROUP_ID" dbType="bigint"/> 
+			
+			<result property="Name" column="NAME" dbType="nvarchar"/> 
+			
+			<result property="Memo" column="MEMO" dbType="nvarchar"/> 
+			
+			<result property="SortNo" column="SORT_NO" dbType="int"/> 
+			
+			<result property="InsertDateTime" column="INSERT_DATE_TIME" dbType="datetime"/> 
+			
+			<result property="InsertUser" column="INSERT_USER" dbType="bigint"/> 
+			
+			<result property="UpdateDateTime" column="UPDATE_DATE_TIME" dbType="datetime"/> 
+			
+			<result property="UpdateUser" column="UPDATE_USER" dbType="bigint"/> 
+			
+			<result property="Version" column="VERSION" dbType="int"/> 
+			
+			<result property="BranchShopId" column="BRANCH_SHOP_ID" dbType="bigint"/> 
+			
+			<result property="CompanyId" column="COMPANY_ID" dbType="bigint"/> 
+			
+
+		</resultMap>
+	</resultMaps>
+</sqlMap>

@@ -1,0 +1,40 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow/Service/HandOver/Impl
+http://192.168.0.6/svn/workflow
+
+
+
+2009-06-19T09:59:48.156250Z
+2623
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+HandOverServiceImpl.cs
+file
+
+
+
+
+2010-03-25T07:09:41.375000Z
+505064e5f06a401caf98ca45863306f5
+2009-06-19T09:59:48.156250Z
+2623
+zhangxiaolin
+

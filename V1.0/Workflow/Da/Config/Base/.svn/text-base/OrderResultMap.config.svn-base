@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="OrderResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="Order" type="Workflow.Da.Domain.Order, Workflow.Support" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="selectResult" class="Order">
+			<result property="Id" column="ID" dbType="bigint"/> 
+			
+			<result property="CustomerId" column="CUSTOMER_ID" dbType="bigint"/> 
+			
+			<result property="NewOrderUserId" column="NEW_ORDER_USER_ID" dbType="bigint"/> 
+			
+			<result property="CashUserId" column="CASH_USER_ID" dbType="bigint"/> 
+			
+			<result property="MemberCardId" column="MEMBER_CARD_ID" dbType="bigint"/> 
+			
+			<result property="No" column="NO" dbType="varchar"/> 
+			
+			<result property="CustomerType" column="CUSTOMER_TYPE" dbType="int"/> 
+			
+			<result property="CustomerName" column="CUSTOMER_NAME" dbType="nvarchar"/> 
+			
+			<result property="Name" column="NAME" dbType="nvarchar"/> 
+			
+			<result property="ProjectName" column="PROJECT_NAME" dbType="nvarchar"/> 
+			
+			<result property="PayType" column="PAY_TYPE" dbType="int"/> 
+			
+			<result property="PrepareMoney" column="PREPARE_MONEY" dbType="char"/> 
+			
+			<result property="PrepareMoneyAmount" column="PREPARE_MONEY_AMOUNT" dbType="decimal"/> 
+			
+			<result property="NeedTicket" column="NEED_TICKET" dbType="char"/> 
+			
+			<result property="DeliveryType" column="DELIVERY_TYPE" dbType="int"/> 
+			
+			<result property="DeliveryDateTime" column="DELIVERY_DATE_TIME" dbType="datetime"/> 
+			
+			<result property="SumAmount" column="SUM_AMOUNT" dbType="decimal"/> 
+			
+			<result property="Memo" column="MEMO" dbType="nvarchar"/> 
+			
+			<result property="NotPayTicketAmount" column="NOT_PAY_TICKET_AMOUNT" dbType="decimal"/> 
+			
+			<result property="PaidTicketAmount" column="PAID_TICKET_AMOUNT" dbType="decimal"/> 
+			
+			<result property="RealPaidAmount" column="REAL_PAID_AMOUNT" dbType="decimal"/> 
+			
+			<result property="PaidAmount" column="PAID_AMOUNT" dbType="decimal"/> 
+			
+			<result property="PaidTicket" column="PAID_TICKET" dbType="char"/> 
+			
+			<result property="Status" column="STATUS" dbType="int"/> 
+			
+			<result property="BalanceDateTime" column="BALANCE_DATE_TIME" dbType="datetime"/> 
+			
+			<result property="Deleted" column="DELETED" dbType="char"/> 
+			
+			<result property="InsertDateTime" column="INSERT_DATE_TIME" dbType="datetime"/> 
+			
+			<result property="InsertUser" column="INSERT_USER" dbType="bigint"/> 
+			
+			<result property="UpdateDateTime" column="UPDATE_DATE_TIME" dbType="datetime"/> 
+			
+			<result property="UpdateUser" column="UPDATE_USER" dbType="bigint"/> 
+			
+			<result property="Version" column="VERSION" dbType="int"/> 
+			
+			<result property="CompanyId" column="COMPANY_ID" dbType="bigint"/> 
+			
+			<result property="BranchShopId" column="BRANCH_SHOP_ID" dbType="bigint"/> 
+			
+
+<!--list_in-->
+			<result property="OrderItemList" column="ID" select="OrderBase.SelectOrderItem" nullValue="0" lazyLoad="true"/>
+<!--single_in-->
+			<result property="NewOrderUser" column="NEW_ORDER_USER_ID" select="UserBase.SelectByPk" nullValue="0" lazyLoad="true"/>
+<!--single_in-->
+			<result property="CashUser" column="CASH_USER_ID" select="UserBase.SelectByPk" nullValue="0" lazyLoad="true"/>
+		</resultMap>
+	</resultMaps>
+</sqlMap>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns='http://www.springframework.net' xmlns:v="http://www.springframework.net/validation" default-autowire="byName" default-lazy-init="true">
+
+    <import resource="action.config"/>
+    
+    <object id="messageSource" type="Spring.Context.Support.ResourceSetMessageSource, Spring.Core">
+        <property name="ResourceManagers">
+            <list>
+                <value>Workflow.Web.Resources.Strings, Workflow.Support</value>
+                <value>Workflow.Web.Resources.Messages, Workflow.Support</value>
+            </list>
+        </property>
+    </object>
+    
+    <!--<object id="demo" type="~/demo.aspx" >
+        --><!--<property name="Results">
+            <dictionary>
+                <entry key="userSaved" value="redirect:UserRegistered.aspx?status=Registration Successful,user=${UserInfo}"/>
+                <entry key="cancel" value-ref="homePageResult"/>
+            </dictionary> 
+        </property> --><!--
+     </object>-->
+	<object type="~/Default.aspx"></object>
+  <object type="~/Login.aspx"/>
+  <object type="~/Top.aspx"/>
+  <object type="~/LoginOut.aspx"/>
+  <object type="~/priceBaseData/addBusinessType.aspx"/>
+  <object type="~/priceBaseData/addProcessContent.aspx"/>
+  <object type="~/priceBaseData/addMachineType.aspx"/>
+  <object type="~/priceBaseData/addMachine.aspx"/>
+  <object type="~/priceBaseData/machineTypeDetail.aspx"/>
+  <object type="~/priceBaseData/addPaperSpecifiation.aspx"/>
+  <object type="~/priceBaseData/addPaperType.aspx"/>
+  <object type="~/priceBaseData/addPriceFactor.aspx"/>
+  <object type="~/priceBaseData/addFactorValue.aspx"/>
+  <object type="~/priceBaseData/priceFactorDetail.aspx"/>
+  <object type="~/priceBaseData/addBusinessTypePriceFactor.aspx"/>
+  <object type="~/priceBaseData/addFactorRelation.aspx"/>
+  <object type="~/priceBaseData/addFactorRelationValue.aspx"/>
+  <object type="~/orderBaseData/addCustomerLevel.aspx"/>
+  <object type="~/orderBaseData/addCustomerType.aspx"/>
+  <object type="~/orderBaseData/addMasterTrade.aspx"/>
+  <object type="~/orderBaseData/addSecondaryTrade.aspx"/>
+  <object type="~/orderBaseData/addMemberCardLevel.aspx"/>
+  <object type="~/orderBaseData/addPrintDemand.aspx"/>
+  <object type="~/orderBaseData/addPrintDemandDetail.aspx"/>
+  <object type="~/orderBaseData/addReportLessMode.aspx"/>
+  <object type="~/orderBaseData/addTrashReason.aspx"/>
+  <object type="~/orderBaseData/addProcessContentAchievementRate.aspx"/>
+  <object type="~/system/idVindicate.aspx"/>
+  <object type="~/system/edmitId.aspx"/>
+  <object type="~/system/addApllicationProperties.aspx"/>
+  <object type="~/system/addCompany.aspx"/>
+  <object type="~/system/addBranchShop.aspx"/>
+  <object type="~/system/setMarking.aspx"/>
+</objects>

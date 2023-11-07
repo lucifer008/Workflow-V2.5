@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3516/trunk/v2.5/Workflow/Service/OrderManage/Impl
+END
+OrderServiceImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3516/trunk/v2.5/Workflow/Service/OrderManage/Impl/OrderServiceImpl.cs
+END
+SearchOrderServiceImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/workflow/!svn/ver/3387/trunk/v2.5/Workflow/Service/OrderManage/Impl/SearchOrderServiceImpl.cs
+END
+NoGeneratorImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3401/trunk/v2.5/Workflow/Service/OrderManage/Impl/NoGeneratorImpl.cs
+END
+TakeWorkServiceImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Service/OrderManage/Impl/TakeWorkServiceImpl.cs
+END

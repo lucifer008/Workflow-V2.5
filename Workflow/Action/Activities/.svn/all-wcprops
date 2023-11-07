@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/workflow/!svn/ver/3222/trunk/v2.5/Workflow/Action/Activities
+END
+CampaignAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Action/Activities/CampaignAction.cs
+END
+ConcessionAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Action/Activities/ConcessionAction.cs
+END
+BuySendAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3200/trunk/v2.5/Workflow/Action/Activities/BuySendAction.cs
+END
+DiscountConcessionAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Action/Activities/DiscountConcessionAction.cs
+END

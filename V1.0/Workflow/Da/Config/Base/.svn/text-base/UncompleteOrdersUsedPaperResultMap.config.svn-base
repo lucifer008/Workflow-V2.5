@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="UncompleteOrdersUsedPaperResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="UncompleteOrdersUsedPaper" type="Workflow.Da.Domain.UncompleteOrdersUsedPaper, Workflow.Support" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="selectResult" class="UncompleteOrdersUsedPaper">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="OrdersId" column="ORDERS_ID" dbType="bigint"/>
+			<result property="RecordMachineWatchId" column="RECORD_MACHINE_WATCH_ID" dbType="bigint"/>
+			<result property="UsedPaperCount" column="USED_PAPER_COUNT" dbType="int"/>
+			<result property="ColorType" column="COLOR_TYPE" dbType="char"/>
+			<result property="Machine" column="MACHINE_ID" select="MachineBase.SelectByPk" nullValue="0" lazyLoad="true"/>
+			<result property="PaperSpecification" column="PAPER_SPECIFICATION_ID" select="PaperSpecificationBase.SelectByPk" nullValue="0" lazyLoad="true"/>
+		</resultMap>
+	</resultMaps>
+</sqlMap>

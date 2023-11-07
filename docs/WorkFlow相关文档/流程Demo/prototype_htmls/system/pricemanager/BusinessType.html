@@ -1,0 +1,137 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>业务类型设置</title>
+<link href="../../css/css.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../../js/jquery.js"></script>
+<script language="javascript" src="../../js/default.js"></script>
+<script language="javascript" >
+function showModifyBusinessType()
+{
+	showPage('ModifyBusinessType.html', null, 805, 415, false, true);
+}
+</script>
+</head>
+<body style="text-align:center">
+<div align="center" style="width:99%" bgcolor="#ffffff" id="container">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+	<tr>
+		<td width="11"><img alt="" src="../../images/white_main_top_left.gif" /></td>
+		<td width="99%"><img alt="" src="../../images/spacer_10_x_10.gif" height="10" /></td>
+		<td width="10"><img alt="" src="../../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+	</tr>
+	<tr>
+		<td colspan="3" bgcolor="#FFFFFF">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+            <td align="left" bgcolor="#eeeeee">首页 -&gt; 系统管理 -&gt; 价格管理 -&gt; 业务类型设置</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="caption" align="center">业务类型设置</td>
+          </tr>
+          <tr>
+            <td width="3%"></td>
+            <td align="left"><table width="100%" border="1" cellpadding="3" cellspacing="1">
+                <tr>
+                  <td nowrap="nowrap" class="item_caption">业务名称:</td>
+                  <td class="item_content"><input name="textfield3" type="text" class="texts" value="扫描" /></td>
+                </tr>
+                <tr>
+                  <td nowrap="nowrap" class="item_caption">相关因素:</td>
+                  <td class="item_content"><input name="textfield32" type="text" class="texts" value="发票" /></td>
+                </tr>
+                <tr class="querybuttons">
+                  <td colspan="2" nowrap="nowrap"><input name="Submit4" disabled="disabled" type="button" class="buttons" value="查询" /></td>
+                </tr>
+              </table></td>
+            <td width="3%"></td>
+          </tr>
+          
+          <tr>
+            <td width="3%"></td>
+            <td align="left"><input name="Submit326" type="button" class="buttons" onClick="showPage('AddBusinessType.html', null, 805, 555, false, true);" value="新建业务类型" /></td>
+            <td width="3%"></td>
+          </tr>
+          <tr>
+            <td width="3%">&nbsp;</td>
+            <td align="center"><table width="100%" border="1" cellpadding="3" cellspacing="1">
+                <tr>
+                  <th width="1%" nowrap="nowrap" bgcolor="#d8d8d8">&nbsp;NO&nbsp;</th>
+                  <th width="20%" nowrap="nowrap" bgcolor="#d8d8d8">业务名称</th>
+                  <th width="40%" nowrap="nowrap" bgcolor="#d8d8d8">相关因素</th>
+                  <th nowrap="nowrap" bgcolor="#d8d8d8">备注</th>
+                  <th width="1%" nowrap="nowrap" bgcolor="#d8d8d8">&nbsp;</th>
+                </tr>
+                <tr class="detailRow">
+                  <td align="center">1</td>
+                  <td align="left">打印</td>
+                  <td align="left">机器 纸型 纸质 数量 发票</td>
+                  <td>&nbsp;</td>
+                  <td align="left" nowrap="nowrap"><a href="#" onClick="showModifyBusinessType();">编辑</a> 删除</td>
+                </tr>
+                <tr class="detailRow">
+                  <td align="center">2</td>
+                  <td align="left">扫描</td>
+                  <td align="left">机器 纸型 纸质 数量 发票</td>
+                  <td>&nbsp;</td>
+                  <td align="left" nowrap="nowrap"><a href="#" onClick="showModifyBusinessType();">编辑</a> 删除</td>
+                </tr>
+                <tr class="detailRow">
+                  <td align="center">3</td>
+                  <td align="left">复印</td>
+                  <td align="left">机器 纸型 纸质 数量 发票</td>
+                  <td>&nbsp;</td>
+                  <td align="left" nowrap="nowrap"><a href="#" onClick="showModifyBusinessType();">编辑</a> 删除</td>
+                </tr>
+                <tr class="detailRow">
+                  <td align="center">4</td>
+                  <td align="left">喷绘</td>
+                  <td align="left">机器 纸型 纸质 数量 发票</td>
+                  <td>&nbsp;</td>
+                  <td align="left" nowrap="nowrap"><a href="#" onClick="showModifyBusinessType();">编辑</a> 删除</td>
+                </tr>
+                <tr class="detailRow">
+                  <td align="center">5</td>
+                  <td align="left">装订</td>
+                  <td align="left">数量 发票</td>
+                  <td>&nbsp;</td>
+                  <td align="left" nowrap="nowrap"><a href="#" onClick="showModifyBusinessType();">编辑</a> 删除</td>
+                </tr>
+                <tr class="detailRow">
+                  <td align="center">6</td>
+                  <td align="left">工程图文</td>
+                  <td align="left">机器 纸型 纸质 数量 发票</td>
+                  <td>&nbsp;</td>
+                  <td align="left" nowrap="nowrap"><a href="#" onClick="showModifyBusinessType();">编辑</a> 删除</td>
+                </tr>
+              </table></td>
+            <td width="3%">&nbsp;</td>
+          </tr>
+          
+			<tr class="emptyButtonsUpperRowHight">
+				<td colspan="3"></td>
+			</tr>
+          <tr height="5">
+            <td><img alt="" src="../../images/spacer_5_x_5.gif" width="5" height="5"></td>
+            <td bgcolor="#eeeeee">&nbsp;</td>
+            <td><img alt="" src="../../images/spacer_5_x_5.gif" width="5" height="5"></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  </td>
+  </tr>
+  	<tr>
+		<td width="11"><img alt="" src="../../images/white_main_bottom_left.gif"></td>
+		<td width="99%"><img alt="" src="../../images/spacer_10_x_10.gif"></td>
+		<td width="10"><img alt="" src="../../images/white_main_bottom_right.gif"></td>
+	</tr>
+  </table>
+</div>
+</body>
+</html>

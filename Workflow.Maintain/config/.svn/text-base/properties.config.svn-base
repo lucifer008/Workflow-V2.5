@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+	<add key="datasource" value="localhost"/>
+	<add key="database" value="workflowTemp(高新)"/>
+	<add key="username" value="sa"/>
+	<add key="password" value="sa"/>
+</settings>

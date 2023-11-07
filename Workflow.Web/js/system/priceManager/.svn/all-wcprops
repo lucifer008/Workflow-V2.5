@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3146/trunk/v2.5/Workflow.Web/js/system/priceManager
+END
+memberCardPriceSettings.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/system/priceManager/memberCardPriceSettings.js
+END
+editSpecialPrice.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/system/priceManager/editSpecialPrice.js
+END
+baseSetPrice.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/system/priceManager/baseSetPrice.js
+END
+basePriceSet.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/system/priceManager/basePriceSet.js
+END
+mangePrice.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/system/priceManager/mangePrice.js
+END
+batchAddPrice.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/system/priceManager/batchAddPrice.js
+END
+setPrice.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/system/priceManager/setPrice.js
+END
+tradePriceSetting.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/system/priceManager/tradePriceSetting.js
+END
+selectStandardPriceNext.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/system/priceManager/selectStandardPriceNext.js
+END
+selectStandardPrice.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/system/priceManager/selectStandardPrice.js
+END
+specialPriceSettings.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/workflow/!svn/ver/3146/trunk/v2.5/Workflow.Web/js/system/priceManager/specialPriceSettings.js
+END
+batchDeletePrice.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/system/priceManager/batchDeletePrice.js
+END
+addPriceSet.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/system/priceManager/addPriceSet.js
+END
+businessType.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/system/priceManager/businessType.js
+END
+editBusinessType.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/system/priceManager/editBusinessType.js
+END

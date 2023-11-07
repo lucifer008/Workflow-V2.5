@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>¿ìÓ¡Ò×</title>
+<style type="text/css">
+	a, A:link, a:visited, a:active, A:hover
+		{
+		    color: #000000; 
+		    text-decoration: none; 
+		    font-family: Tahoma, Verdana; 
+		    font-size: 12px
+		 }
+</style>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="tree.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/left.js"></script>
+</head>
+<body>
+<div align="center" style="width:100%; height:100%; vertical-align:top" bgcolor="#ffffff">
+<table width="100%" border="0" height="100%" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">	
+	<tr></tr>
+	<tr height="99%">
+		<td colspan="3" bgcolor="#FFFFFF" height="99%" valign="top">
+		<script type="text/javascript">
+		    new tree(TREE_ITEMS, TREE_TPL);
+		</script>
+		</td>
+	</tr>
+	<tr></tr>
+</table>
+</div>
+</body>
+</html>

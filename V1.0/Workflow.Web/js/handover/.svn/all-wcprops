@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/handover
+END
+handOver.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/handover/handOver.js
+END
+stageHandOver.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/handover/stageHandOver.js
+END
+casherHandOver.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/handover/casherHandOver.js
+END
+searchHandOver.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/handover/searchHandOver.js
+END

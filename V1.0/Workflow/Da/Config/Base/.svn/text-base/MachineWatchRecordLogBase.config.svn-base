@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="MachineWatchRecordLogBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="MachineWatchRecordLogResultMap.selectResult">
+			SELECT
+				ID, MACHINE_ID, MACHINE_WATCH_ID, RECORD_MACHINE_WATCH_ID, LAST_NUMBER, NEW_NUMBER, MEMO
+			FROM MACHINE_WATCH_RECORD_LOG
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="MachineWatchRecordLogResultMap.selectResult">
+			SELECT
+				ID, MACHINE_ID, MACHINE_WATCH_ID, RECORD_MACHINE_WATCH_ID, LAST_NUMBER, NEW_NUMBER, MEMO
+			FROM MACHINE_WATCH_RECORD_LOG
+			WHERE ID = #Id# 
+		</select>
+		<insert id="Insert" parameterClass="MachineWatchRecordLog">
+			INSERT INTO MACHINE_WATCH_RECORD_LOG
+				(
+				  ID, MACHINE_ID, MACHINE_WATCH_ID, RECORD_MACHINE_WATCH_ID, LAST_NUMBER, NEW_NUMBER, MEMO
+				)
+				VALUES
+				(
+				  #Id # , #Machine.Id# , #MachineWatch.Id# , #RecordMachineWatchId# , #LastNumber# , #NewNumber# , #Memo# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="MachineWatchRecordLog">
+			UPDATE MACHINE_WATCH_RECORD_LOG
+				SET
+					MACHINE_ID = #Machine.Id# ,MACHINE_WATCH_ID = #MachineWatch.Id#  ,RECORD_MACHINE_WATCH_ID = #RecordMachineWatchId#  ,LAST_NUMBER = #LastNumber#  ,NEW_NUMBER = #NewNumber#  ,MEMO = #Memo#  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE MACHINE_WATCH_RECORD_LOG
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM MACHINE_WATCH_RECORD_LOG WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

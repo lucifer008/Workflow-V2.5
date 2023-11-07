@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/js/orderBaseData
+END
+addMasterTrade.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/js/orderBaseData/addMasterTrade.js
+END
+addProcessContentAchievementRate.js
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/js/orderBaseData/addProcessContentAchievementRate.js
+END
+addCustomerType.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/js/orderBaseData/addCustomerType.js
+END
+addPrintDemand.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/js/orderBaseData/addPrintDemand.js
+END
+addReportLessMode.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/js/orderBaseData/addReportLessMode.js
+END
+addSecondaryTrade.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/js/orderBaseData/addSecondaryTrade.js
+END
+addPrintDemandDetail.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/js/orderBaseData/addPrintDemandDetail.js
+END
+addCustomerLevel.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/js/orderBaseData/addCustomerLevel.js
+END
+addMemberCardLevel.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/js/orderBaseData/addMemberCardLevel.js
+END
+addTrashReason.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/js/orderBaseData/addTrashReason.js
+END

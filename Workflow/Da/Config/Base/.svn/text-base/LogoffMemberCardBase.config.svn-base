@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="LogoffMemberCardBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="LogoffMemberCardResultMap.selectResult">
+			SELECT
+				MEMBER_CARD_ID, NAME, LOGOFF_DATE_TIME, MEMO, ID, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, COMPANY_ID, BRANCH_SHOP_ID
+			FROM LOGOFF_MEMBER_CARD
+			Where DELETED = '0'
+				AND COMPANY_ID = #CompanyId#
+				AND BRANCH_SHOP_ID = #BranchShopId#
+			ORDER BY ID
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="LogoffMemberCardResultMap.selectResult">
+			SELECT
+				MEMBER_CARD_ID, NAME, LOGOFF_DATE_TIME, MEMO, ID, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, COMPANY_ID, BRANCH_SHOP_ID
+			FROM LOGOFF_MEMBER_CARD
+			WHERE ID = #Id# AND DELETED = '0' 
+
+		</select>
+		<insert id="Insert" parameterClass="LogoffMemberCard">
+			INSERT INTO LOGOFF_MEMBER_CARD
+				(
+				  MEMBER_CARD_ID, NAME, LOGOFF_DATE_TIME, MEMO, ID, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, COMPANY_ID, BRANCH_SHOP_ID
+				)
+				VALUES
+				(
+				  #MemberCardId # , #Name# , #LogoffDateTime# , #Memo# , #Id# , #InsertDateTime# , #InsertUser# , #UpdateDateTime# , #UpdateUser# , #Version# , #Deleted# , #CompanyId# , #BranchShopId# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="LogoffMemberCard">
+			UPDATE LOGOFF_MEMBER_CARD
+				SET
+					MEMBER_CARD_ID = #MemberCardId# ,NAME = #Name#  ,LOGOFF_DATE_TIME = #LogoffDateTime#  ,MEMO = #Memo#  ,UPDATE_DATE_TIME = #UpdateDateTime#  ,UPDATE_USER = #UpdateUser#  ,VERSION = VERSION + 1  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE LOGOFF_MEMBER_CARD
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM LOGOFF_MEMBER_CARD WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

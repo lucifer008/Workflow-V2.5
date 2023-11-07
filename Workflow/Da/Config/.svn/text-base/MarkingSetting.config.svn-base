@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="MarkingSetting" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<cacheModels>
+        <cacheModel id="MarkingSettingCache" implementation="LRU">
+            <flushInterval hours="24"/>
+            <property name="CacheSize" value="100" />
+            <flushOnExecute statement="MarkingSettingBase.Insert"/>
+            <flushOnExecute statement="MarkingSettingBase.Update"/>
+            <flushOnExecute statement="MarkingSettingBase.LogicDelete"/>
+            <flushOnExecute statement="MarkingSettingBase.Delete"/>
+        </cacheModel>
+    </cacheModels>
+	<resultMaps>
+		<resultMap id="SearchMarkingSettingMap" class="MarkingSetting">
+			<result property="Id" column="Id"/>
+			<result property="ProcessContentId" column="Process_Content_Id"/>
+			<result property="ProcessName" column="ProcessName"/>
+			<result property="Amount" column="AMOUNT"/>
+			<result property="Marking" column="MARKING"/>
+			<result property="Memo" column="Memo"/>
+		</resultMap>
+	</resultMaps>
+	<!--注意：请对每个statements段增加注释。说明处理的业务-->
+	<!--查询表MARKING_SETTING [积分设置中的所有记录]-->
+	<statements>
+		<select id="SelectAll" resultMap="MarkingSettingResultMap.selectResult">
+			SELECT
+			*
+			FROM MARKING_SETTING
+			ORDER BY ID ASC
+		</select>
+		<select id="SearchMarkingSetting" resultMap="SearchMarkingSettingMap">
+			select
+			top(#RowCount#)
+			ms.Id,ms.Process_Content_Id,pc.Name ProcessName,
+			ms.Amount,ms.Marking,ms.Memo
+			from marking_setting ms
+			Inner join Process_content pc on ms.Process_content_id=pc.Id
+			where pc.Deleted='0'
+			and pc.company_Id=#CompanyId#
+			and pc.Branch_Shop_Id=#BranchShopId#
+			and ms.Id not in(
+			select
+			top(#RowCount#*#CurrentPageIndex#)
+			m.Id
+			from marking_setting m
+			Inner join Process_content p on m.Process_content_id=p.Id
+			where p.Deleted='0'
+			and p.company_Id=#CompanyId#
+			and p.Branch_Shop_Id=#BranchShopId#
+			order by m.Id desc
+			)
+			order by ms.Id desc
+		</select>
+		<select id="SearchMarkingSettingRowCount" resultClass="long">
+			select
+			count(m.Id)
+			from marking_setting m
+			Inner join Process_content p on m.Process_content_id=p.Id
+			where p.Deleted='0'
+			and p.company_Id=#CompanyId#
+			and p.Branch_Shop_Id=#BranchShopId#
+		</select>
+		<select id="CheckMarkingSettingIsExist" resultClass="long">
+			select
+			count(m.Id)
+			from marking_setting m
+			Inner join Process_content p on m.Process_content_id=p.Id
+			where p.Deleted='0'
+			and p.company_Id=#CompanyId#
+			and p.Branch_Shop_Id=#BranchShopId#
+			and p.Id=#ProcessContentId#
+		</select>
+		<select id="GetAllMarkingSetting" resultMap="MarkingSettingResultMap.selectResult">
+			SELECT
+			*
+			FROM MARKING_SETTING a
+			Inner join Process_Content p on a.Process_Content_Id=p.Id
+			where p.Deleted='0'
+			and p.company_Id=#CompanyId#
+			and p.Branch_Shop_Id=#BranchShopId#
+		</select>
+	</statements>
+</sqlMap>

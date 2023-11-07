@@ -1,0 +1,52 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Action/Membercard/Model
+http://192.168.0.6/svn/workflow
+
+
+
+2010-01-12T10:00:38.859375Z
+2894
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+MemberCardCampaignModel.cs
+file
+
+
+
+
+2010-03-25T07:11:40.828125Z
+d7d51c18695fc4904fb753218d4bc433
+2009-12-21T06:05:19.343750Z
+2784
+chenruyin
+
+MemberCardModel.cs
+file
+
+
+
+
+2010-03-25T07:11:40.906250Z
+76d971bde721c99ce3b7a536349a9d17
+2010-01-12T10:00:38.859375Z
+2894
+zhangxiaolin
+

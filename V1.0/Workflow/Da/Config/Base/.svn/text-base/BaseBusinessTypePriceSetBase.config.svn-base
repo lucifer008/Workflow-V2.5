@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="BaseBusinessTypePriceSetBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="BaseBusinessTypePriceSetResultMap.selectResult"
+			cacheModel="BaseBusinessTypePriceSet.BaseBusinessTypePriceSetCache">
+			SELECT
+				ID, BUSINESS_TYPE_ID, FACTOR1, FACTOR2, FACTOR3, FACTOR4, FACTOR5, FACTOR6, FACTOR7, FACTOR8, FACTOR9, FACTOR10, FACTOR11, FACTOR12, FACTOR13, FACTOR14, FACTOR15, FACTOR16, FACTOR17, FACTOR18, FACTOR19, FACTOR20, COST_PRICE, STANDARD_PRICE, ACTIVITY_PRICE, RESERVE_PRICE, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, BRANCH_SHOP_ID, COMPANY_ID
+			FROM BASE_BUSINESS_TYPE_PRICE_SET
+			Where DELETED = '0'
+				AND COMPANY_ID = #CompanyId#
+				AND BRANCH_SHOP_ID = #BranchShopId#
+			ORDER BY ID
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="BaseBusinessTypePriceSetResultMap.selectResult"
+			cacheModel="BaseBusinessTypePriceSet.BaseBusinessTypePriceSetCache">
+			SELECT
+				ID, BUSINESS_TYPE_ID, FACTOR1, FACTOR2, FACTOR3, FACTOR4, FACTOR5, FACTOR6, FACTOR7, FACTOR8, FACTOR9, FACTOR10, FACTOR11, FACTOR12, FACTOR13, FACTOR14, FACTOR15, FACTOR16, FACTOR17, FACTOR18, FACTOR19, FACTOR20, COST_PRICE, STANDARD_PRICE, ACTIVITY_PRICE, RESERVE_PRICE, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, BRANCH_SHOP_ID, COMPANY_ID
+			FROM BASE_BUSINESS_TYPE_PRICE_SET
+			WHERE ID = #Id# AND DELETED = '0' 
+
+		</select>
+		<insert id="Insert" parameterClass="BaseBusinessTypePriceSet">
+			INSERT INTO BASE_BUSINESS_TYPE_PRICE_SET
+				(
+				  ID, BUSINESS_TYPE_ID, FACTOR1, FACTOR2, FACTOR3, FACTOR4, FACTOR5, FACTOR6, FACTOR7, FACTOR8, FACTOR9, FACTOR10, FACTOR11, FACTOR12, FACTOR13, FACTOR14, FACTOR15, FACTOR16, FACTOR17, FACTOR18, FACTOR19, FACTOR20, COST_PRICE, STANDARD_PRICE, ACTIVITY_PRICE, RESERVE_PRICE, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, BRANCH_SHOP_ID, COMPANY_ID
+				)
+				VALUES
+				(
+				  #Id # , #BusinessType.Id# , #Factor1# , #Factor2# , #Factor3# , #Factor4# , #Factor5# , #Factor6# , #Factor7# , #Factor8# , #Factor9# , #Factor10# , #Factor11# , #Factor12# , #Factor13# , #Factor14# , #Factor15# , #Factor16# , #Factor17# , #Factor18# , #Factor19# , #Factor20# , #CostPrice# , #StandardPrice# , #ActivityPrice# , #ReservePrice# , #InsertDateTime# , #InsertUser# , #UpdateDateTime# , #UpdateUser# , #Version# , #Deleted# , #BranchShopId# , #CompanyId# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="BaseBusinessTypePriceSet">
+			UPDATE BASE_BUSINESS_TYPE_PRICE_SET
+				SET
+					BUSINESS_TYPE_ID = #BusinessType.Id# ,FACTOR1 = #Factor1#  ,FACTOR2 = #Factor2#  ,FACTOR3 = #Factor3#  ,FACTOR4 = #Factor4#  ,FACTOR5 = #Factor5#  ,FACTOR6 = #Factor6#  ,FACTOR7 = #Factor7#  ,FACTOR8 = #Factor8#  ,FACTOR9 = #Factor9#  ,FACTOR10 = #Factor10#  ,FACTOR11 = #Factor11#  ,FACTOR12 = #Factor12#  ,FACTOR13 = #Factor13#  ,FACTOR14 = #Factor14#  ,FACTOR15 = #Factor15#  ,FACTOR16 = #Factor16#  ,FACTOR17 = #Factor17#  ,FACTOR18 = #Factor18#  ,FACTOR19 = #Factor19#  ,FACTOR20 = #Factor20#  ,COST_PRICE = #CostPrice#  ,STANDARD_PRICE = #StandardPrice#  ,ACTIVITY_PRICE = #ActivityPrice#  ,RESERVE_PRICE = #ReservePrice#  ,UPDATE_DATE_TIME = #UpdateDateTime#  ,UPDATE_USER = #UpdateUser#  ,VERSION = VERSION + 1  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE BASE_BUSINESS_TYPE_PRICE_SET
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM BASE_BUSINESS_TYPE_PRICE_SET WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

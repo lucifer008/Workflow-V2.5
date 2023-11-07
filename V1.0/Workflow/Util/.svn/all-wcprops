@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Util
+END
+DateUtils.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Util/DateUtils.cs
+END
+ComputeFormula.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Util/ComputeFormula.cs
+END
+NumericUtils.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Util/NumericUtils.cs
+END
+ThreadLocalUtils.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Util/ThreadLocalUtils.cs
+END
+StringUtils.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Util/StringUtils.cs
+END
+JSONUtils.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Util/JSONUtils.cs
+END

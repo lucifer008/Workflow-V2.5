@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="MemberCardDiscountConcession" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+	</resultMaps>
+	<!--注意：请对每个statements段增加注释。说明处理的业务-->
+	<!--查询表MEMBER_CARD_DISCOUNT_CONCESSION [会员卡参加的打折优惠活动中的所有记录]-->
+	<statements>
+		<select id="SelectAll" resultMap="MemberCardDiscountConcessionResultMap.selectResult">
+			SELECT
+			*
+			FROM MEMBER_CARD_DISCOUNT_CONCESSION
+			ORDER BY ID ASC
+		</select>
+	</statements>
+</sqlMap>

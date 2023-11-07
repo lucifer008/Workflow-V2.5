@@ -1,0 +1,17 @@
+D:\Application\Jobs\LogCleaner\Configurations\LogCleanSetting.xml
+D:\Application\Jobs\LogCleaner\Configurations\log.config
+D:\Application\Jobs\LogCleaner\Configurations\LogCleanSetting.xsd
+D:\Application\Jobs\LogCleaner\Workflow.FileCleaner.exe
+D:\Application\Jobs\LogCleaner\Workflow.FileCleaner.pdb
+D:\project\Workflow V2.5\Workflow.FileCleaner\obj\Debug\ResolveAssemblyReference.cache
+D:\project\Workflow V2.5\Workflow.FileCleaner\obj\Debug\Workflow.FileCleaner.exe
+D:\project\Workflow V2.5\Workflow.FileCleaner\obj\Debug\Workflow.FileCleaner.pdb
+D:\project\Workflow V2.5\Workflow.FileCleaner\bin\Release\Configurations\LogCleanSetting.xml
+D:\project\Workflow V2.5\Workflow.FileCleaner\bin\Release\Configurations\log.config
+D:\project\Workflow V2.5\Workflow.FileCleaner\bin\Release\Configurations\LogCleanSetting.xsd
+D:\project\Workflow V2.5\Workflow.FileCleaner\bin\Release\Workflow.FileCleaner.exe
+D:\project\Workflow V2.5\Workflow.FileCleaner\bin\Release\Workflow.FileCleaner.pdb
+D:\project\Workflow V2.5\Workflow.FileCleaner\bin\Release\log4net.dll
+D:\project\Workflow V2.5\Workflow.FileCleaner\obj\Release\ResolveAssemblyReference.cache
+D:\project\Workflow V2.5\Workflow.FileCleaner\obj\Release\Workflow.FileCleaner.exe
+D:\project\Workflow V2.5\Workflow.FileCleaner\obj\Release\Workflow.FileCleaner.pdb

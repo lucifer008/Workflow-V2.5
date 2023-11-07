@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>工单列表</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="99%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#CCCCCC">
+  <tr>
+    <td bgcolor="#FFFFFF">
+	<table width="100%" border="0" cellpadding="0" cellspacing="3" bgcolor="#FFFFFF">
+      <tr>
+        <td><table width="100%" border="0" cellpadding="0" cellspacing="0" background="../images/index_13.gif">
+          <tr>
+            <td width="4%" height="25" align="center"><img alt="" src="../images/index_17.gif" width="11" height="11" /></td>
+            <td width="49%">工单管理 > 工单列表</td>
+            <td width="49%">&nbsp;</td>
+            <td width="47%">&nbsp;</td>
+          </tr>
+        </table></td>
+      </tr>
+      
+      <tr>
+        <td align="left">
+		<table width="98%" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC" class="sou">
+          <tr>
+            <td height="18" align="center" bgcolor="#DBDBDB">NO</td>
+
+            <td height="18" align="center" bgcolor="#DBDBDB">工单号</td>
+            <td height="18" align="center" bgcolor="#DBDBDB">项目名称</td>
+            <td height="18" align="center" bgcolor="#DBDBDB">工单号</td>
+            <td height="18" align="center" bgcolor="#DBDBDB">联系电话</td>
+            <td height="18" align="center" bgcolor="#DBDBDB">开单时间</td>
+            <td height="18" align="center" bgcolor="#DBDBDB">结算时间</td>
+            <td height="18" align="center" bgcolor="#DBDBDB">金额</td>
+            <td height="18" align="center" bgcolor="#DBDBDB">备注</td>
+            </tr>
+          <tr>
+            <td height="18" align="center" bgcolor="#EEEEEE">1</td>
+            <td height="18" align="center" bgcolor="#EEEEEE"><a href="#">0001401</a></td>
+            <td bgcolor="#EEEEEE">西北建筑设计院</td>
+            <td height="18" align="center" bgcolor="#EEEEEE">88221036</td>
+            <td height="18" align="center" bgcolor="#EEEEEE">2007-08-22 09:10 </td>
+            <td height="18" bgcolor="#EEEEEE">&nbsp;</td>
+            <td height="18" align="right" bgcolor="#EEEEEE">&nbsp;</td>
+            <td height="18" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+          <tr>
+            <td height="18" align="center" bgcolor="#FFFFFF">2</td>
+            <td height="18" align="center" bgcolor="#FFFFFF"><a href="#">0001402</a></td>
+            <td bgcolor="#FFFFFF">中铁一局</td>
+            <td height="18" align="center" bgcolor="#FFFFFF">85692077</td>
+            <td height="18" align="center" bgcolor="#FFFFFF">2007-08-22 09:15 </td>
+            <td height="18" bgcolor="#FFFFFF">&nbsp;</td>
+            <td height="18" align="right" bgcolor="#FFFFFF">&nbsp;</td>
+            <td height="18" bgcolor="#FFFFFF">&nbsp;</td>
+            </tr>
+          <tr>
+            <td height="18" align="center" bgcolor="#EEEEEE">3</td>
+            <td height="18" align="center" bgcolor="#EEEEEE"><a href="#">0001403</a></td>
+            <td bgcolor="#EEEEEE">建大设计院</td>
+            <td height="18" align="center" bgcolor="#EEEEEE">13002912345</td>
+            <td height="18" align="center" bgcolor="#EEEEEE">2007-08-22 09:18 </td>
+            <td height="18" bgcolor="#EEEEEE">&nbsp;</td>
+            <td height="18" align="right" bgcolor="#EEEEEE">&nbsp;</td>
+            <td height="18" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+          <tr>
+            <td height="18" align="center" bgcolor="#FFFFFF">4</td>
+            <td height="18" align="center" bgcolor="#FFFFFF"><a href="#">0001404</a></td>
+            <td bgcolor="#FFFFFF">交大设计院</td>
+            <td height="18" align="center" bgcolor="#FFFFFF">87695216</td>
+            <td height="18" align="center" bgcolor="#FFFFFF">2007-08-22 09:23 </td>
+            <td height="18" bgcolor="#FFFFFF">&nbsp;</td>
+            <td height="18" align="right" bgcolor="#FFFFFF">&nbsp;</td>
+            <td height="18" bgcolor="#FFFFFF">&nbsp;</td>
+            </tr>
+          <tr>
+            <td height="18" align="center" bgcolor="#EEEEEE">5</td>
+            <td height="18" align="center" bgcolor="#EEEEEE"><a href="#">0001405</a></td>
+            <td bgcolor="#EEEEEE">771所</td>
+            <td height="18" align="center" bgcolor="#EEEEEE">13309216486</td>
+            <td height="18" align="center" bgcolor="#EEEEEE">2007-08-22 09:30 </td>
+            <td height="18" bgcolor="#EEEEEE">&nbsp;</td>
+            <td height="18" align="right" bgcolor="#EEEEEE">&nbsp;</td>
+            <td height="18" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+          <tr>
+            <td height="18" align="center" bgcolor="#FFFFFF">6</td>
+            <td height="18" align="center" bgcolor="#FFFFFF"><a href="#">0001406</a></td>
+            <td bgcolor="#FFFFFF">李先生</td>
+            <td height="18" align="center" bgcolor="#FFFFFF">13892843166</td>
+            <td height="18" align="center" bgcolor="#FFFFFF">2007-08-22 09:35 </td>
+            <td height="18" bgcolor="#FFFFFF">&nbsp;</td>
+            <td height="18" align="right" bgcolor="#FFFFFF">&nbsp;</td>
+            <td height="18" bgcolor="#FFFFFF">&nbsp;</td>
+            </tr>
+          <tr>
+            <td height="18" align="center" bgcolor="#EEEEEE">7</td>
+            <td height="18" align="center" bgcolor="#EEEEEE"><a href="#">0001407</a></td>
+            <td bgcolor="#EEEEEE">刘先生</td>
+            <td height="18" align="center" bgcolor="#EEEEEE">85082233</td>
+            <td height="18" align="center" bgcolor="#EEEEEE">2007-08-22 09:41 </td>
+            <td height="18" bgcolor="#EEEEEE">&nbsp;</td>
+            <td height="18" align="right" bgcolor="#EEEEEE">&nbsp;</td>
+            <td height="18" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+          <tr>
+            <td height="18" align="center" bgcolor="#FFFFFF">8</td>
+            <td height="18" align="center" bgcolor="#FFFFFF"><a href="#">0001408</a></td>
+            <td bgcolor="#FFFFFF">中铁一局</td>
+            <td height="18" align="center" bgcolor="#FFFFFF">86625656</td>
+            <td height="18" align="center" bgcolor="#FFFFFF">2007-08-22 09:53 </td>
+            <td height="18" bgcolor="#FFFFFF">&nbsp;</td>
+            <td height="18" align="right" bgcolor="#FFFFFF">&nbsp;</td>
+            <td height="18" bgcolor="#FFFFFF">&nbsp;</td>
+            </tr>
+          <tr>
+            <td height="27" align="center" bgcolor="#EEEEEE">9</td>
+            <td height="27" align="center" bgcolor="#EEEEEE"><a href="#">0001409</a></td>
+            <td bgcolor="#EEEEEE">中铁一局</td>
+            <td height="27" align="center" bgcolor="#EEEEEE">13629015858</td>
+            <td height="27" align="center" bgcolor="#EEEEEE">2007-08-22 10:02 </td>
+            <td height="27" bgcolor="#EEEEEE">&nbsp;</td>
+            <td height="27" align="right" bgcolor="#EEEEEE">&nbsp;</td>
+            <td height="27" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+          <tr>
+            <td height="18" align="center" bgcolor="#FFFFFF">10</td>
+            <td height="18" align="center" bgcolor="#FFFFFF"><a href="#">0001410</a></td>
+            <td bgcolor="#FFFFFF">马先生</td>
+            <td height="18" align="center" bgcolor="#FFFFFF">13572109532</td>
+            <td height="18" align="center" bgcolor="#FFFFFF">2007-08-22 10:11 </td>
+            <td height="18" bgcolor="#FFFFFF">&nbsp;</td>
+            <td height="18" align="right" bgcolor="#FFFFFF">&nbsp;</td>
+            <td height="18" bgcolor="#FFFFFF">&nbsp;</td>
+            </tr>
+          <tr>
+            <td height="18" align="center" bgcolor="#EEEEEE">11</td>
+            <td height="18" align="center" bgcolor="#EEEEEE"><a href="#">0001411</a></td>
+            <td bgcolor="#EEEEEE">杨先生</td>
+            <td height="18" align="center" bgcolor="#EEEEEE">13991958758</td>
+            <td height="18" align="center" bgcolor="#EEEEEE">2007-08-22 10:16 </td>
+            <td height="18" bgcolor="#EEEEEE">&nbsp;</td>
+            <td height="18" align="right" bgcolor="#EEEEEE">&nbsp;</td>
+            <td height="18" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+          <tr>
+            <td height="18" align="center" bgcolor="#FFFFFF">12</td>
+            <td height="18" align="center" bgcolor="#FFFFFF"><a href="#">0001412</a></td>
+            <td bgcolor="#FFFFFF">李玲同学</td>
+            <td height="18" align="center" bgcolor="#FFFFFF">88668822</td>
+            <td height="18" align="center" bgcolor="#FFFFFF">2007-08-22 10:28 </td>
+            <td height="18" bgcolor="#FFFFFF">&nbsp;</td>
+            <td height="18" align="right" bgcolor="#FFFFFF">&nbsp;</td>
+            <td height="18" bgcolor="#FFFFFF">&nbsp;</td>
+            </tr>
+          <tr>
+            <td height="18" align="center" bgcolor="#EEEEEE">13</td>
+            <td height="18" align="center" bgcolor="#EEEEEE"><a href="#">0001413</a></td>
+            <td bgcolor="#EEEEEE">马明同学</td>
+            <td height="18" align="center" bgcolor="#EEEEEE">66328450</td>
+            <td height="18" align="center" bgcolor="#EEEEEE">2007-08-22 11:30 </td>
+            <td height="18" bgcolor="#EEEEEE">&nbsp;</td>
+            <td height="18" align="right" bgcolor="#EEEEEE">&nbsp;</td>
+            <td height="18" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+          <tr>
+            <td height="18" align="center" bgcolor="#FFFFFF">14</td>
+            <td height="18" align="center" bgcolor="#FFFFFF"><a href="#">0001414</a></td>
+            <td bgcolor="#FFFFFF">张先生</td>
+            <td height="18" align="center" bgcolor="#FFFFFF">37652144</td>
+            <td height="18" align="center" bgcolor="#FFFFFF">2007-08-22 11:45 </td>
+            <td height="18" bgcolor="#FFFFFF">&nbsp;</td>
+            <td height="18" align="right" bgcolor="#FFFFFF">&nbsp;</td>
+            <td height="18" bgcolor="#FFFFFF">&nbsp;</td>
+            </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

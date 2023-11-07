@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--表CUSTOMER [客户]的基本增删改查操作，此配置文件不允许修改-->
+<sqlMap namespace="CustomerBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		
+			<!--查询表CUSTOMER [客户]的基本操作-->		 
+			<select id="SelectAll" resultMap="CustomerResultMap.selectResult">
+			SELECT  ID,CUSTOMER_LEVEL_ID,CUSTOMER_TYPE_ID,SECONDARY_TRADE_ID,NAME,SIMPLE_NAME,ADDRESS,LAST_LINK_MAN,LAST_TEL_NO,LINK_MAN_COUNT,MEMO,AMOUNT,NEED_TICKET,VALIDATE_STATUS,INSERT_USER,INSERT_DATE_TIME,UPDATE_USER,UPDATE_DATE_TIME,VERSION,DELETED,COMPANY_ID,BRANCH_SHOP_ID,PAY_TYPE	FROM CUSTOMER Order by ID
+			</select>
+
+			<!--按照主键查询表CUSTOMER [客户]的基本操作-->
+			<select id="SelectByPk" parameterClass="long" resultMap="CustomerResultMap.selectResult">
+			SELECT 
+			ID,
+			CUSTOMER_LEVEL_ID,
+			CUSTOMER_TYPE_ID,
+			SECONDARY_TRADE_ID,
+			NAME,
+			SIMPLE_NAME,
+			ADDRESS,
+			LAST_LINK_MAN,
+			LAST_TEL_NO,
+			LINK_MAN_COUNT,
+			MEMO,
+			AMOUNT,
+			NEED_TICKET,
+			VALIDATE_STATUS,
+			INSERT_USER,
+			INSERT_DATE_TIME,
+			UPDATE_USER,
+			UPDATE_DATE_TIME,
+			VERSION,
+			DELETED,
+			COMPANY_ID,
+			BRANCH_SHOP_ID,
+			PAY_TYPE
+			FROM CUSTOMER
+			WHERE ID = #Id# 
+			</select>
+
+			<!--插入表CUSTOMER [客户]的基本操作-->
+			<insert id="Insert" parameterClass="Customer">
+			INSERT INTO CUSTOMER
+			(
+				ID,
+				CUSTOMER_LEVEL_ID,
+				CUSTOMER_TYPE_ID,
+				SECONDARY_TRADE_ID,
+				NAME,
+				SIMPLE_NAME,
+				ADDRESS,
+				LAST_LINK_MAN,
+				LAST_TEL_NO,
+				LINK_MAN_COUNT,
+				MEMO,
+				AMOUNT,
+				NEED_TICKET,
+				VALIDATE_STATUS,
+				INSERT_USER,
+				INSERT_DATE_TIME,
+				UPDATE_USER,
+				UPDATE_DATE_TIME,
+				VERSION,
+				DELETED,
+				COMPANY_ID,
+				BRANCH_SHOP_ID,
+				PAY_TYPE
+			) VALUES
+			( 
+				#Id#,
+				#CustomerLevel.Id#,
+				#CustomerType.Id#,
+				#SecondaryTrade.Id#,
+				#Name#,
+				#SimpleName#,
+				#Address#,
+				#LastLinkMan#,
+				#LastTelNo#,
+				#LinkManCount#,
+				#Memo#,
+				#Amount#,
+				#NeedTicket#,
+				#ValidateStatus#,
+				#InsertUser#,
+				#InsertDateTime#,
+				#UpdateUser#,
+				#UpdateDateTime#,
+				#Version#,
+				#Deleted#,
+				#CompanyId#,
+				#BranchShopId#,
+				#PayType#
+			)
+			</insert>
+			
+			<!--更新表CUSTOMER [客户]的基本操作-->
+			<update id="Update" parameterClass="Customer">
+			UPDATE CUSTOMER
+			SET
+				CUSTOMER_LEVEL_ID=#CustomerLevel.Id#,
+				CUSTOMER_TYPE_ID=#CustomerType.Id#,
+				SECONDARY_TRADE_ID=#SecondaryTrade.Id#,
+				NAME=#Name#,
+				SIMPLE_NAME=#SimpleName#,
+				ADDRESS=#Address#,
+				LAST_LINK_MAN=#LastLinkMan#,
+				LAST_TEL_NO=#LastTelNo#,
+				LINK_MAN_COUNT=#LinkManCount#,
+				MEMO=#Memo#,
+				<!--AMOUNT=#Amount#,-->
+				NEED_TICKET=#NeedTicket#,
+				VALIDATE_STATUS=#ValidateStatus#,
+				<!--INSERT_USER=#InsertUser#,-->
+				<!--INSERT_DATE_TIME=#InsertDateTime#,-->
+				UPDATE_USER=#UpdateUser#,
+				UPDATE_DATE_TIME=#UpdateDateTime#,
+				<!--VERSION=#Version#,
+				DELETED=#Deleted#,
+				COMPANY_ID=#CompanyId#,
+				BRANCH_SHOP_ID=#BranchShopId#,-->
+				PAY_TYPE=#PayType#
+			WHERE ID = #Id#
+			</update>
+
+			<!--逻辑删除表CUSTOMER [客户]的基本操作-->
+			<update id="LogicDelete" parameterClass="long">
+				UPDATE CUSTOMER
+				SET	VERSION = VERSION + 1,DELETED = '1'	WHERE ID = #Id#
+			</update>
+
+			<!--物理删除表CUSTOMER [客户]的基本操作-->
+			<delete id="Delete" parameterClass="long">
+				DELETE FROM CUSTOMER WHERE ID = #Id#
+			</delete>
+
+			<!--目标表LINK_MAN的信息查询-->
+			<select id="SelectLinkMan" parameterClass="long" resultMap="LinkManResultMap.selectResult" >
+				SELECT
+				*
+				FROM LINK_MAN
+				WHERE CUSTOMER_ID = #value#
+				ORDER BY ID
+			</select>			
+		</statements>
+</sqlMap>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="CashHandOverOrderResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="CashHandOverOrder" type="Workflow.Da.Domain.CashHandOverOrder, Workflow.Support" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="selectResult" class="CashHandOverOrder">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="OrdersId" column="ORDERS_ID" dbType="bigint"/>
+			<result property="CashHandOverId" column="CASH_HAND_OVER_ID" dbType="bigint"/>
+			<result property="No" column="NO" dbType="varchar"/>
+			<result property="EarnestAmount" column="EARNEST_AMOUNT" dbType="decimal"/>
+		</resultMap>
+	</resultMaps>
+</sqlMap>

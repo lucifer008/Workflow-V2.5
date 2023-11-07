@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="UncompleteOrdersUsedPaperBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="UncompleteOrdersUsedPaperResultMap.selectResult">
+			SELECT
+				ID, ORDERS_ID, RECORD_MACHINE_WATCH_ID, MACHINE_ID, PAPER_SPECIFICATION_ID, USED_PAPER_COUNT, COLOR_TYPE
+			FROM UNCOMPLETE_ORDERS_USED_PAPER
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="UncompleteOrdersUsedPaperResultMap.selectResult">
+			SELECT
+				ID, ORDERS_ID, RECORD_MACHINE_WATCH_ID, MACHINE_ID, PAPER_SPECIFICATION_ID, USED_PAPER_COUNT, COLOR_TYPE
+			FROM UNCOMPLETE_ORDERS_USED_PAPER
+			WHERE ID = #Id# 
+		</select>
+		<insert id="Insert" parameterClass="UncompleteOrdersUsedPaper">
+			INSERT INTO UNCOMPLETE_ORDERS_USED_PAPER
+				(
+				  ID, ORDERS_ID, RECORD_MACHINE_WATCH_ID, MACHINE_ID, PAPER_SPECIFICATION_ID, USED_PAPER_COUNT, COLOR_TYPE
+				)
+				VALUES
+				(
+				  #Id # , #OrdersId# , #RecordMachineWatchId# , #Machine.Id# , #PaperSpecification.Id# , #UsedPaperCount# , #ColorType# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="UncompleteOrdersUsedPaper">
+			UPDATE UNCOMPLETE_ORDERS_USED_PAPER
+				SET
+					ORDERS_ID = #OrdersId# ,RECORD_MACHINE_WATCH_ID = #RecordMachineWatchId#  ,MACHINE_ID = #Machine.Id#  ,PAPER_SPECIFICATION_ID = #PaperSpecification.Id#  ,USED_PAPER_COUNT = #UsedPaperCount#  ,COLOR_TYPE = #ColorType#  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE UNCOMPLETE_ORDERS_USED_PAPER
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM UNCOMPLETE_ORDERS_USED_PAPER WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

@@ -1,0 +1,671 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/workflow/!svn/ver/3430/trunk/v2.5/Workflow/Da/Domain/Base
+END
+OrderItemMortgageBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/OrderItemMortgageBase.cs
+END
+MemberCardConcessionBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/MemberCardConcessionBase.cs
+END
+OrderItemFactorValueBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/OrderItemFactorValueBase.cs
+END
+RolePermissionGroupBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/RolePermissionGroupBase.cs
+END
+BlankOutReasonBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/BlankOutReasonBase.cs
+END
+AchievementBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/AchievementBase.cs
+END
+MachineWatchRecordLogBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/MachineWatchRecordLogBase.cs
+END
+BusinessTypeBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/BusinessTypeBase.cs
+END
+RealOrderItemBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/RealOrderItemBase.cs
+END
+ProcessContentAchievementRateBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/ProcessContentAchievementRateBase.cs
+END
+HandOverOrderBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/HandOverOrderBase.cs
+END
+MachineWatchScaleBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/MachineWatchScaleBase.cs
+END
+MemberCardOrderItemCounteractLogBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/MemberCardOrderItemCounteractLogBase.cs
+END
+PaperSpecificationBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/PaperSpecificationBase.cs
+END
+TrashPaperEmployeeBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/TrashPaperEmployeeBase.cs
+END
+ProcessContentBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/ProcessContentBase.cs
+END
+BuySendBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3222/trunk/v2.5/Workflow/Da/Domain/Base/BuySendBase.cs
+END
+BranchStoreBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/BranchStoreBase.cs
+END
+MasterTradeBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/MasterTradeBase.cs
+END
+PaperSpecificationSimilarityBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/PaperSpecificationSimilarityBase.cs
+END
+ApplyAbateBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3430/trunk/v2.5/Workflow/Da/Domain/Base/ApplyAbateBase.cs
+END
+BaseBusinessTypePriceSetBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/BaseBusinessTypePriceSetBase.cs
+END
+PrintDemandDetailBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/PrintDemandDetailBase.cs
+END
+MemberOperateLogBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/MemberOperateLogBase.cs
+END
+TrashReasonBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/TrashReasonBase.cs
+END
+DailyBusionessReportBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3193/trunk/v2.5/Workflow/Da/Domain/Base/DailyBusionessReportBase.cs
+END
+RealOrderItemFactorValueBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/RealOrderItemFactorValueBase.cs
+END
+RecordMachineWatchBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/RecordMachineWatchBase.cs
+END
+MemberCardBuySendBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3222/trunk/v2.5/Workflow/Da/Domain/Base/MemberCardBuySendBase.cs
+END
+BusinessTypePriceSetBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/BusinessTypePriceSetBase.cs
+END
+OrderTimeoutAlarmRecordBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/OrderTimeoutAlarmRecordBase.cs
+END
+MemberCardDiscountConcessionBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/MemberCardDiscountConcessionBase.cs
+END
+CompensateEmployeeBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/CompensateEmployeeBase.cs
+END
+UserRoleBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/UserRoleBase.cs
+END
+OrderMortgageRecordBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/OrderMortgageRecordBase.cs
+END
+RoleBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/RoleBase.cs
+END
+CustomerBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/CustomerBase.cs
+END
+ConcessionDifferencePriceBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/ConcessionDifferencePriceBase.cs
+END
+MemberCardBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/MemberCardBase.cs
+END
+ConcessionBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/ConcessionBase.cs
+END
+IdGeneratorBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/IdGeneratorBase.cs
+END
+EmployeePositionBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/EmployeePositionBase.cs
+END
+CashHandOverBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/CashHandOverBase.cs
+END
+DiscountConcessionMachineTypePaperSpecBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/DiscountConcessionMachineTypePaperSpecBase.cs
+END
+FactorRelationValueBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/FactorRelationValueBase.cs
+END
+OrderBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/OrderBase.cs
+END
+FactorRelationBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/FactorRelationBase.cs
+END
+ConcessionMemberCardLevelBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/ConcessionMemberCardLevelBase.cs
+END
+AccreditRecordBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/AccreditRecordBase.cs
+END
+BusinessModuleGroupBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/BusinessModuleGroupBase.cs
+END
+EmployeeBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/EmployeeBase.cs
+END
+BusinessTypePriceFactorBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/BusinessTypePriceFactorBase.cs
+END
+OtherGatheringAndRefundmentRecordBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/OtherGatheringAndRefundmentRecordBase.cs
+END
+AmountSegmentBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/AmountSegmentBase.cs
+END
+TakeWorkBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/TakeWorkBase.cs
+END
+OrderItemPrintRequireDetailBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/OrderItemPrintRequireDetailBase.cs
+END
+BranchShopBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/BranchShopBase.cs
+END
+PermissionGroupDetailBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/PermissionGroupDetailBase.cs
+END
+PermissionBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/PermissionBase.cs
+END
+OrderItemEmployeeBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/OrderItemEmployeeBase.cs
+END
+MachineWatchBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/MachineWatchBase.cs
+END
+ReportLossMemberCardBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/ReportLossMemberCardBase.cs
+END
+LogoffMemberCardBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/LogoffMemberCardBase.cs
+END
+PriceFactorBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/PriceFactorBase.cs
+END
+PaymentConcessionBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/PaymentConcessionBase.cs
+END
+CashHandOverOrderBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/CashHandOverOrderBase.cs
+END
+RequireAccountingInfoBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/RequireAccountingInfoBase.cs
+END
+CustomerTypeBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/CustomerTypeBase.cs
+END
+MachineBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/MachineBase.cs
+END
+PositionBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/PositionBase.cs
+END
+PrintDemandBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/PrintDemandBase.cs
+END
+HandOverBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/HandOverBase.cs
+END
+ChangeMemberCardBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/ChangeMemberCardBase.cs
+END
+ApplicationPropertyBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3231/trunk/v2.5/Workflow/Da/Domain/Base/ApplicationPropertyBase.cs
+END
+RealOrderItemPrintRequireBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/RealOrderItemPrintRequireBase.cs
+END
+DailyBusionessReportItemBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3207/trunk/v2.5/Workflow/Da/Domain/Base/DailyBusionessReportItemBase.cs
+END
+FactorValueBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/FactorValueBase.cs
+END
+DiscountConcessionBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/DiscountConcessionBase.cs
+END
+RelationEmployeeBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/RelationEmployeeBase.cs
+END
+MemberCardConcessionGatheringBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/MemberCardConcessionGatheringBase.cs
+END
+UserBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/UserBase.cs
+END
+UserConcessionRangeBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/UserConcessionRangeBase.cs
+END
+DutyEmployeeBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/DutyEmployeeBase.cs
+END
+MarkingSettingBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/MarkingSettingBase.cs
+END
+DailyRecordMachineBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/DailyRecordMachineBase.cs
+END
+HandOverMemberCardBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/HandOverMemberCardBase.cs
+END
+MemberCardLevelBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/MemberCardLevelBase.cs
+END
+MachineWatchConversionPaperBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/MachineWatchConversionPaperBase.cs
+END
+LinkManBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/LinkManBase.cs
+END
+CustomerLevelBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/CustomerLevelBase.cs
+END
+OrderItemBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/OrderItemBase.cs
+END
+OrdersStatusAlterBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/OrdersStatusAlterBase.cs
+END
+RealOrderItemEmployeeBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/RealOrderItemEmployeeBase.cs
+END
+BusinessModuleBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/BusinessModuleBase.cs
+END
+UncompleteOrdersUsedPaperBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/UncompleteOrdersUsedPaperBase.cs
+END
+GatheringOrderBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/GatheringOrderBase.cs
+END
+OrdersDutyBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/OrdersDutyBase.cs
+END
+PermissionGroupBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/PermissionGroupBase.cs
+END
+MachineTypeBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/MachineTypeBase.cs
+END
+CompanyBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/CompanyBase.cs
+END
+CompensateUsedPaperBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/CompensateUsedPaperBase.cs
+END
+ReportLessModeBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/ReportLessModeBase.cs
+END
+SecondaryTradeBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/SecondaryTradeBase.cs
+END
+GatheringBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/GatheringBase.cs
+END
+RealOrderItemTrashReasonBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/RealOrderItemTrashReasonBase.cs
+END
+PaperTypeBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/PaperTypeBase.cs
+END
+PrintRequireDetailBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/PrintRequireDetailBase.cs
+END
+OrdersForRecordMachineSumBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/OrdersForRecordMachineSumBase.cs
+END
+CampaignBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/CampaignBase.cs
+END
+DeliveryOrderBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Domain/Base/DeliveryOrderBase.cs
+END
+UnitBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Domain/Base/UnitBase.cs
+END

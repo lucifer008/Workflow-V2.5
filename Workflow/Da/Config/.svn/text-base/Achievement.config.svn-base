@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="Achievement" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+
+  <resultMaps>
+		<resultMap id="SearchAchievementMap" class="Achievement">
+      <result property="Id" column="achievement_Id"/>
+      <result property="OrdersId" column="ordersid"/>
+			<result property="No" column="No"/>
+			<result property ="CustomerName" column="CustomerName"/>
+			<result property="InsertDateTime" column="Insert_Date_Time"/>
+			<result property="PositionName" column="PositionName"/>
+			<result property="ProcessName" column="ProcessName"/>
+      <result property="EmployeeName" column="EmployeeName"/>
+			<result property="NewOrderName" column="NewOrderName"/>
+			<result property="AchievementValue" column="ACHIEVEMENT"/>
+		</resultMap>
+		<resultMap id="SelectAchievementCount" class="Achievement">
+			<result property="EmployeeId" column="employeeid"/>
+			<result property="EmployeeName" column="employeeName"/>
+			<result property="PositionId" column="positionId"/>
+			<result property="PositionName" column="positionName"/>
+			<result property="AchievementValue" column="achievementvalue"/>
+		</resultMap>
+		<resultMap id="SelectCustomerAchievementCountMap" class="Achievement">
+			<result property="EmployeeId" column="employeeid"/>
+			<result property="EmployeeName" column="EmployeeName"/>
+			<result property="AchievementValue" column="AchievementValue"/>
+			<!--<result property="TrashPaper" column="TrashPapers"/>-->
+		</resultMap>
+		<resultMap id="SelectCustomerAchievementDetailMap" class="Achievement">
+			<result property="No" column="No"/>
+			<result property="EmployeeName" column="EMPLOYEENAME"/>
+			<result property="AchievementValue" column="ACHIEVEMENTVALUE"/>
+			<result property="CustomerName" column="CustomerName"/>
+			<result property="PositionName" column="PositionName"/>
+		</resultMap>
+    <resultMap id="SearchAchievementByShoperAndManagerMap" class="Achievement">
+      <result property="EmployeeName" column="employeeName"/>
+      <result property="PositionName" column="positionName"/>
+      <result property="AchievementValue" column="achievementValue"/>
+    </resultMap>
+	</resultMaps>
+	<statements>
+    <!--业绩查询(分页) 2009年4月23日10:42:57 修正为按照结算时间查询  张晓林-->
+	<select id="SearchAchievement" parameterClass="map" resultMap="SearchAchievementMap">
+      select
+      distinct
+      top(#RowCount#)
+      a.id as ordersid,
+      cus.Name as CustomerName,
+      a.No,a.Balance_Date_Time Insert_Date_Time,
+      k.PositionName,
+      em.Name as NewOrderName,
+      k.ACHIEVEMENT as ACHIEVEMENT
+      ,k.id as achievement_Id,k.EmployeeName,z.Name ProcessName
+      from orders as a
+      INNer join Customer as cus on cus.Id=a.Customer_Id
+      INNER join Users as u on u.id=a.insert_User
+      INNEr join Employee as em on em.id=u.Employee_Id
+      Inner join Employee_Position as ep on ep.employee_Id=em.Id
+      Inner join Position as ps on ep.position_Id=ps.Id
+      Inner join(
+      select
+      ac.Orders_Id,po.Name as PositionName,ac.Id,
+      achievement_Value as ACHIEVEMENT
+      ,em.Name as EmployeeName
+      from  ACHIEVEMENT as ac
+      left join Employee as em on em.Id=ac.Employee_Id
+      left join position as po on po.id=ac.position
+      where ac.Deleted='0' And ac.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend=" And" property="BranchShopId">
+          ac.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull property="EmployeeIdList">
+          <iterate prepend="and" property="EmployeeIdList" open="(" close=")" conjunction=" OR ">
+            <![CDATA[
+					  em.ID=#EmployeeIdList[]#
+					  ]]>
+          </iterate>
+        </isNotNull>
+        <isNotNull property="PositionIdList">
+          <iterate prepend="and" property="PositionIdList" open="(" close=")" conjunction=" OR ">
+            <![CDATA[
+					  po.ID=#PositionIdList[]#
+					  ]]>
+          </iterate>
+        </isNotNull>
+      </dynamic>
+      )k on a.id=k.Orders_Id
+      Inner join(
+      select
+      k.id,pc.Name
+      from achievement k
+      Inner join ORDER_ITEM_FACTOR_VALUE o on o.order_Item_Id=k.order_item_Id
+      inner join PROCESS_CONTENT pc on pc.Id=o.value
+      inner join price_factor pf on pf.Id=o.price_factor_id
+      and pf.target_table=#NewOrderName#
+      )z on k.id=z.Id
+      where a.Deleted='0' And a.Company_Id=#CompanyId#
+      <dynamic>
+      <isNotNull prepend="And" property="OrderNo">
+        a.No=#OrderNo#
+      </isNotNull>
+      <isNotNull prepend="And" property="Status">
+        a.Status=#Status#
+      </isNotNull>
+      <isNotNull prepend=" And" property="BranchShopId">
+        a.Branch_Shop_Id=#BranchShopId#
+      </isNotNull>
+      <isNotNull prepend="And" property="BeginDateTimeString">
+        a.Balance_Date_Time>=#BeginDateTimeString#
+      </isNotNull>
+      <isNotNull prepend="And" property="EndDateTimeString">
+        <![CDATA[ a.Balance_Date_Time<=#EndDateTimeString#]]>
+      </isNotNull>
+      </dynamic>
+      And k.id not in(
+      select
+      distinct
+      top(#RowCount#*#pageCountIndex#)
+      k.id
+      from orders as a
+      INNer join Customer as cus on cus.Id=a.Customer_Id
+      INNER join Users as u on u.id=a.insert_User
+      INNEr join Employee as em on em.id=u.Employee_Id
+      Inner join Employee_Position as ep on ep.employee_Id=em.Id
+      Inner join Position as ps on ep.position_Id=ps.Id
+      Inner join(
+      select
+      ac.Orders_Id,po.Name as PositionName,ac.Id,
+      achievement_Value as ACHIEVEMENT
+      ,em.Name as EmployeeName
+      from  ACHIEVEMENT as ac
+      left join Employee as em on em.Id=ac.Employee_Id
+      left join position as po on po.id=ac.position
+      where ac.Deleted='0' And ac.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend=" And" property="BranchShopId">
+          ac.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull property="EmployeeIdList">
+          <iterate prepend="and" property="EmployeeIdList" open="(" close=")" conjunction=" OR ">
+            <![CDATA[
+					  em.ID=#EmployeeIdList[]#
+					  ]]>
+          </iterate>
+        </isNotNull>
+        <isNotNull property="PositionIdList">
+          <iterate prepend="and" property="PositionIdList" open="(" close=")" conjunction=" OR ">
+            <![CDATA[
+					  po.ID=#PositionIdList[]#
+					  ]]>
+          </iterate>
+        </isNotNull>
+      </dynamic>
+      )k on a.id=k.Orders_Id
+      where a.Deleted='0' And a.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="OrderNo">
+          a.No=#OrderNo#
+        </isNotNull>
+        <isNotNull prepend="And" property="Status">
+          a.Status=#Status#
+        </isNotNull>
+        <isNotNull prepend=" And" property="BranchShopId">
+          a.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull prepend="And" property="BeginDateTimeString">
+          a.Balance_Date_Time>=#BeginDateTimeString#
+        </isNotNull>
+        <isNotNull prepend="And" property="EndDateTimeString">
+          <![CDATA[ a.Balance_Date_Time<=#EndDateTimeString#]]>
+        </isNotNull>
+      </dynamic>
+      order by k.id
+      )
+      order by k.id
+    </select>
+    <!--业绩查询(统计总行数)-->
+    <select id="SelectAchievementRowCount" parameterClass="map" resultClass="long">
+      select Count(distinct m.achievement_Id) from (
+      select
+      a.id as ordersid,
+      cus.Name as CustomerName,
+      a.No,a.Insert_Date_Time,
+      k.PositionName,
+      em.Name as NewOrderName,
+      k.ACHIEVEMENT as ACHIEVEMENT
+      ,k.id as achievement_Id,k.EmployeeName
+      from orders as a
+      INNer join Customer as cus on cus.Id=a.Customer_Id
+      INNER join Users as u on u.id=a.insert_User
+      INNEr join Employee as em on em.id=u.Employee_Id
+      Inner join Employee_Position as ep on ep.employee_Id=em.Id
+      Inner join Position as ps on ep.position_Id=ps.Id
+      Inner join(
+      select
+      ac.Orders_Id,po.Name as PositionName,ac.Id,
+      achievement_Value as ACHIEVEMENT
+      ,em.Name as EmployeeName
+      from  ACHIEVEMENT as ac
+      left join Employee as em on em.Id=ac.Employee_Id
+      left join position as po on po.id=ac.position
+      where ac.Deleted='0' And ac.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend=" And" property="BranchShopId">
+          ac.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull property="EmployeeIdList">
+          <iterate prepend="and" property="EmployeeIdList" open="(" close=")" conjunction=" OR ">
+            <![CDATA[
+					  em.ID=#EmployeeIdList[]#
+					  ]]>
+          </iterate>
+        </isNotNull>
+        <isNotNull property="PositionIdList">
+          <iterate prepend="and" property="PositionIdList" open="(" close=")" conjunction=" OR ">
+            <![CDATA[
+					  po.ID=#PositionIdList[]#
+					  ]]>
+          </iterate>
+        </isNotNull>
+      </dynamic>
+      )k on a.id=k.Orders_Id
+      where a.Deleted='0' And a.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="OrderNo">
+          a.No=#OrderNo#
+        </isNotNull>
+        <isNotNull prepend="And" property="Status">
+          a.Status=#Status#
+        </isNotNull>
+        <isNotNull prepend=" And" property="BranchShopId">
+          a.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull prepend="And" property="BeginDateTimeString">
+          a.Balance_Date_Time>=#BeginDateTimeString#
+        </isNotNull>
+        <isNotNull prepend="And" property="EndDateTimeString">
+          <![CDATA[ a.Balance_Date_Time<=#EndDateTimeString#]]>
+        </isNotNull>
+      </dynamic>
+      )m
+    </select>
+    <!--业绩查询(打印)-->
+    <select id="SelectAchievementPrint" parameterClass="map" resultMap="SearchAchievementMap">
+      select
+      distinct
+      a.id as ordersid,
+      cus.Name as CustomerName,
+      a.No,a.Balance_Date_Time Insert_Date_Time,
+      k.PositionName,
+      em.Name as NewOrderName,
+      k.ACHIEVEMENT as ACHIEVEMENT
+      ,k.id as achievement_Id,k.EmployeeName,z.Name ProcessName
+      from orders as a
+      INNer join Customer as cus on cus.Id=a.Customer_Id
+      INNER join Users as u on u.id=a.insert_User
+      INNEr join Employee as em on em.id=u.Employee_Id
+      Inner join Employee_Position as ep on ep.employee_Id=em.Id
+      Inner join Position as ps on ep.position_Id=ps.Id
+      Inner join(
+      select
+      ac.Orders_Id,po.Name as PositionName,ac.Id,
+      achievement_Value as ACHIEVEMENT
+      ,em.Name as EmployeeName
+      from  ACHIEVEMENT as ac
+      left join Employee as em on em.Id=ac.Employee_Id
+      left join position as po on po.id=ac.position
+      where ac.Deleted='0' And ac.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend=" And" property="BranchShopId">
+          ac.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull property="EmployeeIdList">
+          <iterate prepend="and" property="EmployeeIdList" open="(" close=")" conjunction=" OR ">
+            <![CDATA[
+					  em.ID=#EmployeeIdList[]#
+					  ]]>
+          </iterate>
+        </isNotNull>
+        <isNotNull property="PositionIdList">
+          <iterate prepend="and" property="PositionIdList" open="(" close=")" conjunction=" OR ">
+            <![CDATA[
+					  po.ID=#PositionIdList[]#
+					  ]]>
+          </iterate>
+        </isNotNull>
+      </dynamic>
+      )k on a.id=k.Orders_Id
+      Inner join(
+      select
+      k.id,pc.Name
+      from achievement k
+      Inner join ORDER_ITEM_FACTOR_VALUE o on o.order_Item_Id=k.order_item_Id
+      inner join PROCESS_CONTENT pc on pc.Id=o.value
+      inner join price_factor pf on pf.Id=o.price_factor_id
+      and pf.target_table=#NewOrderName#
+      )z on k.id=z.Id
+      where a.Deleted='0' And a.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="OrderNo">
+          a.No=#OrderNo#
+        </isNotNull>
+        <isNotNull prepend="And" property="Status">
+          a.Status=#Status#
+        </isNotNull>
+        <isNotNull prepend=" And" property="BranchShopId">
+          a.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull prepend="And" property="BeginDateTimeString">
+          a.Balance_Date_Time>=#BeginDateTimeString#
+        </isNotNull>
+        <isNotNull prepend="And" property="EndDateTimeString">
+          <![CDATA[ a.Balance_Date_Time<=#EndDateTimeString#]]>
+        </isNotNull>
+      </dynamic>
+      order by k.Id
+    </select> 
+    <!--订单绩效分配情况统计(分页)-->
+	<select id="GetOrderAchievementCount" parameterClass="map" resultMap="SelectAchievementCount">
+			<![CDATA[
+        select top(#RowCount#) * from(
+			  select b.id employeeid,
+        max(b.name) employeeName,
+        d.id positionId,max(d.name) positionName,sum(isnull(a.achievement_value,0)) achievementvalue 
+        from achievement a
+			  inner join employee b on a.employee_id=b.id
+			  inner join position d on a.position=d.id
+			  where a.deleted='0' and a.company_id=#CompanyId# and a.Orders_Id=#OrdersId#
+			  ]]>
+			  <dynamic >
+				  <isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+					  <![CDATA[
+					  a.branch_shop_id=#BranchShopId#		
+					  ]]>
+				  </isNotEqual>
+			  </dynamic>
+			  <![CDATA[
+			  group by d.id,b.id
+			  ]]>
+      ) m
+      where m.employeeid not in(
+      <![CDATA[
+        select 
+        top(#RowCount#*#currentPageIndex#) b.id employeeid
+        from achievement a
+			  inner join employee b on a.employee_id=b.id
+			  inner join position d on a.position=d.id
+       where a.deleted='0' and a.company_id=#CompanyId# and a.Orders_Id=#OrdersId#
+      ]]>
+      <dynamic >
+        <isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+          <![CDATA[
+					  a.branch_shop_id=#BranchShopId#		
+					  ]]>
+        </isNotEqual>
+      </dynamic>
+      <![CDATA[
+			  group by d.id,b.id
+			  ]]>
+      )
+    </select>
+    <!--订单绩效分配情况统计(总记录数)-->
+    <select id="GetOrderAchievementCountTotal" parameterClass="map" resultClass="long">
+      <![CDATA[
+      select Count(*) from (
+			select b.id employeeid,max(b.name) employeeName,d.id positionId,max(d.name) positionName,sum(isnull(a.achievement_value,0)) achievementvalue from achievement a
+			inner join employee b on a.employee_id=b.id
+			inner join position d on a.position=d.id
+			where a.deleted='0' and a.company_id=#CompanyId# and a.Orders_Id=#OrdersId#
+			]]>
+      <dynamic >
+        <isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+          <![CDATA[
+					a.branch_shop_id=#BranchShopId#		
+					]]>
+        </isNotEqual>
+      </dynamic>
+      <![CDATA[
+			group by d.id,b.id
+			]]>
+      ) m
+    </select>
+    <!--订单绩效分配情况统计(打印)-->
+    <select id="GetOrderAchievementPrint" parameterClass="map" resultMap="SelectAchievementCount">
+      <![CDATA[
+			select b.id employeeid,max(b.name) employeeName,d.id positionId,max(d.name) positionName,sum(isnull(a.achievement_value,0)) achievementvalue from achievement a
+			inner join employee b on a.employee_id=b.id
+			inner join position d on a.position=d.id
+			where a.deleted='0' and a.company_id=#CompanyId# and a.Orders_Id=#OrdersId#
+
+			]]>
+      <dynamic >
+        <isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+          <![CDATA[
+					a.branch_shop_id=#BranchShopId#		
+					]]>
+        </isNotEqual>
+      </dynamic>
+      <![CDATA[
+			group by d.id,b.id
+			]]>
+    </select>
+    <!--员工绩效统计(分页)  2009年4月23日10:42:57 修正为按照结算时间查询  张晓林-->
+	<select id="SelectCustomerAchievementCount" parameterClass="map" resultMap="SelectCustomerAchievementCountMap">
+		if exists(select * from sysobjects where name='##tem')
+		begin
+		drop table ##tem
+		end
+		select identity(bigint,1,1) as Id,* into ##tem from(
+		select
+		b.id employeeid,
+		max(b.name) employeeName,
+		sum(isnull(a.achievement_value,0)) achievementvalue
+		from achievement a
+		left join employee b on a.employee_id=b.id
+		left join position d on a.position=d.id
+		left join orders as e on e.Id=a.orders_Id
+		where e.deleted='0' and e.company_id=#CompanyId#
+		<dynamic>
+			<isNotNull prepend="And" property="BranchShopId">e.Branch_Shop_Id=#BranchShopId#</isNotNull>
+			<isNotNull prepend="and" property="BeginDateTimeString">
+			  <![CDATA[
+						e.balance_date_Time>=#BeginDateTimeString#
+						]]>
+			</isNotNull>
+			<isNotNull prepend="and" property="EndDateTimeString">
+			  <![CDATA[
+						e.balance_date_Time<=#EndDateTimeString#
+						]]>
+			</isNotNull>
+			<isNotNull property="EmployeeIdList">
+			<iterate prepend="and" property="EmployeeIdList" open="(" close=")" conjunction=" OR ">
+			  <![CDATA[
+						b.ID=#EmployeeIdList[]#
+						]]>
+			</iterate>
+			</isNotNull>
+			<isNotNull property="PositionIdList">
+			<iterate prepend="and" property="PositionIdList" open="(" close=")" conjunction=" OR ">
+			  <![CDATA[
+						d.ID=#PositionIdList[]#
+						]]>
+			</iterate>
+			</isNotNull>
+      </dynamic>
+		group by b.id
+		)z
+		select 
+		top(#RowCount#) * 
+		from ##tem 
+		where Id not in(select top(#pageCountIndex#*#RowCount#) Id from ##tem)
+	</select>
+    <select id="SelectCustomerAchievementCountTotal" parameterClass="map" resultClass="long">
+	select count(id) from(
+      select
+      distinct b.id 
+      from achievement a
+      left join employee b on a.employee_id=b.id
+      left join position d on a.position=d.id
+      left join orders as e on e.Id=a.orders_Id
+      where e.deleted='0' and e.company_id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">e.Branch_Shop_Id=#BranchShopId#</isNotNull>
+        <isNotNull prepend="and" property="BeginDateTimeString">
+          <![CDATA[
+					e.balance_date_Time>=#BeginDateTimeString#
+					]]>
+        </isNotNull>
+        <isNotNull prepend="and" property="EndDateTimeString">
+          <![CDATA[
+					e.balance_date_Time<=#EndDateTimeString#
+					]]>
+        </isNotNull>
+        <isNotNull property="EmployeeIdList">
+          <iterate prepend="and" property="EmployeeIdList" open="(" close=")" conjunction=" OR ">
+            <![CDATA[
+					b.ID=#EmployeeIdList[]#
+					]]>
+          </iterate>
+        </isNotNull>
+        <isNotNull property="PositionIdList">
+          <iterate prepend="and" property="PositionIdList" open="(" close=")" conjunction=" OR ">
+            <![CDATA[
+					d.ID=#PositionIdList[]#
+					]]>
+          </iterate>
+        </isNotNull>
+      </dynamic>
+	  )m
+    
+    </select>
+    <!--员工业绩统计(打印)-->
+    <select id="SelectCustomerAchievementCountPrint" parameterClass="map" resultMap="SelectCustomerAchievementCountMap">
+      select
+      b.id employeeid,max(b.name)
+      employeeName,
+      sum(isnull(a.achievement_value,0)) achievementvalue
+      from achievement a
+      left join employee b on a.employee_id=b.id
+      left join position d on a.position=d.id
+      left join orders as e on e.Id=a.orders_Id
+      where e.deleted='0' and e.company_id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">e.Branch_Shop_Id=#BranchShopId#</isNotNull>
+        <isNotNull prepend="and" property="BeginDateTimeString">
+          <![CDATA[
+					e.balance_date_Time>=#BeginDateTimeString#
+					]]>
+        </isNotNull>
+        <isNotNull prepend="and" property="EndDateTimeString">
+          <![CDATA[
+					e.balance_date_Time<=#EndDateTimeString#
+					]]>
+        </isNotNull>
+        <isNotNull property="EmployeeIdList">
+          <iterate prepend="and" property="EmployeeIdList" open="(" close=")" conjunction=" OR ">
+            <![CDATA[
+					b.ID=#EmployeeIdList[]#
+					]]>
+          </iterate>
+        </isNotNull>
+        <isNotNull property="PositionIdList">
+          <iterate prepend="and" property="PositionIdList" open="(" close=")" conjunction=" OR ">
+            <![CDATA[
+					d.ID=#PositionIdList[]#
+					]]>
+          </iterate>
+        </isNotNull>
+      </dynamic>
+      group by b.id
+    </select>
+    <!--员工绩效详情-->
+	<select id="SelectCustomerAchievementDetail" resultMap="SelectCustomerAchievementDetailMap">
+			<![CDATA[
+			select
+			top (#RowCount#)
+			c.no No, 
+			e.NAME EMPLOYEENAME,
+			sum(ISNULL(d.ACHIEVEMENT_VALUE,0)) ACHIEVEMENTVALUE,
+			g.name PositionName,f.Name as CustomerName
+			from achievement d
+			inner join orders c on d.orders_id=c.id
+			inner join Customer as f on f.Id=c.Customer_Id
+			inner join employee e on d.employee_id=e.id
+			left join position g on d.position=g.id		  
+			WHERE c.DELETED='0' AND c.COMPANY_ID=#CompanyId# AND c.BRANCH_SHOP_ID=#BranchShopId#
+			]]>
+			<dynamic>
+				<isNotNull prepend="and" property="EmployeeId">
+					<![CDATA[
+					e.ID=#EmployeeId#
+					]]>
+				</isNotNull>
+				<isNotNull prepend="and" property="BeginDateTimeString">
+					<![CDATA[
+					c.balance_date_Time>=#BeginDateTimeString#
+					]]>
+				</isNotNull>
+				<isNotNull prepend="and" property="EndDateTimeString">
+				  <![CDATA[
+							c.balance_date_Time<=#EndDateTimeString#
+							]]>
+						</isNotNull>
+				<isNotNull prepend="And" property="PositionName">
+				  g.Name=#PositionName#
+				</isNotNull>
+			</dynamic>
+		 and c.id not in(
+		  <![CDATA[
+					select
+			top (#currentPageIndex#*#RowCount#)
+			  c.Id
+			  from achievement d
+				  inner join orders c on d.orders_id=c.id
+			inner join Customer as f on f.Id=c.Customer_Id
+				  inner join employee e on d.employee_id=e.id
+				  left join position g on d.position=g.id		  
+				  WHERE c.DELETED='0' AND c.COMPANY_ID=#CompanyId# AND c.BRANCH_SHOP_ID=#BranchShopId#
+				]]>
+		  <dynamic>
+			<isNotNull prepend="and" property="EmployeeId">
+			  <![CDATA[
+						e.ID=#EmployeeId#
+						]]>
+			</isNotNull>
+			<isNotNull prepend="and" property="BeginDateTimeString">
+			  <![CDATA[
+						c.balance_date_Time>=#BeginDateTimeString#
+						]]>
+			</isNotNull>
+			<isNotNull prepend="and" property="EndDateTimeString">
+			  <![CDATA[
+						c.balance_date_Time<=#EndDateTimeString#
+						]]>
+			</isNotNull>
+			<isNotNull prepend="And" property="PositionName">
+			  g.Name=#PositionName#
+			</isNotNull>
+		  </dynamic>
+		  <![CDATA[
+				group by c.id,c.No,e.Name,g.Name,f.Name order by c.id DESC
+				]]>
+		  )
+	      
+				<![CDATA[
+				group by c.id,c.No,e.Name,g.Name,f.Name order by c.id DESC
+				]]>
+		</select>
+    <select id="GetCustomerAchievementDetailRowCount" parameterClass="map" resultClass="long">
+      <![CDATA[
+				select count(*) from(
+        select
+	      c.no No, 
+	      e.NAME EMPLOYEENAME,
+	      sum(ISNULL(d.ACHIEVEMENT_VALUE,0)) ACHIEVEMENTVALUE,
+	      g.name PositionName,f.Name as CustomerName
+	      from achievement d
+			  inner join orders c on d.orders_id=c.id
+        inner join Customer as f on f.Id=c.Customer_Id
+			  inner join employee e on d.employee_id=e.id
+			  left join position g on d.position=g.id		  
+			  WHERE c.DELETED='0' AND c.COMPANY_ID=#CompanyId# AND c.BRANCH_SHOP_ID=#BranchShopId#
+			]]>
+      <dynamic>
+        <isNotNull prepend="and" property="EmployeeId">
+          <![CDATA[
+					e.ID=#EmployeeId#
+					]]>
+        </isNotNull>
+        <isNotNull prepend="and" property="BeginDateTimeString">
+          <![CDATA[
+					c.balance_date_Time>=#BeginDateTimeString#
+					]]>
+        </isNotNull>
+        <isNotNull prepend="and" property="EndDateTimeString">
+          <![CDATA[
+					c.balance_date_Time<=#EndDateTimeString#
+					]]>
+        </isNotNull>
+        <isNotNull prepend="And" property="PositionName">
+          g.Name=#PositionName#
+        </isNotNull>
+      </dynamic>
+      group by c.id,c.No,e.Name,g.Name,f.Name
+      )l
+    </select>
+    <select id="GetCustomerAchievementDetailPrint" parameterClass="map" resultMap="SelectCustomerAchievementDetailMap">
+      <![CDATA[
+				select
+	      c.no No, 
+	      e.NAME EMPLOYEENAME,
+	      sum(ISNULL(d.ACHIEVEMENT_VALUE,0)) ACHIEVEMENTVALUE,
+	      g.name PositionName,f.Name as CustomerName
+	      from achievement d
+			  inner join orders c on d.orders_id=c.id
+				inner join Customer as f on f.Id=c.Customer_Id
+			  inner join employee e on d.employee_id=e.id
+			  left join position g on d.position=g.id		  
+			  WHERE c.DELETED='0' AND c.COMPANY_ID=#CompanyId# AND c.BRANCH_SHOP_ID=#BranchShopId#
+			]]>
+      <dynamic>
+        <isNotNull prepend="and" property="EmployeeId">
+          <![CDATA[
+					e.ID=#EmployeeId#
+					]]>
+        </isNotNull>
+        <isNotNull prepend="and" property="BeginDateTimeString">
+          <![CDATA[
+					c.balance_date_Time>=#BeginDateTimeString#
+					]]>
+        </isNotNull>
+        <isNotNull prepend="and" property="EndDateTimeString">
+          <![CDATA[
+					c.balance_date_Time<=#EndDateTimeString#
+					]]>
+        </isNotNull>
+        <isNotNull prepend="And" property="PositionName">
+          g.Name=#PositionName#
+        </isNotNull>
+      </dynamic>
+      <![CDATA[
+			group by c.id,c.No,e.Name,g.Name,f.Name order by c.id DESC
+			]]>
+    </select>
+    <select id="GetAchievementById" parameterClass="map" resultMap="AchievementResultMap.selectResult">
+			SELECT * FROM
+			ACHIEVEMENT WHERE ORDER_ITEM_ID = #orderItemid#
+			AND EMPLOYEE_ID=#employeeid#
+		</select>
+    <!--统计订单制作参与人员业绩明细-->
+    <select id="GetOrderAchievementInfoByOrderIdOrEmployeeId" parameterClass="map" resultMap="AchievementResultMap.selectResult">
+      <![CDATA[
+				select
+        *
+        from Achievement
+				where orders_Id=#OrderId#
+        and order_Item_Id=#OrderItemId#
+        and employee_Id=#EmployeeId#
+        and Deleted='0' and Company_Id=#CompanyId#
+			]]>
+      <dynamic>
+        <isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+          <![CDATA[
+					 branch_shop_id=#BranchShopId#
+					]]>
+        </isNotEqual>
+        <isNotNull prepend="and" Property="Prophase">
+          position=#Prophase#
+        </isNotNull>
+        <isNotNull prepend="and" Property="Anaphase">
+          position=#Anaphase#
+        </isNotNull>
+      </dynamic>
+    </select>
+    <!--店长经理绩效统计-->
+    <select id="SearchAchievementByShoperAndManager" resultMap="SearchAchievementByShoperAndManagerMap">
+      select employeeName,positionName,sum(isnull(achievementValue,0)) achievementValue from (
+      select
+      em.name employeeName,
+      ps.Name positionName,ac.achievement_Value achievementValue
+      from achievement ac
+      Inner join employee em on em.Id=ac.employee_Id
+      inner join employee_position ep on ep.employee_id=em.id
+      inner join position ps on ps.id=ep.position_Id
+      inner join orders o on o.Id=ac.orders_Id
+      and ac.deleted='0'
+      and ac.company_id=#CompanyId#
+      and ac.branch_Shop_Id=#BranchShopId#
+      and (ps.id=#PositionId# or ps.Id=#UpdateUser#)
+      and year(o.balance_date_Time)=year(#ProcessName#)
+      and month(o.balance_date_Time)=month(#ProcessName#)
+      )z
+      group by employeeName,positionName
+    </select>
+    <delete id="DeleteAchievementByOrdersId" parameterClass="Achievement" >
+      <![CDATA[
+			delete  from Achievement where orders_Id=#OrdersId# and Company_Id=#CompanyId# 
+			]]>
+      <isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+        <![CDATA[
+				Branch_Shop_Id=#BranchShopId#
+				]]>
+      </isNotEqual>
+    </delete>
+    <delete id="DeleteAchievement" parameterClass="Achievement">
+      delete achievement
+      where orders_Id=#OrdersId#
+      and (position=#InsertUser# or position=#UpdateUser#)
+      and Company_Id=#CompanyId#
+      And branch_Shop_Id=#BranchShopId#
+    </delete>
+  </statements>
+</sqlMap>

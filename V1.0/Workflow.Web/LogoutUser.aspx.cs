@@ -1,0 +1,51 @@
+﻿using System;
+using System.Web;
+using System.Data;
+using System.Web.UI;
+using System.Collections;
+using System.Web.Security;
+using System.Configuration;
+using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls.WebParts;
+using Workflow.Web;
+using Workflow.Action;
+/// <summary>
+/// 名    称: LogoutUser
+/// 功能概要: 用户退出
+/// 作    者: 付强
+/// 创建时间: 2009-11-1
+/// 修正履历: 
+/// 修正时间: 
+/// </summary>
+public partial class LogoutUser : PageBase
+{
+    #region 类成员
+    public LoginAction loginAction;
+    public LoginAction LoginAction
+    {
+        set { loginAction = value; }
+    }
+    #endregion
+
+    #region 页面加载
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            BindData();
+        }
+    }
+    #endregion
+
+    #region 数据绑定
+    protected void BindData()
+    {
+        loginAction.GetCurrentBranchShop();
+        this.sltBranchShop.DataSource = loginAction.LoginModel.BranchShopList;
+        this.sltBranchShop.DataTextField = "Name";
+        this.sltBranchShop.DataValueField = "ID";
+        this.sltBranchShop.DataBind();
+    }
+    #endregion
+}

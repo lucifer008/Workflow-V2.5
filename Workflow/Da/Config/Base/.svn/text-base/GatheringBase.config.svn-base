@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="GatheringBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="GatheringResultMap.selectResult">
+			SELECT
+				ID, AMOUNT, GATHERING_DATE_TIME, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, COMPANY_ID, BRANCH_SHOP_ID
+			FROM GATHERING
+			Where DELETED = '0'
+				AND COMPANY_ID = #CompanyId#
+				AND BRANCH_SHOP_ID = #BranchShopId#
+			ORDER BY ID
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="GatheringResultMap.selectResult">
+			SELECT
+				ID, AMOUNT, GATHERING_DATE_TIME, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, COMPANY_ID, BRANCH_SHOP_ID
+			FROM GATHERING
+			WHERE ID = #Id# AND DELETED = '0' 
+
+		</select>
+		<insert id="Insert" parameterClass="Gathering">
+			INSERT INTO GATHERING
+				(
+				  ID, AMOUNT, GATHERING_DATE_TIME, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, COMPANY_ID, BRANCH_SHOP_ID
+				)
+				VALUES
+				(
+				  #Id # , #Amount# , #GatheringDateTime# , #InsertDateTime# , #InsertUser# , #UpdateDateTime# , #UpdateUser# , #Version# , #Deleted# , #CompanyId# , #BranchShopId# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="Gathering">
+			UPDATE GATHERING
+				SET
+					AMOUNT = #Amount# ,GATHERING_DATE_TIME = #GatheringDateTime#  ,UPDATE_DATE_TIME = #UpdateDateTime#  ,UPDATE_USER = #UpdateUser#  ,VERSION = VERSION + 1  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE GATHERING
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM GATHERING WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

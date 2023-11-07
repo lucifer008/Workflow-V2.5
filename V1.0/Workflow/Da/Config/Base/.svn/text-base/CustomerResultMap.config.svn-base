@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="CustomerResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="Customer" type="Workflow.Da.Domain.Customer, Workflow.Support" />
+	</alias>
+
+	<resultMaps>
+		<resultMap id="selectResult" class="Customer">
+			<result property="Id" column="ID" dbType="bigint"/>
+
+			<!--<result property="CustomerLevelId" column="CUSTOMER_LEVEL_ID" dbType="bigint"/>
+
+			<result property="CustomerTypeId" column="CUSTOMER_TYPE_ID" dbType="bigint"/>
+
+			<result property="SecondaryTradeId" column="SECONDARY_TRADE_ID" dbType="bigint"/>-->
+
+			<result property="Name" column="NAME" dbType="nvarchar"/>
+
+			<result property="SimpleName" column="SIMPLE_NAME" dbType="varchar"/>
+
+			<result property="Address" column="ADDRESS" dbType="nvarchar"/>
+
+			<result property="LastLinkMan" column="LAST_LINK_MAN" dbType="nvarchar"/>
+
+			<result property="LastTelNo" column="LAST_TEL_NO" dbType="varchar"/>
+
+			<result property="LinkManCount" column="LINK_MAN_COUNT" dbType="int"/>
+
+			<result property="Memo" column="MEMO" dbType="nvarchar"/>
+
+			<result property="Amount" column="AMOUNT" dbType="decimal"/>
+
+			<result property="NeedTicket" column="NEED_TICKET" dbType="char"/>
+
+			<result property="ValidateStatus" column="VALIDATE_STATUS" dbType="char"/>
+
+			<result property="InsertUser" column="INSERT_USER" dbType="bigint"/>
+
+			<result property="InsertDateTime" column="INSERT_DATE_TIME" dbType="datetime"/>
+
+			<result property="UpdateUser" column="UPDATE_USER" dbType="bigint"/>
+
+			<result property="UpdateDateTime" column="UPDATE_DATE_TIME" dbType="datetime"/>
+
+			<result property="Version" column="VERSION" dbType="int"/>
+
+			<result property="Deleted" column="DELETED" dbType="char"/>
+
+			<result property="CompanyId" column="COMPANY_ID" dbType="bigint"/>
+
+			<result property="BranchShopId" column="BRANCH_SHOP_ID" dbType="bigint"/>
+
+			<result property="PayType" column="PAY_TYPE" dbType="int"/>
+
+
+			<result property="CustomerType" column="CUSTOMER_TYPE_ID" select="CustomerTypeBase.SelectByPk" nullValue="0" lazyLoad="true"/>
+			<result property="CustomerLevel" column="CUSTOMER_LEVEL_ID" select="CustomerLevelBase.SelectByPk" nullValue="0" lazyLoad="true"/>
+			<result property="SecondaryTrade" column="SECONDARY_TRADE_ID" select="SecondaryTradeBase.SelectByPk" nullValue="0" lazyLoad="true"/>
+			<result property="LinkManList" column="ID" select="CustomerBase.SelectLinkMan" nullValue="0" lazyLoad="true"/>
+		</resultMap>
+	</resultMaps>
+</sqlMap>

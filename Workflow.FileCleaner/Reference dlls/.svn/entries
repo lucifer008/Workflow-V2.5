@@ -1,0 +1,41 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow.FileCleaner/Reference%20dlls
+http://192.168.0.6/svn/workflow
+
+
+
+2008-12-08T07:11:17.625000Z
+1868
+fuqiang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+log4net.dll
+file
+
+
+
+
+2010-03-25T07:08:47.234375Z
+b89cb7f3f1a1e2807e708f5435deb13d
+2008-12-08T07:11:17.625000Z
+1868
+fuqiang
+has-props
+

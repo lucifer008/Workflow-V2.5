@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="MemberCard" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+		<resultMap id="selectCard" class="MemberCard">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="CustomerId" column="CUSTOMER_ID" dbType="bigint"/>
+			<result property="MemberCardNo" column="MEMBER_CARD_NO" dbType="varchar"/>
+			<result property="MemberState" column="MEMBER_STATE" dbType="varchar"/>
+			<result property="IdentityCardNo" column="IDENTITY_CARD_NO" dbType="varchar"/>
+			<result property="Password" column="PASSWORD" dbType="char"/>
+			<result property="MemberCardBeginDate" column="MEMBER_CARD_BEGIN_DATE" dbType="datetime"/>
+			<result property="MemberCardEndDate" column="MEMBER_CARD_END_DATE" dbType="datetime"/>
+			<result property="NeedTicket" column="NEED_TICKET" dbType="char"/>
+			<result property="ConsumeAmount" column="CONSUME_AMOUNT" dbType="decimal"/>
+			<result property="Integral" column="INTEGRAl" dbType="int"/>
+			<result property="InsertDateTime" column="INSERT_DATE_TIME" dbType="datetime"/>
+			<result property="InsertUser" column="INSERT_USER" dbType="bigint"/>
+			<result property="UpdateDateTime" column="UPDATE_DATE_TIME" dbType="datetime"/>
+			<result property="UpdateUser" column="UPDATE_USER" dbType="bigint"/>
+			<result property="Version" column="VERSION" dbType="int"/>
+			<result property="Deleted" column="DELETED" dbType="char"/>
+			<result property="CompanyId" column="COMPANY_ID" dbType="bigint"/>
+			<result property="BranchShopId" column="BRANCH_SHOP_ID" dbType="bigint"/>
+			<result property="MemberCardLevel" column="MEMBER_CARD_LEVEL_ID" select="MemberCardLevelBase.SelectByPk" lazyLoad="true"/>
+			<result property="CustomerName" column="Name" dbType="varchar"/>
+			<result property="CustomerMemo" column="Memo" dbType="varchar"/>
+		</resultMap>
+		<resultMap id="selectTodayNewMemberCardResult" class="MemberCard">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="CustomerId" column="CUSTOMER_ID" dbType="bigint"/>
+			<result property="MemberCardNo" column="MEMBER_CARD_NO" dbType="varchar"/>
+			<result property="Name" column="NAME" dbType="nvarchar"/>
+      <result property="CustomerName" column="CustomerName" dbType="nvarchar"/>
+      <result property="Age" column="AGE" dbType="int"/>
+			<result property="Email" column="EMAIL" dbType="varchar"/>
+			<result property="Hobby" column="HOBBY" dbType="nvarchar"/>
+			<result property="MobileNo" column="MOBILE_NO" dbType="varchar"/>
+			<result property="Position" column="POSITION" dbType="nvarchar"/>
+			<result property="Sex" column="SEX" dbType="char"/>
+			<result property="MemberState" column="MEMBER_STATE" dbType="varchar"/>
+			<result property="IdentityCardNo" column="IDENTITY_CARD_NO" dbType="varchar"/>
+			<result property="Password" column="PASSWORD" dbType="char"/>
+			<result property="MemberCardBeginDate" column="MEMBER_CARD_BEGIN_DATE" dbType="datetime"/>
+			<result property="MemberCardEndDate" column="MEMBER_CARD_END_DATE" dbType="datetime"/>
+			<result property="NeedTicket" column="NEED_TICKET" dbType="char"/>
+			<result property="ConsumeAmount" column="CONSUME_AMOUNT" dbType="decimal"/>
+			<result property="Integral" column="INTEGRAl" dbType="int"/>
+			<result property="InsertDateTime" column="INSERT_DATE_TIME" dbType="datetime"/>
+			<result property="InsertUser" column="INSERT_USER" dbType="bigint"/>
+			<result property="UpdateDateTime" column="UPDATE_DATE_TIME" dbType="datetime"/>
+			<result property="UpdateUser" column="UPDATE_USER" dbType="bigint"/>
+			<result property="Version" column="VERSION" dbType="int"/>
+			<result property="Deleted" column="DELETED" dbType="char"/>
+			<result property="CompanyId" column="COMPANY_ID" dbType="bigint"/>
+			<result property="BranchShopId" column="BRANCH_SHOP_ID" dbType="bigint"/>
+			<!--<result property="MemberCardLevel" column="MEMBER_CARD_LEVEL_ID" select="MemberCardLevelBase.SelectByPk" nullValue="0" lazyLoad="true"/>
+			<result property="MemberCardConcessionList" column="ID" select="MemberCardBase.SelectMemberCardConcession" nullValue="0" lazyLoad="true"/>-->
+		</resultMap>
+		<resultMap id="SelectMemberCardInfo" class="MemberCard">
+			<result property="Id" column="MemberCardId"/>
+			<result property="CustomerId" column="CustomerId"/>
+			<result property="MemberCardNo" column="MemberCardNo"/>
+			<!--<result property="MemberCardLevelId" column="MemberCardLevelId"/>-->
+			<result property="TradeId" column="TradeId"/>
+			<result property="CustomerTypeId" column="CustomerTypeId"/>
+			<result property="CustomerName" column="CustomerName"/>
+			<result property="LinkManName" column="LinkMan"/>
+			<result property="TelNo" column="TelNo"/>
+			<result property="CustomerMemo" column="CustomerMemo"/>
+			<result property="NeedTicket" column="NeedTicket"/>
+			<result property="PayType" column="Pay_Type"/>
+		</resultMap>	
+		<resultMap id="selectPartResult" class="MemberCard">
+			<result property="Id" column="Id" dbType="bigint"/>
+			<result property="Password" column="PASSWORD" dbType="char"/>
+		</resultMap>
+    <resultMap id="SelectMemberCard" class="MemberCard">
+      <result property="Id" column="MemberCardId"/>
+      <result property="CustomerId" column="CustomerId"/>
+      <result property="MemberState" column="MemberState" dbType="varchar"/>
+      <result property="ConsumeAmount" column="CONSUME_AMOUNT" dbType="decimal"/>
+      <result property="Integral" column="INTEGRAl" dbType="int"/>
+    </resultMap>
+    <resultMap id="SearchMemberByIdMap" class="MemberCard">
+      <result property="Id" column="ID" dbType="bigint"/>
+      <result property="CustomerId" column="CUSTOMER_ID" dbType="bigint"/>
+      <result property="MemberCardLevelId" column="Member_Card_Level_Id" dbType="bigint"/>
+      <result property="MemberCardNo" column="MEMBER_CARD_NO" dbType="varchar"/>
+      <result property="Name" column="NAME" dbType="nvarchar"/>
+      <result property="CustomerName" column="CustomerName" dbType="nvarchar"/>
+      <result property="Age" column="AGE" dbType="int"/>
+      <result property="Email" column="EMAIL" dbType="varchar"/>
+      <result property="Hobby" column="HOBBY" dbType="nvarchar"/>
+      <result property="MobileNo" column="MOBILE_NO" dbType="varchar"/>
+      <result property="Position" column="POSITION" dbType="nvarchar"/>
+      <result property="Sex" column="SEX" dbType="char"/>
+      <result property="MemberState" column="MEMBER_STATE" dbType="varchar"/>
+      <result property="IdentityCardNo" column="IDENTITY_CARD_NO" dbType="varchar"/>
+      <result property="Password" column="PASSWORD" dbType="char"/>
+      <result property="MemberCardBeginDateString" column="MEMBER_CARD_BEGIN_DATE" dbType="nvarchar"/>
+      <result property="MemberCardEndDateString" column="MEMBER_CARD_END_DATE" dbType="nvarchar"/>
+      <result property="NeedTicket" column="NEED_TICKET" dbType="char"/>
+      <result property="ConsumeAmount" column="CONSUME_AMOUNT" dbType="decimal"/>
+      <result property="Integral" column="INTEGRAl" dbType="int"/>
+      <result property="TradeId" column="SECONDARY_TRADE_ID" dbType="int"/>
+      <result property="CustomerTypeId" column="customer_Type_ID" dbType="int"/>
+      <result property="CustomerAddress" column="address" dbType="varchar"/>
+      <result property="LastLinkMan" column="last_link_man" dbType="varchar"/>
+      <result property="CustomerNameSimple" column="Simple_Name" dbType="varchar"/>
+      <result property="LastTelNo" column="last_Tel_No" dbType="varchar"/>
+      <result property="Memo" column="memo" dbType="varchar"/>
+      <result property="PayType" column="Pay_Type" dbType="int"/>
+      <result property="CustomerValidateStatus" column="VALIDATE_STATUS" dbType="char"/>
+      <result property="CustomerLevelId" column="Customer_level_Id" dbType="bigint"/>
+    </resultMap>
+    <resultMap id="SelectMemberCardByCardNoMap" class="MemberCard">
+      <result property="Id" column="Id"/>
+      <result property="MemberCardNo" column="Member_Card_No"/>
+      <result property="CustomerName" column="CustomerName"/>
+      <result property="Name" column="CustomerLevelName"/>
+    </resultMap>
+    <resultMap id="SearchChargeRecordMap" class="MemberCardConcession">
+      <result property="Id" column="Id"/>
+      <result property="MemberCardNo" column="Member_Card_No"/>
+      <result property="MemberCardId" column="MemberCardId"/>
+      <result property="CustomerName" column="CustomerName"/>
+      <result property="JoinDateTime" column="Join_Date_Time"/>
+      <result property="Amount" column="Amount"/>
+      <result property="CampaignName" column="CampaignName"/>
+      <result property="ConcessionName" column="ConcessionName"/>
+      <result property="Memo" column="Memo"/>
+    </resultMap>
+    <resultMap id="SearchMemberCardConsumeAmountMap" class="MemberCard">
+      <result property="ConsumeAmount" column="ConsumeAmount"/>
+    </resultMap>
+	</resultMaps>  
+	<statements>
+		<select id="SelectAll" resultMap="MemberCardResultMap.selectResult">
+			SELECT
+			*
+			FROM MEMBER_CARD where DELETED = '0'
+			ORDER BY ID ASC
+		</select>
+		<!--按照身份证号查询卡信息 (挂失/恢复)-->
+		<select id="SelectMemberCardByIdentityCardInGearMemberCard" parameterClass="map"  resultMap="selectTodayNewMemberCardResult">
+		  SELECT
+		  a.*,b.Name as CustomerName
+		  FROM member_card as a
+		  Inner join Customer as b on a.Customer_Id=b.id
+		  where a.deleted = '0' and a.identity_card_no=#IdentityCardNo# and a.Company_Id=#CompanyId# a.and member_State !='3'
+		  <dynamic>
+			<isNotNull prepend="And" property="BranchShopId">
+			  a.Branch_Shop_Id=#BranchShopId#
+			</isNotNull>
+			<isNotNull prepend="AND" property="MemberState">
+			  <![CDATA[ a.member_State!=#MemberState#]]>
+			</isNotNull>
+		  </dynamic>
+		  ORDER BY ID ASC
+		</select>		
+		<select id="SelectMemberCardByIdentityCard" parameterClass="map"  resultMap="selectTodayNewMemberCardResult">
+		  SELECT
+		  a.*,b.Name as CustomerName
+		  FROM member_card as a
+		  Inner join Customer as b on a.Customer_Id=b.id
+		  where a.deleted = '0' 
+		  and a.Company_Id=#CompanyId#
+		  <dynamic>
+			<isNotNull prepend="And" property="IdentityCardNo">
+			  a.identity_card_no=#IdentityCardNo#
+			</isNotNull>
+			<isNotNull prepend="And" property="BranchShopId">
+				a.Branch_Shop_Id=#BranchShopId#
+			</isNotNull>
+			<isNotNull prepend="AND" property="MemberState">
+				a.member_State=#MemberState#
+			</isNotNull>
+			<isNotNull prepend="And" property="MemberCardNo">
+			  a.Member_Card_no like #MemberCardNo#
+			</isNotNull>
+		  </dynamic>
+			ORDER BY ID ASC
+		</select>		
+		<select id="SelectMemberCardByIdentityCardReportLossMemberCard" parameterClass="map"  resultMap="selectTodayNewMemberCardResult">
+		  SELECT
+		  a.*,b.Name as CustomerName
+		  FROM member_card as a
+		  Inner join Customer as b on a.Customer_Id=b.id
+		  where a.deleted = '0' 
+		  <dynamic>
+			<isNotNull prepend="And" property="IdentityCardNo">
+			  a.identity_card_no=#IdentityCardNo#
+			</isNotNull>
+			<isNotNull prepend="AND" property="BranchShopId">
+				a.Branch_Shop_Id=#BranchShopId#
+			</isNotNull>
+			<isNotNull prepend="AND" property="CompanyId">
+				a.Company_Id=#CompanyId#
+			</isNotNull>
+			<isNotNull prepend="AND" property="MemberState">
+				a.member_State !=#MemberState#
+			</isNotNull>
+			<isNotNull prepend="And" property="MemberCardNo">
+			  a.Member_Card_no like #MemberCardNo#
+			</isNotNull>
+		  </dynamic>
+		  ORDER BY ID ASC
+		</select>
+		<select id="SelectMemberCardByCardNo" parameterClass="map"  resultMap="SelectMemberCardByCardNoMap">   
+		  SELECT
+		  top(1) a.Id,a.Member_Card_No,
+		  b.Name as CustomerName,
+		  c.Name as CustomerLevelName
+		  FROM member_card a
+		  Inner join Customer b on a.Customer_Id=b.Id
+		  Inner join Customer_Level c on c.Id=b.Customer_level_Id
+		  where a.deleted = '0'
+		  and a.Company_Id=#CompanyId#
+		  and a.member_state = #MemberState#
+		  <dynamic>
+			<isNotNull prepend="And" property="MemberCardNo">
+			  a.member_card_no= #MemberCardNo#
+			</isNotNull>
+			<isNotNull prepend="And" property="BranchShopId">
+			  a.branch_Shop_Id=#BranchShopId#
+			</isNotNull>
+		  </dynamic>
+		</select>
+		<!--会员详情统计-->
+		<select id="SelectAllMemberCardByCardNo" parameterClass="map"  resultMap="MemberCardResultMap.selectResult">
+		  SELECT
+		  top (1) *
+		  FROM member_card
+		  where
+		  deleted = '0'
+		  and member_card_no= #MemberCardNo#
+		  and company_Id=#CompanyId#
+		  and branch_Shop_Id=#BranchShopId#
+		</select>
+		<!--根据会员Id查询消费总金额-->
+		<select id="SearchMemberCardConsumeAmount" parameterClass="map" resultMap="SearchMemberCardConsumeAmountMap">
+		  select
+		  Sum(Sum_Amount) as ConsumeAmount
+		  from orders
+		  where deleted='0'
+		  and Member_Card_Id=#MemberCardId#
+		  and Company_Id=#CompanyId#
+		  and branch_Shop_Id=#BranchShopId#
+		  and Status=#Status#
+		</select>
+		<!--挂失/恢复 验证卡密码-->
+		<select id="SelectMemberCardByMemberCardNoAndPassWord" parameterClass="map"  resultClass="int">
+		  select count(*) from member_card
+		  where  deleted = '0'
+		  and Company_Id=#CompanyId# and Branch_Shop_Id=#BranchShopId#
+		  <dynamic>
+			<isNotNull prepend="ANd" property="PassWord">
+			  password = #PassWord#
+			</isNotNull>
+			<isNotNull prepend="AND" property="CustomerId">
+			  Customer_Id=#CustomerId#
+			</isNotNull>
+			<isNotNull prepend="AND" property="MemberCardNo">
+			  member_card_no= #MemberCardNo#
+			</isNotNull>
+		  </dynamic>
+		</select>   
+		<select id="SelectMemberCardNo" parameterClass="map"  resultClass="int">
+		  select count(*) from member_card
+		  where  deleted = '0'
+		  <isNotNull prepend="AND" property="MemberCardNo">
+			member_card_no= #MemberCardNo#
+		  </isNotNull>
+		  <isNotNull prepend="ANd" property="CompanyId">
+			Company_Id=#CompanyId#
+		  </isNotNull>
+		  <isNotNull prepend="ANd" property="BranchShopId">
+			Branch_Shop_Id=#BranchShopId#
+		  </isNotNull>
+		</select>
+		<!--会员卡查询(分页)-->
+		<select id="SearchMemberCard" parameterClass="map" resultMap="selectCard">
+		  select top(#RowCount#)
+		  mc.*,
+		  c.Name,
+		  c.memo
+		  from member_card as mc
+		  inner join customer c on mc.customer_id = c.id
+		  WHERE mc.DELETED = '0'
+		  And mc.Company_Id=#CompanyId#
+		  And mc.Id not in(
+			select
+			top(#PageIndex#*#RowCount#)
+			mcc.Id
+			from member_card as mcc
+			inner join customer cu on mcc.customer_id = cu.id
+			WHERE mcc.DELETED = '0'
+			And mcc.Company_Id=#CompanyId#
+			<dynamic>
+			  <isNotNull prepend="And" property="BranchShopId">
+				mcc.Branch_Shop_Id=#BranchShopId#
+			  </isNotNull>
+			  <isNotNull prepend="AND" property="MemberCardNo">
+				MCC.Member_Card_No = #MemberCardNo#
+			  </isNotNull>
+			  <isNotNull prepend="AND" property="MemberState">
+				MCC.Member_State = #MemberState#
+			  </isNotNull>
+			  <isNotNull prepend="AND" property="CustomerName">
+				CU.Name = #CustomerName#
+			  </isNotNull>
+			  <isNotNull prepend="AND" property="MemberCardLevelId">
+				MCC.MEMBER_CARD_LEVEL_ID = #MemberCardLevelId#
+			  </isNotNull>
+			  <isNotNull prepend="AND" property="BeginDate">
+				<![CDATA[MCC.INSERT_DATE_TIME >=  #BeginDate#]]>
+			  </isNotNull>
+			  <isNotNull prepend="AND" property="EndDate">
+				<![CDATA[MCC.INSERT_DATE_TIME <= #EndDate#]]>
+			  </isNotNull>
+			</dynamic>
+		  )
+		  <dynamic>
+			<isNotNull prepend="And" property="BranchShopId">
+			  mc.Branch_Shop_Id=#BranchShopId#
+			</isNotNull>
+			<isNotNull prepend="AND" property="MemberCardNo">
+				MC.Member_Card_No = #MemberCardNo#
+			</isNotNull>
+			<isNotNull prepend="AND" property="MemberState">
+				MC.Member_State = #MemberState#
+			</isNotNull>
+			<isNotNull prepend="AND" property="CustomerName">
+				C.Name = #CustomerName#
+			</isNotNull>
+			<isNotNull prepend="AND" property="MemberCardLevelId">
+				MC.MEMBER_CARD_LEVEL_ID = #MemberCardLevelId#
+			</isNotNull>
+			<isNotNull prepend="AND" property="BeginDate">
+				<![CDATA[MC.INSERT_DATE_TIME >=  #BeginDate#]]>
+			</isNotNull>
+			<isNotNull prepend="AND" property="EndDate">
+				<![CDATA[MC.INSERT_DATE_TIME <= #EndDate#]]>
+			</isNotNull>
+		</dynamic>
+		</select>
+		<select id="SearchMemberCardRowCount" parameterClass="map" resultClass="long">
+		  select
+		  count(*)
+		  from member_card as mc
+		  inner join customer c on mc.customer_id = c.id
+		  WHERE mc.DELETED = '0'
+		  And mc.Company_Id=#CompanyId#
+		  <dynamic>
+			<isNotNull prepend="And" property="BranchShopId">
+			  mc.Branch_Shop_Id=#BranchShopId#
+			</isNotNull>
+			<isNotNull prepend="AND" property="MemberCardNo">
+			  MC.Member_Card_No = #MemberCardNo#
+			</isNotNull>
+			<isNotNull prepend="AND" property="MemberState">
+			  MC.Member_State = #MemberState#
+			</isNotNull>
+			<isNotNull prepend="AND" property="CustomerName">
+			  C.Name = #CustomerName#
+			</isNotNull>
+			<isNotNull prepend="AND" property="MemberCardLevelId">
+			  MC.MEMBER_CARD_LEVEL_ID = #MemberCardLevelId#
+			</isNotNull>
+			<isNotNull prepend="AND" property="BeginDate">
+			  <![CDATA[MC.INSERT_DATE_TIME >=  #BeginDate#]]>
+			</isNotNull>
+			<isNotNull prepend="AND" property="EndDate">
+			  <![CDATA[MC.INSERT_DATE_TIME <= #EndDate#]]>
+			</isNotNull>
+		  </dynamic>
+		</select>
+		<select id="SelectTodayNewMemberCard" resultMap="selectTodayNewMemberCardResult">
+			SELECT
+			*
+			FROM member_card
+			WHERE insert_date_time between convert(nvarchar(10),getdate(),120) and convert(nvarchar(10),dateadd(day,1,getdate()),120)
+			ORDER BY insert_date_time DESC
+		</select>
+		<select id="SelectSomeNewMemberCard" resultMap="MemberCardResultMap.selectResult">
+		  SELECT
+		  *
+		  FROM member_card
+		  WHERE
+		  deleted='0'
+		  And insert_date_time between #StartTime# and #EndTime#
+		  And Company_Id=#CompanyId#
+		  And Insert_User=#UserId#
+		  <dynamic>
+			<isNotNull prepend="And" property="BranchShopId">
+			  Branch_Shop_Id=#BranchShopId#
+			</isNotNull>
+		  </dynamic>
+		  ORDER BY insert_date_time DESC
+		</select>
+		<!--统计会员卡充值记录(分页)-->
+		<select id="SearchChargeRecord" parameterClass="map" resultMap="SearchChargeRecordMap">
+			if exists(select * from sysobjects where name='##t')
+			begin
+			drop table ##t
+			end
+			select identity(bigint,1,1) as Id,* into ##t from(
+			select * from (
+			select
+			b.Id MemberCardId,
+			b.Member_Card_No,      max(c.Name) CustomerName,
+			a.Join_Date_Time,      Sum(a.Amount) Amount,e.Name CampaignName,
+			d.Name ConcessionName,Max(d.Memo) memo
+			from Member_Card_Concession a
+			inner join Member_Card b on b.Id=a.Member_Card_Id
+			Inner join Customer c on c.Id=b.Customer_Id
+			Inner join Concession d on d.Id=a.Concession_Id
+			Inner join Campaign e on e.Id=d.Campaign_Id
+			where b.deleted='0' and b.company_Id=#CompanyId# and b.Branch_Shop_Id=#BranchShopId#
+			<dynamic>
+				<isNotNull prepend="And" property="BeginDate">
+					a.Join_date_Time>=#BeginDate#
+				</isNotNull>
+				<isNotNull prepend="And" property="EndDate">
+					<![CDATA[a.Join_Date_Time<=#EndDate# ]]>
+				</isNotNull>
+				<isNotNull prepend="And" property="MemberCardNo">
+					b.Member_Card_No=#MemberCardNo#
+				</isNotNull>
+			</dynamic>
+			group by d.name,e.Name,a.Join_Date_Time,b.Member_Card_No,b.Id
+			)z
+			union
+			(
+			select
+			b.Id MemberCardId,
+			b.Member_Card_No,      max(c.Name) CustomerName,
+			a.Join_Date_Time,      Sum(a.Amount) Amount,e.Name CampaignName,
+			d.Name ConcessionName,Max(d.Memo) memo
+			from MEMBER_CARD_DISCOUNT_CONCESSION a
+			inner join Member_Card b on b.Id=a.Member_Card_Id
+			Inner join Customer c on c.Id=b.Customer_Id
+			Inner join DISCOUNT_CONCESSION d on d.Id=a.Discount_Concession_Id
+			Inner join Campaign e on e.Id=d.Campaign_Id
+			where b.deleted='0' and b.company_Id=#CompanyId# and b.Branch_Shop_Id=#BranchShopId#
+			<dynamic>
+				<isNotNull prepend="And" property="BeginDate">
+					a.Join_date_Time>=#BeginDate#
+				</isNotNull>
+				<isNotNull prepend="And" property="EndDate">
+					<![CDATA[a.Join_Date_Time<=#EndDate# ]]>
+				</isNotNull>
+				<isNotNull prepend="And" property="MemberCardNo">
+					b.Member_Card_No=#MemberCardNo#
+				</isNotNull>
+			</dynamic>
+			group by d.name,e.Name,a.Join_Date_Time,b.Member_Card_No,b.Id
+			)
+			)k
+			select
+			top(#RowCount#) *
+			from ##t
+			where Id not in(
+			select
+			top(#RowCount#*#CurrentPageIndex#) k.id
+			from ##t k
+			)
+			drop table ##t
+		</select>
+		<select id="SearchChargeRecordRowCount" parameterClass="map" resultClass="long">
+			if exists(select * from sysobjects where name='##t')
+			begin
+			drop table ##t
+			end
+			select identity(bigint,1,1) as Id,* into ##t from(
+			select * from (
+			select
+			b.Id MemberCardId,
+			b.Member_Card_No,      max(c.Name) CustomerName,
+			a.Join_Date_Time,      Sum(a.Amount) Amount,e.Name CampaignName,
+			d.Name ConcessionName,Max(d.Memo) memo
+			from Member_Card_Concession a
+			inner join Member_Card b on b.Id=a.Member_Card_Id
+			Inner join Customer c on c.Id=b.Customer_Id
+			Inner join Concession d on d.Id=a.Concession_Id
+			Inner join Campaign e on e.Id=d.Campaign_Id
+			where b.deleted='0' and b.company_Id=#CompanyId# and b.Branch_Shop_Id=#BranchShopId#
+			<dynamic>
+				<isNotNull prepend="And" property="BeginDate">
+					a.Join_date_Time>=#BeginDate#
+				</isNotNull>
+				<isNotNull prepend="And" property="EndDate">
+					<![CDATA[a.Join_Date_Time<=#EndDate# ]]>
+				</isNotNull>
+				<isNotNull prepend="And" property="MemberCardNo">
+					b.Member_Card_No=#MemberCardNo#
+				</isNotNull>
+			</dynamic>
+			group by d.name,e.Name,a.Join_Date_Time,b.Member_Card_No,b.Id
+			)z
+			union
+			(
+			select
+			b.Id MemberCardId,
+			b.Member_Card_No,      max(c.Name) CustomerName,
+			a.Join_Date_Time,      Sum(a.Amount) Amount,e.Name CampaignName,
+			d.Name ConcessionName,Max(d.Memo) memo
+			from MEMBER_CARD_DISCOUNT_CONCESSION a
+			inner join Member_Card b on b.Id=a.Member_Card_Id
+			Inner join Customer c on c.Id=b.Customer_Id
+			Inner join DISCOUNT_CONCESSION d on d.Id=a.Discount_Concession_Id
+			Inner join Campaign e on e.Id=d.Campaign_Id
+			where b.deleted='0' and b.company_Id=#CompanyId# and b.Branch_Shop_Id=#BranchShopId#
+			<dynamic>
+				<isNotNull prepend="And" property="BeginDate">
+					a.Join_date_Time>=#BeginDate#
+				</isNotNull>
+				<isNotNull prepend="And" property="EndDate">
+					<![CDATA[a.Join_Date_Time<=#EndDate# ]]>
+				</isNotNull>
+				<isNotNull prepend="And" property="MemberCardNo">
+					b.Member_Card_No=#MemberCardNo#
+				</isNotNull>
+			</dynamic>
+			group by d.name,e.Name,a.Join_Date_Time,b.Member_Card_No,b.Id
+			)
+			)k
+			
+			select
+			count(Id)
+			from ##t
+			
+			drop table ##t
+		</select>
+		<select id="SelectOperateLog" parameterClass="map" resultMap="MemberCard.selectCard">
+		  select  mc.*, c.name,c.memo
+		  from member_card as mc inner join member_operate_log as mol on mc.id = mol.member_card_id
+		  inner join customer as c on c.id = mc.customer_id
+		  WHERE mc.DELETED = '0'
+		  <dynamic>
+			<isNotNull prepend="AND" property="MemberCardNo">
+				MC.Member_Card_No = #MemberCardNo#
+			</isNotNull>
+			<isNotNull prepend="AND" property="BeginDate">
+				<![CDATA[
+				mol.insert_date_time between #BeginDate# and  #EndDate#
+				]]>
+			</isNotNull>
+		 </dynamic>
+		 order by mc.id asc
+		</select>
+		<select id="SelectChangeMemberCard" parameterClass="map" resultMap="MemberCard.selectCard">
+			select mc.*, c.name, c.memo
+			from member_card as mc inner join change_member_card as cmc on mc.id = cmc.member_card_id
+			inner join customer as c on mc.customer_id = c.id
+			WHERE cmc.DELETED = '0'
+			<dynamic>
+				<isNotNull prepend="AND" property="MemberCardNo">
+					cmc.new_member_card_no = #MemberCardNo#
+				</isNotNull>
+				<isNotNull prepend="AND" property="BeginDate">
+					<![CDATA[
+                    cmc.insert_date_time between #BeginDate# and  #EndDate#
+                    ]]>
+				</isNotNull>
+			</dynamic>
+			order by mc.id asc
+		</select>
+		<select id="SelectCustomerInfoByMemberCard" resultMap="SelectMemberCardInfo" parameterClass="map">
+			<![CDATA[
+				select a.Id MemberCardId,a.Member_Card_No as MemberCardNo,b.Id CustomerId,b.SECONDARY_TRADE_ID TradeId,b.CUSTOMER_TYPE_ID CustomerTypeId,
+				b.Name CustomerName,b.LAST_LINK_MAN as LinkMan,b.LAST_TEL_NO as TelNo,
+				b.MEMO as CustomerMemo,b.NEED_TICKET NeedTicket,b.Pay_Type
+				 from member_Card a
+				inner join customer b on a.customer_id=b.Id
+				where a.Member_Card_No=#MemberCardNo# and a.MEMBER_STATE=#Status# and a.Company_Id=#CompanyId# and a.Branch_Shop_Id=#BranchShopId# 
+			]]>
+		</select>
+		<!--根据客户Id和卡号Id查询卡信息-->
+		<select id="SelectMemberCardByCustomerIdAndMemberCardId" parameterClass="map" resultMap="SelectMemberCard">
+		  select
+		  id as MemberCardId,Customer_Id as CustomerId,
+		  Member_State as MemberState,
+		  CONSUME_AMOUNT,INTEGRAl
+		  from Member_Card 
+		  where 
+		  Company_Id=#CompanyId# 
+		  and deleted='0'
+		  <dynamic>
+			<isNotNull prepend="And" property="BranchShopId">
+			  Branch_Shop_Id=#BranchShopId#
+			</isNotNull>
+			<isNotNull prepend="And" property="MemberCardNo">
+			  Member_Card_No=#MemberCardNo#
+			</isNotNull>
+			<isNotNull prepend="ANd" property="CustomerId">
+			  Customer_Id=#CustomerId#
+			</isNotNull>
+		</dynamic>
+		</select>
+		<!--通过membercardId查询Member信息-->
+		<select id="SearchMemberById" resultMap="SearchMemberByIdMap" parameterClass="map">
+		  select
+		  a.Id,a.CUSTOMER_ID,a.Member_Card_Level_Id,
+		  a.MEMBER_CARD_NO,a.NAME,a.AGE,a.EMAIL,
+		  a.HOBBY,a.MOBILE_NO,
+		  a.POSITION,a.SEX,a.MEMBER_STATE,a.IDENTITY_CARD_NO,
+		  a.PASSWORD,
+		  Convert(varchar(10),a.MEMBER_CARD_BEGIN_DATE,121) as MEMBER_CARD_BEGIN_DATE,
+		  Convert(varchar(10),a.MEMBER_CARD_END_DATE,121) as MEMBER_CARD_END_DATE,
+		  a.NEED_TICKET,a.CONSUME_AMOUNT,a.INTEGRAl,
+		  b.customer_Type_ID,b.SECONDARY_TRADE_ID,
+		  b.address,b.last_link_man,b.Name as CustomerName,
+		  b.Simple_Name,b.last_Tel_No,
+		  b.memo,b.pay_Type,b.VALIDATE_STATUS,b.Customer_level_Id
+		  from member_Card a
+		  inner join customer b on a.customer_id=b.Id
+		  where
+		  a.deleted='0' And a.company_Id=#CompanyId#
+		  <isNotNull prepend="And" property="BranchShopId">
+			 a.branch_Shop_Id=#BranchShopId#
+		   </isNotNull>
+		  <isNotNull prepend="And" property="Id">
+			a.Id=#Id#
+		  </isNotNull>
+		</select>
+		<!--判断会员卡是否正在使用-->
+		<select id="SearchMemberCardIdInOrdersRowCount" parameterClass="map" resultClass="long" >
+		  SELECT
+		  count(*)
+		  FROM ORDERS
+		  Where DELETED = '0'
+		  And Company_Id=#CompanyId#
+		  <dynamic>
+			<isNotNull prepend="And" property="BranchShopId">
+			  branch_Shop_id=#BranchShopId#
+			</isNotNull>
+			<isNotNull prepend="And" property="MemberCardId">
+			  member_card_Id = #MemberCardId#
+			</isNotNull>
+		  </dynamic>
+		</select>
+		<!--获取会员卡刷卡的次数-->
+		<select id="SelectMemberCardBrushNumber" parameterClass="map" resultCalss="int">
+			SELECT
+			count(*)
+			FROM ORDERS
+			Where DELETED = '0'
+			AND MEMBER_CARD_ID =(
+			select
+			Id
+			from member_Card
+			where member_Card_No=#MemberCardNo#
+			and branch_shop_Id=#BranchShopId#
+			and company_Id=#CompanyId#
+			)
+			and company_Id=#CompanyId#
+			and branch_Shop_Id=#BranchShopId#
+		</select>
+		<!--删除会员卡(逻辑删除)-->
+		<update id="UpdateMemberCardById" parameterClass="map">
+		  Update Member_Card set deleted='1' where Id=#MemberCardId#
+		  And Company_Id=#CompanyId#
+		  <isNotNull prepend="And" property="BranchShopId">
+			branch_Shop_Id=#BranchShopId#
+		  </isNotNull>
+		</update>
+		<update id="UpdateMemberState" parameterClass="map">
+			UPDATE MEMBER_CARD
+			SET
+			MEMBER_STATE = #MemberState#
+			WHERE ID = #Id#
+		</update>
+		<update id="DeleteMemberCard" parameterClass="long">
+			<![CDATA[UPDATE MEMBER_CARD
+			SET
+			deleted = '0'
+			WHERE customer_id = #CustomerId#]]>
+		</update>
+		<update id="UpdateMemberCardConsumAmountById" parameterClass="MemberCard">
+			<![CDATA[
+			update Member_Card set Consume_Amount=#ConsumeAmount# where ID=#Id#
+			]]>
+		</update>
+		<update id="UpdateMemberCardMarkingSetting">
+			Update Member_Card set Integral=Integral+#Integral#
+			where deleted='0'
+			and Company_Id=#CompanyId#
+			and Branch_Shop_Id=#BranchShopId#
+			and Id=#Id#
+		</update>
+		
+		<!--合并客户:合并会员卡信息-->
+		<update id="UpdateConbinationCustomerId" parameterClass="map">
+			update Member_Card set customer_id = #NewCustomerId# where customer_id = #OldCustomerId#
+		</update>
+	</statements>
+</sqlMap>

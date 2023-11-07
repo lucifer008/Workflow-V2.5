@@ -1,0 +1,152 @@
+<html>
+<head>
+	<title>快印易</title>
+<link rel="stylesheet" href="css/css.css" type="text/css" media="screen" />
+<style>
+	a, A:link, a:visited, a:active, A:hover
+		{color: #000000; text-decoration: none; font-family: Tahoma, Verdana; font-size: 12px}
+</style>
+<script language="JavaScript" src="tree.js"></script>
+<script language="JavaScript" >
+var TREE_ITEMS = [
+	['快印易', null,
+		['工单管理', null,
+		    ['本日工单', 'order/DailyOrder.html'],
+		    ['工单查询', 'order/SearchOrder.html'],
+		    ['上门取活', 'order/GetOrder.html']
+		    
+		],
+		['绩效管理', null,
+		    ['绩效调整',                'achievement/AdjustAchievement.html'],
+		    ['绩效查询',  				'achievement/SearchAchievement.html'],
+		    ['工单绩效分配情况',      'achievement/AchievementComposition.html'],
+		    ['员工绩效统计',      'achievement/AchievementUselessPaperSum.html']
+		],
+		['客户管理', null,
+		    ['客户一览', 'customer/CustomerList.html'],
+		    ['客户资料维护', 'customer/ModifyCustomer.html'],
+		    ['客户确认', 'customer/CustomerValidate.htm'],
+		    ['客户查询', 'customer/SearchCustomer.html']
+		],
+		['会员管理', null,
+		    ['会员一览',          'membercard/MemberCardList.html'],
+			['卡管理',null,
+			    ['发卡',                'membercard/NewMemberCard.html'],
+			    ['挂失/恢复',                'membercard/ReportLossRecovery.html'],
+			    ['注销',                'membercard/LogOutMemberCard.html'],
+			    ['补卡',                'membercard/RepairMemberCard.html']
+			],
+		    ['会员充值',            'membercard/CampaignCharge.html'],
+		    ['会员查询',null,
+			    ['会员详情查询',      'membercard/SearchMemberCard.html'],
+			    ['会员消费统计',  'membercard/MemberCardConsumeSum.html'],
+			    ['会员充值记录',      'membercard/ChargeRecord.html'],
+			    ['会员管理记录',      'membercard/OperationRecord.html'],
+			    ['会员换卡记录',      'membercard/SwapMemberCardRecord.html'],
+			    ['异常消费会员查询',      'membercard/ExceptionConsumeMember.html']
+			]
+		],
+		['抄表处理', null,
+		    ['机器抄表 ',   'logcounters/CopyCounter.html'],
+		    ['计数器查询 ', 'logcounters/SearchCounter.html']
+		],
+		['活动管理', null,
+		    ['营销活动管理', 'activities/CampaginList.html']
+		],
+		['财务处理', null,
+		    ['收银',      'finance/Balance.html'],
+		    ['应收款处理',      'finance/Gathering.html'],
+		    ['预收款处理', 'finance/PrePayHandler.html'],
+		    ['财务查询',null,
+		    	['帐龄分析','finance/find/AnalyzeDebtTime.html'],
+		    	['客户付款明细','finance/find/SearchPayment.html'],
+		    	['客户消费统计','finance/find/OrderSum.html'],
+		    	['工单查询','finance/find/SearchOrderItem.html'],
+		    	['新老客户消费统计','finance/find/SearchNewAndOldCustomer.html'],
+		    	['应收款查询','finance/find/SearchArrear.html'],
+		    	['门店营业额查询','finance/find/SearchTurnOver.html'],
+		    	['预付款查询','finance/find/SearchPrepay.html'],
+		    	['客户对帐表','finance/客户对帐表/SearchRepayHistory-1.html'],
+		    	['异常价格工单汇总','finance/find/ExceptionPriceOrderView.html'],
+		    	['波动客户查询','finance/find/ExceptionConsumeCustomer.html']
+		    ]
+		],
+		['交班管理', null,
+		    ['前台交班', 'handover/StageHandOver.html'],
+		    ['收银交班', 'handover/CasherHandOver.html'],
+		    ['交班查询', 'handover/SearchHandOver.html']
+		],
+		['系统管理', null,
+		    ['价格管理', null,
+				['业务类型设置', 'system/pricemanager/BusinessType.html'],
+			    ['门市价格设置', 'system/pricemanager/PriceManager.html'],
+			    ['会员卡价格设置', 'system/pricemanager/MemberCarcPriceSettings.html'],
+			    ['行业价格设置', 'system/pricemanager/TradePriceSetting.html'],
+			    ['特殊会员价格设置', 'system/pricemanager/SpecialPriceSetting.html']
+		    ]
+		]
+	]
+];
+
+var TREE_TPL = {
+	'target'  : 'mainFrame',	// name of the frame links will be opened in
+							// other possible values are: _blank, _parent, _search, _self and _top
+
+	'icon_e'  : 'icons/empty.gif', // empty image
+	'icon_l'  : 'icons/line.gif',  // vertical line
+
+        'icon_32' : 'icons/base.gif',   // root leaf icon normal
+        'icon_36' : 'icons/base.gif',   // root leaf icon selected
+	
+	'icon_48' : 'icons/base.gif',   // root icon normal
+	'icon_52' : 'icons/base.gif',   // root icon selected
+	'icon_56' : 'icons/base.gif',   // root icon opened
+	'icon_60' : 'icons/base.gif',   // root icon selected
+	
+	'icon_16' : 'icons/folder.gif', // node icon normal
+	'icon_20' : 'icons/folderopen.gif', // node icon selected
+	'icon_24' : 'icons/folderopen.gif', // node icon opened
+	'icon_28' : 'icons/folderopen.gif', // node icon selected opened
+
+	'icon_0'  : 'icons/page.gif', // leaf icon normal
+	'icon_4'  : 'icons/page.gif', // leaf icon selected
+	
+	'icon_2'  : 'icons/joinbottom.gif', // junction for leaf
+	'icon_3'  : 'icons/join.gif',       // junction for last leaf
+	'icon_18' : 'icons/plusbottom.gif', // junction for closed node
+	'icon_19' : 'icons/plus.gif',       // junctioin for last closed node
+	'icon_26' : 'icons/minusbottom.gif',// junction for opened node
+	'icon_27' : 'icons/minus.gif'       // junctioin for last opended node
+};
+</script>
+</head>
+
+<body>
+
+<div align="center" style="width:100%; height:100%; vertical-align:top" bgcolor="#ffffff">
+<table width="100%" border="0" height="100%" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">	
+	<tr>
+		<td width="11" ><img alt="" src="images/white_main_top_left.gif"></td>
+		<td width="99%"><img alt="" src="images/spacer_10_x_10.gif" height="10"></td>
+		<td width="11"><img alt="" src="images/white_main_top_right.gif"
+			width="12" height="11"></td>
+	</tr>
+	<tr height="99%">
+		<td colspan="3" bgcolor="#FFFFFF" valign="top">
+		<script language="JavaScript">
+					<!--//
+						new tree (TREE_ITEMS, TREE_TPL);
+					//-->
+				</script>
+		</td>
+	</tr>
+	<tr>
+		<td width="11"><img alt="" src="images/white_main_bottom_left.gif"></td>
+		<td><img alt="" src="images/spacer_10_x_10.gif"></td>
+		<td width="11"><img alt="" src="images/white_main_bottom_right.gif"></td>
+	</tr>
+</table>
+</div>
+</body>
+</html>
+

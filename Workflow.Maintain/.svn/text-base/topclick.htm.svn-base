@@ -1,0 +1,12 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>无标题页</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/topclick.js"></script>
+</head>
+<body  style="vertical-align:top; height:10px;width:100%; " topMargin="0">
+    <div id="dvTop" style="vertical-align:top;  text-align:center; height:6px;width:100%;cursor:hand" onclick="alt();"><img id="imgTop"  alt="" src="images/out.gif"/>
+    </div>
+</body>
+</html>

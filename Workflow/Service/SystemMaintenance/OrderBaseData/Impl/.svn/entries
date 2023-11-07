@@ -1,0 +1,52 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Service/SystemMaintenance/OrderBaseData/Impl
+http://192.168.0.6/svn/workflow
+
+
+
+2010-05-18T03:20:03.468750Z
+3295
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+OrderBaseDataServiceImpl.cs
+file
+
+
+
+
+2010-05-13T02:29:12.953125Z
+a5c66922bdd849e6e5d8a686b4096c47
+2010-05-18T03:20:03.468750Z
+3295
+zhangxiaolin
+
+SearchOrderBaseDataServiceImpl.cs
+file
+
+
+
+
+2010-05-13T02:29:13.156250Z
+db15176016c78d63b7ebe8d3dc913b2d
+2010-05-18T03:20:03.468750Z
+3295
+zhangxiaolin
+

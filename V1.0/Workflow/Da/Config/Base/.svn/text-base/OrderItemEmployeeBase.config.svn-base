@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="OrderItemEmployeeBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="OrderItemEmployeeResultMap.selectResult">
+			SELECT
+				ID, ORDER_ITEM_ID, EMPLOYEE_ID
+			FROM ORDER_ITEM_EMPLOYEE
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="OrderItemEmployeeResultMap.selectResult">
+			SELECT
+				ID, ORDER_ITEM_ID, EMPLOYEE_ID
+			FROM ORDER_ITEM_EMPLOYEE
+			WHERE ID = #Id# 
+		</select>
+		<insert id="Insert" parameterClass="OrderItemEmployee">
+			INSERT INTO ORDER_ITEM_EMPLOYEE
+				(
+				  ID, ORDER_ITEM_ID, EMPLOYEE_ID
+				)
+				VALUES
+				(
+				  #Id # , #OrderItemId# , #EmployeeId# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="OrderItemEmployee">
+			UPDATE ORDER_ITEM_EMPLOYEE
+				SET
+					ORDER_ITEM_ID = #OrderItemId# ,EMPLOYEE_ID = #EmployeeId#  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE ORDER_ITEM_EMPLOYEE
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM ORDER_ITEM_EMPLOYEE WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

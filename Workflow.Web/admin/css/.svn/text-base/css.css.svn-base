@@ -1,0 +1,215 @@
+body {
+	margin:10px;
+	background-color: #6C7A83;
+	font-family: 宋体,Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	line-height: 24px;
+	color: #336699;
+	margin:0px;
+}
+
+tr, td, th, input, button, select, textarea {
+	font-family: Verdana,Arial,Helvetica; 
+	font-size:10pt; line-height: 12pt
+} 
+
+#container td, #container th {
+	line-height: 24px;
+	color: #333333;
+}
+
+a:link {
+	color: #3366cc;
+}
+
+a:visited {
+  color: #3366FF;
+}
+
+a:hover {
+	text-decoration: none;
+	color:#336699;
+}
+
+a:active {
+	color: #FF0000;
+}
+
+
+
+
+/*以下为模版中必须的*/
+table {
+	border-collapse:collapse;
+	border-color:Silver;
+}
+
+th {
+	background-color:#d6dfef;
+}
+
+
+tr .detailRow {
+	background-color:expression((this.rowIndex % 2==1)?"#ffffff":"#eeeeee");
+	ryo:expression(onmouseover=function(){this.style.backgroundColor=(this.style.backgroundColor!='#e6e6e6'?'#e6e6e6':((this.rowIndex%2==1)?"#ffffff":"#eeeeee"))}
+	,onmouseout=function(){this.style.backgroundColor=(this.style.backgroundColor!='#e6e6e6'?'#e6e6e6':((this.rowIndex%2==1)?"#ffffff":"#eeeeee"))})
+}
+
+
+textarea {
+}
+
+
+.caption {
+	text-align:center;
+	font-size:16px;
+	font-color:#FF0000;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-weight:bold;
+}
+.item_caption {
+	padding-left:5px;
+	width:10%;
+	text-align:left;
+	background-color:#d6dfef;
+}
+.item_content {
+	padding-left:5px;
+	padding-right:5px;
+	text-align:left;
+}
+.num {
+	text-align:right;
+}
+/*Mashaohua Add Start 2007/08/30*/
+/*设置Table中所属行业的对齐方式*/
+.trade {
+	text-align:left;
+}
+
+/*设置Table中姓名的对齐方式*/
+.name {
+	text-align:left;
+}
+
+/*设置Table中部门的对齐方式*/
+.department {
+	text-align:center;
+}
+
+/*设置Table中业务名称的对齐方式*/
+.businessname {
+	text-align:center;
+}
+
+/*设置Table中时间的对齐方式*/
+.datetime {
+	text-align:center;
+}
+
+/*Mashaohua Add End 2007/08/30*/
+
+
+
+#container {
+	min-width:780px;
+}
+
+#container th {
+	padding-left:2px;
+	padding-right:2px;
+}
+
+
+
+/* For Input Control*/
+.buttons {
+	padding-left:5px;
+	padding-right:5px;
+}
+
+/* For select Button*/
+.selectButtons {
+}
+
+/*设置见面中检索Button的对齐方式*/
+.searchbuttons {
+}
+
+/*设置见面中查询Button的对齐方式*/
+.querybuttons {
+	text-align:right;
+	padding-right:15px;
+}
+/*设置见面中底下确认、取消Button的对齐方式*/
+.bottombuttons {
+	text-align:center;
+	padding-right:15px;
+}
+/*设置日期类型的格式*/
+.datetexts {
+	width:90px;
+}
+/*设置日期时间类型的格式*/
+.datetimetexts {
+	width:130px;
+}
+
+/*按钮栏上方的空行*/
+.emptyButtonsUpperRowHight {
+	height:10px;
+}
+
+.strikeTheEyeLargeChar{
+	color:#FF0000;
+	font-weight:bold;
+	font-size:16px;
+}
+.strikeTheEyeNormalChar{
+	color:#FF0000;
+	font-weight:bold;
+}
+
+
+.texts {
+}
+
+.radios {
+}
+
+.checks {
+}
+
+
+/*对齐方式*/
+/*电话号码*/
+.tel {
+	text-align:left;
+}
+
+
+.w1 {width : 1%}
+.w2 {width : 2%}
+
+option.disabled {
+	color: #999;
+}
+.rowNormal
+{
+    background-color: #ffffff;
+}
+
+/* normal (white) background */
+
+.rowAlternate
+{
+    background-color: #fffff0;
+}
+
+/*强调*/
+.emphasize
+{
+	 color:Red;
+	 font-size:medium; 
+}

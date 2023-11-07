@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/MemberCardManager
+END
+IMemberCardService.cs
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/MemberCardManager/IMemberCardService.cs
+END
+ISearchMemberCardService.cs
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/MemberCardManager/ISearchMemberCardService.cs
+END

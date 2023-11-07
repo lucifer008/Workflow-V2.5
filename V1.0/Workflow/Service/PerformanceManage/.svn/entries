@@ -1,0 +1,55 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow/Service/PerformanceManage
+http://192.168.0.6/svn/workflow
+
+
+
+2009-05-25T02:29:33.359375Z
+2588
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+Impl
+dir
+
+IAchinevementService.cs
+file
+
+
+
+
+2010-03-25T07:09:43.484375Z
+8e2712708f195d9b7363fa84e042650b
+2009-05-11T08:22:44.656250Z
+2541
+zhangxiaolin
+
+ISearchAchievementService.cs
+file
+
+
+
+
+2010-03-25T07:09:43.484375Z
+209cdd957e33aadfecca749e482785d7
+2009-05-25T02:29:33.359375Z
+2588
+zhangxiaolin
+

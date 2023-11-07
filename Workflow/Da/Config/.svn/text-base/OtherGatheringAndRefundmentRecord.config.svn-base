@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="OtherGatheringAndRefundmentRecord" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+		<resultMap id="SearchAccountRecordMap" class="OtherGatheringAndRefundmentRecord">
+			<result property="Id" column="IdentityId"/>
+			<result property="CustomerName" column="Name"/>
+			<result property="CustomerId" column="Customer_Id"/>
+			<result property="InsertDateTimeString" column="GatheringDateTime"/>
+			<result property="PaidAmount" column="paidAmount"/>
+			<result property="Amount" column="ScotAmount"/>
+			<result property="TicketAmountSum" column="TicketAmountSum"/>
+			<result property="PreDepositiAmount" column="PreDepositiAmount"/>
+		</resultMap>
+		<resultMap id="SearchDrawTicketRecordMap" class="OtherGatheringAndRefundmentRecord">
+			<result property="CustomerName" column="Name"/>
+			<result property="OrderNo" column="orderNo"/>
+			<result property="InsertDateTime" column="DrawDate"/>
+			<result property="DrawEmployee" column="DrawEmployee"/>
+			<result property="PaidAmount" column="PaidAmount"/>
+		</resultMap>
+	</resultMaps>
+	<!--注意：请对每个statements段增加注释。说明处理的业务-->
+	<!--查询表OTHER_GATHERING_AND_REFUNDMENT_RECORD [其它收退款记录中的所有记录]-->
+	<statements>
+		<select id="SelectAll" resultMap="OtherGatheringAndRefundmentRecordResultMap.selectResult">
+			SELECT
+			*
+			FROM OTHER_GATHERING_AND_REFUNDMENT_RECORD
+			ORDER BY ID ASC
+		</select>
+		
+		<!--应收款处理:将不欠款的订单的欠发票改为0-->
+		<update id="DiffOrderTicket" parameterClass="Order">
+			Update Orders set Not_Pay_Ticket_Amount=0 where Id=#Id#
+		</update>
+		
+		<!--应收款处理:不给不欠款的订单的发票-->
+		<update id="CancelOrderDrawTicket"  parameterClass="Order">
+			Update Orders set Paid_Ticket=#PaidTicket# where Id=#Id#
+		</update>
+		<update id="InvalidateScotRecord">
+			Update OTHER_GATHERING_AND_REFUNDMENT_RECORD set pay_kind=#TempPayKind# where orders_Id=#OrdersId#
+			and company_Id=#CompanyId# and Branch_shop_Id=#BranchShopId#
+		</update>
+		
+		<!--应收款付款记录-->
+		<select id="SearchAccountRecord" resultMap="SearchAccountRecordMap" parameterClass="Order">
+			if exists(select * from sysobjects where name='##t')
+			begin
+			drop table ##t
+			end
+
+			select identity(bigint,1,1) as IdentityId,* into ##t from(
+			select kk.Name,kk.Customer_Id,kk.GatheringDateTime,kk.paidAmount, isNull(hh.ScotAmount,0)ScotAmount,isNull(hh.TicketAmountSum,0)TicketAmountSum,isNull(mm.PreDepositiAmount,0)PreDepositiAmount from(
+			<!--收款金额-->
+			select Name,Customer_Id,GatheringDateTime,sum(isnull(Amount,0)) paidAmount from(
+			select go.orders_Id,Convert(varchar(10),d.Gathering_date_Time,120) GatheringDateTime,d.Amount,o.Customer_Id,cu.Name
+			from gathering d
+			Inner join gathering_orders go on go.gathering_Id=d.Id
+			Inner join orders o on o.Id=go.orders_Id
+			inner join Customer cu on cu.Id=o.customer_Id
+			where o.Deleted='0' and o.Company_Id=#CompanyId# and o.Branch_Shop_Id=#BranchShopId#
+			and o.pay_type=#PayType# and o.status=#Status#
+			and (go.pay_kind=#Status1# or go.pay_kind=#Status2#)
+			<dynamic>
+				<isNotNull prepend="And" property="MemberCardNo">
+					cu.Id in(select Customer_Id from member_card where Member_Card_No=#MemberCardNo#)
+				</isNotNull>
+				<isNotNull prepend="And" property="CustomerName">
+					cu.Name=#CustomerName#
+				</isNotNull>
+				<isNotNull prepend="And" property="InsertDateTimeString">
+					d.Gathering_date_Time>=#InsertDateTimeString#
+				</isNotNull>
+				<isNotNull prepend="And" property="BalanceDateTimeString">
+					<![CDATA[d.Gathering_date_Time<=#BalanceDateTimeString#]]>
+				</isNotNull>
+			</dynamic>
+			)zm group by gatheringDateTime,Customer_Id,Name
+			)kk
+			left join(
+			<!--发票，税费-->
+			select
+			og.Customer_Id,Convert(varchar(10),og.insert_Date_time,120) insert_Date_time,
+			isNull(sum(isNull(og.Amount,0)),0) ScotAmount,isNull(sum(isNull(og.Ticket_amount_sum,0)),0) TicketAmountSum
+			from OTHER_GATHERING_AND_REFUNDMENT_RECORD og
+			Inner join Customer cc on cc.Id=og.Customer_Id
+			where og.deleted='0' and og.Company_Id=#CompanyId# and og.Branch_Shop_Id=#BranchShopId#
+			<dynamic>
+				<isNotNull prepend="And" property="MemberCardNo">
+					cc.Id in(select Customer_Id from member_card where Member_Card_No=#MemberCardNo#)
+				</isNotNull>
+				<isNotNull prepend="And" property="CustomerName">
+					cc.Name=#CustomerName#
+				</isNotNull>
+				<isNotNull prepend="And" property="InsertDateTimeString">
+					og.Insert_date_Time>=#InsertDateTimeString#
+				</isNotNull>
+				<isNotNull prepend="And" property="BalanceDateTimeString">
+					<![CDATA[og.Insert_date_Time<=#BalanceDateTimeString#]]>
+				</isNotNull>
+			</dynamic>
+			and og.pay_Kind=#Status3#
+			group by Convert(varchar(10),og.insert_Date_time,120),og.Customer_Id
+			)hh on kk.customer_Id=hh.Customer_Id and kk.GatheringDateTime=hh.Insert_Date_time
+			<!--预存款-->
+			left join(
+			select
+			og.Customer_Id,Convert(varchar(10),og.insert_Date_time,120) insert_Date_time,
+			isNull(sum(isNull(og.Amount,0)),0) PreDepositiAmount
+			from OTHER_GATHERING_AND_REFUNDMENT_RECORD og
+			Inner join Customer cc on cc.Id=og.Customer_Id
+			where og.deleted='0' and og.Company_Id=#CompanyId# and og.Branch_Shop_Id=#BranchShopId#
+			<dynamic>
+				<isNotNull prepend="And" property="MemberCardNo">
+					cc.Id in(select Customer_Id from member_card where Member_Card_No=#MemberCardNo#)
+				</isNotNull>
+				<isNotNull prepend="And" property="CustomerName">
+					cc.Name=#CustomerName#
+				</isNotNull>
+				<isNotNull prepend="And" property="InsertDateTimeString">
+					og.Insert_date_Time>=#InsertDateTimeString#
+				</isNotNull>
+				<isNotNull prepend="And" property="BalanceDateTimeString">
+					<![CDATA[og.Insert_date_Time<=#BalanceDateTimeString#]]>
+				</isNotNull>
+			</dynamic>
+			and (og.pay_Kind=#Operator2# or og.pay_kind=#CustomerTypeName# or og.pay_kind=#CashName#)
+			group by Convert(varchar(10),og.insert_Date_time,120),og.Customer_Id
+			)mm  on kk.customer_Id=mm.Customer_Id and kk.GatheringDateTime=mm.Insert_Date_time
+			
+			)z
+
+			select top(#BusinessTypeId#) * from ##t
+			where IdentityId not in(
+			select top(#CurrentPageIndex#*#BusinessTypeId#) IdentityId from ##t
+			)
+			
+			drop table ##t
+		</select>
+		<select id="SearchAccountRecordRowCount" parameterClass="Order" resultClass="long">
+			select  count(kk.Customer_Id) from(
+			select Name,Customer_Id,GatheringDateTime,sum(isnull(Amount,0)) paidAmount from(
+			select go.orders_Id,Convert(varchar(10),d.Gathering_date_Time,120) GatheringDateTime,d.Amount,o.Customer_Id,cu.Name
+			from gathering d
+			Inner join gathering_orders go on go.gathering_Id=d.Id
+			Inner join orders o on o.Id=go.orders_Id
+			inner join Customer cu on cu.Id=o.customer_Id
+			where o.Deleted='0' and o.Company_Id=#CompanyId# and o.Branch_Shop_Id=#BranchShopId#
+			and o.pay_type=#PayType# and o.status=#Status#
+			and (go.pay_kind=#Status1# or go.pay_kind=#Status2#)
+			<dynamic>
+				<isNotNull prepend="And" property="MemberCardNo">
+					cu.Id in(select Customer_Id from member_card where Member_Card_No=#MemberCardNo#)
+				</isNotNull>
+				<isNotNull prepend="And" property="CustomerName">
+					cu.Name=#CustomerName#
+				</isNotNull>
+				<isNotNull prepend="And" property="InsertDateTimeString">
+					d.Gathering_date_Time>=#InsertDateTimeString#
+				</isNotNull>
+				<isNotNull prepend="And" property="BalanceDateTimeString">
+					<![CDATA[d.Gathering_date_Time<=#BalanceDateTimeString#]]>
+				</isNotNull>
+			</dynamic>
+			)zm group by gatheringDateTime,Customer_Id,Name
+			)kk
+		</select>
+		<select id="SearchAccountRecordPrint" resultMap="SearchAccountRecordMap" parameterClass="Order">
+			if exists(select * from sysobjects where name='##t')
+			begin
+			drop table ##t
+			end
+
+			select identity(bigint,1,1) as IdentityId,* into ##t from(
+			select  kk.Name,kk.Customer_Id,kk.GatheringDateTime,kk.paidAmount, isNull(hh.ScotAmount,0)ScotAmount,isNull(hh.TicketAmountSum,0)TicketAmountSum,isNull(mm.PreDepositiAmount,0)PreDepositiAmount from(
+			select Name,Customer_Id,GatheringDateTime,sum(isnull(Amount,0)) paidAmount from(
+			select go.orders_Id,Convert(varchar(10),d.Gathering_date_Time,120) GatheringDateTime,d.Amount,o.Customer_Id,cu.Name
+			from gathering d
+			Inner join gathering_orders go on go.gathering_Id=d.Id
+			Inner join orders o on o.Id=go.orders_Id
+			inner join Customer cu on cu.Id=o.customer_Id
+			where o.Deleted='0' and o.Company_Id=#CompanyId# and o.Branch_Shop_Id=#BranchShopId#
+			and o.pay_type=#PayType# and o.status=#Status#
+			and (go.pay_kind=#Status1# or go.pay_kind=#Status2#)
+			<dynamic>
+				<isNotNull prepend="And" property="MemberCardNo">
+					cu.Id in(select Customer_Id from member_card where Member_Card_No=#MemberCardNo#)
+				</isNotNull>
+				<isNotNull prepend="And" property="CustomerName">
+					cu.Name=#CustomerName#
+				</isNotNull>
+				<isNotNull prepend="And" property="InsertDateTimeString">
+					d.Gathering_date_Time>=#InsertDateTimeString#
+				</isNotNull>
+				<isNotNull prepend="And" property="BalanceDateTimeString">
+					<![CDATA[d.Gathering_date_Time<=#BalanceDateTimeString#]]>
+				</isNotNull>
+			</dynamic>
+			)zm group by gatheringDateTime,Customer_Id,Name
+			)kk
+			left join(
+			select
+			og.Customer_Id,Convert(varchar(10),og.insert_Date_time,120) insert_Date_time,
+			isNull(sum(isNull(og.Amount,0)),0) ScotAmount,isNull(sum(isNull(og.Ticket_amount_sum,0)),0) TicketAmountSum
+			from OTHER_GATHERING_AND_REFUNDMENT_RECORD og
+			Inner join Customer cc on cc.Id=og.Customer_Id
+			where og.deleted='0' and og.Company_Id=#CompanyId# and og.Branch_Shop_Id=#BranchShopId#
+			<dynamic>
+				<isNotNull prepend="And" property="MemberCardNo">
+					cc.Id in(select Customer_Id from member_card where Member_Card_No=#MemberCardNo#)
+				</isNotNull>
+				<isNotNull prepend="And" property="CustomerName">
+					cc.Name=#CustomerName#
+				</isNotNull>
+				<isNotNull prepend="And" property="InsertDateTimeString">
+					og.Insert_date_Time>=#InsertDateTimeString#
+				</isNotNull>
+				<isNotNull prepend="And" property="BalanceDateTimeString">
+					<![CDATA[og.Insert_date_Time<=#BalanceDateTimeString#]]>
+				</isNotNull>
+			</dynamic>
+			and og.pay_Kind=#Status3#
+			group by Convert(varchar(10),og.insert_Date_time,120),og.Customer_Id
+			)hh on kk.customer_Id=hh.Customer_Id and kk.GatheringDateTime=hh.Insert_Date_time
+			left join(
+			select
+			og.Customer_Id,Convert(varchar(10),og.insert_Date_time,120) insert_Date_time,
+			isNull(sum(isNull(og.Amount,0)),0) PreDepositiAmount
+			from OTHER_GATHERING_AND_REFUNDMENT_RECORD og
+			Inner join Customer cc on cc.Id=og.Customer_Id
+			where og.deleted='0' and og.Company_Id=#CompanyId# and og.Branch_Shop_Id=#BranchShopId#
+			<dynamic>
+				<isNotNull prepend="And" property="MemberCardNo">
+					cc.Id in(select Customer_Id from member_card where Member_Card_No=#MemberCardNo#)
+				</isNotNull>
+				<isNotNull prepend="And" property="CustomerName">
+					cc.Name=#CustomerName#
+				</isNotNull>
+				<isNotNull prepend="And" property="InsertDateTimeString">
+					og.Insert_date_Time>=#InsertDateTimeString#
+				</isNotNull>
+				<isNotNull prepend="And" property="BalanceDateTimeString">
+					<![CDATA[og.Insert_date_Time<=#BalanceDateTimeString#]]>
+				</isNotNull>
+			</dynamic>
+			and (og.pay_Kind=#Operator2# or og.pay_kind=#CustomerTypeName#  or og.pay_kind=#CashName#)
+			group by Convert(varchar(10),og.insert_Date_time,120),og.Customer_Id
+			)mm  on kk.customer_Id=mm.Customer_Id and kk.GatheringDateTime=mm.Insert_Date_time
+			)z
+			select * from ##t
+			drop table ##t
+		</select>
+		
+		<!--领取发票记录-->
+		<select id="SearchDrawTicketRecord" resultMap="SearchDrawTicketRecordMap">
+		  select
+		  top(#RowCount#)
+		  o.Customer_Id,o.Ticket_Amount_Sum PaidAmount,
+		  o.Insert_Date_Time DrawDate,cu.Name,od.No orderNo,
+		  em.Name DrawEmployee
+		  from
+		  dbo.OTHER_GATHERING_AND_REFUNDMENT_RECORD o
+		  Inner join Customer cu on cu.Id=o.Customer_Id
+		  Inner join orders od on od.Id=o.orders_Id
+		  inner join users us on us.Id=o.Insert_User
+		  inner join employee em on em.Id=us.Employee_Id
+		  <dynamic>
+			<isNotNull  property="MemberCardNo">
+			  INNER JOIN MEMBER_CARD AS MC ON MC.id = od.MEMBER_CARD_ID
+			</isNotNull>
+		  </dynamic>
+		  where o.deleted='0' and o.Company_Id=#CompanyId#
+		  and o.Branch_Shop_Id=#BranchShopId#
+		  and o.pay_kind=#PayKind#
+		  <dynamic>
+			<isNotNull prepend="AND" property="MemberCardNo">
+			  mc.MEMBER_CARD_NO = #MemberCardNo#
+			</isNotNull>
+			<isNotNull prepend="And" property="InsertDateTimeString">
+				o.Insert_Date_Time>=#InsertDateTimeString#
+			</isNotNull>
+			<isNotNull prepend="And" property="EndDateTimeString">
+				<![CDATA[o.Insert_Date_Time<=#EndDateTimeString#]]>
+			</isNotNull>
+			<isNotNull prepend="And" property="CustomerName">
+				cu.Name=#CustomerName#
+			</isNotNull>
+			<isNotNull prepend="And" property="OrderNo">
+				od.No=#OrderNo#
+			</isNotNull>
+		 </dynamic>
+		  and o.Id not in(
+		  select
+		  top(#RowCount#*#CurrentPageIndex#)
+		  o.Id
+		  from
+		  dbo.OTHER_GATHERING_AND_REFUNDMENT_RECORD o
+		  Inner join Customer cu on cu.Id=o.Customer_Id
+		  Inner join orders od on od.Id=o.orders_Id
+		  <dynamic>
+			<isNotNull  property="MemberCardNo">
+			  INNER JOIN MEMBER_CARD AS MC ON MC.id = od.MEMBER_CARD_ID
+			</isNotNull>
+		  </dynamic>
+		  where o.deleted='0' and o.Company_Id=#CompanyId#
+		  and o.Branch_Shop_Id=#BranchShopId#
+		  and o.pay_kind=#PayKind#
+		 <dynamic>
+          <isNotNull prepend="AND" property="MemberCardNo">
+            mc.MEMBER_CARD_NO = #MemberCardNo#
+          </isNotNull>
+			<isNotNull prepend="And" property="InsertDateTimeString">
+				o.Insert_Date_Time>=#InsertDateTimeString#
+			</isNotNull>
+			<isNotNull prepend="And" property="EndDateTimeString">
+				<![CDATA[o.Insert_Date_Time<=#EndDateTimeString#]]>
+			</isNotNull>
+			<isNotNull prepend="And" property="CustomerName">
+				cu.Name=#CustomerName#
+			</isNotNull>
+			<isNotNull prepend="And" property="OrderNo">
+				od.No=#OrderNo#
+			</isNotNull>
+			</dynamic>
+			order by o.Id
+			)
+			order by o.Id
+		 </select>
+		<select id="SearchDrawTicketRecordRowCount" resultClass="long">
+		  select
+		  count(o.Id)
+		  from
+		  dbo.OTHER_GATHERING_AND_REFUNDMENT_RECORD o
+		  Inner join Customer cu on cu.Id=o.Customer_Id
+		  Inner join orders od on od.Id=o.orders_Id
+		  <dynamic>
+			<isNotNull  property="MemberCardNo">
+			  INNER JOIN MEMBER_CARD AS MC ON MC.id = od.MEMBER_CARD_ID
+			</isNotNull>
+		  </dynamic>
+		  where o.deleted='0' and o.Company_Id=#CompanyId#
+		  and o.Branch_Shop_Id=#BranchShopId#
+		  and o.pay_kind=#PayKind#
+		  <dynamic>
+			<isNotNull prepend="AND" property="MemberCardNo">
+			  mc.MEMBER_CARD_NO = #MemberCardNo#
+			</isNotNull>
+			<isNotNull prepend="And" property="InsertDateTimeString">
+				o.Insert_Date_Time>=#InsertDateTimeString#
+			</isNotNull>
+			<isNotNull prepend="And" property="EndDateTimeString">
+				<![CDATA[o.Insert_Date_Time<=#EndDateTimeString#]]>
+			</isNotNull>
+			<isNotNull prepend="And" property="CustomerName">
+				cu.Name=#CustomerName#
+			</isNotNull>
+			<isNotNull prepend="And" property="OrderNo">
+				od.No=#OrderNo#
+			</isNotNull>
+			</dynamic>
+		</select>
+		<select id="SearchDrawTicketRecordPrint" resultMap="SearchDrawTicketRecordMap">
+		  select
+		  o.Customer_Id,o.Ticket_Amount_Sum PaidAmount,
+		  o.Insert_Date_Time DrawDate,cu.Name,od.No orderNo,
+		  em.Name DrawEmployee
+		  from
+		  dbo.OTHER_GATHERING_AND_REFUNDMENT_RECORD o
+		  Inner join Customer cu on cu.Id=o.Customer_Id
+		  Inner join orders od on od.Id=o.orders_Id
+		  inner join users us on us.Id=o.Insert_User
+		  inner join employee em on em.Id=us.Employee_Id
+		  <dynamic>
+			<isNotNull  property="MemberCardNo">
+			  INNER JOIN MEMBER_CARD AS MC ON MC.id = od.MEMBER_CARD_ID
+			</isNotNull>
+		  </dynamic>
+		  where o.deleted='0' and o.Company_Id=#CompanyId#
+		  and o.Branch_Shop_Id=#BranchShopId#
+		  and o.pay_kind=#PayKind#
+		 <dynamic>
+			<isNotNull prepend="AND" property="MemberCardNo">
+			  mc.MEMBER_CARD_NO = #MemberCardNo#
+			</isNotNull>
+			<isNotNull prepend="And" property="InsertDateTimeString">
+				o.Insert_Date_Time>=#InsertDateTimeString#
+			</isNotNull>
+			<isNotNull prepend="And" property="EndDateTimeString">
+				<![CDATA[o.Insert_Date_Time<=#EndDateTimeString#]]>
+			</isNotNull>
+			<isNotNull prepend="And" property="CustomerName">
+				cu.Name=#CustomerName#
+			</isNotNull>
+			<isNotNull prepend="And" property="OrderNo">
+				od.No=#OrderNo#
+			</isNotNull>
+		</dynamic>
+		order by o.Id
+		</select>
+	</statements>
+</sqlMap>

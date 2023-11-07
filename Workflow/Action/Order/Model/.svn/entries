@@ -1,0 +1,52 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Action/Order/Model
+http://192.168.0.6/svn/workflow
+
+
+
+2010-07-14T07:22:46.312500Z
+3396
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+OrderModel.cs
+file
+
+
+
+
+2010-07-06T03:40:39.968750Z
+82c828630d7f431947c4b5696d1463da
+2010-07-14T07:22:46.312500Z
+3396
+zhangxiaolin
+
+TakeWorkModel.cs
+file
+
+
+
+
+2010-03-25T07:11:43.281250Z
+dd5775b64990f3e0ea2de72a6bbf2ad1
+2009-01-21T05:54:54.875000Z
+2250
+zhangxiaolin
+

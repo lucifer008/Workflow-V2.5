@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>实际制作</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../js/财务处理.js"></script>
+<script language="javascript" src="../js/default.js"></script>
+<script language="javascript">
+	function showRealFacture(){
+		showPage('../finance/UpdateOrder.html',null,900,700,false,true);
+	}	
+	$(document).ready(function() {
+		$("a[@innerHTML=处理]").attr("href", "javascript:showRealFacture();");
+	});
+</script>
+</head>
+
+<body  style="text-align:center">
+<div align="center" style="width:99%" bgcolor="#ffffff" id="container">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="12"><img alt="" src="../images/white_main_top_left.gif"
+			width="12" height="11" border="0"></td>
+      <td width="99%" bgcolor="#FFFFFF"><img alt="" src="../images/spacer_10_x_10.gif"
+			width="10" height="10"></td>
+      <td width="12"><img alt="" src="../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+    </tr>
+    <tr>
+      <td colspan="3" bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+            <td align="left" bgcolor="#eeeeee">首页 -> 工单管理 -> 实际制作 </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="caption" align="center">实际制作</td>
+          </tr>
+          <tr>
+            <td width="3%">&nbsp;</td>
+            <td align="center">
+<table width="100%" border="1" cellpadding="2" cellspacing="1">
+          <tr>
+            <td nowrap class="item_caption">工单号:</td>
+            <td class="item_content"><input name="textfield7" type="text" class="texts" value="00001222" />
+              <input name="Submit" type="submit" class="buttons" value="检索" /></td>
+
+          </tr>
+        </table>			</td>
+            <td width="3%">&nbsp;</td>
+		</tr>
+          <tr>
+            <td width="3%">&nbsp;</td>
+            <td align="center">
+<table width="100%" border="1" cellpadding="2" cellspacing="1">
+         <tr>
+            <th width="1%" nowrap>&nbsp;NO&nbsp;</th>
+            <th width="1%" nowrap>工单号</th>
+            <th  nowrap>客户名称</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开单时间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;联系人&nbsp;</th>
+            <th width="1%" nowrap>联系电话</th>
+            <th width="1%" nowrap>&nbsp;开单人&nbsp;</th>
+            <th  nowrap>备注</th>
+            <th width="1%" nowrap></th>
+          </tr>
+          <tr  class="detailRow">
+            <td align="center">1</td>
+            <td align="center">00001220</td>
+            <td align="left">散客</td>
+            <td align="left">照片</td>
+            <td align="center" nowrap>2007-7-15 8:45 </td>
+            <td align="center">李阳</td>
+            <td align="center">13012015158</td>
+            <td align="center">张文娟</td>
+            <td align="center">&nbsp;</td>
+            <td nowrap><a href="#">处理</a></td>
+          </tr>
+          <tr  class="detailRow">
+            <td align="center">2</td>
+            <td align="center">00001255</td>
+            <td  align="left">西北建筑设计院</td>
+            <td align="left">设计书</td>
+            <td align="center">2007-7-16 9:14 </td>
+            <td align="center">付作义</td>
+            <td align="center">13369668668</td>
+            <td align="center">张文娟</td>
+            <td align="center">&nbsp;</td>
+            <td><a href="#">处理</a><a href="javascript:payMoney()"></a></td>
+          </tr>
+          <tr  class="detailRow">
+            <td align="center">3</td>
+            <td align="center">00001260</td>
+            <td  align="left">建工集团</td>
+            <td align="left">标书</td>
+            <td align="center" nowrap>2007-7-16 10:15 </td>
+            <td align="center">刘明海</td>
+            <td align="center">13991992966</td>
+            <td align="center">张文娟</td>
+            <td align="center">&nbsp;</td>
+            <td><a href="#">处理</a><a href="javascript:payMoney()"></a></td>
+          </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>			</td>
+            <td width="3%">&nbsp;</td>
+		</tr>
+			<tr class="emptyButtonsUpperRowHight">
+				<td colspan="3"></td>
+			</tr>				
+          <tr height="5">
+            <td><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+            <td bgcolor="#eeeeee">&nbsp;</td>
+            <td><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+          </tr>		
+		</table>
+	</td>
+</tr>
+    <tr>
+      <td width="12"><img alt="" src="../images/white_main_bottom_left.gif"
+			width="12" height="11"></td>
+      <td bgcolor="#FFFFFF"><img alt="" src="../images/spacer_10_x_10.gif"
+			width="10" height="10"></td>
+      <td width="12"><img alt="" src="../images/white_main_bottom_right.gif"
+			width="12" height="11"></td>
+    </tr>
+  </table>
+</div>				
+</body>
+</html>

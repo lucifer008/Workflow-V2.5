@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="Machine" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+    <cacheModels>
+        <cacheModel id="MachineCache" implementation="LRU">
+            <flushInterval hours="24"/>
+            <property name="CacheSize" value="100" />
+            <flushOnExecute statement="MachineBase.Insert"/>
+            <flushOnExecute statement="MachineBase.Update"/>
+            <flushOnExecute statement="MachineBase.LogicDelete"/>
+            <flushOnExecute statement="MachineBase.Delete"/>
+        </cacheModel>
+    </cacheModels>
+	<resultMaps>
+		<!--<resultMap id="GetMachineLastestNumBer" class="Machine">
+			<result property="MachineName" column="NAME" dbType="nvarchar"/>
+			<result property="M1" column="M1" dbType="nvarchar"/>
+			<result property="M2" column="M2" dbType="nvarchar"/>
+			<result property="M3" column="M3" dbType="nvarchar"/>
+			<result property="M4" column="M4" dbType="nvarchar"/>
+		</resultMap>-->
+    <resultMap id="SearchMachineRowCountMap" class="Machine">
+      <result property="Id" column="Id"/>
+      <result property="No" column="No"/>
+      <result property="Name" column="Name"/>
+      <result property="MachineTypeId" column="machine_Type_Id"/>
+      <result property="MachineTypeName" column="MachineTypeName"/>
+    </resultMap>
+	</resultMaps>
+	<statements>
+		<select id="SelectAll" resultMap="MachineResultMap.selectResult">
+			SELECT
+				*
+			FROM MACHINE
+			ORDER BY ID ASC
+		</select>
+		<!--<select id="GetMachineLastestNumBer" resultMap="Machine.GetMachineLastestNumBer">
+			select b.NAME,sum(case d.name when 'M1' then c.LASTEST_NUMBER end) M1
+			,sum(case d.name when 'M2' then c.LASTEST_NUMBER end) M2
+			,sum(case d.name when 'M3' then c.LASTEST_NUMBER end) M3
+			,sum(case d.name when 'M4' then c.LASTEST_NUMBER end) M4 from machine a
+			inner join machine_type b on b.id=a.machine_type_id
+			inner join MACHINE_WATCH_SCALE c on a.id=c.Machine_id
+			inner join machine_watch d on d.id=c.Machine_watch_id
+			group by b.name order by b.name asc
+		</select>-->
+	<select id="SelectNeedRecordWarchMachine" parameterClass="map" resultMap="MachineResultMap.selectResult">
+		select b.* from machine_type a inner join machine b
+		on a.id=b.machine_type_id
+		where b.COMPANY_ID=#companyid#
+		and b.BRANCH_SHOP_ID=#branchshopid#
+		and a.need_record_warch=#needrecordwatch#
+	</select>
+    
+    <select id="SearchMachine" resultMap="SearchMachineRowCountMap">
+      select
+      top (#InsertUser#)
+      a.No,a.Name,a.Id,
+      a.machine_Type_Id,b.Name MachineTypeName
+      from Machine a
+      Inner join  Machine_Type b on a.Machine_Type_Id=b.Id
+      where a.deleted='0'
+      and a.company_Id=#CompanyId#
+      and a.branch_Shop_Id=#BranchShopId#
+      and a.Id not in(
+      select
+      top (#Id#*#InsertUser#) a.Id
+      from Machine a
+      Inner join  Machine_Type b on a.Machine_Type_Id=b.Id
+      where a.deleted='0'
+      and a.company_Id=#CompanyId#
+      and a.branch_Shop_Id=#BranchShopId#
+      )
+    </select>
+    <select id="SearchMachineRowCount" resultClass="long">
+      select
+      count(a.Id)
+      from Machine a
+      Inner join  Machine_Type b on a.Machine_Type_Id=b.Id
+      where a.deleted='0'
+      and a.company_Id=#CompanyId#
+      and a.branch_Shop_Id=#BranchShopId#
+    </select>
+	</statements>
+</sqlMap>

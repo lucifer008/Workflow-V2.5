@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 34
+bak
+*.pdb
+*.cdb
+*.rqb
+*.oob
+*.sws
+
+END

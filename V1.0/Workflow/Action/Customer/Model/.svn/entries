@@ -1,0 +1,52 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow/Action/Customer/Model
+http://192.168.0.6/svn/workflow
+
+
+
+2009-10-26T01:32:18.140625Z
+2647
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+NewCustomerModel.cs
+file
+
+
+
+
+2010-03-25T07:10:10.531250Z
+edfaf7d05ea518571e5204d9de5eb793
+2009-04-22T08:01:33.796875Z
+2475
+zhangxiaolin
+
+SelectCustomerModel.cs
+file
+
+
+
+
+2010-03-25T07:10:10.562500Z
+312bd65e1413e60a61a2765b479645f3
+2009-10-26T01:32:18.140625Z
+2647
+zhangxiaolin
+

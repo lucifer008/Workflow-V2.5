@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="GatheringOrderResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="GatheringOrder" type="Workflow.Da.Domain.GatheringOrder, Workflow.Support" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="selectResult" class="GatheringOrder">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="OrdersId" column="ORDERS_ID" dbType="bigint"/>
+			<result property="GatheringId" column="GATHERING_ID" dbType="bigint"/>
+			<result property="PayKind" column="PAY_KIND" dbType="char"/>
+		</resultMap>
+	</resultMaps>
+</sqlMap>

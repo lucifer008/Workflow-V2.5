@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="BaseBusinessTypePriceSet" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+    <cacheModels>
+        <cacheModel id="BaseBusinessTypePriceSetCache" implementation="LRU">
+            <flushInterval hours="24"/>
+            <property name="CacheSize" value="100" />
+            <flushOnExecute statement="BaseBusinessTypePriceSetBase.Insert"/>
+            <flushOnExecute statement="BaseBusinessTypePriceSetBase.Update"/>
+            <flushOnExecute statement="BaseBusinessTypePriceSetBase.LogicDelete"/>
+            <flushOnExecute statement="BaseBusinessTypePriceSetBase.Delete"/>
+        </cacheModel>
+    </cacheModels>
+	<resultMaps>
+		<resultMap id="selectCustomQueryBaseBusinessTypePriceSetListResult" class="BaseBusinessTypePriceSet">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="Factor1" column="FACTOR1" dbType="bigint"/>
+			<result property="Factor2" column="FACTOR2" dbType="bigint"/>
+			<result property="Factor3" column="FACTOR3" dbType="bigint"/>
+			<result property="Factor4" column="FACTOR4" dbType="bigint"/>
+			<result property="Factor5" column="FACTOR5" dbType="bigint"/>
+			<result property="Factor6" column="FACTOR6" dbType="bigint"/>
+			<result property="Factor7" column="FACTOR7" dbType="bigint"/>
+			<result property="Factor8" column="FACTOR8" dbType="bigint"/>
+			<result property="Factor9" column="FACTOR9" dbType="bigint"/>
+			<result property="Factor10" column="FACTOR10" dbType="bigint"/>
+			<result property="Factor11" column="FACTOR11" dbType="bigint"/>
+			<result property="Factor12" column="FACTOR12" dbType="bigint"/>
+			<result property="Factor13" column="FACTOR13" dbType="bigint"/>
+			<result property="Factor14" column="FACTOR14" dbType="bigint"/>
+			<result property="Factor15" column="FACTOR15" dbType="bigint"/>
+			<result property="Factor16" column="FACTOR16" dbType="bigint"/>
+			<result property="Factor17" column="FACTOR17" dbType="bigint"/>
+			<result property="Factor18" column="FACTOR18" dbType="bigint"/>
+			<result property="Factor19" column="FACTOR19" dbType="bigint"/>
+			<result property="Factor20" column="FACTOR20" dbType="bigint"/>
+			<result property="CostPrice" column="COST_PRICE" dbType="decimal"/>
+			<result property="StandardPrice" column="STANDARD_PRICE" dbType="decimal"/>
+			<result property="ActivityPrice" column="ACTIVITY_PRICE" dbType="decimal"/>
+			<result property="ReservePrice" column="RESERVE_PRICE" dbType="decimal"/>
+			<result property="InsertDateTime" column="INSERT_DATE_TIME" dbType="datetime"/>
+			<result property="InsertUser" column="INSERT_USER" dbType="bigint"/>
+			<result property="UpdateDateTime" column="UPDATE_DATE_TIME" dbType="datetime"/>
+			<result property="UpdateUser" column="UPDATE_USER" dbType="bigint"/>
+			<result property="Version" column="VERSION" dbType="int"/>
+			<result property="Deleted" column="DELETED" dbType="char"/>
+			<result property="BranchShopId" column="BRANCH_SHOP_ID" dbType="bigint"/>
+			<result property="CompanyId" column="COMPANY_ID" dbType="bigint"/>
+			<result property="BusinessType" column="BUSINESS_TYPE_ID" select="BusinessTypeBase.SelectByPk"/>
+		</resultMap>
+		<resultMap id="GetTheLowerestPrice" class="BaseBusinessTypePriceSet">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="StandardPrice" column="STANDARD_PRICE" dbType="decimal"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="SelectCustomQueryBaseBusinessTypePriceSetList" parameterClass="BaseBusinessTypePriceSet" resultMap="BaseBusinessTypePriceSet.selectCustomQueryBaseBusinessTypePriceSetListResult">
+			SELECT
+			*
+			FROM BASE_BUSINESS_TYPE_PRICE_SET
+			WHERE DELETED='0'
+			AND COMPANY_ID = #CompanyId#
+			AND BRANCH_SHOP_ID = #BranchShopId#
+			<dynamic>
+				<isNotEqual prepend="and" property="BusinessType.Id" compareValue="-1">
+					BUSINESS_TYPE_ID = #BusinessType.Id#
+				</isNotEqual>
+				<isNotEmpty prepend="and" property="IdList">
+					Id in($IdList$)
+				</isNotEmpty>
+				<isNotEqual prepend="and" property="Factor1" compareValue="0">
+					FACTOR1 = #Factor1#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor2" compareValue="0">
+					FACTOR2 = #Factor2#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor3" compareValue="0">
+					FACTOR3 = #Factor3#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor4" compareValue="0">
+					FACTOR4 = #Factor4#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor5" compareValue="0">
+					FACTOR5 = #Factor5#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor6" compareValue="0">
+					FACTOR6 = #Factor6#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor7" compareValue="0">
+					FACTOR7 = #Factor7#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor8" compareValue="0">
+					FACTOR8 = #Factor8#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor9" compareValue="0">
+					FACTOR9 = #Factor9#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor10" compareValue="0">
+					FACTOR10 = #Factor10#
+				</isNotEqual>
+			</dynamic>
+			ORDER BY ID ASC
+		</select>
+
+
+		<select id="SelectCustomQueryBaseBusinessTypePriceSetList_Page" parameterClass="BaseBusinessTypePriceSet" resultMap="BaseBusinessTypePriceSet.selectCustomQueryBaseBusinessTypePriceSetListResult">
+			SELECT top (#EveryPageRows#)
+			*
+			FROM BASE_BUSINESS_TYPE_PRICE_SET
+			WHERE DELETED='0' and ID not in (select top (#EveryPageRows#*(#CurrentPageID#-1)) ID from BASE_BUSINESS_TYPE_PRICE_SET
+											<dynamic>
+												<isNotEqual prepend="where" property="BusinessType.Id" compareValue="-1">
+													BUSINESS_TYPE_ID = #BusinessType.Id#
+												</isNotEqual>
+											</dynamic>				 
+				 order by ID)
+			AND COMPANY_ID = #CompanyId#
+			AND BRANCH_SHOP_ID = #BranchShopId#
+			<dynamic>
+				<isNotEqual prepend="and" property="BusinessType.Id" compareValue="-1">
+					BUSINESS_TYPE_ID = #BusinessType.Id#
+				</isNotEqual>
+				<isNotEmpty prepend="and" property="IdList">
+					Id in($IdList$)
+				</isNotEmpty>
+				<isNotEqual prepend="and" property="Factor1" compareValue="0">
+					FACTOR1 = #Factor1#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor2" compareValue="0">
+					FACTOR2 = #Factor2#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor3" compareValue="0">
+					FACTOR3 = #Factor3#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor4" compareValue="0">
+					FACTOR4 = #Factor4#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor5" compareValue="0">
+					FACTOR5 = #Factor5#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor6" compareValue="0">
+					FACTOR6 = #Factor6#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor7" compareValue="0">
+					FACTOR7 = #Factor7#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor8" compareValue="0">
+					FACTOR8 = #Factor8#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor9" compareValue="0">
+					FACTOR9 = #Factor9#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor10" compareValue="0">
+					FACTOR10 = #Factor10#
+				</isNotEqual>
+			</dynamic>
+			ORDER BY ID ASC
+		</select>
+
+		<select id="SelectCustomQueryBaseBusinessTypePriceSetListCount" parameterClass="BaseBusinessTypePriceSet" resultClass="int">
+			SELECT count(*)
+			FROM BASE_BUSINESS_TYPE_PRICE_SET
+			WHERE DELETED='0'
+			AND COMPANY_ID = #CompanyId#
+			AND BRANCH_SHOP_ID = #BranchShopId#
+			<dynamic>
+				<isNotEqual prepend="and" property="BusinessType.Id" compareValue="-1">
+					BUSINESS_TYPE_ID = #BusinessType.Id#
+				</isNotEqual>
+				<isNotEmpty prepend="and" property="IdList">
+					Id in($IdList$)
+				</isNotEmpty>
+				<isNotEqual prepend="and" property="Factor1" compareValue="0">
+					FACTOR1 = #Factor1#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor2" compareValue="0">
+					FACTOR2 = #Factor2#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor3" compareValue="0">
+					FACTOR3 = #Factor3#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor4" compareValue="0">
+					FACTOR4 = #Factor4#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor5" compareValue="0">
+					FACTOR5 = #Factor5#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor6" compareValue="0">
+					FACTOR6 = #Factor6#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor7" compareValue="0">
+					FACTOR7 = #Factor7#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor8" compareValue="0">
+					FACTOR8 = #Factor8#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor9" compareValue="0">
+					FACTOR9 = #Factor9#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor10" compareValue="0">
+					FACTOR10 = #Factor10#
+				</isNotEqual>
+			</dynamic>		
+		</select>
+
+		<select id="SelectTheLowerestPrice" parameterClass="BaseBusinessTypePriceSet" resultMap="GetTheLowerestPrice">
+			select ID, min(STANDARD_PRICE) STANDARD_PRICE from BASE_BUSINESS_TYPE_PRICE_SET
+			where DELETED='0'
+			AND COMPANY_ID = #CompanyId#
+			AND BRANCH_SHOP_ID = #BranchShopId#
+			<dynamic>
+				<isNotEqual prepend="and" property="BusinessTypeId" compareValue="0">
+					BUSINESS_TYPE_ID = #BusinessTypeId#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor1" compareValue="0">
+					FACTOR1 = #Factor1#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor2" compareValue="0">
+					FACTOR2 = #Factor2#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor3" compareValue="0">
+					FACTOR3 = #Factor3#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor4" compareValue="0">
+					FACTOR4 = #Factor4#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor5" compareValue="0">
+					FACTOR5 = #Factor5#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor6" compareValue="0">
+					FACTOR6 = #Factor6#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor7" compareValue="0">
+					FACTOR7 = #Factor7#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor8" compareValue="0">
+					FACTOR8 = #Factor8#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor9" compareValue="0">
+					FACTOR9 = #Factor9#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor10" compareValue="0">
+					FACTOR10 = #Factor10#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor11" compareValue="0">
+					FACTOR10 = #Factor11#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor12" compareValue="0">
+					FACTOR10 = #Factor12#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor13" compareValue="0">
+					FACTOR10 = #Factor13#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor14" compareValue="0">
+					FACTOR10 = #Factor14#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor15" compareValue="0">
+					FACTOR10 = #Factor15#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor16" compareValue="0">
+					FACTOR10 = #Factor16#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor17" compareValue="0">
+					FACTOR10 = #Factor17#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor18" compareValue="0">
+					FACTOR10 = #Factor18#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor19" compareValue="0">
+					FACTOR10 = #Factor19#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor20" compareValue="0">
+					FACTOR10 = #Factor20#
+				</isNotEqual>
+			</dynamic>
+			<![CDATA[
+				Group by ID
+			]]>
+		</select>
+		<select id="GetBaseBusinessTypePriceSetDao" parameterClass="map" resultMap="BaseBusinessTypePriceSetResultMap.selectResult">
+			with o as (select row_number() over(order by INSERT_DATE_TIME desc) as row , * from (
+			SELECT * FROM BASE_BUSINESS_TYPE_PRICE_SET
+			WHERE DELETED='0'
+			AND COMPANY_ID = #CompanyId#
+			AND BRANCH_SHOP_ID = #BranchShopId#
+			<dynamic>
+				<isNotEqual prepend="and" property="BusinessType.Id" compareValue="-1">
+					BUSINESS_TYPE_ID = #BusinessType.Id#
+				</isNotEqual>
+				<isNotEmpty prepend="and" property="IdList">
+					Id in($IdList$)
+				</isNotEmpty>
+				<isNotEqual prepend="and" property="Factor1" compareValue="0">
+					FACTOR1 = #Factor1#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor2" compareValue="0">
+					FACTOR2 = #Factor2#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor3" compareValue="0">
+					FACTOR3 = #Factor3#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor4" compareValue="0">
+					FACTOR4 = #Factor4#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor5" compareValue="0">
+					FACTOR5 = #Factor5#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor6" compareValue="0">
+					FACTOR6 = #Factor6#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor7" compareValue="0">
+					FACTOR7 = #Factor7#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor8" compareValue="0">
+					FACTOR8 = #Factor8#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor9" compareValue="0">
+					FACTOR9 = #Factor9#
+				</isNotEqual>
+				<isNotEqual prepend="and" property="Factor10" compareValue="0">
+					FACTOR10 = #Factor10#
+				</isNotEqual>
+			</dynamic>
+			)
+			as P )
+			select * from o where row between #BeginRow# and #EndRow#
+		</select>
+    
+    <!--营销活动管理 选择价格(分页)-->
+    <select id="SearchBaseBuinessTypeSetInfo" parameterClass="BaseBusinessTypePriceSet" resultMap="BaseBusinessTypePriceSetResultMap.selectResult">
+      SELECT top(#EveryPageRows#)
+      *
+      from BASE_BUSINESS_TYPE_PRICE_SET
+      Where DELETED = '0'
+      AND COMPANY_ID = #CompanyId#
+      AND BRANCH_SHOP_ID = #BranchShopId#
+      <dynamic>
+        <isNotEqual prepend="and" property="BusinessTypeId" compareValue="0">
+          Business_Type_Id=#BusinessTypeId#
+        </isNotEqual>
+      </dynamic>
+      And Id not in(
+      select top(#EveryPageRows#*#CurrentPageID#) id from BASE_BUSINESS_TYPE_PRICE_SET
+      Where DELETED = '0'
+      <dynamic>
+        <isNotEqual prepend="and" property="BusinessTypeId" compareValue="0">
+          Business_Type_Id=#BusinessTypeId#
+        </isNotEqual>
+      </dynamic>
+      AND COMPANY_ID = #CompanyId#
+      AND BRANCH_SHOP_ID = #BranchShopId#
+      )
+      ORDER BY ID
+    </select>
+    <select id="SearchBaseBuinessTypeSetInfoRowCount" parameterClass="BaseBusinessTypePriceSet" resultClass="long">
+      select count(*) from
+      BASE_BUSINESS_TYPE_PRICE_SET
+      where  DELETED = '0'
+      AND COMPANY_ID = #CompanyId#
+      AND BRANCH_SHOP_ID = #BranchShopId#
+      <dynamic>
+        <isNotEqual prepend="and" property="BusinessTypeId" compareValue="0">
+          Business_Type_Id=#BusinessTypeId#
+        </isNotEqual>
+      </dynamic>
+    </select>
+  </statements>
+</sqlMap>

@@ -1,0 +1,665 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/workflow/!svn/ver/3430/trunk/v2.5/Workflow/Da
+END
+IBusinessModuleGroupDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IBusinessModuleGroupDao.cs
+END
+IOrdersForRecordMachineSumDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IOrdersForRecordMachineSumDao.cs
+END
+IEmployeeDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IEmployeeDao.cs
+END
+IUserConcessionRangeDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IUserConcessionRangeDao.cs
+END
+IOtherGatheringAndRefundmentRecordDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IOtherGatheringAndRefundmentRecordDao.cs
+END
+IMemberCardConcessionDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IMemberCardConcessionDao.cs
+END
+IMarkingSettingDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IMarkingSettingDao.cs
+END
+IDailyRecordMachineDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IDailyRecordMachineDao.cs
+END
+IBlankOutReasonDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IBlankOutReasonDao.cs
+END
+ITakeWorkDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/ITakeWorkDao.cs
+END
+IAchievementDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IAchievementDao.cs
+END
+IPermissionGroupDetailDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IPermissionGroupDetailDao.cs
+END
+ICustomerLevelDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/ICustomerLevelDao.cs
+END
+ITrashReasonDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/ITrashReasonDao.cs
+END
+IRealOrderItemFactorValueDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IRealOrderItemFactorValueDao.cs
+END
+IMachineWatchDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IMachineWatchDao.cs
+END
+IMemberCardBuySendDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3227/trunk/v2.5/Workflow/Da/IMemberCardBuySendDao.cs
+END
+IBusinessTypeDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IBusinessTypeDao.cs
+END
+IMemberCardDiscountConcessionDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IMemberCardDiscountConcessionDao.cs
+END
+IProcessContentAchievementRateDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IProcessContentAchievementRateDao.cs
+END
+IRealOrderItemDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IRealOrderItemDao.cs
+END
+IHandOverOrderDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IHandOverOrderDao.cs
+END
+ICustomerTypeDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/ICustomerTypeDao.cs
+END
+IChangeMemberCardDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IChangeMemberCardDao.cs
+END
+ICompensateUsedPaperDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3268/trunk/v2.5/Workflow/Da/ICompensateUsedPaperDao.cs
+END
+IRealOrderItemPrintRequireDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IRealOrderItemPrintRequireDao.cs
+END
+IRealOrderItemTrashReasonDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IRealOrderItemTrashReasonDao.cs
+END
+IFactorRelationValueDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IFactorRelationValueDao.cs
+END
+IPaperTypeDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IPaperTypeDao.cs
+END
+IOrderDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/workflow/!svn/ver/3387/trunk/v2.5/Workflow/Da/IOrderDao.cs
+END
+IFactorRelationDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IFactorRelationDao.cs
+END
+IRolePermissionGroupDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IRolePermissionGroupDao.cs
+END
+IPermissionDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IPermissionDao.cs
+END
+IDailyBusionessReportDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3193/trunk/v2.5/Workflow/Da/IDailyBusionessReportDao.cs
+END
+IMemberOperateLogDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IMemberOperateLogDao.cs
+END
+ILogoffMemberCardDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/ILogoffMemberCardDao.cs
+END
+IReportLossMemberCardDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IReportLossMemberCardDao.cs
+END
+IOrderMortgageRecordDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IOrderMortgageRecordDao.cs
+END
+IBusinessModuleDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IBusinessModuleDao.cs
+END
+ICustomerDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/ICustomerDao.cs
+END
+IPriceFactorDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/workflow/!svn/ver/3196/trunk/v2.5/Workflow/Da/IPriceFactorDao.cs
+END
+IRoleDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IRoleDao.cs
+END
+IConcessionDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IConcessionDao.cs
+END
+IRequireAccountingInfoDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IRequireAccountingInfoDao.cs
+END
+ICashHandOverDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/ICashHandOverDao.cs
+END
+IPrintDemandDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IPrintDemandDao.cs
+END
+IMachineTypeDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IMachineTypeDao.cs
+END
+IHandOverDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IHandOverDao.cs
+END
+ICompanyDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/ICompanyDao.cs
+END
+IGatheringDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IGatheringDao.cs
+END
+IMasterTradeDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IMasterTradeDao.cs
+END
+IDiscountConcessionDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IDiscountConcessionDao.cs
+END
+IUserDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/workflow/!svn/ver/3320/trunk/v2.5/Workflow/Da/IUserDao.cs
+END
+ICampaignDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/ICampaignDao.cs
+END
+IUnitDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IUnitDao.cs
+END
+IOrderItemMortgageDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IOrderItemMortgageDao.cs
+END
+IApplyAbateDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/workflow/!svn/ver/3408/trunk/v2.5/Workflow/Da/IApplyAbateDao.cs
+END
+IAmountSegmentDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IAmountSegmentDao.cs
+END
+IBranchShopDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IBranchShopDao.cs
+END
+IHandOverMemberCardDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IHandOverMemberCardDao.cs
+END
+IMemberCardLevelDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IMemberCardLevelDao.cs
+END
+IMachineWatchConversionPaperDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IMachineWatchConversionPaperDao.cs
+END
+ILinkManDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/ILinkManDao.cs
+END
+IRecordMachineWatchDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IRecordMachineWatchDao.cs
+END
+IOrderItemEmployeeDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IOrderItemEmployeeDao.cs
+END
+IBusinessTypePriceSetDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IBusinessTypePriceSetDao.cs
+END
+IMachineWatchRecordLogDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IMachineWatchRecordLogDao.cs
+END
+ICompensateEmployeeDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/ICompensateEmployeeDao.cs
+END
+IUserRoleDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IUserRoleDao.cs
+END
+IConcessionDifferencePriceDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IConcessionDifferencePriceDao.cs
+END
+IIdGeneratorDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IIdGeneratorDao.cs
+END
+IUncompleteOrdersUsedPaperDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IUncompleteOrdersUsedPaperDao.cs
+END
+IMachineDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IMachineDao.cs
+END
+IGatheringOrderDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IGatheringOrderDao.cs
+END
+IEmployeePositionDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IEmployeePositionDao.cs
+END
+IOrdersDutyDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IOrdersDutyDao.cs
+END
+IPermissionGroupDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IPermissionGroupDao.cs
+END
+IDiscountConcessionMachineTypePaperSpecDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IDiscountConcessionMachineTypePaperSpecDao.cs
+END
+IApplicationPropertyDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3401/trunk/v2.5/Workflow/Da/IApplicationPropertyDao.cs
+END
+IProcessContentDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IProcessContentDao.cs
+END
+ITrashPaperEmployeeDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/ITrashPaperEmployeeDao.cs
+END
+IPrintRequireDetailDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IPrintRequireDetailDao.cs
+END
+IConcessionMemberCardLevelDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IConcessionMemberCardLevelDao.cs
+END
+IRelationEmployeeDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IRelationEmployeeDao.cs
+END
+IMemberCardConcessionGatheringDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IMemberCardConcessionGatheringDao.cs
+END
+IBusinessTypePriceFactorDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IBusinessTypePriceFactorDao.cs
+END
+IDeliveryOrderDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IDeliveryOrderDao.cs
+END
+IPaperSpecificationSimilarityDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IPaperSpecificationSimilarityDao.cs
+END
+IDutyEmployeeDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IDutyEmployeeDao.cs
+END
+IOrderItemFactorValueDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IOrderItemFactorValueDao.cs
+END
+IBaseBusinessTypePriceSetDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3200/trunk/v2.5/Workflow/Da/IBaseBusinessTypePriceSetDao.cs
+END
+IOrderItemPrintRequireDetailDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IOrderItemPrintRequireDetailDao.cs
+END
+IPrintDemandDetailDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IPrintDemandDetailDao.cs
+END
+IOrderItemDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/workflow/!svn/ver/3345/trunk/v2.5/Workflow/Da/IOrderItemDao.cs
+END
+IOrdersStatusAlterDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IOrdersStatusAlterDao.cs
+END
+IOrderTimeoutAlarmRecordDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IOrderTimeoutAlarmRecordDao.cs
+END
+IRealOrderItemEmployeeDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IRealOrderItemEmployeeDao.cs
+END
+IMemberCardDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IMemberCardDao.cs
+END
+ICashHandOverOrderDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/ICashHandOverOrderDao.cs
+END
+IPaymentConcessionDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3396/trunk/v2.5/Workflow/Da/IPaymentConcessionDao.cs
+END
+IMachineWatchScaleDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IMachineWatchScaleDao.cs
+END
+IPositionDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IPositionDao.cs
+END
+IMemberCardOrderItemCounteractLogDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IMemberCardOrderItemCounteractLogDao.cs
+END
+IReportLessModeDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IReportLessModeDao.cs
+END
+ISecondaryTradeDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/ISecondaryTradeDao.cs
+END
+IPaperSpecificationDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3268/trunk/v2.5/Workflow/Da/IPaperSpecificationDao.cs
+END
+IDailyBusionessReportItemDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/IDailyBusionessReportItemDao.cs
+END
+IBuySendDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/workflow/!svn/ver/3227/trunk/v2.5/Workflow/Da/IBuySendDao.cs
+END
+IFactorValueDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IFactorValueDao.cs
+END
+IAccreditRecordDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/IAccreditRecordDao.cs
+END

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="UserRoleResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="UserRole" type="Workflow.Da.Domain.UserRole, Workflow.Support" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="selectResult" class="UserRole">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="UsersId" column="USERS_ID" dbType="bigint"/>
+			<result property="RoleId" column="ROLE_ID" dbType="bigint"/>
+		</resultMap>
+	</resultMaps>
+</sqlMap>

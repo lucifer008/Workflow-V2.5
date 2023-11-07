@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Base
+END
+LabelValue.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Base/LabelValue.cs
+END
+DaoBaseImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Base/DaoBaseImpl.cs
+END
+MetaData.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Base/MetaData.cs
+END
+IDaoBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Base/IDaoBase.cs
+END

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--表ORDER_ITEM_MORTGAGE [工单冲减明细]的基本增删改查操作，此配置文件不允许修改-->
+<sqlMap namespace="OrderItemMortgageBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		
+			<!--查询表ORDER_ITEM_MORTGAGE [工单冲减明细]的基本操作-->		 
+			<select id="SelectAll" resultMap="OrderItemMortgageResultMap.selectResult">
+			SELECT  ID,ORDER_MORTGAGE_RECORD_ID,ORDER_ITEM_ID,SRC_ORDER_ITEM_ID,AMOUNT,MEMO	FROM ORDER_ITEM_MORTGAGE Order by ID
+			</select>
+
+			<!--按照主键查询表ORDER_ITEM_MORTGAGE [工单冲减明细]的基本操作-->
+			<select id="SelectByPk" parameterClass="long" resultMap="OrderItemMortgageResultMap.selectResult">
+			SELECT 
+			ID,
+			ORDER_MORTGAGE_RECORD_ID,
+			ORDER_ITEM_ID,
+			SRC_ORDER_ITEM_ID,
+			AMOUNT,
+			MEMO
+			FROM ORDER_ITEM_MORTGAGE
+			WHERE ID = #Id# 
+			AND DELETED = '0'
+			</select>
+
+			<!--插入表ORDER_ITEM_MORTGAGE [工单冲减明细]的基本操作-->
+			<insert id="Insert" parameterClass="OrderItemMortgage">
+			INSERT INTO ORDER_ITEM_MORTGAGE
+			(
+				ID,
+				ORDER_MORTGAGE_RECORD_ID,
+				ORDER_ITEM_ID,
+				SRC_ORDER_ITEM_ID,
+				AMOUNT,
+				MEMO
+			) VALUES
+			( 
+				#Id#,
+				#OrderMortgageRecordId#,
+				#OrderItemId#,
+				#SrcOrderItemId#,
+				#Amount#,
+				#Memo#
+			)
+			</insert>
+			
+			<!--更新表ORDER_ITEM_MORTGAGE [工单冲减明细]的基本操作-->
+			<update id="Update" parameterClass="OrderItemMortgage">
+			UPDATE ORDER_ITEM_MORTGAGE
+			SET
+				ORDER_MORTGAGE_RECORD_ID=#OrderMortgageRecordId#,
+				ORDER_ITEM_ID=#OrderItemId#,
+				SRC_ORDER_ITEM_ID=#SrcOrderItemId#,
+				AMOUNT=#Amount#,
+				MEMO=#Memo#
+			WHERE ID = #Id#
+			</update>
+
+			<!--逻辑删除表ORDER_ITEM_MORTGAGE [工单冲减明细]的基本操作-->
+			<update id="LogicDelete" parameterClass="long">
+				UPDATE ORDER_ITEM_MORTGAGE
+				SET	VERSION = VERSION + 1,DELETED = '1'	WHERE ID = #Id#
+			</update>
+
+			<!--物理删除表ORDER_ITEM_MORTGAGE [工单冲减明细]的基本操作-->
+			<delete id="Delete" parameterClass="long">
+				DELETE FROM ORDER_ITEM_MORTGAGE WHERE ID = #Id#
+			</delete>
+
+		</statements>
+</sqlMap>

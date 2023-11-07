@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/IBatis
+END
+SqlMapClientOperations.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/IBatis/SqlMapClientOperations.cs
+END
+SqlMapClientFactoryBean.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/IBatis/SqlMapClientFactoryBean.cs
+END

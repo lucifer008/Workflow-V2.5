@@ -1,0 +1,256 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow.Maintain
+http://192.168.0.6/svn/workflow
+
+
+
+2009-10-30T09:24:56.312500Z
+2652
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+Top.aspx.cs
+file
+
+
+
+
+2010-03-25T07:09:39.921875Z
+fe37cdc8ac740a43ebfdcce4ba1dc037
+2009-04-28T10:14:30.593750Z
+2490
+zhangxiaolin
+
+right.html
+file
+
+
+
+
+2010-03-25T07:09:39.937500Z
+0ec3016b9dcbf334f0c8cb16c0c74ebc
+2009-06-22T09:52:00.046875Z
+2625
+zhangxiaolin
+
+Providers.config
+file
+
+
+
+
+2010-03-25T07:09:39.953125Z
+60b469f125c863005b63e14c9a3b2a8a
+2009-04-27T03:10:52.281250Z
+2484
+fuqiang
+
+Web.Config
+file
+
+
+
+
+2010-03-25T07:09:39.953125Z
+7cde4edb8a32b47bcc592efeb0c7db2a
+2009-04-28T10:14:30.593750Z
+2490
+zhangxiaolin
+
+Login.aspx
+file
+
+
+
+
+2010-03-25T07:09:39.968750Z
+71e408bcaac00bd8a4708808a78fc628
+2009-06-22T09:52:00.046875Z
+2625
+zhangxiaolin
+
+ajax
+dir
+
+procudre
+dir
+
+system
+dir
+
+Login.aspx.cs
+file
+
+
+
+
+2010-03-25T07:09:39.968750Z
+6f9cc90bc712033e3fba7fcd6b980e32
+2009-04-28T10:14:30.593750Z
+2490
+zhangxiaolin
+
+leftclick.htm
+file
+
+
+
+
+2010-03-25T07:09:39.984375Z
+8ce57729b7a54642a8496c1221a29481
+2009-06-22T09:52:00.046875Z
+2625
+zhangxiaolin
+
+priceBaseData
+dir
+
+css
+dir
+
+left.html
+file
+
+
+
+
+2010-03-25T07:09:40.000000Z
+7b0aa4ee26ab30224fc21079d6ec18ea
+2009-06-22T09:52:00.046875Z
+2625
+zhangxiaolin
+
+Default.aspx
+file
+
+
+
+
+2010-03-25T07:09:40.000000Z
+4d4dd1f41147256f0c1e80830b720185
+2009-04-27T03:10:52.281250Z
+2484
+fuqiang
+
+topclick.htm
+file
+
+
+
+
+2010-03-25T07:09:40.015625Z
+6a6ea91dabc7902c3639c4a79019585d
+2009-06-22T09:52:00.046875Z
+2625
+zhangxiaolin
+
+orderBaseData
+dir
+
+Default.aspx.cs
+file
+
+
+
+
+2010-03-25T07:09:40.015625Z
+802b6cb881ccf7962fc59a22e4721ced
+2009-04-27T03:10:52.281250Z
+2484
+fuqiang
+
+images
+dir
+
+config
+dir
+
+Bin
+dir
+
+App_Data
+dir
+
+LoginOut.aspx
+file
+
+
+
+
+2010-03-25T07:09:40.031250Z
+025d436d83fa086740b361aa0cb05f5e
+2009-04-28T10:14:30.593750Z
+2490
+zhangxiaolin
+
+index.html
+file
+
+
+
+
+2010-03-25T07:09:40.062500Z
+9c3bf6953e699b391a0c8e8b3469c197
+2009-10-30T09:24:56.312500Z
+2652
+zhangxiaolin
+
+tree.js
+file
+
+
+
+
+2010-03-25T07:09:40.062500Z
+e9e2a99ed40d97150d2bd2c69d7687e6
+2009-04-27T03:10:52.281250Z
+2484
+fuqiang
+
+icons
+dir
+
+js
+dir
+
+Top.aspx
+file
+
+
+
+
+2010-03-25T07:09:40.078125Z
+d373c6cb7fce544a6be5bad4b6d4ed97
+2009-04-28T10:14:30.593750Z
+2490
+zhangxiaolin
+
+LoginOut.aspx.cs
+file
+
+
+
+
+2010-03-25T07:09:40.078125Z
+e4025db0262557f42c1596b3f0e668ba
+2009-05-14T09:50:37.875000Z
+2562
+zhangxiaolin
+

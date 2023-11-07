@@ -1,0 +1,40 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Service/SystemPermission/EmployeeManage/Impl
+http://192.168.0.6/svn/workflow
+
+
+
+2010-04-28T10:02:17.281250Z
+3241
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+EmployeeServiceImpl.cs
+file
+
+
+
+
+2010-04-28T09:29:11.906250Z
+620123831e2f95781dd9154c2b7696f4
+2010-04-28T10:02:17.281250Z
+3241
+zhangxiaolin
+

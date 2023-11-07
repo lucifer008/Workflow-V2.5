@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="UncompleteOrdersUsedPaper" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+		<resultMap id="SelectUncompleterOrderResult" class="UncompleteOrdersUsedPaper">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="UsedPaperCount" column="USED_PAPER_COUNT" dbType="int"/>
+			<result property="ColorType" column="COLOR_TYPE" dbType="char"/>
+			<result property="MachineTypeName" column="MACHINE_TYPE_NAME" dbType="nvarchar"/>
+			<result property="PaperName" column="PAPER_NAME" dbType="nvarchar"/>
+			<result property="OrderNo" column="NO" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="SelectUncompleteOrdersByRecordWatchId" parameterClass="long" resultMap="SelectUncompleterOrderResult" >
+			select a.ID,a.COLOR_TYPE,a.USED_PAPER_COUNT,b.name as MACHINE_TYPE_NAME,c.name as PAPER_NAME,o.NO from UNCOMPLETE_ORDERS_USED_PAPER a inner join
+			MACHINE_type b on a.machine_type_id=b.id inner join
+			PAPER_SPECIFICATION c on a.paper_specification_id=c.id inner join
+			Orders o on a.orders_id=o.id
+			where record_machine_watch_id=#value#
+		</select>
+		<delete id="DeleteUncompleteOrderByRecordWatchId" parameterClass="long">
+			DELETE UNCOMPLETE_ORDERS_USED_PAPER WHERE RECORD_MACHINE_WATCH_ID=#value#
+		</delete>
+	</statements>
+</sqlMap>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="RealOrderItemPrintRequireBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="RealOrderItemPrintRequireResultMap.selectResult">
+			SELECT
+				ID, PRINT_REQUIRE_DETAIL_ID, REAL_ORDER_ITEM_ID
+			FROM REAL_ORDER_ITEM_PRINT_REQUIRE
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="RealOrderItemPrintRequireResultMap.selectResult">
+			SELECT
+				ID, PRINT_REQUIRE_DETAIL_ID, REAL_ORDER_ITEM_ID
+			FROM REAL_ORDER_ITEM_PRINT_REQUIRE
+			WHERE ID = #Id# 
+		</select>
+		<insert id="Insert" parameterClass="RealOrderItemPrintRequire">
+			INSERT INTO REAL_ORDER_ITEM_PRINT_REQUIRE
+				(
+				  ID, PRINT_REQUIRE_DETAIL_ID, REAL_ORDER_ITEM_ID
+				)
+				VALUES
+				(
+				  #Id # , #PrintRequireDetailId# , #RealOrderItemId# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="RealOrderItemPrintRequire">
+			UPDATE REAL_ORDER_ITEM_PRINT_REQUIRE
+				SET
+					PRINT_REQUIRE_DETAIL_ID = #PrintRequireDetailId# ,REAL_ORDER_ITEM_ID = #RealOrderItemId#  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE REAL_ORDER_ITEM_PRINT_REQUIRE
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM REAL_ORDER_ITEM_PRINT_REQUIRE WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

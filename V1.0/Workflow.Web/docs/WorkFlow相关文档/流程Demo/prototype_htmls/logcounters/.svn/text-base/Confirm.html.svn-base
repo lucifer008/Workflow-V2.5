@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>身份确认</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table width="267" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+  <tr>
+    <td height="24" align="left" bgcolor="9EB9CC"><span class="white">　</span>身份确认 </td>
+  </tr>
+  <tr>
+    <td height="100" bgcolor="#F7F7F7"><table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="30" align="left">请验证人在下面输入密码以进行身份验证：</td>
+        </tr>
+        <tr>
+          <td height="30"><input name="textfield" type="text" value="Admin" /></td>
+        </tr>
+        <tr>
+          <td height="30" align="left"><table width="119" border="0" cellspacing="1">
+              <tr>
+                <th width="175" align="center" scope="col"> <input name="Submit2" type="submit" class="btn" value="确定" /></th>
+                <th width="176" align="center" scope="col"><input name="Submit" type="submit" class="btn" value="取消" /></th>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+</body>
+</html>

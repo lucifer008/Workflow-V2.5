@@ -1,0 +1,43 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Service/SystemPermission
+http://192.168.0.6/svn/workflow
+
+
+
+2010-05-20T03:04:15.000000Z
+3299
+baixiaoyu
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+PermissionManage
+dir
+
+UserMangae
+dir
+
+EmployeeManage
+dir
+
+RoleManage
+dir
+
+PositionManage
+dir
+

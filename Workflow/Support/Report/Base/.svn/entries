@@ -1,0 +1,40 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Support/Report/Base
+http://192.168.0.6/svn/workflow
+
+
+
+2009-02-24T09:10:12.406250Z
+2348
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+ReportBase.cs
+file
+
+
+
+
+2010-03-25T07:11:37.187500Z
+a067f85b214675f020b7e613a4bcc916
+2009-02-24T09:10:12.406250Z
+2348
+zhangxiaolin
+

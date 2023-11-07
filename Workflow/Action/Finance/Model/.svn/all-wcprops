@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/workflow/!svn/ver/3396/trunk/v2.5/Workflow/Action/Finance/Model
+END
+PayForOrderModel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Action/Finance/Model/PayForOrderModel.cs
+END
+DebtAnlyzeModel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Action/Finance/Model/DebtAnlyzeModel.cs
+END
+FinanceModel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Action/Finance/Model/FinanceModel.cs
+END
+FindFinanceModel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3396/trunk/v2.5/Workflow/Action/Finance/Model/FindFinanceModel.cs
+END

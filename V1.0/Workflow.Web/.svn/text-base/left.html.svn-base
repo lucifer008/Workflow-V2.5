@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>¿ìÓ¡Ò×</title>
+<!--<link rel="stylesheet" href="css/css.css" type="text/css" media="screen" />-->
+<style type="text/css">
+	a, A:link, a:visited, a:active, A:hover
+		{color: #000000; text-decoration: none; font-family: Tahoma, Verdana; font-size: 12px}
+</style>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="tree.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/left.js"></script>
+</head>
+<body>
+<div align="center" style="width:100%; height:100%; vertical-align:top" bgcolor="#ffffff">
+<table width="100%" border="0" height="100%" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">	
+	<tr>
+<!--	<td width="11" ><img alt="" src="images/white_main_top_left.gif"/></td>
+		<td width="99%"><img alt="" src="images/spacer_10_x_10.gif" height="10"/></td>
+		<td width="11"><img alt="" src="images/white_main_top_right.gif" width="12" height="11"/></td>
+-->	</tr>
+	<tr height="99%">
+		<td colspan="3" bgcolor="#FFFFFF" height="99%" valign="top">
+		<script type="text/javascript">
+			<!--//
+			    newtree(TREE_ITEMS,TREE_TPL);
+                new tree(TREE_ITEMS, TREE_TPL);
+			//-->
+		</script>
+		</td>
+	</tr>
+	<tr>
+<!--    <td width="11"><img alt="" src="images/white_main_bottom_left.gif"/></td>
+		<td><img alt="" src="images/spacer_10_x_10.gif"/></td>
+		<td width="11"><img alt="" src="images/white_main_bottom_right.gif"/></td>
+-->	</tr>
+</table>
+</div>
+</body>
+</html>

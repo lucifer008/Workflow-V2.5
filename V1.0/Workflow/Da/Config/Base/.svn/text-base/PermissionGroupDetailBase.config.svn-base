@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="PermissionGroupDetailBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="PermissionGroupDetailResultMap.selectResult">
+			SELECT
+				ID, PERMISSION_ID, PERMISSION_GROUP_ID
+			FROM PERMISSION_GROUP_DETAIL
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="PermissionGroupDetailResultMap.selectResult">
+			SELECT
+				ID, PERMISSION_ID, PERMISSION_GROUP_ID
+			FROM PERMISSION_GROUP_DETAIL
+			WHERE ID = #Id# 
+		</select>
+		<insert id="Insert" parameterClass="PermissionGroupDetail">
+			INSERT INTO PERMISSION_GROUP_DETAIL
+				(
+				  ID, PERMISSION_ID, PERMISSION_GROUP_ID
+				)
+				VALUES
+				(
+				  #Id # , #PermissionId# , #PermissionGroupId# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="PermissionGroupDetail">
+			UPDATE PERMISSION_GROUP_DETAIL
+				SET
+					PERMISSION_ID = #PermissionId# ,PERMISSION_GROUP_ID = #PermissionGroupId#  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE PERMISSION_GROUP_DETAIL
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM PERMISSION_GROUP_DETAIL WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

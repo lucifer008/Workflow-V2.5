@@ -1,0 +1,40 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow.Web/docs/DBScript
+http://192.168.0.6/svn/workflow
+
+
+
+2009-05-11T01:43:34.437500Z
+2537
+fuqiang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+存储过程
+dir
+
+基础数据
+dir
+
+测试脚本
+dir
+
+CreateDb
+dir
+

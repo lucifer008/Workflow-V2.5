@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Support/Attributes
+END
+SelectPermissionAttribute.cs
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Support/Attributes/SelectPermissionAttribute.cs
+END
+DeletePermissionAttribute.cs
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Support/Attributes/DeletePermissionAttribute.cs
+END
+UpdatePermissionAttribute.cs
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Support/Attributes/UpdatePermissionAttribute.cs
+END
+InsertPermissionAttribute.cs
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Support/Attributes/InsertPermissionAttribute.cs
+END

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="Gathering" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+		<resultMap id="SelectPaymentResult" class="Gathering">
+			<result property="Amount" column="AMOUNT"/>
+			<result property="UserName" column="user_name"/>
+			<result property="GatheringDateTime" column="gathering_Date_Time"/>
+			<result property="Arrearage" column="arrearage"/>
+			<result property="Memo" column="memo"/>
+		</resultMap>
+		<!--取得结款笔数/结款金额(收银交班)-->
+		<resultMap id="SelectPayForAmountResult" class="CashHandOver">
+			<result property="PayForCount" column="PAY_FOR_COUNT" dbType="int"/>
+			<result property="PayForAmountSum" column="PAY_FOR_AMOUNT_SUM" dbType="decimal"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+	<select id="SelectCustomerPayment" resultMap="SelectPaymentResult" parameterClass="Order">
+		<![CDATA[
+		select a.amount, a.gathering_Date_Time,d.user_name,c.REAL_PAID_AMOUNT-c.PAID_AMOUNT arrearage ,c.memo
+		from gathering a
+		inner join gathering_Orders b on a.id=b.gathering_id
+		inner join orders c on b.orders_id=c.id
+		inner join users d on c.cash_user_id=d.id
+		where a.Deleted='0'
+		]]>
+		<dynamic>
+			<isNotNull prepend="and" property="BalanceDateTimeString">
+				<![CDATA[
+				a.gathering_date_time>=#BalanceDateTimeString#
+				]]>
+			</isNotNull>
+			<isNotNull prepend="and" property="InsertDateTimeString">
+				<![CDATA[
+				a.gathering_date_time<#InsertDateTimeString#	
+				]]>
+			</isNotNull>
+			<isNotNull prepend="and" property="CustomerName">
+				<![CDATA[
+				c.customer_name=#CustomerName#
+				]]>
+			</isNotNull>
+		</dynamic>
+	</select>
+    <!--收银交班(结算金额，结款金额)-->
+	<select id="SelectPayForAmount" parameterClass="map" resultMap="Gathering.SelectPayForAmountResult">
+		select isnull(sum(AMOUNT),0) as PAY_FOR_AMOUNT_SUM,
+		count(*) as PAY_FOR_COUNT
+		from GATHERING a
+		Inner join Gathering_Orders b on a.Id=b.Gathering_Id
+		where a.DELETED='0'
+		And a.Gathering_Date_Time between #StartTime# and #EndTime#
+		And a.Insert_User=#UserId#
+		And a.Company_Id=#CompanyId#
+		And a.Branch_Shop_Id=#BranchShopId#
+		and (b.pay_kind=#PayTypeBalance# or b.pay_kind=#PayTypePreDiff# or b.pay_kind=#PayTypeMemberCardDiff# or b.pay_kind=#PreDeposits# or b.pay_kind=#AccountPreDepositsDiff# or b.pay_kind=#PayTypeOwe#)<!--or b.pay_kind=#PayTypePreDiff# or b.pay_kind=#PayTypeOwe#付款类型为:结算款+预付款冲减+已经收了应收款-->
+	</select>
+	<select id="SelectGatheringByOrderId" parameterClass="Gathering" resultMap="GatheringResultMap.selectResult">
+		<![CDATA[
+			select * from gathering a inner join gathering_orders b on b.gathering_id=a.id
+			where b.orders_id=#Id# and a.company_id=#CompanyId# and a.branch_shop_id=#BranchShopId#
+		]]>
+	</select>
+	<delete id="DeleteGatheringOrderInfo" parameterClass="Gathering">
+		Delete gathering_orders where Orders_Id=#Id# and Pay_kind!=#InsertUser#
+	</delete>
+	<delete id="DeleteGatheringInfo" parameterClass="Gathering">
+		Delete Gathering
+		where Id in(select gathering_Id from Gathering_orders where orders_Id=#Id# and pay_kind!=#InsertUser#)
+		and company_Id=#CompanyId#
+		and branch_shop_id=#BranchShopId#
+	</delete>
+	<delete id="DeleteGatheringPaymentConcessionInfo" parameterClass="Gathering">
+		Delete Payment_Concession
+		where gathering_Id in(select gathering_Id from Gathering_orders where orders_Id=#Id# and pay_kind!=#InsertUser#)
+		and company_Id=#CompanyId#
+		and branch_shop_id=#BranchShopId#
+	</delete>
+	</statements>
+</sqlMap>

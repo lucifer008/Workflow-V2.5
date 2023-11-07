@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>会员一览</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="../css/calendar-blue.css"  type="text/css" />
+<script type="text/javascript" src="../js/calendar.js"></script>
+<script type="text/javascript" src="../js/calendar-zh.js"></script>
+<script	type="text/javascript" src="../js/calendar-setup.js"></script>
+<script type="text/javascript" src="../js/checkCalendar.js"></script>
+<link href="../css/thickbox.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="text-align:center">
+<div align="center" style="width:99%; background-color:#FFFFFF;" id="container">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+	<tr>
+		<td width="11"><img alt="" src="../images/white_main_top_left.gif"></td>
+		<td width="99%"><img alt="" src="../images/spacer_10_x_10.gif" height="10"></td>
+		<td width="10"><img alt="" src="../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+	</tr>
+  <tr>
+    <td colspan="3" bgcolor="#FFFFFF">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="3%"></td>
+        <td align="left" bgcolor="#eeeeee">首页&nbsp;-&gt;&nbsp;会员管理&nbsp;-&gt;&nbsp;会员一览</td>
+        <td width="3%"></td>
+      </tr>
+      <tr>
+        <td colspan="3" class="caption" align="center">会员一览</td>
+      </tr>
+      <tr>
+        <td width="3%"></td>
+        <td align="left">
+		<table border="1" cellpadding="3" cellspacing="1" width="100%" align="left">
+          <tr>
+            <td nowrap class="item_caption">发卡时间:</td>
+            <td class="item_content"><div>
+					<input class="datetexts" id="txtFrom" type="text" maxlength="10" readonly="true" value="2007-08-01"/>
+					<img alt=""  id="img alt=""btnFrom" src="../images/cal.gif" width="20" height="14" border="0" alt="Click Here to Pick up the date" /> &nbsp;&nbsp;&nbsp;&nbsp;至 			&nbsp;&nbsp;&nbsp;&nbsp;
+					<script type="text/javascript">
+						Calendar.setup({
+							firstDay       :    0,                  // first day of the week
+							inputField     :    "txtFrom",     				// id of the input field
+							button         :    "img alt=""btnFrom",  					// trigger for the calendar (button ID)
+							align          :    "Tl",           		// alignment (defaults to "Bl")
+							//singleClick  :    true,
+							showsTime      :    "true",
+							ifFormat       :    "%Y-%m-%d"    // our date only format
+							 });
+							 window
+					</script>			
+	    		    <input class="datetexts" name="txtTo" type="text"  maxlength="10" readonly="true" value="2007-08-31"/>
+			        <img alt=""  id="img alt=""btnTo" src="../images/cal.gif" width="20" height="14" border="0" alt="Click Here to Pick up the date" /></div>
+			<div>
+			  <script type="text/javascript">
+						Calendar.setup({
+							firstDay       :    0,                  // first day of the week
+							inputField     :    "txtTo",     				// id of the input field
+							button         :    "img alt=""btnTo",  					// trigger for the calendar (button ID)
+							align          :    "Tl",           		// alignment (defaults to "Bl")
+							//singleClick  :    true,
+							showsTime      :    "true",
+							ifFormat       :    "%Y-%m-%d"    // our date only format
+							 });
+							 window
+					</script>			
+		    		</div></td>
+            <td nowrap class="item_caption">卡状态:</td>
+            <td class="item_content"><select name="select" size="1">
+              <option>不限</option>
+              <option>正常</option>
+              <option>已挂失</option>
+              <option>已注销</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td nowrap class="item_caption">客户名称:</td>
+            <td class="item_content" ><input name="textfield3" type="text" style="width: 298px" value="设计院"/></td>
+            <td nowrap class="item_caption">卡级别:</td>
+            <td class="item_content"><select name="select2" size="1">
+              <option>不限</option>
+              <option>打印卡</option>
+              <option>影像卡</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td nowrap class="item_caption">卡号:</td>
+            <td class="item_content" colspan="3"><input class="texts" type="text" size="20" /></td>
+          </tr>
+          <tr>
+             <td colspan="4" align="right" class="querybuttons"><input type="button" disabled="disabled" class="buttons" value="查询" /></td>
+      </tr>
+        </table></td>
+        <td width="3%"></td>
+      </tr>
+      <tr>
+        <td colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="3%"></td>
+        <td align="left">查询结果（共4项）</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td width="3%"></td>
+        <td align="left">
+        <table border="1" cellpadding="3" cellspacing="1" width="100%" align="left">
+          <tr>
+            <th width="1%" nowrap align="center">&nbsp;NO&nbsp;</th>
+            <th width="1%" nowrap align="center">会员卡号</th>
+            <th width="30%" nowrap align="center">客户名称</th>
+            <th width="1%" nowrap align="center">状态</th>
+            <th width="1%" nowrap align="center">类型</th>
+            <th width="1%" nowrap align="center">级别</th>
+            <th width="1%" nowrap align="center">消费总额</th>
+            <th width="1%" nowrap align="center">积分</th>
+            <th width="20%" nowrap align="center">备注</th>
+            
+          </tr>
+          <tr class="detailRow">
+            <td align="center"nowrap>1</td>
+            <td align="left" nowrap><a href="#" onclick="window.open('MemberCardDetail.html')">M00011</a></td>
+            <td align="left"nowrap>建大设计院</td>
+            <td align="center" nowrap>正常</td>
+            <td align="left" nowrap>影像卡</td>
+            <td align="left" nowrap>金卡</td>
+            <td align="right" nowrap>
+                3,300</td>
+            <td align="right"nowrap>330</td>
+            <td nowrap>&nbsp;</td>
+            
+          </tr>
+          <tr class="detailRow">
+            <td align="center" nowrap>2</td>
+            <td align="left" nowrap><a href="#" onclick="window.open('MemberCardDetail.html')">M00012</a></td>
+            <td align="left" nowrap>交大设计院</td>
+            <td align="center" nowrap>正常</td>
+            <td align="left" nowrap>打印卡</td>
+            <td align="left" nowrap>银卡</td>
+            <td align="right" nowrap>
+                5,500</td>
+            <td align="right"nowrap>550</td>
+            <td >&nbsp;</td>
+            
+          </tr>
+          <tr class="detailRow">
+            <td align="center" nowrap>3</td>
+            <td align="left" nowrap><a href="#" onclick="window.open('MemberCardDetail.html')">M00013</a></td>
+            <td align="left" nowrap>西大设计院</td>
+            <td align="center" nowrap>已挂失</td>
+            <td align="left" nowrap>打印卡</td>
+            <td align="left" nowrap>金卡</td>
+            <td align="right" nowrap>
+                2,009</td>
+            <td align="right" nowrap>200</td>
+            <td >&nbsp;</td>
+            
+          </tr>
+          <tr class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            
+          </tr>
+        </table></td>
+        <td></td>
+      </tr>
+      <tr class="emptyButtonsUpperRowHight">
+				<td colspan="3"></td>
+			</tr>
+      <tr height="5">
+				<td style="height: 5px"><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+				<td bgcolor="#eeeeee" style="height: 5px">&nbsp;</td>
+				<td style="height: 5px"><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+			</tr>      
+    </table></td>
+  </tr>
+	<tr>
+		<td width="11"><img alt="" src="../images/white_main_bottom_left.gif"></td>
+		<td width="99%"><img alt="" src="../images/spacer_10_x_10.gif"></td>
+		<td width="10"><img alt="" src="../images/white_main_bottom_right.gif"></td>
+	</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow/Action/Finance
+http://192.168.0.6/svn/workflow
+
+
+
+2009-11-17T01:02:13.390625Z
+2663
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+Model
+dir
+
+FinanceAction.cs
+file
+
+
+
+
+2010-03-25T07:10:10.875000Z
+757b9c7b2248f25f0097570b848bb982
+2009-11-09T08:14:19.312500Z
+2653
+zhangxiaolin
+
+FindFinanceAction.cs
+file
+
+
+
+
+2010-03-25T07:10:10.890625Z
+02251ed517d5767a712a0d10ba5fd5a0
+2009-11-17T01:02:13.390625Z
+2663
+zhangxiaolin
+

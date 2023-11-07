@@ -1,0 +1,1039 @@
+﻿// JScript 文件
+///名    称:finance
+///功能概要:收银js
+///作    者:
+///创建时间:
+///修正履历：
+///修正时间:
+
+var isCarryMoney=false;
+var isPreAmount=false;
+var isOwe=false;//结算方式是否为记账
+/*加载页面属性*/
+$(document).ready(function(){
+    var returnBackMoney=$('#txtReceivableMoney').val();
+    if(returnBackMoney<0){
+        $('#giveBack').text(Math.abs(returnBackMoney));
+        $('#txtReturnMoney').val(Math.abs(returnBackMoney));
+    }
+    if(parseInt($("#cbPaymentType").val())==payType2){
+        $("#txtRealMoney").attr("disabled",true);
+        $("#chkCarryMoney").attr("disabled",true);
+        $("#cbPreSaveMoney").attr("disabled",true);
+        $("#trRealMoney").hide();
+        $("#trGiveZero").hide();
+        
+        
+        $("#rdbtN").attr("disabled",true);
+        $("#rdbtF").attr("disabled",true);
+        $("#rdbtY").attr("checked",true);
+        
+        $("#lblRdbtN").hide();
+        $("#lblRdbtY").hide();
+        $("#lblRdbtF").hide();
+        onTicketClick($("#rdbtY"));
+        $("#txtPaidTicket").attr("readonly",true);
+        //抹零与优惠
+        document.getElementById("trZero").style.display='none';//$("#trZero").hide();
+        document.getElementById("trPreferent").style.display='none';//$("#trPreferent").hide();
+    }
+    
+    //去掉预存款冲减 2009年11月10日17:05:36
+    $("#trPreDeposits").remove();
+    //默认隐藏税费
+    $("#lblScot").hide();
+    
+    getCustomerPayType();
+    realMoneyChange();
+    //判断杰表打印控件是否已经安装   2010年6月3日 
+    try {
+        //获取可用打印机列表
+        jatoolsPrinter.getPrinters();
+        $('#hidHaveJat').val("1");
+    }
+    catch (e) {
+        $('#hidHaveJat').val("0");
+    }
+});
+
+//功能:1>.判断优惠，抹零权限范围是否合法；2>.计算应收款金额；
+//作者:
+//日期:
+function comulateMoney(){
+    var sumMoney=parseFloat($("#txtHiddenSumMoney").val());//现金总计
+    var prepayMoney=parseFloat($("#txtPrepayMoney").val());//已预收
+    var zeroMoney=parseFloat($("#txtZeroMoney").val());//摸零金额
+    var accountMoney=parseFloat($("#txtAcc").val());//挂账
+    var preferentialMoney=parseFloat($("#txtPreferentialMoney").val());//优惠金额
+    var maxPreferentialAmount=fltMul(sumMoney,concessionMax);//当前用户最大的优惠金额
+    var minPreferentialAmount=fltMul(sumMoney,concessionMin);//当前用户最小的优惠金额
+    
+    if(isNaN(sumMoney)) sumMoney=0;
+    if(isNaN(prepayMoney)) prepayMoney=0;
+    if(isNaN(zeroMoney)) zeroMoney=0;
+    if(isNaN(accountMoney)) accountMoney=0;
+    if(isNaN(preferentialMoney)) preferentialMoney=0;
+    
+    if(zeroMoney<zeroMin || zeroMoney>zeroMax){
+        var yes=confirm("抹零金额超出您的权限范围！是否授权抹零?");
+        if(!yes){
+            $("#txtZeroMoney").val(0);
+            $("#txtZeroMoney").focus();
+            $("#txtZeroMoney").select();
+            return false;
+        }
+        else{
+            var tag=accredit(zeroAccreditTypeKey,zeroAccreditTypeText,zeroAccreditTypeId);
+            if(tag){
+               if(zeroMoney>accZeroMax){
+                    alert("授权用户权限不够!");
+                    $("#txtZeroMoney").val(0);
+                    $("#txtZeroMoney").focus();
+                    $("#txtZeroMoney").select();
+                    return false;
+               }   
+            }
+            else{
+                return false;
+            }
+        }
+    }
+    if(zeroMoney!=0 && sumMoney<zeroMoney ){
+        alert("抹零金额不能大于总金额!");
+        $("#txtZeroMoney").val(0);
+        $("#txtZeroMoney").focus();
+        $("#txtZeroMoney").select();
+        return false;
+    }
+    if(preferentialMoney>maxPreferentialAmount || preferentialMoney<minPreferentialAmount){
+        var yes=confirm("优惠金额超出您的权限范围！是否授权优惠?")
+        if(!yes){
+            $("#txtPreferentialMoney").val(0);
+            $("#txtPreferentialMoney").focus();
+            $("#txtPreferentialMoney").select();
+            return false;
+        }
+        else{
+            var tag=accredit(concessionAccreditTypeKey,concessionAccreditTypeText,concessionAccreditTypeId);
+            if(!tag){return false;}
+            else{
+                var accMaxConAmount=fltMul(sumMoney,accConcessionMax);//授权用户最大的优惠金额
+                if(preferentialMoney>accMaxConAmount){
+                    alert("授权用户权限不够!");
+                    $("#txtPreferentialMoney").val(0);
+                    $("#txtPreferentialMoney").focus();
+                    $("#txtPreferentialMoney").select();
+                    return false
+                }
+            }
+        }
+    }    
+    if(preferentialMoney!=0 && sumMoney<preferentialMoney){
+        alert("优惠金额不能大于总金额!");
+        $("#txtPreferentialMoney").val(0);
+        $("#txtPreferentialMoney").focus();
+        $("#txtPreferentialMoney").select();
+        return false;
+    }
+
+    if($("#txtAcc").length<=0){
+        if(sumMoney<(zeroMoney+preferentialMoney)){
+            alert("抹零金额 + 优惠金额 不能大于总金额!");
+            $("#txtZeroMoney").val(0);
+            $("#txtPreferentialMoney").val(0);
+            $("#txtPreferentialMoney").focus();
+            $("#txtPreferentialMoney").select();
+            return false;
+        }
+    }
+    else{
+        if(sumMoney<accountMoney){
+            alert("记账金额不能大于总金额!");
+            $("#txtAcc").val(0);
+            $("#txtAcc").focus();
+            $("#txtAcc").select();
+            return false;
+        }    
+        if(sumMoney<(zeroMoney+preferentialMoney)){
+            alert("抹零金额 + 优惠金额 不能大于总金额!");
+            $("#txtZeroMoney").val(0);
+            $("#txtAcc").val(0);
+            $("#txtPreferentialMoney").val(0);
+            $("#txtPreferentialMoney").focus();
+            $("#txtPreferentialMoney").select();
+            return false;
+        }
+    }
+    var result=fltAdd(sumMoney,0);
+    var obj=$("#isUsePrepay");
+    if($(obj).length>0 && $(obj)[0].checked){ //如果使用预收款
+        result=fltSub(result,prepayMoney);
+    }    
+    result=fltSub(result,zeroMoney);
+    result=fltSub(result,preferentialMoney);
+    $("#txtReceivableMoney").val(result);
+    realMoneyChange();
+   return true;
+}
+
+//功能:1>.验证收款金额格式是否合法；2>.计算实收金额；3>.计算预存金额;4>计算税费
+//作者:
+//日期:
+//备注:
+
+var allPaidAmount=0;//实际付款金额(优惠金额+抹零+本次收款+预收款冲减+预存款冲减)
+var rAmount=0;//实际使用金额(不包含消费的预存金额)
+function realMoneyChange(){
+    rAmount=0;
+    allPaidAmount=0;//所有付款金额
+    computeTicket();
+    var isUsePrepay=$("#isUsePrepay").attr("checked");//是否使用预收款
+    var prepay=parseFloat($("#txtPrepayMoney").val());//预收款
+    var zeroMoney=parseFloat($("#txtZeroMoney").val());//抹零
+    var realMoney= parseFloat($("#txtRealMoney").val())  ;//实收金额
+    var sumMoney=parseFloat($("#txtHiddenSumMoney").val());//现金总计
+    var preDeposits=parseFloat($("#txtPreDeposits").val());//预存款
+    var isUsePreDepos=$("#cbIsUsePreDeposits").attr("checked");//是否使用预存款
+    var preferentialMoney=parseFloat($("#txtPreferentialMoney").val());//优惠金额
+    var campaignAmount=parseFloat(amountReceivableMoney());
+    var accountMoney= 0;//存储应收款
+    var findZeroAmount=0;//找零金额
+    if(isNaN(prepay)) prepay=0;
+    if(isNaN(sumMoney)) sumMoney=0;
+    if(isNaN(realMoney)) realMoney=0;
+    if(isNaN(zeroMoney)) zeroMoney=0;
+    if(isNaN(preferentialMoney)) preferentialMoney=0;
+    if(isNaN(accountMoney)) accountMoney=0;
+    if(!isNumber(realMoney)){
+       alert("收款金额格式错误!");
+       $("#txtRealMoney").val(0)
+       $("#txtRealMoney").focus();
+       return false;
+    }
+    if(isUsedCampaign && 0==campaignAmount){ 
+        accountMoney=0;
+        allPaidAmount=fltAdd(sumMoney,0);
+    }
+    else if(isUsedCampaign && 0<campaignAmount){
+         accountMoney=fltSub(campaignAmount,preferentialMoney);
+         allPaidAmount=fltAdd(fltSub(sumMoney,accountMoney),0);
+    }
+    else{
+        accountMoney=fltSub(sumMoney,preferentialMoney);
+    }
+    
+    accountMoney= fltSub(accountMoney,zeroMoney);
+    allPaidAmount=allPaidAmount+fltAdd(zeroMoney,realMoney);
+    allPaidAmount=fltAdd(allPaidAmount,preferentialMoney)
+    
+    if(0>accountMoney) accountMoney=0;
+     $("#realPrePayAmount").val(0);
+    //如果使用预收款
+    if(isUsePrepay){
+        //预收款大于应收款金额
+        if(prepay>accountMoney){
+            //实际冲减的预收款
+            rAmount+=accountMoney;
+            allPaidAmount=fltAdd(allPaidAmount,accountMoney)
+            $("#realPrePayAmount").val(accountMoney);
+            accountMoney=0;
+        }
+        else{
+            rAmount+=prepay;
+            allPaidAmount=fltAdd(allPaidAmount,prepay)
+            accountMoney=fltSub(accountMoney,prepay);
+            $("#realPrePayAmount").val(prepay);
+        }
+    }
+    if(0>accountMoney) accountMoney=0;
+    //如果使用预存款
+    if(isUsePreDepos){
+        //预存金额大于应收款金额
+        if(preDeposits>accountMoney && accountMoney>0){
+            allPaidAmount=fltAdd(allPaidAmount,accountMoney)
+            $("#realPreDepositsAmount").val(accountMoney);//实际冲减的预存款
+            accountMoney=0;
+        }
+        else if(preDeposits<=accountMoney && accountMoney>0){
+            allPaidAmount=fltAdd(allPaidAmount,preDeposits)
+            accountMoney=fltSub(accountMoney,preDeposits);
+            $("#realPreDepositsAmount").val(preDeposits);
+        }
+        else{
+            accountMoney=0;
+            $("#realPreDepositsAmount").val(0);
+        }
+    }
+    $("#txtReceivableMoney").val(parseFloat(accountMoney).toFixed(2));
+    if(accountMoney>=0){
+        $("#txtAcc").val(accountMoney);
+        $("#txtReceivableMoney").val(accountMoney);
+    }
+    else{
+        $("#txtAcc").val(0);
+        $("#txtReceivableMoney").val(0);
+    }
+    
+    var reDiff=fltSub(realMoney,accountMoney);
+    var scotAmount=parseFloat($("#txtScotAmount").val());
+    if(isNaN(scotAmount)) scotAmount=0;
+    $("#realAmount").val(accountMoney);//实际收款金额
+    $("#otherPreDepositAmount").hide();//可输入的预存金额
+    if(reDiff>=0){   
+        reDiff=fltSub(reDiff,scotAmount);
+        if(reDiff<0) reDiff=0;
+        if(!isCarryMoney){
+            if(!isPreAmount){ //是否预存
+                $("#preDepositAmount").val(0);
+            }
+            else{
+                $("#preDepositAmount").val(FormatMoney(reDiff,2));
+            }
+        }
+        else{
+            if(isPreAmount){
+                $("#otherPreDepositAmount").show();
+                $("#preDepositAmount").val($("#otherPreDepositAmount").val());
+            }
+            else{
+                 $("#preDepositAmount").val(0);
+            }
+            $("#realAmount").val(fltSub(realMoney,scotAmount));//实际收款金额
+        }
+    }
+    else //实收金额<应收金额(舍入少收情况)
+    {
+        accountMoney=fltAdd(accountMoney,scotAmount);//应收款+税费
+        var reDiff1=fltSub(accountMoney,realMoney);
+        if(isCarryMoney && reDiff1>0 && reDiff1<=1){//舍入少收
+            $("#realAmount").val(fltSub(realMoney,scotAmount));//实际收款金额
+            if(isPreAmount){
+                $("#otherPreDepositAmount").show();
+                $("#preDepositAmount").val($("#otherPreDepositAmount").val()); 
+            } 
+        }
+        else{
+            $("#realAmount").val(0);  
+        }
+    }
+    var acc=parseFloat($("#txtReceivableMoney").val());
+    if(acc<realMoney && 0!=acc) rAmount=fltAdd(rAmount,acc);
+    else if(acc<realMoney && 0==acc) rAmount=rAmount;
+    else rAmount=fltAdd(realMoney,rAmount);
+    
+    caluScotAmount();
+    paidAmountMessage();
+}
+
+//功能: 订单结算数据验证
+//作者:
+//日期:
+function balanceCheck(){
+    caluScotAmount();
+    if(!comulateMoney()) return false;
+    paidAmountMessage();
+    if(!checkOnlyNum($("#txtZeroMoney"),false,14)){
+        $("#txtZeroMoney").focus();
+        $("#txtZeroMoney").select();
+        return false;
+    }  
+    if(!checkOnlyNum($("#txtPreferentialMoney"),false,14)){
+        $("#txtPreferentialMoney").focus();
+        $("#txtPreferentialMoney").select();
+        return false;
+    }
+  
+    if(!checkOnlyNum($("#txtRealMoney"),false,14)){
+        $("#txtRealMoney").focus();
+        $("#txtRealMoney").select();
+        return false;
+    }
+    
+    //由于有预收款,实收金额可以是0
+    if(""==$("#txtRealMoney").val() || 0>parseFloat($("#txtRealMoney").val())){
+        alert("您输入的金额有误!!!");
+        $("#txtRealMoney").select();
+        $("#txtRealMoney").focus();
+        return false;
+    }
+    accMoney=parseFloat($("#txtReceivableMoney").val());
+    if($("#cbPaymentType").val()==payType1){
+        if(!isCarryMoney){
+            if(0>getDiffRealAccount()){
+                alert("您输入的金额不足!");
+                $("#txtRealMoney").select();
+                $("#txtRealMoney").focus();
+                return false;
+            }
+        }
+        else{
+            if(accMoney>=0){
+                var rs=getDiffRealAccount();
+                if(rs>1 || rs<-1){
+                    alert("舍入不能超过1元!");
+                    $("#txtRealMoney").select();
+                    $("#txtRealMoney").focus();
+                    return false;
+                }
+            }
+        }
+    }
+    var objTicket=$("input:radio[@name=ticket]");
+    for(var i=0;i<objTicket.length;i++){
+        if($(objTicket[i]).attr("checked")){
+            if("N"==$(objTicket[i]).attr("value")){//不欠发票
+                if(!checkOnlyNum($("#txtPayTicketMoney"),false,14)){
+                    $("#txtPayTicketMoney").focus();
+                    $("#txtPayTicketMoney").select();
+                    return false;
+                }                
+                if(parseFloat($("#txtPayTicketMoney").val())<=0.001){
+                    alert('发票金额不能小于等于0!');
+                    $('#txtPayTicketMoney').focus();
+                    $('#txtPayTicketMoney').select();
+                    return false;
+                }
+                else if(!isCarryMoney){
+                    if(parseFloat($("#txtPayTicketMoney").val())>parseFloat($("#txtHiddenSumMoney").val()) && !isUseScot){
+                        alert('发票金额不能大于总计金额!');
+                        $('#txtPayTicketMoney').focus();
+                        $('#txtPayTicketMoney').select();
+                        return false;
+                    }
+                }
+                if(fltSub($("#txtPayTicketMoney").val(),$("#txtHiddenSumMoney").val())>1 && !isUseScot){
+                    alert('多开的发票金额不能大于 1 元!');
+                    $('#txtPayTicketMoney').focus();
+                    $('#txtPayTicketMoney').select();
+                    return false;
+                }
+            }
+            else if("Y"==$(objTicket[i]).attr("value")){//欠发票
+                if(!checkOnlyNum($("#txtOweMoney"),false,14)){
+                    $("#txtOweMoney").focus();
+                    $("#txtOweMoney").select();
+                    return false;
+                }                
+                if(parseFloat($("#txtOweMoney").val())<=0.001){
+                    alert('欠票金额不能小于等于0!');
+                    $('#txtOweMoney').focus();
+                    $('#txtOweMoney').select();
+                    return false;
+                }
+                else if(!isCarryMoney){
+                    if(!isUseScot && parseFloat($("#txtOweMoney").val())>parseFloat($("#txtHiddenSumMoney").val())){
+                        alert('欠票金额不能大于总计金额!');
+                        $('#txtOweMoney').focus();
+                        $('#txtOweMoney').select();
+                        return false;
+                    }
+                }
+                
+                if(!isUseScot && fltSub($("#txtOweMoney").val(),$("#txtHiddenSumMoney").val())>1){
+                    alert('多开的发票金额不能大于 1 元!');
+                    $('#txtOweMoney').focus();
+                    $('#txtOweMoney').select();
+                    return false;
+                }
+                
+                var rval=fltAdd($('#txtOweMoney').val(),$('#txtPaidTicket').val());
+                rval=fltSub(rval,$('#txtHiddenSumMoney').val());
+                if($('#txtPrepayMoney').val()>0 && $('#isUsePrepay').attr('checked')){
+                    rval=Math.abs(fltSub(rval,$("#realPrePayAmount").val())); //处理预收款大于订单金额的情况rval=Math.abs(fltSub(rval,$('#txtPrepayMoney').val()));
+                }
+                if(rval>1 && !isUseScot){
+                    alert('欠票金额与付票金额之和不能大于 实付金额!');
+                    $('#txtOweMoney').focus();
+                    $('#txtOweMoney').select();
+                    return false;
+                }
+            }
+        }
+    }
+    if(!$("#cbIsUsePreDeposits").attr("checked")){
+        $("#realPreDepositsAmount").val(0);
+    }
+    if(!$("#isUsePrepay").attr("checked")){
+        $("#realPrePayAmount").val(0);
+    }
+    //alert($("#realAmount").val());
+    if(isUsedCampaign)
+		$("#hidCampaignVal").val(getCampaignData());
+	if(!checkDataIsLegitimacy()) return false;
+	
+	var ebc=new endBalanceCheck();
+	ebc.isPre=$("#isUsePrepay").attr("checked");
+	ebc.isRounding=isCarryMoney;
+    ebc.diffPreAmount=parseFloat($("#realPrePayAmount").val());
+    ebc.rasureZeroAmount=parseFloat($("#txtZeroMoney").val());
+    ebc.favourableAmount=parseFloat($("#txtPreferentialMoney").val());
+    ebc.orderSumAmount=parseFloat($("#txtHiddenSumMoney").val());
+    ebc.accountAmount=parseFloat($("#txtReceivableMoney").val());
+    ebc.realPayAmount=parseFloat($("#txtRealMoney").val());
+    ebc.scotAmount=parseFloat($("#txtScotAmount").val());
+    if(!ebc.isIncomeCounterpoise()){
+        alert("数据结算错误！请重新结算!");
+        //window.close();
+        return false;
+    }
+    
+	//alert("订单实际收款="+$("#realAmount").val());
+    var res= confirm("确定结账?");
+    if (res!=true){
+        return false;
+    }
+    $("#txtSubTag").val(1);
+    $("#btnOK").attr("disabled",true);
+    $("#form1").submit();
+    return true;
+}
+
+//功能: 获取实收与应收之差
+//作者: 张晓林
+//日期: 2010年6月4日11:42:03
+function getDiffRealAccount(){
+    var sumAm=parseFloat($("#txtHiddenSumMoney").val());//订单总金额
+    var allReAm=parseFloat($("#txtRealMoney").val());//实收金额
+    var isUsePre=$("#isUsePrepay").attr("checked");//是否使用预收款
+    var isUseSa=$("#cbIsUsePreDeposits").attr("checked");//是否使用预存款
+    var preAmount=parseFloat($("#txtPrepayMoney").val());//预收款
+    var preDeposits=parseFloat($("#txtPreDeposits").val());//预存款
+    var reDiffPreAm=parseFloat($("#realPrePayAmount").val());//实际冲减的预收款
+    var reDiffSavAm=parseFloat($("#realPreDepositsAmount").val());//实际冲减的预存款
+    var scotAmount=parseFloat($("#txtScotAmount").val());
+    var diAccountAmount=parseFloat($("#txtReceivableMoney").val());
+    if(isNaN(preDeposits)) preDeposits=0;
+    if(isNaN(scotAmount)) scotAmount=0;
+    var diffAmount=0;
+    var all=allReAm;//+zeroMoney+preferentialMoney;
+    if(isUsePre) all+=preAmount;
+    if(isUsePre) all+=preDeposits;
+    if(isUsePre) diffAmount=fltAdd(diffAmount,reDiffPreAm);
+    if(isUseSa) diffAmount=fltAdd(diffAmount,reDiffSavAm);
+    if(isUseScot) diffAmount=fltAdd(diffAmount,scotAmount);
+    diffAmount=fltAdd(diffAmount,diAccountAmount);
+    diffAmount=fltSub(all,diffAmount);
+    
+    return diffAmount;
+}
+//功能: 收款信息提示框
+//作者: 张晓林
+//日期: 2010年4月26日11:25:02
+function paidAmountMessage(){
+    if($("#cbPaymentType").val()!=payType1) $("#tdAccCo").html("本次记账金额");
+    else $("#tdAccCo").html("本次应收金额");
+    var scotAmount=parseFloat($("#txtScotAmount").val());
+    var reMoney=parseFloat($("#txtRealMoney").val());
+    var accMoney=parseFloat($("#txtReceivableMoney").val());
+    if(isNaN(scotAmount)) scotAmount=0;
+    if(isNaN(reMoney)) reMoney=0;
+    if(isNaN(accMoney)) accMoney=0;
+    $("#tdAccountAmount").html(fltAdd(accMoney,scotAmount));
+    $("#tdPreDospsitiAmount").html($("#preDepositAmount").val());
+    $("#tdPreAmountDiff").html($("#realPrePayAmount").val());
+    $("#tdZeroAmount").html($("#txtZeroMoney").val());
+    $("#tdConcessionAmount").html($("#txtPreferentialMoney").val());
+}
+function accredit(t){
+	return window.showModalDialog('Accredit.aspx',t,'dialogHeigth:100px;dialogWidth:260px;status:no');
+}
+
+function rasureTrail(t){
+    if(isOwe){
+        alert("记账时不能抹零!");
+        $("#txtZeroMoney").attr("readonly",true);
+        return;
+    }
+    var returnValue='false';
+    switch(position){
+        case master:
+        case manager:
+            returnValue='true';
+            break;
+        default:
+            if(zeroMax>0){
+                returnValue='true';
+            }
+            else{
+                returnValue=accredit(concessionAccreditTypeKey,concessionAccreditTypeText,concessionAccreditTypeId);
+            }
+            break;
+        
+    }   
+    if(returnValue=='true'){
+        $("#txtZeroMoney").attr("readonly",false);
+        $("#txtZeroMoney").focus();
+        $("#txtZeroMoney").select();
+    }
+}
+function preferentialMoney(t){
+   if(isOwe){
+        alert("记账时不能优惠!");
+        $("#txtPreferentialMoney").attr("readonly",true);
+        return;
+    }
+    var returnValue='false';
+     switch(position){
+        case master:
+        case manager:
+            returnValue='true';
+            break;
+        default:
+            if(concessionMax>0){
+                returnValue='true';
+            }
+            else{
+                returnValue=accredit(concessionAccreditTypeKey,concessionAccreditTypeText,concessionAccreditTypeId);
+            }
+            break;
+    } 
+    if(returnValue=='true'){
+        $("#txtPreferentialMoney").attr("readonly",false);
+        $("#txtPreferentialMoney").focus();
+        $("#txtPreferentialMoney").select();
+    }
+}
+
+function getCustomerPayType(){
+    $("#txtZeroMoney").val("0");
+    $("#txtPreferentialMoney").val("0");
+    $("#txtZeroMoney").attr("readonly",true);
+    $("#txtPreferentialMoney").attr("readonly",true);
+       
+    var customerId=$("#txtCustomerId").val();
+    var url = "../ajax/AjaxEngine.aspx" + "?CustomerId=" + customerId;
+    $.getJSON(url, {a : '15'},onPayTypeChange);
+    realMoneyChange();
+}
+
+
+function onPayTypeChange(json){
+    if (json.success == null || json.success){
+        data=json;
+    }
+    else{ 
+        return;
+    }
+    var tb=$("#cbPaymentType");
+    if($("tr[@name='trAcc']",$(tb).parent().parent().parent()).length>0){
+        $($("tr[@name='trAcc']",$(tb).parent().parent().parent())[0]).remove();
+    }
+    
+    if(parseInt($("#cbPaymentType").val())==payType2){
+        if(data.Customer.PayType==payType2){
+        
+            $("<tr name='trAcc'><td  nowrap class='item_caption'>挂账:</td><td colspan='3' class='item_content'><input id='txtAcc' name='AccountMoney'  type='text' readonly='true' class='num'  value='0' /></td></tr>").insertAfter("#trPreferent");
+             var acc=fltSub($("#txtReceivableMoney").val(),$("#txtRealMoney").val());
+            if(acc>=0){
+                $("#txtAcc").val(acc);
+            }
+            $("#txtRealMoney").val(0);
+            $("#chkCarryMoney").attr("checked",false);
+            $("#txtRealMoney").attr("disabled",true);
+            $("#chkCarryMoney").attr("disabled",true);
+            $("#cbPreSaveMoney").attr("disabled",true);
+            $("#cbPreSaveMoney").attr("checked",false); 
+            
+            //记账时只能欠票
+            $("#rdbtN").attr("disabled",true);
+            $("#rdbtF").attr("disabled",true);
+            $("#rdbtY").attr("checked",true);
+            onTicketClick($("#rdbtY"));
+            $("#txtPaidTicket").attr("readonly",true);
+            $("#lblRdbtN").hide();
+            $("#lblRdbtY").hide();
+            $("#lblRdbtF").hide();
+            
+            $("#trGiveZero").hide();
+            $("#trRealMoney").hide();
+            
+            //抹零与优惠
+            //$("#trZero").hide();
+            //$("#trPreferent").hide();
+            document.getElementById("trZero").style.display='none';//$("#trZero").hide();
+            document.getElementById("trPreferent").style.display='none'
+            isOwe=true;
+        }
+        else{
+            isOwe=false;
+            alert("该客户不是记账客户,不能记账!");
+            $("#cbPaymentType").attr("value",payType1)
+        }
+    }
+    else{
+        $("#txtRealMoney").attr("disabled",false);
+        $("#chkCarryMoney").attr("disabled",false);
+        $("#cbPreSaveMoney").attr("disabled",false);
+        
+        $("#rdbtN").attr("disabled",false);
+        $("#rdbtF").attr("disabled",false);
+        $("#txtPaidTicket").show();
+        $("#txtPaidTicket").attr("readonly",false);
+        $("#lblRdbtN").show();
+        $("#lblRdbtY").show();
+        $("#lblRdbtF").show();
+        $("#trGiveZero").show();        
+        $("#trRealMoney").show();
+        //抹零与优惠
+        $("#trZero").show();
+        $("#trPreferent").show();
+        isOwe=false;
+    }
+    computeTicket();
+    caluScotAmount();
+}
+
+
+
+function onTicketClick(o){
+    if($('#rdbtY').attr("checked")){
+        $('#sown').show();
+        $('#spay').hide();
+        $('#txtPayTicketMoney').val('0');
+        $('#txtPayTicketMoney').hide();
+        $('#txtPaidTicket').show();
+        $('#txtOweMoney').show();
+        $('#txtOweMoney').focus();
+        $('#txtOweMoney').select();
+    }
+    else if($('#rdbtN').attr("checked")){
+        $('#sown').hide();
+        $('#spay').show();
+        $('#txtOweMoney').val('0');
+        $('#txtOweMoney').hide();
+        $('#txtPaidTicket').hide();
+        $('#txtPaidTicket').val('0');
+        $('#txtPayTicketMoney').show();
+        $('#txtPayTicketMoney').focus();
+        $('#txtPayTicketMoney').select();
+    }
+    else{
+        $('#sown').hide();
+        $('#spay').hide();
+        $('#txtOweMoney').val('0');
+        $('#txtOweMoney').hide();
+        $('#txtPaidTicket').hide();
+        $('#txtPaidTicket').val('0');
+        $('#txtPayTicketMoney').val('0');
+        $('#txtPayTicketMoney').hide();
+        $("#lblScot").hide();
+        $("#txtScotAmount").val("0");
+    }
+    
+}
+
+function onCarryMoneyClick(){
+    if($("#chkCarryMoney").attr("checked")){
+        isCarryMoney=true;
+    }
+    else{
+        isCarryMoney=false;
+    }
+    realMoneyChange();
+}
+
+function onOwnTicket(){
+    var rval=fltSub(parseFloat($('#txtHiddenSumMoney').val()),parseFloat($('#txtPaidTicket').val()));//var rval=fltSub($('#txtReceivableMoney').val(),$('#txtOweMoney').val());
+    if($("#chkCarryMoney").attr("checked")){
+        rval=Math.round(rval);
+    }
+    if(rval<=1 || isNaN(rval)){
+        rval=0;
+    }       
+    $('#txtOweMoney').val(rval);
+}
+
+// 功能: 设置选中预存款
+// 作者: 张晓林
+// 日期: 2009年11月3日13:16:06
+function preDepositCheck(o){
+    if("cbPreSaveMoney"==o.id){
+         
+         if(!$("#cbPreSaveMoney").attr("checked")) isPreAmount=false;  
+         else isPreAmount=true;
+         
+         realMoneyChange();
+    }
+    else{
+        if(!$("#cbPreSaveMoney").attr("checked")){
+            isPreAmount=false;
+            realMoneyChange();
+            $("#cbPreSaveMoney").attr("checked",true)
+            $("#giveBack").html(findZeroAmount);
+        }
+        else{
+            isPreAmount=true;
+            realMoneyChange();
+            $("#giveBack").html("0");
+        }
+    }
+    
+    var findZeroAmount=parseFloat($("#giveBack").html());
+    if(isNaN(findZeroAmount)) findZeroAmount=0;
+    
+    if(isPreAmount)$("#giveBack").html("0");
+    else $("#giveBack").html(findZeroAmount);
+}
+
+// 功能: 控制Esc建退出弹出窗体，回车提交
+// 作者: 张晓林
+// 日期: 2009年11月3日13:16:06
+document.onkeydown=function(event_e){
+    //Esc建退出
+	if (window.event) event_e=window.event;
+	var int_keycode=event_e.charCode || event_e.keyCode;
+	if (int_keycode==27){
+		window.close();
+	}
+	//回车提交
+	var evt=window.event || arguments[0];
+    var element=evt.srcElement || evt.target;
+    if(13==evt.keyCode){
+        if("lblCarryMoney"==element.id || "chkCarryMoney"==element.id){
+            $("#chkCarryMoney").attr("checked",!$("#chkCarryMoney").attr("checked"));
+            onCarryMoneyClick();    
+        }
+        else if("btnClose"!=element.id){
+            $("#btnOK").click();
+            return false;
+        }
+    }
+}
+
+//功能: 获取授权用户的优惠信息
+//作者: 张晓林
+//日期: 2009年11月20日
+function accredit(t1,t2,t3){
+     var url="../finance/Accredit.aspx?AccreditTypeKey="+escape(t1)+"&AccreditTypeText="+escape(t2)+"&AccreditTypeId="+escape(t3)+"&IsCallBack=True";
+     //return showPage(url,null,280,500,false,true,false,false);
+     return window.showModalDialog(url,window,'dialogHeigth:200px;dialogWidth:280px;status:no');
+}
+var accZeroMax=0,accConcessionMax=0,accRendupMax=0;
+function setAccreditUsersInfo(o){
+    accZeroMax=o.maxZero;
+    accConcessionMax=o.maxConcession;
+    accRendupMax=o.maxRendUp;
+}
+
+//功能: 计算税费(只有以现金结款时才计算税费)
+//作者: 张晓林
+//日期: 2009年11月20日
+var isUseScot=false;
+function caluScotAmount(){
+    var oweTicketAmount=parseFloat($("#txtOweMoney").val());//欠票金额
+    var paidTicketAmount=parseFloat($("#txtPaidTicket").val());//付票金额
+    var sumMoney=parseFloat($("#txtHiddenSumMoney").val());//现金总计
+    var paidTicketMoney=parseFloat($("#txtPayTicketMoney").val());//付票金额
+    var accAmount=parseFloat($("#txtReceivableMoney").val());
+    var allAmount=parseFloat(allPaidAmount);//所有付款金额
+    scotInverse=parseFloat(scotInverse);//税费比例
+    
+    if(isNaN(oweTicketAmount)) oweTicketAmount=0;
+    if(isNaN(paidTicketAmount)) paidTicketAmount=0;
+    if(isNaN(paidTicketMoney)) paidTicketMoney=0;
+    if(isNaN(sumMoney)) sumMoney=0;
+    if(isNaN(scotInverse)) scotInverse=0;
+    if(isNaN(allAmount)) allAmount=0;
+    if(isNaN(accAmount)) accAmount=0;
+    
+    var ticketAmount=fltAdd(oweTicketAmount,paidTicketAmount);
+    ticketAmount=fltAdd(ticketAmount,paidTicketMoney);
+    ticketAmount=fltSub(ticketAmount,sumMoney)
+    if(1<ticketAmount){
+        if(parseInt($("#cbPaymentType").val())!=payType2){
+            $("#lblScot").show();
+            ticketAmount=fltMul(ticketAmount,scotInverse);
+            $("#txtScotAmount").val(parseFloat(ticketAmount).toFixed(2));
+            isUseScot=true;
+        }
+        else{
+            $("#lblScot").hide();
+            $("#txtScotAmount").val("0");
+            isUseScot=false;
+        }
+    }
+    else{
+        $("#lblScot").hide();
+        $("#txtScotAmount").val("0");
+        isUseScot=false;
+    }
+    //重新计算预存金额
+    var scotAmount=parseFloat($("#txtScotAmount").val());
+    var res=fltSub(allPaidAmount,scotAmount);
+    var res=fltSub(res,sumMoney)
+    if(res>0){
+        if(!isCarryMoney){
+            if(isPreAmount){
+                 $("#preDepositAmount").val(res);
+            }
+            else{
+                $("#preDepositAmount").val(0);   
+            }
+        }
+    }
+    else{
+         $("#preDepositAmount").val(0);
+    }
+    computeFindAmount(rAmount);
+}
+
+//功能：计算找零金额
+//作者: 张晓林
+//日期: 2010年6月3日17:19:15
+function computeFindAmount(aRelAmount){
+    var diffAmount=0;
+    var allReAm=parseFloat($("#txtRealMoney").val());//实收金额
+    var sumAm=parseFloat($("#txtHiddenSumMoney").val());//订单总金额
+    var preAmount=parseFloat($("#txtPrepayMoney").val());//预收款
+    var scotAmount=parseFloat($("#txtScotAmount").val());//税费
+    
+    if(isNaN(scotAmount)) scotAmount=0;
+    if(0<scotAmount) aRelAmount+=scotAmount;
+    var all=preAmount+allReAm;
+    
+    diffAmount=fltSub(all,aRelAmount);
+    if(0>diffAmount || isCarryMoney){
+       $("#giveBack").text(0); 
+    }else{
+        $("#giveBack").text(parseFloat(diffAmount).toFixed(2)); 
+    }
+}
+
+//功能: 自动计算给发票金额(只有以现金结款时才计算税费)
+//作者: 张晓林
+//日期: 2010年2月23日9:42:23
+function computeTicket(){
+    if($('#rdbtY').attr("checked")){
+        if(payType2!=parseInt($("#cbPaymentType").val())){
+            var oweTicketAmount=parseFloat($("#txtOweMoney").val());
+            var sumMoney=parseFloat($("#txtHiddenSumMoney").val());//现金总计
+            
+            var res=fltSub(sumMoney,oweTicketAmount);
+            if(res>0) $("#txtPaidTicket").val(res);
+            else $("#txtPaidTicket").val(0);
+        }
+        else{
+            $("#txtPaidTicket").val(0); 
+        }
+    }
+    else{$("#txtPaidTicket").val(0);}
+}
+//功能: 检验数据是合法(防止JS在客户端由于某种原因不执行的情况)
+//作者: 张晓林
+//日期: 2010年8月3日14:46:11
+function checkDataIsLegitimacy(){
+    var payType=parseInt($("#cbPaymentType").val());
+    var allReAm=parseFloat($("#txtRealMoney").val());//实收金额
+    var sumAm=parseFloat($("#txtHiddenSumMoney").val());//订单总金额
+    var preAmount=parseFloat($("#txtPrepayMoney").val());//预收款
+    var zeroMoney=parseFloat($("#txtZeroMoney").val());//抹零
+    var preferentialMoney=parseFloat($("#txtPreferentialMoney").val());//优惠金额
+    if(isNaN(preAmount)) preAmount=0;
+    if(isNaN(zeroMoney)) zeroMoney=0;
+    if(isNaN(preferentialMoney)) preferentialMoney=0;
+    if(payType==payType2){
+        var diff=fltSub(sumAm,preAmount);
+        if(diff<0) diff=10;
+        if(0==preAmount || 0<diff){
+            if(0<allReAm){
+                alert("记账时不能付现金!");
+                $("#txtRealMoney").select();
+                $("#txtRealMoney").focus();
+                return false;
+            }
+            if(0<zeroMoney){
+                alert("记账时不能抹零!");
+                $("#txtZeroMoney").select();
+                $("#txtZeroMoney").focus();
+                return false;
+            }
+            if(0<preferentialMoney){
+                alert("记账时不能优惠!");
+                $("#txtPreferentialMoney").select();
+                $("#txtPreferentialMoney").focus();
+                return false;
+            }
+        }
+    }
+    return true;
+}
+//功能: 结算最后验证
+//作者: 张晓林
+//日期: 2010年9月6日9:28:46
+function endBalanceCheck(){
+    //是否预收
+    this.isPre=false;
+    
+    //是否舍入
+    this.isRounding=false;
+    
+    //支付方式是否是记账
+    this.isOwe=false;
+    
+    //冲减金额
+    this.diffPreAmount=0;
+    
+    //抹零金额
+    this.rasureZeroAmount=0;
+    //优惠金额
+    this.favourableAmount=0;
+    //订单金额
+    this.orderSumAmount=0;
+    
+    //应收金额
+    this.accountAmount=0;
+    
+    //实收金额
+    this.realPayAmount=0;
+    //税费
+    this.scotAmount=0;
+    //收款是否平衡
+    //数据合法化
+    var dataLegitimacy=function(){
+        if(isNaN(this.diffPreAmount))
+            this.diffPreAmount=0;
+        if(isNaN(this.rasureZeroAmount))
+            this.rasureZeroAmount=0;
+        if(isNaN(this.favourableAmount))
+            this.favourableAmount=0;
+        if(isNaN(this.scotAmount))
+            this.scotAmount=0;
+        if(isNaN(this.accountAmount))
+            this.accountAmount=0;
+        if(isNaN(this.realPayAmount))
+            this.realPayAmount=0;
+    }
+    this.isIncomeCounterpoise=function (){
+        
+        if(this.isOwe) return true;
+        if(!this.isRounding) return true;
+        var isTrue=true;
+        var isRounMore=false;
+        var addAmount=0;
+        var rounAmount=0;
+        var acAmount=0;
+        dataLegitimacy();
+        acAmount=fltAdd(this.orderSumAmount,this.scotAmount);
+        addAmount=fltAdd(this.diffPreAmount,this.rasureZeroAmount);
+        addAmount+=fltAdd(this.favourableAmount,this.realPayAmount);
+        if(this.isRounding){
+            if(this.realPayAmount>this.accountAmount){
+                isRounMore=true;
+                rounAmount=fltSub(this.realPayAmount,this.accountAmount);
+                if(this.scotAmount>0)
+                    rounAmount=fltSub(rounAmount,this.scotAmount);    
+            }
+            else{
+                rounAmount=fltSub(this.accountAmount,this.realPayAmount);
+                if(this.scotAmount>0)
+                    rounAmount=fltSub(rounAmount,this.scotAmount);    
+            }
+        }
+        if(isRounMore) acAmount=fltAdd(acAmount,rounAmount);
+        else addAmount=fltAdd(addAmount,rounAmount);
+        if(addAmount!=acAmount){
+            isTrue=false;
+        }
+        return isTrue;
+    }
+}

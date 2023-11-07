@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="UncompleteOrdersUsedPaper" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+		<resultMap id="SelectUncompeleteOrderUsePaperResult" class="UncompleteOrdersUsedPaper">
+			<result property="UsedPaperCount" column="USED_PAPER_COUNT" dbType="int"/>
+			<result property="LastTimeUsedPaperCount" column="LAST_TIME_USED_PAPER_COUNT" dbType="int"/>
+		</resultMap>
+		<resultMap id="SelectUncompleterOrderResult" class="UncompleteOrdersUsedPaper">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="UsedPaperCount" column="USED_PAPER_COUNT" dbType="int"/>
+			<result property="ColorType" column="COLOR_TYPE" dbType="char"/>
+			<result property="MachineName" column="MACHINE_NAME" dbType="nvarchar"/>
+			<result property="PaperName" column="PAPER_NAME" dbType="nvarchar"/>
+			<result property="OrderNo" column="NO" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="SelectUncompeleteOrderUsePaper" parameterClass="UncompleteOrdersUsedPaper" resultMap="UncompleteOrdersUsedPaper.SelectUncompeleteOrderUsePaperResult">
+			SELECT ISNULL(MAX(COL1),0) AS USED_PAPER_COUNT,ISNULL(MAX(COL2),0) AS LAST_TIME_USED_PAPER_COUNT FROM
+			(
+			SELECT 	CASE WHEN RECORD_MACHINE_WATCH_ID=#RecordMachineWatchId# THEN SUM(USED_PAPER_COUNT) END AS COL1,
+			CASE WHEN RECORD_MACHINE_WATCH_ID=#LastRecordMachineWatchId# THEN SUM(USED_PAPER_COUNT) END AS COL2
+			FROM UNCOMPLETE_ORDERS_USED_PAPER
+			WHERE
+			(
+			RECORD_MACHINE_WATCH_ID=#RecordMachineWatchId#
+			AND MACHINE_ID=#Machine.Id#
+			AND COLOR_TYPE=#ColorType#
+			)
+			OR
+			(RECORD_MACHINE_WATCH_ID=#LastRecordMachineWatchId#
+			AND MACHINE_ID=#Machine.Id#
+			AND COLOR_TYPE=#ColorType#
+			)
+			GROUP BY RECORD_MACHINE_WATCH_ID
+			) T1
+		</select>
+
+		<select id="SelectUncompleteOrdersByRecordWatchId" parameterClass="long" resultMap="SelectUncompleterOrderResult" >
+			select a.ID,a.COLOR_TYPE,a.USED_PAPER_COUNT,b.name as MACHINE_NAME,c.name as PAPER_NAME,o.NO from UNCOMPLETE_ORDERS_USED_PAPER a inner join
+			MACHINE b on a.machine_id=b.id inner join
+			PAPER_SPECIFICATION c on a.paper_specification_id=c.id inner join
+			Orders o on a.orders_id=o.id
+			where record_machine_watch_id=#value#
+		</select>
+
+		<delete id="DeleteUncompleteOrderByRecordWatchId" parameterClass="long">
+			DELETE UNCOMPLETE_ORDERS_USED_PAPER WHERE RECORD_MACHINE_WATCH_ID=#value#
+		</delete>
+	</statements>
+</sqlMap>

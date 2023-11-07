@@ -1,0 +1,36 @@
+.pagetitle {
+	COLOR: #003366
+}
+.formtitle {
+	COLOR: #003366
+}
+.bluetext {
+	COLOR: #003366
+}
+.toptext {
+	COLOR: #ffffff
+}
+.toptext A {
+	COLOR: #ffffff
+}
+.navItemOver {
+	COLOR: #ffffff; BACKGROUND-COLOR: #003366
+}
+.navItemOver A {
+	COLOR: #ffffff
+}
+.navItem {
+	COLOR: #ffffff; BACKGROUND-COLOR: #3c78b5
+}
+.navItem A {
+	COLOR: #ffffff
+}
+#filterFormHeader {
+	BORDER-BOTTOM: #3c78b5 1px solid
+}
+.leftFormHeader {
+	BORDER-BOTTOM: #3c78b5 1px solid
+}
+#filterForm .tableUnderline {
+	BORDER-BOTTOM: #3c78b5 1px solid
+}

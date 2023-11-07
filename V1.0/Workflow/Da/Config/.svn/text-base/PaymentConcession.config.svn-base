@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="PaymentConcession" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+    <resultMap id="SearchConcessionMap" class="PaymentConcession">
+      <result property="Id" column="orders_Id"/>
+      <result property="OrderNo" column="No"/>
+      <result property="ConcessionAmountTotal" column="ConcessionAmount"/>
+      <result property ="MoreConcessionAmountTotal" column="MoreConcessionAmount"/>
+    </resultMap>
+	</resultMaps>
+	<statements>
+		<select id="SelectAll" resultMap="PaymentConcessionResultMap.selectResult">
+			SELECT
+				*
+			FROM PAYMENT_CONCESSION
+			ORDER BY ID ASC
+		</select>
+		<select id="SelectOrderConcessionByOrderId" parameterClass="long" resultMap="PaymentConcessionResultMap.selectResult">
+			<![CDATA[
+				select * from PAYMENT_CONCESSION a
+				inner join gathering b on a.gathering_id=b.id
+				inner join gathering_orders c on c.gathering_id=b.id
+				where c.orders_id=#Id# and  a.Deleted='0' and a.Company_Id=#CompanyId# 
+			]]>
+			<dynamic>
+				<isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+					<![CDATA[
+					 a.branch_shop_id=#BranchShopId#
+					]]>
+				</isNotEqual>
+			</dynamic>			
+		</select>
+		<select id="SelectPayConcessionByGatheringId" parameterClass="long" resultMap="PaymentConcessionResultMap.selectResult">
+			<![CDATA[
+				select * from PAYMENT_CONCESSION where gathering_id=#value#
+			]]>
+		</select>
+    
+    <!--优惠查询-->
+    <select id="SearchConcession" resultMap="SearchConcessionMap">
+      select
+      top(#RowCount#)
+      o.No,
+      a.orders_Id,sum(isnull(z.ConcessionAmount,0))ConcessionAmount,sum(isnull(m.MoreConcessionAmount,0)) MoreConcessionAmount from GATHERING_ORDERS a
+      <!--优惠合计(抹零+折让+优惠+舍入少收)-->
+      left join(
+        select
+        Gathering_Id,sum(isnull(concession_amount,0)) ConcessionAmount
+        from PAYMENT_CONCESSION
+        where deleted='0'
+        and company_Id=#CompanyId#
+        and Branch_shop_Id=#BranchShopId#
+        and (concession_Type=#Memo# or concession_Type=#Version# or concession_Type=#UpdateUser# or concession_Type=#InsertUser#)
+        group by gathering_Id
+      ) z on z.Gathering_Id=a.Gathering_Id
+      <!--多收合计(舍入多收)-->
+		left join(
+		select
+		Gathering_Id,sum(isnull(concession_amount,0)) MoreConcessionAmount
+		from PAYMENT_CONCESSION
+		where deleted='0'
+		and company_Id=#CompanyId#
+		and Branch_shop_Id=#BranchShopId#
+		and concession_Type=#ConcessionType#
+		group by gathering_Id
+		)m on m.Gathering_Id=a.Gathering_Id
+		Inner join orders o on o.Id=a.orders_Id
+		and a.gathering_Id in(select Id from Gathering
+		where (Pay_Kind=#PayTypeBalance# or pay_Kind=#PayTypePreDiff# or Pay_Kind=#PayTypeMemberCardDiff# or Pay_Kind=#PayTypeOwe# or pay_kind=#PreDepositsDiff# or pay_kind=#AccountPreDepositsDiff#)
+		<dynamic>
+            <isNotNull prepend="And" property="BeiginDateTimeString">
+              Gathering_date_Time>=#BeiginDateTimeString#
+            </isNotNull>
+            <isNotNull prepend="And" property="EndDateTimeString">
+              <![CDATA[Gathering_Date_Time<=#EndDateTimeString#]]>
+            </isNotNull>
+          </dynamic>
+          )
+      <dynamic>
+        <isNotNull prepend="And" property="OrderNo">
+          o.No=#OrderNo#
+        </isNotNull>
+      </dynamic>
+      <!--分页开始-->
+		and a.orders_Id not in (
+		select top(#RowCount#*#CurrentPageIndex#) a.orders_Id from GATHERING_ORDERS a
+		Inner join(
+		select
+		Gathering_Id,sum(isnull(concession_amount,0)) ConcessionAmount
+		from PAYMENT_CONCESSION
+		where deleted='0'
+		and company_Id=#CompanyId#
+		and Branch_shop_Id=#BranchShopId#
+		and (concession_Type=#Memo# or concession_Type=#Version# or concession_Type=#UpdateUser# or concession_Type=#InsertUser#)
+		group by gathering_Id
+		) z on z.Gathering_Id=a.Gathering_Id
+		left join(
+		select
+		Gathering_Id,sum(isnull(concession_amount,0)) MoreConcessionAmount
+		from PAYMENT_CONCESSION
+		where deleted='0'
+		and company_Id=#CompanyId#
+		and Branch_shop_Id=#BranchShopId#
+		and concession_Type=#ConcessionType#
+		group by gathering_Id
+		)m on m.Gathering_Id=a.Gathering_Id
+		Inner join orders o on o.Id=a.orders_Id
+		and a.gathering_Id in(select Id from Gathering
+		where (Pay_Kind=#PayTypeBalance# or pay_Kind=#PayTypePreDiff# or Pay_Kind=#PayTypeMemberCardDiff# or Pay_Kind=#PayTypeOwe# or pay_kind=#PreDepositsDiff# or pay_kind=#AccountPreDepositsDiff#)
+		<dynamic>
+          <isNotNull prepend="And" property="BeiginDateTimeString">
+            Gathering_date_Time>=#BeiginDateTimeString#
+          </isNotNull>
+          <isNotNull prepend="And" property="EndDateTimeString">
+            <![CDATA[Gathering_Date_Time<=#EndDateTimeString#]]>
+          </isNotNull>
+        </dynamic>
+          )
+      <dynamic>
+        <isNotNull prepend="And" property="OrderNo">
+          o.No=#OrderNo#
+        </isNotNull>
+      </dynamic>
+      group by orders_Id
+      having sum(isnull(z.ConcessionAmount,0))>0 or sum(isnull(m.MoreConcessionAmount,0))>0
+      order by a.Orders_Id
+      )
+      <!--分页结束-->
+      group by orders_Id,No
+      having sum(isnull(z.ConcessionAmount,0))>0 or sum(isnull(m.MoreConcessionAmount,0))>0
+      order by a.Orders_Id
+
+    </select>
+    <select id="SearchConcessionRowCount" resultClass="long">
+      select count(orders_Id) from(
+      select a.orders_Id,sum(isnull(z.ConcessionAmount,0))ConcessionAmount,sum(isnull(m.MoreConcessionAmount,0)) MoreConcessionAmount from GATHERING_ORDERS a
+      <!--优惠合计(抹零+折让+优惠+舍入少收)-->
+      left join(
+      select
+      Gathering_Id,sum(isnull(concession_amount,0)) ConcessionAmount
+      from PAYMENT_CONCESSION
+      where deleted='0'
+      and company_Id=#CompanyId#
+      and Branch_shop_Id=#BranchShopId#
+      and (concession_Type=#Memo# or concession_Type=#Version# or concession_Type=#UpdateUser# or concession_Type=#InsertUser#)
+      group by gathering_Id
+      ) z on z.Gathering_Id=a.Gathering_Id
+      <!--多收合计(舍入多收)-->
+		left join(
+		select
+		Gathering_Id,sum(isnull(concession_amount,0)) MoreConcessionAmount
+		from PAYMENT_CONCESSION
+		where deleted='0'
+		and company_Id=#CompanyId#
+		and Branch_shop_Id=#BranchShopId#
+		and concession_Type=#ConcessionType#
+		group by gathering_Id
+		)m on m.Gathering_Id=a.Gathering_Id
+		Inner join orders o on o.Id=a.orders_Id
+		and a.gathering_Id in(select Id from Gathering
+		where (Pay_Kind=#PayTypeBalance# or pay_Kind=#PayTypePreDiff# or Pay_Kind=#PayTypeMemberCardDiff# or Pay_Kind=#PayTypeOwe# or pay_kind=#PreDepositsDiff# or pay_kind=#AccountPreDepositsDiff#)
+		<dynamic>
+            <isNotNull prepend="And" property="BeiginDateTimeString">
+              Gathering_date_Time>=#BeiginDateTimeString#
+            </isNotNull>
+            <isNotNull prepend="And" property="EndDateTimeString">
+              <![CDATA[Gathering_Date_Time<=#EndDateTimeString#]]>
+            </isNotNull>
+          </dynamic>
+            )
+      <dynamic>
+        <isNotNull prepend="And" property="OrderNo">
+          o.No=#OrderNo#
+        </isNotNull>
+      </dynamic>
+      group by orders_Id
+      having sum(isnull(z.ConcessionAmount,0))>0 or sum(isnull(m.MoreConcessionAmount,0))>0
+      )n
+    </select>
+    <select id="SearchConcessionPrint" resultMap="SearchConcessionMap">
+      select
+      o.No,a.orders_Id,sum(isnull(z.ConcessionAmount,0))ConcessionAmount,
+      sum(isnull(m.MoreConcessionAmount,0)) MoreConcessionAmount 
+      from GATHERING_ORDERS a
+      <!--优惠合计(抹零+折让+优惠+舍入少收)-->
+      left join(
+      select
+      Gathering_Id,sum(isnull(concession_amount,0)) ConcessionAmount
+      from PAYMENT_CONCESSION
+      where deleted='0'
+      and company_Id=#CompanyId#
+      and Branch_shop_Id=#BranchShopId#
+      and (concession_Type=#Memo# or concession_Type=#Version# or concession_Type=#UpdateUser# or concession_Type=#InsertUser#)
+      group by gathering_Id
+      ) z on z.Gathering_Id=a.Gathering_Id
+      <!--多收合计(舍入多收)-->
+		left join(
+		select
+		Gathering_Id,sum(isnull(concession_amount,0)) MoreConcessionAmount
+		from PAYMENT_CONCESSION
+		where deleted='0'
+		and company_Id=#CompanyId#
+		and Branch_shop_Id=#BranchShopId#
+		and concession_Type=#ConcessionType#
+		group by gathering_Id
+		)m on m.Gathering_Id=a.Gathering_Id
+		Inner join orders o on o.Id=a.orders_Id
+		and a.gathering_Id in(select Id from Gathering
+		where (Pay_Kind=#PayTypeBalance# or pay_Kind=#PayTypePreDiff# or Pay_Kind=#PayTypeMemberCardDiff# or Pay_Kind=#PayTypeOwe# or pay_kind=#PreDepositsDiff# or pay_kind=#AccountPreDepositsDiff#)
+		<dynamic>
+        <isNotNull prepend="And" property="BeiginDateTimeString">
+          Gathering_date_Time>=#BeiginDateTimeString#
+        </isNotNull>
+        <isNotNull prepend="And" property="EndDateTimeString">
+          <![CDATA[Gathering_Date_Time<=#EndDateTimeString#]]>
+        </isNotNull>
+      </dynamic>
+      )
+      <dynamic>
+        <isNotNull prepend="And" property="OrderNo">
+          o.No=#OrderNo#
+        </isNotNull>
+      </dynamic>
+      group by orders_Id,No
+      having sum(isnull(z.ConcessionAmount,0))>0 or sum(isnull(m.MoreConcessionAmount,0))>0
+      order by a.Orders_Id
+    </select>
+	</statements>
+</sqlMap>

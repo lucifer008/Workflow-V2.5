@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="PaperSpecificationSimilarity" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+    <cacheModels>
+        <cacheModel id="PaperSpecificationSimilarityCache" implementation="LRU" readOnly="false">
+            <flushInterval hours="24"/>
+            <property name="CacheSize" value="100" />
+            <flushOnExecute statement="PaperSpecificationSimilarityBase.Insert"/>
+            <flushOnExecute statement="PaperSpecificationSimilarityBase.Update"/>
+            <flushOnExecute statement="PaperSpecificationSimilarityBase.LogicDelete"/>
+            <flushOnExecute statement="PaperSpecificationSimilarityBase.Delete"/>
+        </cacheModel>
+    </cacheModels>
+	<resultMaps>
+	</resultMaps>
+	<statements>
+		<select id="SelectAll" resultMap="PaperSpecificationSimilarityResultMap.selectResult">
+			SELECT
+				*
+			FROM PAPER_SPECIFICATION_SIMILARITY
+			ORDER BY ID ASC
+		</select>
+	</statements>
+</sqlMap>

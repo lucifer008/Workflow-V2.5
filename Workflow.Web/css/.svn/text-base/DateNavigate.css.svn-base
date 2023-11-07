@@ -1,0 +1,27 @@
+﻿/* 日期查询导航   前一天，今日，昨日..... */
+.divDateQueryNav
+{
+	font-size:12px;background:url(/images/zh_bg_03.jpg) repeat-x;
+	height:26px;padding-top:9px;padding-left:8px;padding-right:34px;
+}
+
+.divDateQueryNav a
+{
+	margin-right:5px;float:left;width:56px;
+	line-height:26px;text-align:center;
+	color:#0076de;
+	background-repeat:no-repeat;
+	background-image:url(/images/zh_bg_02.jpg);
+}
+.divDateQueryNav a:hover
+{
+	color:Green;
+}
+.divDateQueryNav .BlueBg
+{
+	background-image:url(/images/zh_bg_01.jpg);
+}
+.divDateQueryNav.aCurrent,.divDateQueryNav .aCurrent:hover
+{
+	color:#e66804;
+}

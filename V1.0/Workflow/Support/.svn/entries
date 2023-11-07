@@ -1,0 +1,103 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow/Support
+http://192.168.0.6/svn/workflow
+
+
+
+2009-11-19T03:02:07.437500Z
+2670
+fuqiang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+Constants.cs
+file
+
+
+
+
+2010-03-25T07:10:06.921875Z
+fbf578f08acfbff5dea33db60a1fc6ac
+2009-11-09T08:14:19.312500Z
+2653
+zhangxiaolin
+
+Log
+dir
+
+Spring
+dir
+
+Ajax
+dir
+
+Encrypt
+dir
+
+WorkflowHttpModule.cs
+file
+
+
+
+
+2010-03-25T07:10:06.937500Z
+c8ba1f216ec9ded09c317071a9005e62
+2008-12-25T07:57:45.671875Z
+2022
+fuqiang
+
+Attributes
+dir
+
+Security
+dir
+
+UserContext.cs
+file
+
+
+
+
+2010-03-25T07:10:06.953125Z
+05c38107d93f494aef35c8070c0a88ce
+2009-01-17T09:57:04.140625Z
+2220
+fuqiang
+
+Permission
+dir
+
+Report
+dir
+
+ClientShowData.cs
+file
+
+
+
+
+2010-03-25T07:10:06.968750Z
+0d05b1975fc6e0e271d2844dff644b97
+2008-11-12T08:28:15.531250Z
+1708
+zhujingcheng
+
+Exception
+dir
+

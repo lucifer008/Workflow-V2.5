@@ -1,0 +1,76 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Support/Report
+http://192.168.0.6/svn/workflow
+
+
+
+2010-07-15T01:20:48.562500Z
+3400
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+MemberCard
+dir
+
+Finance
+dir
+
+Logcounters
+dir
+
+HandOver
+dir
+
+Achievement
+dir
+
+ReportPrintVoucher.cs
+file
+
+
+
+
+2010-04-16T06:11:15.453125Z
+cd31d449b4384d9786165954eba0a6ba
+2010-04-15T08:03:42.234375Z
+3188
+chenruyin
+
+Base
+dir
+
+ReportOrder.cs
+file
+
+
+
+
+2010-05-24T06:37:03.375000Z
+6f8e42db8b3ec03ddcde3009987ff92f
+2010-05-24T06:37:14.234375Z
+3310
+zhangxiaolin
+
+ReportOrderQuery
+dir
+
+Orders
+dir
+

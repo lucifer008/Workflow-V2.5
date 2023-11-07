@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="Role" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+    <cacheModels>
+        <cacheModel id="RoleCache" implementation="LRU">
+            <flushInterval hours="24"/>
+            <property name="CacheSize" value="100" />
+            <flushOnExecute statement="RoleBase.Insert"/>
+            <flushOnExecute statement="RoleBase.Update"/>
+            <flushOnExecute statement="RoleBase.LogicDelete"/>
+            <flushOnExecute statement="RoleBase.Delete"/>
+        </cacheModel>
+    </cacheModels>
+	<resultMaps>
+		<resultMap id="selectPartResult" class="Role">
+			<result property="RoleID" column="roleID" dbType="bigint"/>
+			<result property="Permissionvalues" column="permissionvalues" dbType="nvarchar"/>
+			<result property="PermissionValues" column="permissionvalues" dbType="nvarchar"/><!--RoleBase中的属性-->
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="SelectAll" resultMap="selectPartResult">
+			<!--SELECT Id as roleID,permission_values as permissionvalues
+			FROM ROLE where Deleted='0' ORDER BY ID ASC-->
+			<![CDATA[
+			SELECT Id as roleID,permission_values as permissionvalues
+			FROM ROLE where Deleted='0' and Company_Id=#CompanyId#
+			]]>
+			<dynamic>
+				<isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+					<![CDATA[
+					 branch_shop_id=#BranchShopId#  ORDER BY ID ASC
+					]]>
+				</isNotEqual>
+			</dynamic>
+		</select>
+	</statements>
+</sqlMap>

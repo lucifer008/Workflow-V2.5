@@ -1,0 +1,55 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Service/CampaignManage
+http://192.168.0.6/svn/workflow
+
+
+
+2010-04-26T01:55:10.609375Z
+3227
+baixiaoyu
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+Impl
+dir
+
+ISearchCampaignService.cs
+file
+
+
+
+
+2010-03-25T07:11:13.843750Z
+3b901ba4289aca9a787fb350a60cb53b
+2009-03-16T10:20:09.500000Z
+2393
+zhangxiaolin
+
+ICampaignService.cs
+file
+
+
+
+
+2010-04-26T07:00:49.921875Z
+55dce13ad1e5f003ff2fadaf6fc9491a
+2010-04-26T01:55:10.609375Z
+3227
+baixiaoyu
+

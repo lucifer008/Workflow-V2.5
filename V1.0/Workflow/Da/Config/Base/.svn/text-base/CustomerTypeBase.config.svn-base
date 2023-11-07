@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="CustomerTypeBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="CustomerTypeResultMap.selectResult"
+			cacheModel="CustomerType.CustomerTypeCache">
+			SELECT
+				ID, NO, NAME, SORT_NO, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, BRANCH_SHOP_ID, COMPANY_ID
+			FROM CUSTOMER_TYPE
+			Where DELETED = '0'
+				AND COMPANY_ID = #CompanyId#
+				AND BRANCH_SHOP_ID = #BranchShopId#
+			ORDER BY SORT_NO
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="CustomerTypeResultMap.selectResult"
+			cacheModel="CustomerType.CustomerTypeCache">
+			SELECT
+				ID, NO, NAME, SORT_NO, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, BRANCH_SHOP_ID, COMPANY_ID
+			FROM CUSTOMER_TYPE
+			WHERE ID = #Id# AND DELETED = '0' 
+
+		</select>
+		<insert id="Insert" parameterClass="CustomerType">
+			INSERT INTO CUSTOMER_TYPE
+				(
+				  ID, NO, NAME, SORT_NO, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, BRANCH_SHOP_ID, COMPANY_ID
+				)
+				VALUES
+				(
+				  #Id # , #No# , #Name# , #SortNo# , #InsertDateTime# , #InsertUser# , #UpdateDateTime# , #UpdateUser# , #Version# , #Deleted# , #BranchShopId# , #CompanyId# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="CustomerType">
+			UPDATE CUSTOMER_TYPE
+				SET
+					NO = #No# ,NAME = #Name#  ,SORT_NO = #SortNo#  ,UPDATE_DATE_TIME = #UpdateDateTime#  ,UPDATE_USER = #UpdateUser#  ,VERSION = VERSION + 1  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE CUSTOMER_TYPE
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM CUSTOMER_TYPE WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

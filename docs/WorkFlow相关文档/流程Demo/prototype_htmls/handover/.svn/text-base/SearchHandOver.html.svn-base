@@ -1,0 +1,215 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>交班查询</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/calendar.js" charset="utf-8"></script>
+<link rel="stylesheet" href="../css/calendar-blue.css"  type="text/css" />
+<script type="text/javascript" src="../js/calendar-zh.js" charset="utf-8"></script>
+<script	type="text/javascript" src="../js/calendar-setup.js" charset="utf-8"></script>
+<script type="text/javascript" src="../js/checkCalendar.js" charset="utf-8"></script>
+</head>
+<body style="text-align:center">
+<div align="center" style="width:99%" bgcolor="#ffffff" id="container">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">	
+	<tr>
+		<td width="11"><img alt="" src="../images/white_main_top_left.gif"></td>
+		<td width="99%"><img alt="" src="../images/spacer_10_x_10.gif" height="10"></td>
+		<td width="10"><img alt="" src="../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+	</tr>
+	<tr>
+		<td colspan="3" bgcolor="#FFFFFF">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0">
+          <tr>
+            <td></td>
+            <td align="left" bgcolor="#eeeeee">首页 -&gt; 交班管理 -&gt; 交班查询</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="caption" align="center">交班查询</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td align="left"><table width="100%" border="1" cellpadding="3" cellspacing="1">
+              <tr>
+                <td nowrap="nowrap" class="item_caption">交接日期:</td>
+                <td colspan="3" class="item_content"><div>
+                      <input type="text" class="datetimetexts" id="Text1" size="16" maxlength="16" readonly="true"  />
+                      <img alt=""  id="img alt=""btn1" src="../images/cal.gif" width="20" height="14" border="0" alt="Click Here to Pick up the date" />
+                      <script type="text/javascript">
+							Calendar.setup({
+								firstDay       :    0,                  // first day of the week
+								inputField     :    "Text1",     				// id of the input field
+								button         :    "img alt=""btn1",  					// trigger for the calendar (button ID)
+								align          :    "Tl",           		// alignment (defaults to "Bl")
+								//singleClick  :    true,
+								showsTime      :    "true",
+								ifFormat       :    "%Y-%m-%d %H:%M"    // our date only format
+								 });
+								 window
+						</script>
+                      至
+                      <input type="text" class="datetimetexts" id="Text2"  size="16" maxlength="16"  readonly="true"/>
+                      <img alt=""  id="img alt=""btn2" src="../images/cal.gif" width="20" height="14" border="0" alt="Click Here to Pick up the date" />
+                      <script type="text/javascript">
+							Calendar.setup({
+								firstDay       :    0,                  // first day of the week
+								inputField     :    "Text2",     				// id of the input field
+								button         :    "img alt=""btn2",  					// trigger for the calendar (button ID)
+								align          :    "Tl",           		// alignment (defaults to "Bl")
+								//singleClick  :    true,
+								showsTime      :    "true",
+								ifFormat       :    "%Y-%m-%d %H:%M"    // our date only format
+								 });
+								 window
+						</script>
+                    </div></td>
+                </tr>
+              <tr>
+                <td nowrap="nowrap" class="item_caption">部门:</td>
+                <td align="left" class="item_content"><select name="select">
+                  <option>请选择</option>
+                  <option>前期</option>
+                  <option>后期</option>
+                  <option>市场部</option>
+                  <option>财务部</option>
+                                </select></td>
+                <td nowrap="nowrap" class="item_caption">交班人:</td>
+                <td class="item_content"><select name="select2">
+                  <option>请选择</option>
+                  <option>李力</option>
+                    <option>张文娟</option>
+                    <option>李佳家</option>
+                    <option>王小艳</option>
+                                </select></td>
+              </tr>
+              <tr class="querybuttons">
+                <td colspan="4" nowrap="nowrap"><input name="Submit" type="button" class="buttons" value="查询" disabled="disabled"/></td>
+                </tr>
+            </table></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="emptyButtonsUpperRowHight">
+            <td></td>
+            <td align="center"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td width="3%">&nbsp;</td>
+            <td align="center"><table width="100%" border="1" cellpadding="3" cellspacing="1">
+                <tr>
+                  <th width="10%" nowrap="nowrap">&nbsp;NO&nbsp;</th>
+                  <th width="10%" nowrap="nowrap">交班人</th>
+                  <th width="10%" nowrap="nowrap">接班人</th>
+                  <th width="1%" nowrap="nowrap">交班时间</th>
+                  <th nowrap="nowrap">备注</th>
+                  <th width="1%" nowrap="nowrap">&nbsp;</th>
+                </tr>
+                <tr class="detailRow">
+                  <td align="center">1</td>
+                  <td align="center">张三</td>
+                  <td align="center">刘二</td>
+                  <td nowrap="nowrap">2007-07-15 8:12 </td>
+                  <td>&nbsp;</td>
+                  <td nowrap="nowrap"><a href="StageReport.html">详细</a></td>
+                </tr>
+                <tr class="detailRow">
+                  <td align="center">2</td>
+                  <td align="center">李四</td>
+                  <td align="center">马六</td>
+                  <td>2007-07-16 8:20 </td>
+                  <td>&nbsp;</td>
+                  <td><a href="CasherReport.html">详细</a></td>
+                </tr>
+                <tr class="detailRow">
+                  <td align="center">3</td>
+                  <td align="center">王武</td>
+                  <td align="center">赵钱松</td>
+                  <td>2007-07-17 8:11 </td>
+                  <td>&nbsp;</td>
+                  <td><a href="StageReport.html">详细</a></td>
+                </tr>
+                <tr class="detailRow">
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class="detailRow">
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class="detailRow">
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class="detailRow">
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class="detailRow">
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class="detailRow">
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class="detailRow">
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </table></td>
+            <td width="3%">&nbsp;</td>
+          </tr>
+			<tr class="emptyButtonsUpperRowHight">
+				<td colspan="3"></td>
+			</tr>
+          <tr height="5">
+            <td><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+            <td bgcolor="#eeeeee">&nbsp;</td>
+            <td><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+		</td>
+	</tr>
+	<tr>
+		<td width="11"><img alt="" src="../images/white_main_bottom_left.gif"></td>
+		<td width="99%"><img alt="" src="../images/spacer_10_x_10.gif"></td>
+		<td width="10"><img alt="" src="../images/white_main_bottom_right.gif"></td>
+	</tr>
+</table>
+</div>
+</body>
+</html>

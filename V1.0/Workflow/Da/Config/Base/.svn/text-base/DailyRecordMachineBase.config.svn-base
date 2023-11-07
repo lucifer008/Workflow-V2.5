@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="DailyRecordMachineBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="DailyRecordMachineResultMap.selectResult">
+			SELECT
+				ID, MACHINE_ID, PAPER_SPECIFICATION_ID, COLOR_TYPE, IN_WATCH_COUNT, MAKE_COUNT, CASH_COUNT, PATCH_COUNT, MEMO, DO_WATCH_DATE_TIME
+			FROM DAILY_RECORD_MACHINE
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="DailyRecordMachineResultMap.selectResult">
+			SELECT
+				ID, MACHINE_ID, PAPER_SPECIFICATION_ID, COLOR_TYPE, IN_WATCH_COUNT, MAKE_COUNT, CASH_COUNT, PATCH_COUNT, MEMO, DO_WATCH_DATE_TIME
+			FROM DAILY_RECORD_MACHINE
+			WHERE ID = #Id# 
+		</select>
+		<insert id="Insert" parameterClass="DailyRecordMachine">
+			INSERT INTO DAILY_RECORD_MACHINE
+				(
+				  ID, MACHINE_ID, PAPER_SPECIFICATION_ID, COLOR_TYPE, IN_WATCH_COUNT, MAKE_COUNT, CASH_COUNT, PATCH_COUNT, MEMO, DO_WATCH_DATE_TIME
+				)
+				VALUES
+				(
+				  #Id # , #Machine.Id# , #PaperSpecification.Id# , #ColorType# , #InWatchCount# , #MakeCount# , #CashCount# , #PatchCount# , #Memo# , #DoWatchDateTime# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="DailyRecordMachine">
+			UPDATE DAILY_RECORD_MACHINE
+				SET
+					MACHINE_ID = #Machine.Id# ,PAPER_SPECIFICATION_ID = #PaperSpecification.Id#  ,COLOR_TYPE = #ColorType#  ,IN_WATCH_COUNT = #InWatchCount#  ,MAKE_COUNT = #MakeCount#  ,CASH_COUNT = #CashCount#  ,PATCH_COUNT = #PatchCount#  ,MEMO = #Memo#  ,DO_WATCH_DATE_TIME = #DoWatchDateTime#  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE DAILY_RECORD_MACHINE
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM DAILY_RECORD_MACHINE WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

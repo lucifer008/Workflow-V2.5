@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>结算</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body  style="text-align:center">
+<div align="center" style="width:100%" bgcolor="#ffffff" id="container">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+		<td width="11"><img alt="" src="../images/white_main_top_left.gif"></td>
+		<td width="99%" bgcolor="#FFFFFF"><img alt="" src="../images/spacer_10_x_10.gif" height="10"></td>
+		<td width="10"><img alt="" src="../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+    </tr>
+
+    <tr>
+      <td colspan="3" bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+            <td align="left" bgcolor="#eeeeee">首页 -&gt; 财务处理 -&gt;结算</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="caption" align="center">结算</td>
+          </tr>
+          <tr>
+            <td width="3%">&nbsp;</td>
+            <td align="center"><table width="100%" border="1" cellpadding="2" cellspacing="1">
+                <tr>
+                  <td nowrap class="item_caption">工单号:</td>
+                  <td class="item_content">0001222</td>
+                  <td nowrap class="item_caption">客户名称:</td>
+                  <td class="item_content">中铁一局&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+              </table></td>
+          </tr>
+          <tr>
+            <td width="3%">&nbsp;</td>
+            <td align="center"><table width="100%" border="1" cellpadding="2" cellspacing="1">
+                <tr>
+                  <th width="1%" nowrap>&nbsp;NO&nbsp;</th>
+                  <th width="1%" nowrap>&nbsp;&nbsp;业务类型&nbsp;&nbsp;</th>
+                  <th width="1%" nowrap>&nbsp;&nbsp;加工内容&nbsp;&nbsp;</th>
+                  <th width="1%" nowrap>&nbsp;&nbsp;&nbsp;机器&nbsp;&nbsp;&nbsp;</th>
+                  <th width="1%" nowrap>&nbsp;&nbsp;&nbsp;纸型&nbsp;&nbsp;&nbsp;</th>
+                  <th width="1%" nowrap>&nbsp;&nbsp;&nbsp;&nbsp;纸质&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                  <th width="1%" nowrap>&nbsp;&nbsp;&nbsp;&nbsp;数量&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                  <th width="1%" nowrap>&nbsp;&nbsp;&nbsp;单价&nbsp;&nbsp;&nbsp;</th>
+                  <th width="1%" nowrap>&nbsp;&nbsp;&nbsp;&nbsp;金额&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                  <th width="1%" nowrap>&nbsp;单位&nbsp;</th>
+                  <th  nowrap>制作要求</th>
+                </tr>
+                <tr  class="detailRow">
+                  <td align="center" >1</td>
+                  <td align="center">打印</td>
+                  <td align="center">彩色打印</td>
+                  <td align="center" nowrap>DC-8000</td>
+                  <td align="center">A3</td>
+                  <td align="center">157g铜板</td>
+                  <td class="num">80</td>
+                  <td class="num">3.0</td>
+                  <td class="num">240</td>
+                  <td align="center">张</td>
+                  <td align="left">单面</td>
+                </tr>
+                <tr  class="detailRow">
+                  <td align="center" bgcolor="#FFFFFF">2</td>
+                  <td align="center" bgcolor="#FFFFFF">装订</td>
+                  <td align="center" bgcolor="#FFFFFF">胶状</td>
+                  <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
+                  <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
+                  <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
+                  <td class="num" bgcolor="#FFFFFF">20</td>
+                  <td class="num" bgcolor="#FFFFFF">5.0</td>
+                  <td class="num" bgcolor="#FFFFFF">100</td>
+                  <td align="center" bgcolor="#FFFFFF">本</td>
+                  <td align="left" bgcolor="#FFFFFF">蝴蝶装</td>
+                </tr>
+              </table></td>
+          </tr>
+          <tr>
+            <td width="3%">&nbsp;</td>
+            <td align="left"><table width="60%" border="1" cellpadding="2" cellspacing="1">
+              <tr>
+                <td  nowrap class="item_caption">付款流水号:</td>
+                <td colspan="3" class="item_content">P00001222<a href="#"></a> <a href="#"></a> <a href="#"></a></td>
+                </tr>
+              <tr>
+                <td  nowrap class="item_caption">总计金额:</td>
+                <td colspan="3" class="item_content"><input name="textfield" type="text" class="num strikeTheEyeNormalChar" value="340" />                </td>
+                </tr>
+              <tr>
+                <td  nowrap class="item_caption">已预收:&nbsp;&nbsp;</td>
+                <td colspan="3" class="item_content"><input name="textfield2" class="num" type="text" value="0" />                </td>
+                </tr>
+              <tr>
+                <td  nowrap class="item_caption">抹零:</td>
+                <td colspan="3" class="item_content"><input name="textfield3" type="text" class="num" readonly="true" value="0" />
+                  抹零 </td>
+                </tr>
+              <tr>
+                <td  nowrap class="item_caption">挂账:</td>
+                <td colspan="3" class="item_content"><input name="textfield4" type="text" class="num" readonly="true"  value="0" />
+                  挂账 </td>
+                </tr>
+             <tr>
+                <td  nowrap class="item_caption">优惠:</td>
+                <td colspan="3" class="item_content"><input name="textfield4" type="text" class="num" readonly="true" value="0" />
+                  优惠</td>
+                </tr>			  
+              <tr>
+                <td  nowrap class="item_caption">应收金额:</td>
+                <td class="item_content" nowrap><input name="textfield5" type="text" class="num strikeTheEyeNormalChar" value="340" /></td>
+                <td  nowrap class="item_caption">付款方式:</td>
+                <td class="item_content"><select name="select">
+                    <option>现金</option>
+                    <option>记账</option>
+                  </select>                </td>
+              </tr>
+
+              <tr>
+                <td  nowrap class="item_caption">实收金额: </td> 
+                <td class="item_content"><input name="textfield6" type="text" class="num strikeTheEyeNormalChar" value="350" /></td>
+                <td  nowrap class="item_caption">找零:</td>
+                <td class="strikeTheEyeNormalChar item_content ">10 </td>
+              </tr>
+            </table></td>
+          </tr>
+			  <tr>
+	            <td width="3%">&nbsp;</td>	
+				<td align="left">
+  <input type="checkbox" name="checkbox" class="checks" value="checkbox" />
+        欠票				
+				</td>
+	            <td width="3%">&nbsp;</td>	
+			  </tr>	
+			  <tr>
+	            <td width="3%">&nbsp;</td>	
+				<td align="center" class="bottombuttons">
+<input name="Submit5" type="button" class="buttons" onclick="window.close()" value="确定" />　　 
+          <input name="Submit4" type="button" class="buttons" onclick="window.close()" value="取消" />				</td>
+	            <td width="3%">&nbsp;</td>	
+			  </tr>	
+			<tr class="emptyButtonsUpperRowHight">
+				<td colspan="3"></td>
+			</tr>				  			  	  
+          <tr height="5">
+            <td><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+            <td bgcolor="#eeeeee">&nbsp;</td>
+            <td><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr>
+		<td width="11"><img alt="" src="../images/white_main_bottom_left.gif"></td>
+		<td width="99%" bgcolor="#FFFFFF"><img alt="" src="../images/spacer_10_x_10.gif"></td>
+		<td width="10"><img alt="" src="../images/white_main_bottom_right.gif"></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

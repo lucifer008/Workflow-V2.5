@@ -1,0 +1,299 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/workflow/!svn/ver/3519/trunk/v2.5/Workflow.Web/order
+END
+PrintRequest.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/PrintRequest.aspx
+END
+SearchOrder.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3400/trunk/v2.5/Workflow.Web/order/SearchOrder.aspx.cs
+END
+CanceAfterVerificationDelivery.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/CanceAfterVerificationDelivery.aspx.cs
+END
+ReDoOrderForOrderItem.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/ReDoOrderForOrderItem.aspx.cs
+END
+CheckOrder.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/CheckOrder.aspx.cs
+END
+DispatchOrderForOrderItem.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/DispatchOrderForOrderItem.aspx
+END
+GetOrder.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/order/GetOrder.aspx.cs
+END
+BlankOut.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/BlankOut.aspx
+END
+Delivery.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/order/Delivery.aspx
+END
+NewReDoOrderForOrderItem.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/NewReDoOrderForOrderItem.aspx.cs
+END
+SetDailyOrderDefaultCondition.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/SetDailyOrderDefaultCondition.aspx
+END
+NewGetingOrder.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/order/NewGetingOrder.aspx.cs
+END
+PhophaseConfirm.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/PhophaseConfirm.aspx.cs
+END
+SetDailyOrderDefaultCondition.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/SetDailyOrderDefaultCondition.aspx.cs
+END
+ReDo.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/order/ReDo.aspx.cs
+END
+RealFactureOrder.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/RealFactureOrder.aspx.cs
+END
+DispatchOrder.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/DispatchOrder.aspx.cs
+END
+SearchOrder.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3396/trunk/v2.5/Workflow.Web/order/SearchOrder.aspx
+END
+ve-126.tmp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/ve-126.tmp
+END
+ReDoOrderForOrderItem.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/ReDoOrderForOrderItem.aspx
+END
+NewRealFactureOrder.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/NewRealFactureOrder.aspx.cs
+END
+PrintRequest.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/order/PrintRequest.aspx.cs
+END
+CheckOrder.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/CheckOrder.aspx
+END
+GetOrder.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/workflow/!svn/ver/3396/trunk/v2.5/Workflow.Web/order/GetOrder.aspx
+END
+TodayOrder.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/workflow/!svn/ver/3519/trunk/v2.5/Workflow.Web/order/TodayOrder.aspx
+END
+BlankOutRecord.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/BlankOutRecord.aspx
+END
+TodayOrder.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3519/trunk/v2.5/Workflow.Web/order/TodayOrder.aspx.cs
+END
+Finish.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/Finish.aspx
+END
+DispatchOrderForOrderItem.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/DispatchOrderForOrderItem.aspx.cs
+END
+NewReDoOrderForOrderItem.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/NewReDoOrderForOrderItem.aspx
+END
+BlankOutRecord.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/order/BlankOutRecord.aspx.cs
+END
+NewGetingOrder.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3396/trunk/v2.5/Workflow.Web/order/NewGetingOrder.aspx
+END
+BlankOut.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/BlankOut.aspx.cs
+END
+Finish.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/Finish.aspx.cs
+END
+PhophaseConfirm.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/PhophaseConfirm.aspx
+END
+Delivery.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/order/Delivery.aspx.cs
+END
+ReDo.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/ReDo.aspx
+END
+RealFactureOrder.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/RealFactureOrder.aspx
+END
+DispatchOrder.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/DispatchOrder.aspx
+END
+OrderDetail.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/OrderDetail.aspx
+END
+FinishOrderForOrderItem.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/FinishOrderForOrderItem.aspx
+END
+DailyOrder.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/workflow/!svn/ver/3396/trunk/v2.5/Workflow.Web/order/DailyOrder.aspx
+END
+PatchUpOrder.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/PatchUpOrder.aspx
+END
+OrderDetail.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/OrderDetail.aspx.cs
+END
+FinishOrderForOrderItem.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/FinishOrderForOrderItem.aspx.cs
+END
+CanceAfterVerificationDelivery.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/CanceAfterVerificationDelivery.aspx
+END
+DailyOrder.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3396/trunk/v2.5/Workflow.Web/order/DailyOrder.aspx.cs
+END
+NewRealFactureOrder.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/NewRealFactureOrder.aspx
+END
+PatchUpOrder.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/order/PatchUpOrder.aspx.cs
+END

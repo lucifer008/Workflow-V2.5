@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns='http://www.springframework.net' xmlns:db="http://www.springframework.net/database" default-autowire="byName" default-lazy-init="true">
+
+    <import resource="dao.config"/>
+    <object id="masterDataService" type="Workflow.Service.Impl.MasterDataServiceImpl,Workflow.Support"></object>
+	
+  <!--后台数据维护Service注入-->
+  <object id="priceBaseService" type="Workflow.Service.SystemMaintenance.PriceBaseData.Impl.PriceBaseServiceImpl,Workflow.Support"></object>
+  <object id="searchPriceBaseService" type="Workflow.Service.SystemMaintenance.PriceBaseData.Impl.SearchPriceBaseServiceImpl,Workflow.Support"></object>
+  
+  <object id="orderBaseDataService" type="Workflow.Service.SystemMaintenance.OrderBaseData.Impl.OrderBaseDataServiceImpl,Workflow.Support"></object>
+  <object id="searchOrderBaseDataService" type="Workflow.Service.SystemMaintenance.OrderBaseData.Impl.SearchOrderBaseDataServiceImpl,Workflow.Support"></object>
+
+  <object id="SearchSystemService"  type="Workflow.Service.SystemMaintenance.System.Impl.SearchSystemServiceImpl,Workflow.Support" singleton="false"></object>
+  <object id="SystemService"  type="Workflow.Service.SystemMaintenance.System.Impl.SystemServiceImpl,Workflow.Support" singleton="false"></object>
+</objects>

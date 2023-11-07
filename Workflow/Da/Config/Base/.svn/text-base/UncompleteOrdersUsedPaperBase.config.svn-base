@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--表UNCOMPLETE_ORDERS_USED_PAPER [未完工工单用纸情况]的基本增删改查操作，此配置文件不允许修改-->
+<sqlMap namespace="UncompleteOrdersUsedPaperBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		
+			<!--查询表UNCOMPLETE_ORDERS_USED_PAPER [未完工工单用纸情况]的基本操作-->		 
+			<select id="SelectAll" resultMap="UncompleteOrdersUsedPaperResultMap.selectResult">
+			SELECT  ID,ORDERS_ID,RECORD_MACHINE_WATCH_ID,MACHINE_TYPE_ID,PAPER_SPECIFICATION_ID,USED_PAPER_COUNT,COLOR_TYPE	FROM UNCOMPLETE_ORDERS_USED_PAPER Order by ID
+			</select>
+
+			<!--按照主键查询表UNCOMPLETE_ORDERS_USED_PAPER [未完工工单用纸情况]的基本操作-->
+			<select id="SelectByPk" parameterClass="long" resultMap="UncompleteOrdersUsedPaperResultMap.selectResult">
+			SELECT 
+			ID,
+			ORDERS_ID,
+			RECORD_MACHINE_WATCH_ID,
+			MACHINE_TYPE_ID,
+			PAPER_SPECIFICATION_ID,
+			USED_PAPER_COUNT,
+			COLOR_TYPE
+			FROM UNCOMPLETE_ORDERS_USED_PAPER
+			WHERE ID = #Id# 
+			</select>
+
+			<!--插入表UNCOMPLETE_ORDERS_USED_PAPER [未完工工单用纸情况]的基本操作-->
+			<insert id="Insert" parameterClass="UncompleteOrdersUsedPaper">
+			INSERT INTO UNCOMPLETE_ORDERS_USED_PAPER
+			(
+				ID,
+				ORDERS_ID,
+				RECORD_MACHINE_WATCH_ID,
+				MACHINE_TYPE_ID,
+				PAPER_SPECIFICATION_ID,
+				USED_PAPER_COUNT,
+				COLOR_TYPE
+			) VALUES
+			( 
+				#Id#,
+				#OrdersId#,
+				#RecordMachineWatchId#,
+				#MachineTypeId#,
+				#PaperSpecificationId#,
+				#UsedPaperCount#,
+				#ColorType#
+			)
+			</insert>
+			
+			<!--更新表UNCOMPLETE_ORDERS_USED_PAPER [未完工工单用纸情况]的基本操作-->
+			<update id="Update" parameterClass="UncompleteOrdersUsedPaper">
+			UPDATE UNCOMPLETE_ORDERS_USED_PAPER
+			SET
+				ORDERS_ID=#OrdersId#,
+				RECORD_MACHINE_WATCH_ID=#RecordMachineWatchId#,
+				MACHINE_TYPE_ID=#MachineTypeId#,
+				PAPER_SPECIFICATION_ID=#PaperSpecificationId#,
+				USED_PAPER_COUNT=#UsedPaperCount#,
+				COLOR_TYPE=#ColorType#
+			WHERE ID = #Id#
+			</update>
+
+			<!--逻辑删除表UNCOMPLETE_ORDERS_USED_PAPER [未完工工单用纸情况]的基本操作-->
+			<update id="LogicDelete" parameterClass="long">
+				UPDATE UNCOMPLETE_ORDERS_USED_PAPER
+				SET	VERSION = VERSION + 1,DELETED = '1'	WHERE ID = #Id#
+			</update>
+
+			<!--物理删除表UNCOMPLETE_ORDERS_USED_PAPER [未完工工单用纸情况]的基本操作-->
+			<delete id="Delete" parameterClass="long">
+				DELETE FROM UNCOMPLETE_ORDERS_USED_PAPER WHERE ID = #Id#
+			</delete>
+
+		</statements>
+</sqlMap>

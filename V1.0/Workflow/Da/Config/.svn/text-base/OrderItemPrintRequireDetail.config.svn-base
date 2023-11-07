@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="OrderItemPrintRequireDetail" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+		<resultMap id="SelectOrderItemPrintRequireResult" class="OrderItemPrintRequireDetail">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="Name" column="NAME"/>
+			<result property="OrderItemId" column="ORDER_ITEM_ID" dbType="bigint"/>
+			<result property="PrintRequireDetailId" column="PRINT_REQUIRE_DETAIL_ID" dbType="bigint"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="SelectOrderItemPrintRequire" parameterClass="OrderItemPrintRequireDetail" resultMap="SelectOrderItemPrintRequireResult">
+			<![CDATA[
+			select a.*,b.Name from ORDER_ITEM_PRINT_REQUIRE_DETAIL a
+			inner join PRINT_REQUIRE_DETAIL b on a.Print_Require_detail_id=b.id
+			inner join order_Item c on a.Order_Item_Id=c.id
+			inner join Orders d on c.Orders_id=d.id
+			where d.No=#Name# and d.Deleted='0' and d.Company_Id=#OrderItemId#
+			]]>
+			<dynamic>
+				<isNotEqual prepend="and" compareProperty="Id" compareValue="0">
+					<![CDATA[
+					 d.branch_shop_id=#Id#
+					]]>
+				</isNotEqual>
+			</dynamic>
+		</select>
+		<delete id="DeleteOrderItemPrintRequireByOrderNo" parameterClass="OrderItemPrintRequireDetail">
+			<![CDATA[
+			delete order_Item_Print_require_detail from order_Item_Print_require_detail a 
+			inner join order_Item as oi on a.order_item_id=oi.id
+			inner join orders as o on oi.orders_id=o.id
+			where o.no=#Name# and o.Deleted='0' and o.Company_Id=#OrderItemId#
+			]]>
+			<isNotEqual prepend="and" compareProperty="Id" compareValue="0">
+				<![CDATA[
+				 o.branch_shop_id=#Id#
+				]]>
+			</isNotEqual>
+		</delete>
+	</statements>
+</sqlMap>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="MemberOperateLog" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+    <resultMap id="SearchOperateLogMap" class="MemberCard">
+      <result property="Id" column="Id"/>
+      <result property="MemberOperateLogId" column="memberOperateLogId"/>
+      <result property="MemberCardNo" column="Member_Card_No"/>
+      <result property="CustomerName" column="CustomerName"/>
+      <result property="InsertDateTime" column="Insert_Date_Time"/>
+      <result property="InsertUserName" column="InsertUser"/>
+      <result property="OperateType" column="Operate_Type"/>
+      <result property="Memo" column="Memo"/>
+    </resultMap>
+	</resultMaps>
+	<statements>
+		<select id="SelectAll" resultMap="MemberOperateLogResultMap.selectResult">
+			SELECT
+				*
+			FROM MEMBER_OPERATE_LOG
+			ORDER BY ID ASC
+		</select>
+		<select id="SelectOperateLog" parameterClass="map" resultMap="MemberOperateLogResultMap.selectResult">
+			select  mol.*
+			from member_card as mc inner join member_operate_log as mol on mc.id = mol.member_card_id
+			WHERE mc.DELETED = '0'
+			<dynamic>
+				<isNotNull prepend="AND" property="MemberCardNo">
+					MC.Member_Card_No = #MemberCardNo#
+				</isNotNull>
+				<isNotNull prepend="AND" property="BeginDate">
+					<![CDATA[
+                    mol.insert_date_time between #BeginDate# and  #EndDate#
+                    ]]>
+				</isNotNull>
+			</dynamic>
+			order by mc.id asc
+		</select>
+    
+    <!--获取会员操作记录(分页)-->
+    <select id="SearchOperateLog" parameterClass="map" resultMap="SearchOperateLogMap">
+      select top(#RowCount#)
+      a.Id memberOperateLogId,b.Id,
+      b.Member_Card_No,c.name as CustomerName,
+      a.Insert_date_Time, e.name as InsertUser,
+      a.Operate_Type,a.Memo
+      from Member_Operate_log a
+      inner join Member_card b on b.Id=a.Member_card_Id
+      inner join Customer c on c.Id=b.Customer_Id
+      inner join users d on d.Id=a.Insert_User
+      inner join Employee e on e.Id=d.Employee_Id
+      where a.deleted='0'
+      And a.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">
+          a.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull prepend="And" property="BeginDate">
+          a.Insert_Date_Time>=#BeginDate#
+        </isNotNull>
+        <isNotNull prepend="And" property="EndDate">
+          <![CDATA[a.Insert_Date_Time<=#EndDate#]]>
+        </isNotNull>
+        <isNotNull prepend="And" property="MemberCardNo">
+          b.Member_Card_No like #MemberCardNo#
+        </isNotNull>
+      </dynamic>
+        And a.Id not in(
+        select top(#CurrentPageIndex#*#RowCount#) a.Id
+        from Member_Operate_log a
+        inner join Member_Card b on b.Id=a.Member_Card_Id
+        where a.deleted='0'
+        And a.Company_Id=#CompanyId#
+        <dynamic>
+          <isNotNull prepend="And" property="BranchShopId">
+            a.Branch_Shop_Id=#BranchShopId#
+          </isNotNull>
+          <isNotNull prepend="And" property="BeginDate">
+            a.Insert_Date_Time>=#BeginDate#
+          </isNotNull>
+          <isNotNull prepend="And" property="EndDate">
+            <![CDATA[a.Insert_Date_Time<=#EndDate#]]>
+          </isNotNull>
+          <isNotNull prepend="And" property="MemberCardNo">
+            b.Member_Card_No like #MemberCardNo#
+          </isNotNull>
+        </dynamic>
+        order by a.Id
+      )
+      order by a.Id
+    </select>
+    <select id="SearchOperateLogRowCount" parameterClass="map" resultClass="long">
+      select
+      count(*)
+      from Member_Operate_log a
+      inner join Member_Card b on a.Member_Card_Id=b.Id
+      where a.deleted='0'
+      And a.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">
+          a.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull prepend="And" property="BeginDate">
+          a.Insert_Date_Time>=#BeginDate#
+        </isNotNull>
+        <isNotNull prepend="And" property="EndDate">
+          <![CDATA[a.Insert_Date_Time<=#EndDate#]]>
+        </isNotNull>
+        <isNotNull prepend="And" property="MemberCardNo">
+          b.Member_Card_No like #MemberCardNo#
+        </isNotNull>
+      </dynamic>
+    </select>
+
+    <select id="SearchOperateLogPrint" parameterClass="map" resultMap="SearchOperateLogMap">
+      select
+      a.Id memberOperateLogId,b.Id,
+      b.Member_Card_No,c.name as CustomerName,
+      a.Insert_date_Time, e.name as InsertUser,
+      a.Operate_Type,a.Memo
+      from Member_Operate_log a
+      inner join Member_card b on b.Id=a.Member_card_Id
+      inner join Customer c on c.Id=b.Customer_Id
+      inner join users d on d.Id=a.Insert_User
+      inner join Employee e on e.Id=d.Employee_Id
+      where a.deleted='0'
+      And a.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">
+          a.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull prepend="And" property="BeginDate">
+          a.Insert_Date_Time>=#BeginDate#
+        </isNotNull>
+        <isNotNull prepend="And" property="EndDate">
+          <![CDATA[a.Insert_Date_Time<=#EndDate#]]>
+        </isNotNull>
+        <isNotNull prepend="And" property="MemberCardNo">
+          b.Member_Card_No like #MemberCardNo#
+        </isNotNull>
+      </dynamic>
+      order by a.Id
+    </select>
+	</statements>
+</sqlMap>

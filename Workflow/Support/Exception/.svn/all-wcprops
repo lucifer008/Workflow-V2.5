@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Support/Exception
+END
+PermissionDeniedException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Support/Exception/PermissionDeniedException.cs
+END
+DbStateException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Support/Exception/DbStateException.cs
+END
+WorkflowException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Support/Exception/WorkflowException.cs
+END

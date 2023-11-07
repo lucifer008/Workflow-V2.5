@@ -1,0 +1,40 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Enums
+http://192.168.0.6/svn/workflow
+
+
+
+2007-09-09T03:15:28.112958Z
+673
+fuqiang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+OrderStatus.cs
+file
+
+
+
+
+2010-03-25T07:11:35.015625Z
+db5d32d25075560fad418dda3b2b6772
+2007-09-09T03:15:28.112958Z
+673
+fuqiang
+

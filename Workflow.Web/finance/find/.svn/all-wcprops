@@ -1,0 +1,353 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/workflow/!svn/ver/3472/trunk/v2.5/Workflow.Web/finance/find
+END
+SearchArrear.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/SearchArrear.aspx.cs
+END
+SearchCashOnDuty.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/SearchCashOnDuty.aspx
+END
+CustomerOweMoneyDetail.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/CustomerOweMoneyDetail.aspx
+END
+SearchPayment.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/SearchPayment.aspx.cs
+END
+SearchOrderCountByEmployee.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/SearchOrderCountByEmployee.aspx.cs
+END
+ExceptionConsumeCustomer.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/ExceptionConsumeCustomer.aspx
+END
+DailyStatistical.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3258/trunk/v2.5/Workflow.Web/finance/find/DailyStatistical.aspx.cs
+END
+ExceptionConsumeCustomer.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/ExceptionConsumeCustomer.aspx.cs
+END
+WithoutConsumeCustomer.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/WithoutConsumeCustomer.aspx
+END
+SearchOrderItem.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/SearchOrderItem.aspx
+END
+MonthPaper.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3402/trunk/v2.5/Workflow.Web/finance/find/MonthPaper.aspx.cs
+END
+AnalyzeDebtTime.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/AnalyzeDebtTime.aspx
+END
+SearchCustomerOrderList.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/SearchCustomerOrderList.aspx.cs
+END
+SearchOrderItem.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/SearchOrderItem.aspx.cs
+END
+SearchPrepay.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/SearchPrepay.aspx
+END
+SearchNewAndOldCustomer.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/SearchNewAndOldCustomer.aspx.cs
+END
+SearchConcessionByUser.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3300/trunk/v2.5/Workflow.Web/finance/find/SearchConcessionByUser.aspx.cs
+END
+SearchPaidedAccountRecord.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/SearchPaidedAccountRecord.aspx
+END
+SearchRepayHistory.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/SearchRepayHistory.aspx
+END
+YearPaper.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3402/trunk/v2.5/Workflow.Web/finance/find/YearPaper.aspx
+END
+SearchConcession.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3396/trunk/v2.5/Workflow.Web/finance/find/SearchConcession.aspx
+END
+CustomerPaidMoneyDetail.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/CustomerPaidMoneyDetail.aspx
+END
+DailyPaper.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3400/trunk/v2.5/Workflow.Web/finance/find/DailyPaper.aspx
+END
+SearchPrepay.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/SearchPrepay.aspx.cs
+END
+SearchPaidedAccountRecord.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/SearchPaidedAccountRecord.aspx.cs
+END
+SearchRepayHistory.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/SearchRepayHistory.aspx.cs
+END
+YearPaper.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3402/trunk/v2.5/Workflow.Web/finance/find/YearPaper.aspx.cs
+END
+AccountReceivableAccordingToTimeSectTotal.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/AccountReceivableAccordingToTimeSectTotal.aspx
+END
+CustomerPaidMoneyDetail.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/CustomerPaidMoneyDetail.aspx.cs
+END
+DailyPaper.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3472/trunk/v2.5/Workflow.Web/finance/find/DailyPaper.aspx.cs
+END
+OrderSum.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/OrderSum.aspx
+END
+SearchOrderCountDetail.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/SearchOrderCountDetail.aspx.cs
+END
+SearchPayment.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/SearchPayment.aspx
+END
+OrderSum.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/OrderSum.aspx.cs
+END
+OrderPaidMoneyDetail.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/OrderPaidMoneyDetail.aspx
+END
+SearchOrderCountByEmployee.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/SearchOrderCountByEmployee.aspx
+END
+DailyStatistical.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3324/trunk/v2.5/Workflow.Web/finance/find/DailyStatistical.aspx
+END
+OrderPaidMoneyDetail.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/OrderPaidMoneyDetail.aspx.cs
+END
+ExceptionPriceOrderView.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/ExceptionPriceOrderView.aspx
+END
+SearchTurnOver.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/SearchTurnOver.aspx
+END
+SearchCashOnDuty.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/SearchCashOnDuty.aspx.cs
+END
+CustomerOweMoneyDetail.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/CustomerOweMoneyDetail.aspx.cs
+END
+ExceptionPriceOrderView.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/ExceptionPriceOrderView.aspx.cs
+END
+MonthPaper.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3315/trunk/v2.5/Workflow.Web/finance/find/MonthPaper.aspx
+END
+SearchTurnOver.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/SearchTurnOver.aspx.cs
+END
+SearchCustomerOrderList.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/SearchCustomerOrderList.aspx
+END
+ExceptionConsumeMember.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/ExceptionConsumeMember.aspx
+END
+SearchNewAndOldCustomer.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/SearchNewAndOldCustomer.aspx
+END
+WithoutConsumeCustomer.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/WithoutConsumeCustomer.aspx.cs
+END
+SearchConcessionByUser.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3300/trunk/v2.5/Workflow.Web/finance/find/SearchConcessionByUser.aspx
+END
+ExceptionConsumeMember.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/ExceptionConsumeMember.aspx.cs
+END
+AnalyzeDebtTime.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/AnalyzeDebtTime.aspx.cs
+END
+SearchDrawTicketRecord.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3314/trunk/v2.5/Workflow.Web/finance/find/SearchDrawTicketRecord.aspx
+END
+SearchDrawTicketRecord.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3314/trunk/v2.5/Workflow.Web/finance/find/SearchDrawTicketRecord.aspx.cs
+END
+SearchConcession.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3472/trunk/v2.5/Workflow.Web/finance/find/SearchConcession.aspx.cs
+END
+SearchOrderCountDetail.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/SearchOrderCountDetail.aspx
+END
+AccountReceivableAccordingToTimeSectTotal.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/finance/find/AccountReceivableAccordingToTimeSectTotal.aspx.cs
+END
+SearchArrear.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/finance/find/SearchArrear.aspx
+END

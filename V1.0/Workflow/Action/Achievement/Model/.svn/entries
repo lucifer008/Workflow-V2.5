@@ -1,0 +1,40 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow/Action/Achievement/Model
+http://192.168.0.6/svn/workflow
+
+
+
+2009-05-25T02:29:33.359375Z
+2588
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+AdjustAchievementModel.cs
+file
+
+
+
+
+2010-03-25T07:10:09.812500Z
+993176a5bbe5c1a40e6c717da6524a33
+2009-05-25T02:29:33.359375Z
+2588
+zhangxiaolin
+

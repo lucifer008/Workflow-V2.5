@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="RolePermissionGroup" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+	</resultMaps>
+	<!--注意：请对每个statements段增加注释。说明处理的业务-->
+	<!--查询表ROLE_PERMISSION_GROUP [角色权限许可组中的所有记录]-->
+	<statements>
+		<select id="SelectAll" resultMap="RolePermissionGroupResultMap.selectResult">
+			SELECT
+			*
+			FROM ROLE_PERMISSION_GROUP
+			ORDER BY ID ASC
+		</select>
+
+		<select id="GetPermissionGroupIdListByRoleId" parameterClass="long" resultClass="long">
+			SELECT
+			PERMISSION_GROUP_ID
+			FROM ROLE_PERMISSION_GROUP
+			WHERE ROLE_ID=#value#
+			ORDER BY ID ASC
+		</select>
+		<delete id="DeleteRolePermissionGroup" parameterClass="long">
+			DELETE ROLE_PERMISSION_GROUP
+			WHERE ROLE_ID=#value#
+		</delete>
+	</statements>
+</sqlMap>

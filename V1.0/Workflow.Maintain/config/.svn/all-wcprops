@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/config
+END
+aspx.config
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/config/aspx.config
+END
+log4net.config
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/config/log4net.config
+END
+properties.config
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/config/properties.config
+END
+SqlMap.config
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/config/SqlMap.config
+END
+action.config
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/config/action.config
+END
+service.config
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/config/service.config
+END
+dao.config
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Maintain/config/dao.config
+END

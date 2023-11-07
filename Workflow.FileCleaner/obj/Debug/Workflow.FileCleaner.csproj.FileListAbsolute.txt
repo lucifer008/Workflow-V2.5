@@ -1,0 +1,8 @@
+F:\Application\Jobs\LogCleaner\Configurations\LogCleanSetting.xml
+F:\Application\Jobs\LogCleaner\Configurations\log.config
+F:\Application\Jobs\LogCleaner\Configurations\LogCleanSetting.xsd
+F:\Application\Jobs\LogCleaner\Workflow.FileCleaner.exe
+F:\Application\Jobs\LogCleaner\Workflow.FileCleaner.pdb
+F:\myPro\Workflow V2.5\Workflow.FileCleaner\obj\Debug\ResolveAssemblyReference.cache
+F:\myPro\Workflow V2.5\Workflow.FileCleaner\obj\Debug\Workflow.FileCleaner.exe
+F:\myPro\Workflow V2.5\Workflow.FileCleaner\obj\Debug\Workflow.FileCleaner.pdb

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service
+END
+IMasterDataService.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/IMasterDataService.cs
+END
+IApplicationProperty.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/IApplicationProperty.cs
+END

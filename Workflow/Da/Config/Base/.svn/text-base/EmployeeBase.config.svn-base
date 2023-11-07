@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="EmployeeBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="EmployeeResultMap.selectResult"
+			cacheModel="Employee.EmployeeCache">
+			SELECT
+				ID, NO, NAME, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, BRANCH_SHOP_ID, COMPANY_ID
+			FROM EMPLOYEE
+			Where DELETED = '0'
+				AND COMPANY_ID = #CompanyId#
+				AND BRANCH_SHOP_ID = #BranchShopId#
+			ORDER BY NO
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="EmployeeResultMap.selectResult"
+			cacheModel="Employee.EmployeeCache">
+			SELECT
+				ID, NO, NAME, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, BRANCH_SHOP_ID, COMPANY_ID
+			FROM EMPLOYEE
+			WHERE ID = #Id# AND DELETED = '0' 
+		</select>
+		<insert id="Insert" parameterClass="Employee">
+			INSERT INTO EMPLOYEE
+				(
+				  ID, NO, NAME, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, BRANCH_SHOP_ID, COMPANY_ID
+				)
+				VALUES
+				(
+				  #Id # , #No# , #Name# , #InsertDateTime# , #InsertUser# , #UpdateDateTime# , #UpdateUser# , #Version# , #Deleted# , #BranchShopId# , #CompanyId# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="Employee">
+			UPDATE EMPLOYEE
+				SET
+					NO = #No# ,NAME = #Name#  ,UPDATE_DATE_TIME = #UpdateDateTime#  ,UPDATE_USER = #UpdateUser#  ,VERSION = VERSION + 1  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE EMPLOYEE
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM EMPLOYEE WHERE ID = #Id#
+		</delete>
+		
+		<select id="SelectPosition" parameterClass="long" resultMap="PositionResultMap.selectResult" >
+			SELECT
+				POSITION.ID, POSITION.NAME, POSITION.MEMO, POSITION.INSERT_DATE_TIME, POSITION.INSERT_USER, POSITION.UPDATE_DATE_TIME, POSITION.UPDATE_USER, POSITION.VERSION, POSITION.DELETED, POSITION.BRANCH_SHOP_ID, POSITION.COMPANY_ID
+			FROM POSITION
+			INNER JOIN EMPLOYEE_POSITION ON EMPLOYEE_POSITION.POSITION_ID = POSITION.ID
+			WHERE EMPLOYEE_POSITION.EMPLOYEE_ID = #value# AND POSITION.DELETED = '0'
+			ORDER BY POSITION.ID
+		</select>
+  </statements>
+</sqlMap>

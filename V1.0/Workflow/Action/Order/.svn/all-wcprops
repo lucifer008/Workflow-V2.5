@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Order
+END
+SearchOrderAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Order/SearchOrderAction.cs
+END
+NewOrderAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Order/NewOrderAction.cs
+END
+TakeWorkAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Order/TakeWorkAction.cs
+END
+BaseAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/Order/BaseAction.cs
+END

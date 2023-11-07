@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="TrashPaperEmployeeBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="TrashPaperEmployeeResultMap.selectResult">
+			SELECT
+				ID, REAL_ORDER_ITEM_ID, EMPLOYEE_ID, TRASH_PAPERS
+			FROM TRASH_PAPER_EMPLOYEE
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="TrashPaperEmployeeResultMap.selectResult">
+			SELECT
+				ID, REAL_ORDER_ITEM_ID, EMPLOYEE_ID, TRASH_PAPERS
+			FROM TRASH_PAPER_EMPLOYEE
+			WHERE ID = #Id# 
+		</select>
+		<insert id="Insert" parameterClass="TrashPaperEmployee">
+			INSERT INTO TRASH_PAPER_EMPLOYEE
+				(
+				  ID, REAL_ORDER_ITEM_ID, EMPLOYEE_ID, TRASH_PAPERS
+				)
+				VALUES
+				(
+				  #Id # , #RealOrderItemId# , #EmployeeId# , #TrashPapers# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="TrashPaperEmployee">
+			UPDATE TRASH_PAPER_EMPLOYEE
+				SET
+					REAL_ORDER_ITEM_ID = #RealOrderItemId# ,EMPLOYEE_ID = #EmployeeId#  ,TRASH_PAPERS = #TrashPapers#  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE TRASH_PAPER_EMPLOYEE
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM TRASH_PAPER_EMPLOYEE WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>无标题页</title>
+    <link href="../css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <table style="width: 100%">
+        <tr>
+            <td style="width: 100%">
+                <table style="width: 100%">
+                    <tr>
+                        <td style="width: 4%" height="25px" align="center"><img alt="" src="../images/index_17.gif" width="11" height="11" /></td>
+                        <td style="width: 49%">您当前位置:工单管理 / 查询工单</td>
+                        <td style="width: 47%">&nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 600px" align="left">
+                <table style="width: 100%;background-color:#FCFCFC">
+                    <tr>
+                        <td style="width: 12%">
+                            会员卡号:</td>
+                        <td style="width: 35%"><input name="textfield433" type="text" class="biaodan" />
+                        </td>
+                        <td style="width: 11%">
+                            时 间 段:</td>
+                        <td style="width: 42%"><select name="select3" class="biaodan">
+                            <option>2007-07-01</option>
+                        </select>
+                            &nbsp;-----&nbsp;<select name="select4" class="biaodan">
+                            <option>2007-12-20</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 12%">
+                            客户名称:</td>
+                        <td style="width: 35%"><input name="textfield43" type="text" class="biaodan" />
+                        </td>
+                        <td style="width: 11%">
+                        </td>
+                        <td style="width: 42%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 12%">
+                            工单号:</td>
+                        <td style="width: 35%"><input name="textfield432" type="text" class="biaodan" />
+                        </td>
+                        <td style="width: 11%">
+                            金 额:</td>
+                        <td style="width: 42%"><select name="select2" class="biaodan">
+                          <option>大于</option>
+                          <option>小于</option>
+                          <option>等于</option>
+                          <option>大于等于</option>
+                          <option>小于等于</option>
+                          <option>不等于</option>
+                        </select><input name="textfield44" type="text" class="biaodan" size="15" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 12%; height: 26px;">
+                        </td>
+                        <td colspan="3" align="left" style="height: 26px"><a href="#" class="btn">　查 询　</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%" bgcolor="#FFFFFF">
+                <table style="width: 100%" border="0" cellpadding="1" cellspacing="1" class="sou" bgcolor="#CCCCCC">
+                    <tr>
+                        <td align="center"  bgcolor="#DBDBDB">
+                            NO</td>
+                        <td align="center"  bgcolor="#DBDBDB">
+                            工单号</td>
+                        <td align="center"  bgcolor="#DBDBDB">
+                            客户名称</td>
+                        <td align="center"  bgcolor="#DBDBDB">
+                            开单时间</td>
+                        <td align="center"  bgcolor="#DBDBDB">
+                            结算时间</td>
+                        <td align="center"  bgcolor="#DBDBDB">
+                            消费金额</td>
+                        <td align="center"  bgcolor="#DBDBDB">
+                            开单人</td>
+                        <td align="center"  bgcolor="#DBDBDB">
+                            收银</td>
+                        <td align="center"  bgcolor="#DBDBDB">
+                            备注</td>
+                    </tr>
+                    <tr>
+                        <td align="center" bgcolor="#EEEEEE">
+                            1</td>
+                        <td align="center" bgcolor="#EEEEEE"><a href="业务委托工单.html">00001111</a>
+                        </td>
+                        <td align="center" bgcolor="#EEEEEE">
+                            散客</td>
+                        <td align="center" bgcolor="#EEEEEE">
+                            2007-7-18 9:15
+                        </td>
+                        <td align="center" bgcolor="#EEEEEE">
+                            2007-7-18 10:20
+                        </td>
+                        <td align="center" bgcolor="#EEEEEE">
+                            360</td> 
+                        <td align="center" bgcolor="#EEEEEE">
+                            张三</td>
+                        <td align="center" bgcolor="#EEEEEE">
+                            李四</td>
+                        <td bgcolor="#EEEEEE">&nbsp;
+                            </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                        <td bgcolor="#FFFFFF">&nbsp;
+                            </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

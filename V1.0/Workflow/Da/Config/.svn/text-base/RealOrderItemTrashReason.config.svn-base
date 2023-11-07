@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="RealOrderItemTrashReason" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+	</resultMaps>
+	<statements>
+		<select id="SelectAll" resultMap="RealOrderItemTrashReasonResultMap.selectResult">
+			SELECT
+				*
+			FROM REAL_ORDER_ITEM_TRASH_REASON
+			ORDER BY ID ASC
+		</select>
+		<delete id="DeleteRealOrderItemTrashReasonByOrderId" parameterClass="long">
+			<![CDATA[
+			delete Real_Order_Item_Trash_Reason from Real_Order_Item_Trash_Reason a
+			inner join Real_Order_Item b on a.Real_Order_Item_Id=b.Id
+			where b.Orders_Id=#OrderId#
+			]]>
+		</delete>
+	</statements>
+</sqlMap>

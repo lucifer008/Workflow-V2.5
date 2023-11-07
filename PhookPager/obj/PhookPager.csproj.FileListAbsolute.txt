@@ -1,0 +1,10 @@
+D:\project\Workflow V2.5\PhookPager\bin\Debug\PhookPager.dll
+D:\project\Workflow V2.5\PhookPager\bin\Debug\PhookPager.pdb
+D:\project\Workflow V2.5\PhookPager\obj\Debug\ResolveAssemblyReference.cache
+D:\project\Workflow V2.5\PhookPager\obj\Debug\PhookPager.dll
+D:\project\Workflow V2.5\PhookPager\obj\Debug\PhookPager.pdb
+D:\project\Workflow V2.5\PhookPager\bin\Release\PhookPager.dll
+D:\project\Workflow V2.5\PhookPager\bin\Release\PhookPager.pdb
+D:\project\Workflow V2.5\PhookPager\obj\Release\ResolveAssemblyReference.cache
+D:\project\Workflow V2.5\PhookPager\obj\Release\PhookPager.dll
+D:\project\Workflow V2.5\PhookPager\obj\Release\PhookPager.pdb

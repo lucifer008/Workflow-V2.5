@@ -1,0 +1,617 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl
+END
+DiscountConcessionMachineTypePaperSpecDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/DiscountConcessionMachineTypePaperSpecDaoImpl.cs
+END
+ChangeMemberCardDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/ChangeMemberCardDaoImpl.cs
+END
+RealOrderItemTrashReasonDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/RealOrderItemTrashReasonDaoImpl.cs
+END
+GatheringDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/GatheringDaoImpl.cs
+END
+TrashPaperEmployeeDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/TrashPaperEmployeeDaoImpl.cs
+END
+ProcessContentDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/ProcessContentDaoImpl.cs
+END
+FactorValueDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/FactorValueDaoImpl.cs
+END
+PrintRequireDetailDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/PrintRequireDetailDaoImpl.cs
+END
+BusinessModuleGroupDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/BusinessModuleGroupDaoImpl.cs
+END
+UserConcessionRangeDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/UserConcessionRangeDaoImpl.cs
+END
+AmountSegmentDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/AmountSegmentDaoImpl.cs
+END
+AchievementDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/AchievementDaoImpl.cs
+END
+TrashReasonDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/TrashReasonDaoImpl.cs
+END
+MemberOperateLogDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/MemberOperateLogDaoImpl.cs
+END
+OrderItemEmployeeDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/OrderItemEmployeeDaoImpl.cs
+END
+MachineWatchRecordLogDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/MachineWatchRecordLogDaoImpl.cs
+END
+LogoffMemberCardDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/LogoffMemberCardDaoImpl.cs
+END
+ReportLossMemberCardDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/ReportLossMemberCardDaoImpl.cs
+END
+MemberCardDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/MemberCardDaoImpl.cs
+END
+ConcessionDifferencePriceDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/ConcessionDifferencePriceDaoImpl.cs
+END
+CustomerDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/CustomerDaoImpl.cs
+END
+RoleDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/RoleDaoImpl.cs
+END
+UncompleteOrdersUsedPaperDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/UncompleteOrdersUsedPaperDaoImpl.cs
+END
+CashHandOverDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/CashHandOverDaoImpl.cs
+END
+HandOverDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/HandOverDaoImpl.cs
+END
+CompensateUsedPaperDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/CompensateUsedPaperDaoImpl.cs
+END
+ReportLessModeDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/ReportLessModeDaoImpl.cs
+END
+SecondaryTradeDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/SecondaryTradeDaoImpl.cs
+END
+PaperSpecificationDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/PaperSpecificationDaoImpl.cs
+END
+FactorRelationValueDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/FactorRelationValueDaoImpl.cs
+END
+AccreditRecordDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/AccreditRecordDaoImpl.cs
+END
+ConcessionMemberCardLevelDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/ConcessionMemberCardLevelDaoImpl.cs
+END
+UserDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/UserDaoImpl.cs
+END
+MemberCardConcessionGatheringDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/MemberCardConcessionGatheringDaoImpl.cs
+END
+UnitDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/UnitDaoImpl.cs
+END
+DeliveryOrderDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/DeliveryOrderDaoImpl.cs
+END
+CampaignDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/CampaignDaoImpl.cs
+END
+DailyRecordMachineDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/DailyRecordMachineDaoImpl.cs
+END
+MarkingSettingDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/MarkingSettingDaoImpl.cs
+END
+RolePermissionGroupDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/RolePermissionGroupDaoImpl.cs
+END
+BlankOutReasonDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/BlankOutReasonDaoImpl.cs
+END
+PrintDemandDetailDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/PrintDemandDetailDaoImpl.cs
+END
+OrdersStatusAlterDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/OrdersStatusAlterDaoImpl.cs
+END
+OrderItemDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/OrderItemDaoImpl.cs
+END
+BusinessTypePriceSetDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/BusinessTypePriceSetDaoImpl.cs
+END
+RealOrderItemEmployeeDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/RealOrderItemEmployeeDaoImpl.cs
+END
+UserRoleDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/UserRoleDaoImpl.cs
+END
+PriceFactorDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/PriceFactorDaoImpl.cs
+END
+PaymentConcessionDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/PaymentConcessionDaoImpl.cs
+END
+CashHandOverOrderDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/CashHandOverOrderDaoImpl.cs
+END
+MachineWatchScaleDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/MachineWatchScaleDaoImpl.cs
+END
+EmployeePositionDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/EmployeePositionDaoImpl.cs
+END
+PrintDemandDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/PrintDemandDaoImpl.cs
+END
+CompanyDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/CompanyDaoImpl.cs
+END
+MachineTypeDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/MachineTypeDaoImpl.cs
+END
+MasterTradeDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/MasterTradeDaoImpl.cs
+END
+FactorRelationDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/FactorRelationDaoImpl.cs
+END
+RelationEmployeeDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/RelationEmployeeDaoImpl.cs
+END
+OrdersForRecordMachineSumDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/OrdersForRecordMachineSumDaoImpl.cs
+END
+PaperSpecificationSimilarityDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/PaperSpecificationSimilarityDaoImpl.cs
+END
+OtherGatheringAndRefundmentRecordDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/OtherGatheringAndRefundmentRecordDaoImpl.cs
+END
+DutyEmployeeDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/DutyEmployeeDaoImpl.cs
+END
+OrderItemFactorValueDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/OrderItemFactorValueDaoImpl.cs
+END
+BaseBusinessTypePriceSetDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/BaseBusinessTypePriceSetDaoImpl.cs
+END
+PermissionDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/PermissionDaoImpl.cs
+END
+PermissionGroupDetailDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/PermissionGroupDetailDaoImpl.cs
+END
+MemberCardLevelDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/MemberCardLevelDaoImpl.cs
+END
+MachineWatchConversionPaperDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/MachineWatchConversionPaperDaoImpl.cs
+END
+LinkManDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/LinkManDaoImpl.cs
+END
+CustomerLevelDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/CustomerLevelDaoImpl.cs
+END
+ProcessContentAchievementRateDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/ProcessContentAchievementRateDaoImpl.cs
+END
+RealOrderItemDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/RealOrderItemDaoImpl.cs
+END
+BusinessModuleDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/BusinessModuleDaoImpl.cs
+END
+HandOverOrderDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/HandOverOrderDaoImpl.cs
+END
+IdGeneratorDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/IdGeneratorDaoImpl.cs
+END
+ConcessionDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/ConcessionDaoImpl.cs
+END
+MachineDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/MachineDaoImpl.cs
+END
+PositionDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/PositionDaoImpl.cs
+END
+PermissionGroupDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/PermissionGroupDaoImpl.cs
+END
+MemberCardOrderItemCounteractLogDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/MemberCardOrderItemCounteractLogDaoImpl.cs
+END
+ApplicationPropertyDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/ApplicationPropertyDaoImpl.cs
+END
+RealOrderItemPrintRequireDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/RealOrderItemPrintRequireDaoImpl.cs
+END
+PaperTypeDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/PaperTypeDaoImpl.cs
+END
+OrderDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/OrderDaoImpl.cs
+END
+DiscountConcessionDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/DiscountConcessionDaoImpl.cs
+END
+BusinessTypePriceFactorDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/BusinessTypePriceFactorDaoImpl.cs
+END
+EmployeeDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/EmployeeDaoImpl.cs
+END
+MemberCardConcessionDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/MemberCardConcessionDaoImpl.cs
+END
+OrderItemPrintRequireDetailDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/OrderItemPrintRequireDetailDaoImpl.cs
+END
+BranchShopDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/BranchShopDaoImpl.cs
+END
+TakeWorkDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/TakeWorkDaoImpl.cs
+END
+HandOverMemberCardDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/HandOverMemberCardDaoImpl.cs
+END
+RealOrderItemFactorValueDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/RealOrderItemFactorValueDaoImpl.cs
+END
+RecordMachineWatchDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/RecordMachineWatchDaoImpl.cs
+END
+MachineWatchDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/MachineWatchDaoImpl.cs
+END
+BusinessTypeDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/BusinessTypeDaoImpl.cs
+END
+MemberCardDiscountConcessionDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/MemberCardDiscountConcessionDaoImpl.cs
+END
+CompensateEmployeeDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/CompensateEmployeeDaoImpl.cs
+END
+CustomerTypeDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/CustomerTypeDaoImpl.cs
+END
+RequireAccountingInfoDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/RequireAccountingInfoDaoImpl.cs
+END
+OrdersDutyDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/OrdersDutyDaoImpl.cs
+END
+GatheringOrderDaoImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Da/Impl/GatheringOrderDaoImpl.cs
+END

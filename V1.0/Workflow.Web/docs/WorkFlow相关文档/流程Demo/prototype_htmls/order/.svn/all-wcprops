@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order
+END
+原形模版.html
+K 25
+svn:wc:ra_dav:version-url
+V 193
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/%E5%8E%9F%E5%BD%A2%E6%A8%A1%E7%89%88.html
+END
+NewGetingOrder.html
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/NewGetingOrder.html
+END
+NewOrder.html
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/NewOrder.html
+END
+RedoOrder.html
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/RedoOrder.html
+END
+SetDailyOrderDefaultCondition.html
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/SetDailyOrderDefaultCondition.html
+END
+新增加工单.html
+K 25
+svn:wc:ra_dav:version-url
+V 202
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/%E6%96%B0%E5%A2%9E%E5%8A%A0%E5%B7%A5%E5%8D%95.html
+END
+OrderItem.html
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/OrderItem.html
+END
+DispatchOrder.html
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/DispatchOrder.html
+END
+DailyOrder.html
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/DailyOrder.html
+END
+OrderDetail.html
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/OrderDetail.html
+END
+SearchOrder.html
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/SearchOrder.html
+END
+CompleteOrder.html
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/CompleteOrder.html
+END
+PrintRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/PrintRequest.html
+END
+TextPage.htm
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/TextPage.htm
+END
+OrderList.html
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/OrderList.html
+END
+新增加工业务明细.html
+K 25
+svn:wc:ra_dav:version-url
+V 229
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/%E6%96%B0%E5%A2%9E%E5%8A%A0%E5%B7%A5%E4%B8%9A%E5%8A%A1%E6%98%8E%E7%BB%86.html
+END
+SelectOrder.html
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/SelectOrder.html
+END
+GetOrder.html
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/GetOrder.html
+END
+BlankOutOrder.html
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E6%B5%81%E7%A8%8BDemo/prototype_htmls/order/BlankOutOrder.html
+END

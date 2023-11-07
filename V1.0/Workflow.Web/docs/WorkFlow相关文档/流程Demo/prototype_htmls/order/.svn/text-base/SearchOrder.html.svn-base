@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>工单查询</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/calendar-blue.css"  type="text/css" />
+<script language="javascript" src="../js/新增工单.js"></script>
+<script type="text/javascript" src="../js/calendar.js" charset="utf-8"></script>
+<script type="text/javascript" src="../js/calendar-zh.js" charset="utf-8"></script>
+<script	type="text/javascript" src="../js/calendar-setup.js" charset="utf-8"></script>
+<script	type="text/javascript" src="../js/checkCalendar.js" charset="utf-8"></script>
+</head>
+
+<body style="text-align:center">
+<div align="center" style="width:99%" bgcolor="#ffffff" id="container">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+	<tr>
+		<td width="11"><img alt="" src="../images/white_main_top_left.gif"></td>
+		<td width="99%"><img alt="" src="../images/spacer_10_x_10.gif" height="10"></td>
+		<td width="10"><img alt="" src="../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+	</tr> 
+   <tr>
+    <td colspan="3" bgcolor="#FFFFFF">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+         <td width="3%"></td>
+		 <td align="left" bgcolor="#eeeeee">首页&nbsp;-&gt;&nbsp;工单管理&nbsp;-&gt;&nbsp;工单查询</td>
+		 <td width="3%"></td>
+      </tr>
+	  <tr>
+			<td colspan="3" class="caption" align="center">工单查询</td>
+	  </tr>
+	  <tr>
+	    <td width="3%">&nbsp;</td>
+	    <td align="center">
+			<table border="1" cellpadding="3" cellspacing="1" width="100%" align="left">
+                <tr>
+                  <td nowrap class="item_caption">工单号:</td>
+                  <td class="item_content"><input type="text" class="texts" value="00001111" /></td>
+                  <td nowrap class="item_caption">时间段:</td>
+                  <td class="item_content">             	
+						<div>
+					<input type="text" class="datetimetexts" id="Text1" value="2007-07-17" size="15" maxlength="16" readonly="true" />
+					<img alt=""  id="img alt=""btn1" src="../images/cal.gif" width="20" border="0" alt="Click Here to Pick up the date" />
+					<script type="text/javascript">
+						Calendar.setup({
+							firstDay       :    0,                  // first day of the week
+							inputField     :    "Text1",     				// id of the input field
+							button         :    "img alt=""btn1",  					// trigger for the calendar (button ID)
+							align          :    "Tl",           		// alignment (defaults to "Bl")
+							//singleClick  :    true,
+							showsTime      :    "true",
+							ifFormat       :    "%Y-%m-%d %H:%M"    // our date only format
+							 });
+							 window
+					</script>			
+                    &nbsp;&nbsp;至&nbsp;&nbsp;
+					<input type="text" class="datetimetexts" id="Text2" value="2007-07-19" size="15" maxlength="16"  readonly="true" />
+					<img alt=""  id="img alt=""btn2" src="../images/cal.gif" width="20" border="0" alt="Click Here to Pick up the date" />
+					<script type="text/javascript">
+						Calendar.setup({
+							firstDay       :    0,                  // first day of the week
+							inputField     :    "Text2",     				// id of the input field
+							button         :    "img alt=""btn2",  					// trigger for the calendar (button ID)
+							align          :    "Tl",           		// alignment (defaults to "Bl")
+							//singleClick  :    true,
+							showsTime      :    "true",
+							ifFormat       :    "%Y-%m-%d %H:%M"    // our date only format
+							 });
+							 window
+					</script>			
+		    		</div>
+						</td>
+                </tr>
+                <tr>
+                  <td nowrap class="item_caption">会员卡号:</td>
+                  <td class="item_content"><input type="text" class="texts" value="M0806005" /></td>
+                  <td nowrap class="item_caption">客户名称:</td>
+                  <td class="item_content"><input type="text" class="texts" value="西北建筑设计院" />
+                      &nbsp;</td>
+                </tr>
+                <tr>
+                  <td nowrap class="item_caption">金额:</td>
+                  <td class="item_content" colspan="3"><select name="select2" class="biaodan">
+                          <option>小于</option>
+                          <option>小于等于</option>
+                          <option>等于</option>
+                          <option selected="selected">大于等于</option>
+                          <option>大于</option>
+                        </select><input type="text" class="num" value="360" size="9" /></td>
+                </tr>
+                <tr>
+                  <td colspan="4" align="right" class="querybuttons">&nbsp;<input name="strQuery" disabled="disabled" class="buttons" value="查询" type="button"></td>
+                </tr>
+            </table>
+		</td>
+	    <td width="3%"></td>
+	  </tr>
+      <tr>
+	    <td width="3%">&nbsp;</td>
+        <td align="center">
+		<table  border="1" cellpadding="3" cellspacing="1" width="100%" align="left">
+          <tr>
+            <th width="1%" nowrap>&nbsp;NO&nbsp;</th>
+            <th width="1%" nowrap>工单号</th>
+            <th width="50%"nowrap>客户名称</th>
+            <th width="2%" nowrap>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开单时间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th width="2%" nowrap>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;结算时间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th width="1%" nowrap>消费金额</th>
+            <th width="1%" nowrap>开单人</th>
+            <th width="1%" nowrap>&nbsp;收银&nbsp;</th>
+            <th width="40%"nowrap>&nbsp;备注&nbsp;</th>
+          </tr>
+          <tr class="detailRow">
+            <td align="center">1</td>
+            <td nowrap><a href="#" onclick="window.open('OrderDetail.html')">00001111</a></td>
+            <td align="left">西北建筑设计院</td>
+            <td nowrap>07-18 09:15 </td>
+            <td nowrap>07-18 20:20 </td>
+            <td class="num">360</td>
+            <td nowrap>张三</td>
+            <td nowrap>李四</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </table></td>
+		<td width="3%"></td>
+      </tr>
+      <tr class="emptyButtonsUpperRowHight">
+				<td colspan="3"></td>
+			</tr>
+      <tr height="5">
+                            <td style="height: 5px">
+                                <img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+                            <td bgcolor="#eeeeee" style="height: 5px">&nbsp;
+                                </td>
+                            <td style="height: 5px">
+                                <img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+                        </tr>
+    </table></td>
+  </tr>
+	<tr>
+		<td width="11"><img alt="" src="../images/white_main_bottom_left.gif"></td>
+		<td width="99%"><img alt="" src="../images/spacer_10_x_10.gif"></td>
+		<td width="10"><img alt="" src="../images/white_main_bottom_right.gif"></td>
+	</tr>
+</table>
+</div>
+</body>
+</html>

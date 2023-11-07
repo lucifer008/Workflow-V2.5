@@ -1,0 +1,52 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Da/IBatis
+http://192.168.0.6/svn/workflow
+
+
+
+2009-09-24T02:58:03.734375Z
+2641
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+SqlMapClientOperations.cs
+file
+
+
+
+
+2010-03-25T07:11:33.093750Z
+b09cf900954b29afdb3f8e70f2f8c456
+2007-08-20T02:59:47.290446Z
+2
+zhuxinbin
+
+SqlMapClientFactoryBean.cs
+file
+
+
+
+
+2010-03-25T07:11:33.109375Z
+94d449eea022f6044c994b4bb610ef68
+2009-09-24T02:58:03.734375Z
+2641
+zhangxiaolin
+

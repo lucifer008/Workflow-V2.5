@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>核销工单</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body   style="text-align:center">
+<div align="center" style="width:99%" bgcolor="#ffffff"  id="container">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="12"><img alt="" src="../images/white_main_top_left.gif"
+			width="12" height="11" border="0"></td>
+      <td width="99%" bgcolor="#FFFFFF"><img alt="" src="../images/spacer_10_x_10.gif"
+			width="10" height="10"></td>
+      <td width="12"><img alt="" src="../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+    </tr>
+    <tr>
+      <td colspan="3" bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+            <td align="left" bgcolor="#eeeeee">首页 -&gt; 财务处理 -&gt; 核销工单</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="caption" align="center">核销工单</td>
+          </tr>
+          <tr>
+            <td width="3%">&nbsp;</td>
+            <td align="center"><table width="100%" border="0" cellpadding="2" cellspacing="1">
+              <tr>
+                <td  nowrap class="item_caption">工单号:</td>
+                <td width="25%" class="item_content"><input type="text" class="texts" name="textfield" /></td>
+                <td  nowrap class="item_caption">送 货 人:</td>
+                <td class="item_content"><select name="select">
+                    <option>王武</option>
+                    <option>赵谦松</option>
+                </select></td>
+                <td class="item_content" align="right" style="padding-right:10px"><input name="Submit" type="submit" class="buttons" value="查询" /></td>
+              </tr>
+            </table></td>
+            <td width="3%">&nbsp;</td>
+		  </tr>
+          <tr>
+            <td width="3%">&nbsp;</td>
+            <td align="center">
+<table width="100%" border="1" cellpadding="2" cellspacing="1">
+          <tr>
+            <th width="1%" nowrap>&nbsp;NO&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;工单号&nbsp;&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;项目名称&nbsp;&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;客户名称&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;金额&nbsp;&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;联系人&nbsp;&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;联系电话&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;&nbsp;送货地址&nbsp;&nbsp;&nbsp;</th>
+            <th nowrap>备注</th>
+            <th width="1%" nowrap>&nbsp;&nbsp;状态&nbsp;&nbsp;</th>
+            <th width="1%" nowrap></th>
+          </tr>
+          <tr  class="detailRow">
+            <td align="center">1</td>
+            <td align="center">00001520</td>
+            <td align="left">平面图</td>
+            <td align="left" nowrap>西安建筑科技大学</td>
+            <td class="num">430</td>
+            <td align="center">李文</td>
+            <td align="center" nowrap="nowrap" >029-88661503</td>
+            <td align="left">西安市建东街86号</td>
+            <td align="center">&nbsp;</td>
+            <td align="center" nowrap><label>
+              <input id="rd1" type="checkbox" name="checkbox" class="checks" value="checkbox" />
+            </label>
+              <label for="rd1">送出 </label>            </td>
+            <td nowrap><a href="#">核销</a></td>
+          </tr>
+          <tr  class="detailRow">
+            <td align="center">2</td>
+            <td align="center">00001436</td>
+            <td align="left">竞标书</td>
+            <td align="left">中铁一局</td>
+            <td class="num">1,260</td>
+            <td align="center">张权先</td>
+            <td align="center">13019195656</td>
+            <td align="left">西安市雁翔路90号</td>
+            <td align="center">&nbsp;</td>
+            <td align="center"><label>
+              <input id="checkbox" type="checkbox" name="checkbox2" class="checks" value="checkbox" />
+            </label>
+              <label for="checkbox">送出</label></td>
+            <td><a href="#">核销</a></td>
+          </tr>
+          <tr  class="detailRow">
+            <td align="center">3</td>
+            <td align="center">00001222</td>
+            <td align="left">画册</td>
+            <td align="left">杨先生</td>
+            <td class="num">380</td>
+            <td align="center">杨小辉</td>
+            <td align="center">13892805055</td>
+            <td nowrap="nowrap" align="left">西安市骡马市街68号</td>
+            <td align="center">&nbsp;</td>
+            <td align="center"><label>
+              <input id="checkbox2" type="checkbox" name="checkbox3" class="checks" value="checkbox" />
+            </label>
+              <label for="checkbox2">送出</label></td>
+            <td><a href="#">核销</a></td>
+          </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr  class="detailRow">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>			</td>
+            <td width="3%">&nbsp;</td>
+			</tr>
+		
+          <tr height="5">
+            <td><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+            <td bgcolor="#eeeeee">&nbsp;</td>
+            <td><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+          </tr>			
+			</table>
+	  </td>
+	</tr>
+    <tr>
+      <td width="12"><img alt="" src="../images/white_main_bottom_left.gif"
+			width="12" height="11"></td>
+      <td bgcolor="#FFFFFF"><img alt="" src="../images/spacer_10_x_10.gif"
+			width="10" height="10"></td>
+      <td width="12"><img alt="" src="../images/white_main_bottom_right.gif"
+			width="12" height="11"></td>
+    </tr>
+  </table>
+</div>
+		
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="ReportLossMemberCard" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+	</resultMaps>
+	<statements>
+		<select id="SelectAll" resultMap="ReportLossMemberCardResultMap.selectResult">
+			SELECT
+				*
+			FROM REPORT_LOSS_MEMBER_CARD
+			ORDER BY ID ASC
+		</select>
+		<delete id="DeleteByMemberCardId" parameterClass="long">
+			DELETE FROM REPORT_LOSS_MEMBER_CARD WHERE MEMBER_CARD_ID = #MemberCardId#
+		</delete>
+	</statements>
+</sqlMap>

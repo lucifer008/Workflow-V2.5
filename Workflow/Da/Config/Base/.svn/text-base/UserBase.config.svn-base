@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="UserBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="UserResultMap.selectResult"
+			cacheModel="User.UserCache">
+			SELECT
+			ID, EMPLOYEE_ID, USER_NAME, PASSWORD,IS_LOGIN, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, COMPANY_ID, BRANCH_SHOP_ID
+			FROM USERS
+			Where DELETED = '0'
+			AND COMPANY_ID = #CompanyId#
+			AND BRANCH_SHOP_ID = #BranchShopId#
+			ORDER BY ID
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="UserResultMap.selectResult"
+			cacheModel="User.UserCache">
+			SELECT
+			ID, EMPLOYEE_ID, USER_NAME, PASSWORD,IS_LOGIN, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, COMPANY_ID, BRANCH_SHOP_ID
+			FROM USERS
+			WHERE ID = #Id# AND DELETED = '0'
+
+		</select>
+		<insert id="Insert" parameterClass="User">
+			INSERT INTO USERS
+			(
+			ID, EMPLOYEE_ID, USER_NAME, PASSWORD,IS_LOGIN, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, COMPANY_ID, BRANCH_SHOP_ID
+			)
+			VALUES
+			(
+			#Id # , #EmployeeId# , #UserName# , #Password# , #IsLogin# , #InsertDateTime# , #InsertUser# , #UpdateDateTime# , #UpdateUser# , #Version# , #Deleted# , #CompanyId# , #BranchShopId#
+			)
+		</insert>
+		
+		<update id="Update" parameterClass="User">
+			UPDATE USERS
+				SET
+					EMPLOYEE_ID = #EmployeeId# ,USER_NAME = #UserName#  ,PASSWORD = #Password# , IS_LOGIN = #IsLogin# ,UPDATE_DATE_TIME = #UpdateDateTime#  ,UPDATE_USER = #UpdateUser#  ,VERSION = VERSION + 1  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE USERS
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM USERS WHERE ID = #Id#
+		</delete>
+		
+		<select id="SelectRole" parameterClass="long" resultMap="RoleResultMap.selectResult" >
+			SELECT
+				ROLE.ID, ROLE.PERMISSION_VALUES, ROLE.INSERT_DATE_TIME, ROLE.INSERT_USER, ROLE.UPDATE_DATE_TIME, ROLE.UPDATE_USER, ROLE.VERSION, ROLE.DELETED, ROLE.COMPANY_ID, ROLE.BRANCH_SHOP_ID
+			FROM ROLE
+			INNER JOIN USER_ROLE ON USER_ROLE.ROLE_ID = ROLE.ID
+			WHERE USER_ROLE.USERS_ID = #value# AND ROLE.DELETED = '0'
+			ORDER BY ROLE.ID
+		</select>
+		<!--目标表USER_CONCESSION_RANGE的信息查询-->
+		<select id="SelectUserConcessionRange" parameterClass="long" resultMap="UserConcessionRangeResultMap.selectResult" >
+			SELECT
+			*
+			FROM USER_CONCESSION_RANGE
+			WHERE USERS_ID = #value# AND USER_CONCESSION_RANGE.DELETED='0'
+			ORDER BY ID
+		</select>
+
+	</statements>
+</sqlMap>

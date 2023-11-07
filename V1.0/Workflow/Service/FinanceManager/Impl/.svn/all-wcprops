@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/FinanceManager/Impl
+END
+FinanceServiceImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/FinanceManager/Impl/FinanceServiceImpl.cs
+END
+FindFinanceServiceImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/FinanceManager/Impl/FindFinanceServiceImpl.cs
+END

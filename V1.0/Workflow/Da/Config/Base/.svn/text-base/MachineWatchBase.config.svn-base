@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--表MACHINE_WATCH [机器上的表]的基本增删改查操作，此配置文件不允许修改-->
+<sqlMap namespace="MachineWatchBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		
+			<!--查询表MACHINE_WATCH [机器上的表]的基本操作-->		 
+			<select id="SelectAll" resultMap="MachineWatchResultMap.selectResult"  cacheModel="MachineWatch.MachineWatchCache">
+			SELECT  ID,MACHINE_TYPE_ID,NAME,WATCH_TYPE,SORT_NO,INSERT_DATE_TIME,INSERT_USER,UPDATE_DATE_TIME,UPDATE_USER,DELETED,VERSION,BRANCH_SHOP_ID,COMPANY_ID	FROM MACHINE_WATCH Order by ID
+			</select>
+
+			<!--按照主键查询表MACHINE_WATCH [机器上的表]的基本操作-->
+			<select id="SelectByPk" parameterClass="long" resultMap="MachineWatchResultMap.selectResult" cacheModel="MachineWatch.MachineWatchCache">
+			SELECT 
+			ID,
+			MACHINE_TYPE_ID,
+			NAME,
+			WATCH_TYPE,
+			SORT_NO,
+			INSERT_DATE_TIME,
+			INSERT_USER,
+			UPDATE_DATE_TIME,
+			UPDATE_USER,
+			DELETED,
+			VERSION,
+			BRANCH_SHOP_ID,
+			COMPANY_ID
+			FROM MACHINE_WATCH
+			WHERE ID = #Id# 
+			</select>
+
+			<!--插入表MACHINE_WATCH [机器上的表]的基本操作-->
+			<insert id="Insert" parameterClass="MachineWatch">
+			INSERT INTO MACHINE_WATCH
+			(
+				ID,
+				MACHINE_TYPE_ID,
+				NAME,
+				WATCH_TYPE,
+				SORT_NO,
+				INSERT_DATE_TIME,
+				INSERT_USER,
+				UPDATE_DATE_TIME,
+				UPDATE_USER,
+				DELETED,
+				VERSION,
+				BRANCH_SHOP_ID,
+				COMPANY_ID
+			) VALUES
+			( 
+				#Id#,
+				#MachineTypeId#,
+				#Name#,
+				#WatchType#,
+				#SortNo#,
+				#InsertDateTime#,
+				#InsertUser#,
+				#UpdateDateTime#,
+				#UpdateUser#,
+				#Deleted#,
+				#Version#,
+				#BranchShopId#,
+				#CompanyId#
+			)
+			</insert>
+			
+			<!--更新表MACHINE_WATCH [机器上的表]的基本操作-->
+			<update id="Update" parameterClass="MachineWatch">
+			UPDATE MACHINE_WATCH
+			SET
+				MACHINE_TYPE_ID=#MachineTypeId#,
+				NAME=#Name#,
+				WATCH_TYPE=#WatchType#,
+				SORT_NO=#SortNo#,
+				INSERT_DATE_TIME=#InsertDateTime#,
+				INSERT_USER=#InsertUser#,
+				UPDATE_DATE_TIME=#UpdateDateTime#,
+				UPDATE_USER=#UpdateUser#,
+				DELETED=#Deleted#,
+				VERSION=#Version#,
+				BRANCH_SHOP_ID=#BranchShopId#,
+				COMPANY_ID=#CompanyId#
+			WHERE ID = #Id#
+			</update>
+
+			<!--逻辑删除表MACHINE_WATCH [机器上的表]的基本操作-->
+			<update id="LogicDelete" parameterClass="long">
+				UPDATE MACHINE_WATCH
+				SET	VERSION = VERSION + 1,DELETED = '1'	WHERE ID = #Id#
+			</update>
+
+			<!--物理删除表MACHINE_WATCH [机器上的表]的基本操作-->
+			<delete id="Delete" parameterClass="long">
+				DELETE FROM MACHINE_WATCH WHERE ID = #Id#
+			</delete>
+
+		</statements>
+</sqlMap>

@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>编辑优惠方案</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="text-align:center">
+<div align="center" style="width:99%" bgcolor="#ffffff" id="container">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+    <tr>
+      <td width="11"><img alt="" src="../images/white_main_top_left.gif"></td>
+      <td width="99%"><img alt="" src="../images/spacer_10_x_10.gif" height="10"></td>
+      <td width="10"><img alt="" src="../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+    </tr>
+    <tr>
+      <td colspan="3" bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" >
+                <tr>
+                  <td width="3%"></td>
+                  <td align="left" bgcolor="#eeeeee">首页 -&gt; 活动管理 -&gt; 编辑优惠方案</td>
+                  <td width="3%"></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="caption" align="center">编辑优惠方案</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td align="left"><table width="100%" border="0" cellspacing="1" cellpadding="2">
+                      <tr>
+                        <td width="1%" nowrap="nowrap" class="item_caption">名称:</td>
+                        <td width="94%"><input name="textfield" type="text" class="texts" value="充10000元送1000张" /></td>
+                      </tr>
+                      <tr>
+                        <td nowrap="nowrap" class="item_caption">说明:</td>
+                        <td><span class="item_content">
+                          <textarea name="textarea" cols="95"
+							rows="3"></textarea>
+                          </span></td>
+                      </tr>
+                    </table></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td align="left">选择可参与该优惠方案的会员卡的类型及级别:</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td align="left"><table width="100%" border="1" cellspacing="1" cellpadding="3">
+                      <tr>
+                        <td width="14%" class="item_caption"><label for="checkbox2">打印卡:</label></td>
+                        <td width="19%"><input name="checkbox3" type="checkbox" class="checks" id="checkbox3" value="checkbox" checked="checked" />
+                          <label for="checkbox3">金卡</label></td>
+                        <td width="21%"><input name="checkbox4" type="checkbox" class="checks" id="checkbox4" value="checkbox" />
+                          银卡 </td>
+                        <td width="46%"><input name="checkbox5" type="checkbox" class="checks" id="checkbox5" value="checkbox" />
+                          铜卡 </td>
+                      </tr>
+                    </table></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td align="left">选择基础价格并指定充值金额与赠送印张数:</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td align="left"><input name="Submit" type="button" class="buttons" onclick="window.showModalDialog('SelectStandardPrice.html',null,'dialogWidth=820px;dialogHeight=550px')" value="选择价格" /></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td align="left"><table width="100%" border="1" cellspacing="1" cellpadding="3">
+                      <tr>
+                        <td class="item_caption">业务类型:</td>
+                        <td colspan="3" class="item_content">打印</td>
+                      </tr>
+                      <tr>
+                        <td class="item_caption">机器:</td>
+                        <td class="item_content">DC-8000</td>
+                        <td class="item_caption">加工内容:</td>
+                        <td class="item_content">彩色打印</td>
+                      </tr>
+                      <tr>
+                        <td class="item_caption">规格:</td>
+                        <td class="item_content">A3</td>
+                        <td class="item_caption">纸质:</td>
+                        <td class="item_content">157g铜</td>
+                      </tr>
+                      <tr>
+                        <td class="item_caption">下限数量:</td>
+                        <td class="item_content">0</td>
+                        <td class="item_caption">上限数量:</td>
+                        <td class="item_content">1,000</td>
+                      </tr>
+                      <tr>
+                        <td class="item_caption">发票:</td>
+                        <td class="item_content">不要</td>
+                        <td class="item_caption">价格:</td>
+                        <td class="item_content">2.0</td>
+                      </tr>
+                      <tr class="emptyButtonsUpperRowHight">
+                        <td  colspan="4"></td>
+                      </tr>
+                      <tr>
+                        <td width="14%" class="item_caption">充值金额:</td>
+                        <td width="35%" class="item_content"><input name="textfield2" type="text" class="num" value="10000" size="10" /></td>
+                        <td width="11%" class="item_caption">印 张 数:</td>
+                        <td width="40%" class="item_content">5,000</td>
+                      </tr>
+                      <tr>
+                        <td nowrap="nowrap" class="item_caption">赠送印张数:</td>
+                        <td class="item_content"><input name="textfield22" type="text" class="num" value="1000" size="10" /></td>
+                        <td class="item_caption">最终价格:</td>
+                        <td class="item_content">1.6</td>
+                      </tr>
+                    </table></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td align="left">指定在非标准情况下打印时的差价:</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td align="left"><table width="100%" border="1" cellpadding="3" cellspacing="1">
+                      <tr>
+                        <th width="1%" nowrap="nowrap">机器</th>
+                        <th width="1%" nowrap="nowrap">加工内容</th>
+                        <th width="1%" nowrap="nowrap">纸型</th>
+                        <th width="1%" nowrap="nowrap">纸质</th>
+                        <th width="1%" nowrap="nowrap">下限数量</th>
+                        <th width="1%" nowrap="nowrap">上限数量</th>
+                        <th width="1%" nowrap="nowrap">发票</th>
+                        <th width="1%" nowrap="nowrap">原价格</th>
+                        <th width="1%" nowrap="nowrap">差价</th>
+                        <th width="1%" nowrap="nowrap">&nbsp;</th>
+                      </tr>
+                      <tr class="detailRow">
+                        <td align="center" nowrap="nowrap">DC-8000</td>
+                        <td align="center" >彩色打印</td>
+                        <td align="center" >A3</td>
+                        <td align="center" >157g</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td align="center">需要</td>
+                        <td>1.5</td>
+                        <td align="left"><input name="textfield3" type="text" class="num" value="0.3" size="8" /></td>
+                        <td align="left">删除</td>
+                      </tr>
+                      <tr class="detailRow">
+                        <td align="center">&nbsp;</td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td align="center">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td align="left">&nbsp;</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                    </table></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class="emptyButtonsUpperRowHight">
+                  <td colspan="3"></td>
+                </tr>
+                <tr>
+                  <td colspan="3" align="center" class="bottombuttons"><input name="Submit34" class="buttons"
+					value="保存" onclick="window.navigate('AddCampaign.html')" type="button">
+                    &nbsp;&nbsp;&nbsp;
+                  <input
+					name="Submit3342" class="buttons"
+					value="取消" onclick="window.navigate('AddCampaign.html')" type="button"></td>
+                </tr>
+                <tr height="5">
+                  <td><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+                  <td bgcolor="#eeeeee">&nbsp;</td>
+                  <td><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+                </tr>
+              </table></td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr>
+      <td width="11"><img alt="" src="../images/white_main_bottom_left.gif"></td>
+      <td width="99%"><img alt="" src="../images/spacer_10_x_10.gif"></td>
+      <td width="10"><img alt="" src="../images/white_main_bottom_right.gif"></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

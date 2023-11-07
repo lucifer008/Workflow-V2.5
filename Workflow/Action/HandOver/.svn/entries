@@ -1,0 +1,67 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Action/HandOver
+http://192.168.0.6/svn/workflow
+
+
+
+2010-05-18T03:20:03.468750Z
+3295
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+Model
+dir
+
+CashHandOverAction.cs
+file
+
+
+
+
+2010-05-13T02:28:57.687500Z
+e071be421c6921c23561407ee30fd6d6
+2010-05-18T03:20:03.468750Z
+3295
+zhangxiaolin
+
+StageHandOverAction.cs
+file
+
+
+
+
+2010-05-13T02:28:58.078125Z
+d38b42088a5c2db7c5bc23f91641a537
+2010-05-18T03:20:03.468750Z
+3295
+zhangxiaolin
+
+HandOverQueryAction.cs
+file
+
+
+
+
+2010-05-13T02:28:57.765625Z
+fbf50841a5ac8878ad27c15a73cc0969
+2010-05-18T03:20:03.468750Z
+3295
+zhangxiaolin
+

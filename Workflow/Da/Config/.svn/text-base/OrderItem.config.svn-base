@@ -1,0 +1,1206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="OrderItem" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+		<resultMap id="selectResult" class="OrderItem">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="Name" column="NAME"/>
+			<result property="UnitPrice" column="UNIT_PRICE"/>
+			<result property="Amount" column="AMOUNT"/>
+			<result property="BusinessTypeId" column="business_type_id"/>
+			<result property="InsertDateTime" column="Insert_Date_Time"/>
+			<result property="Memo" column="MEMO"/>
+			<result property="Version" column="Version"/>
+			<result property="BusinessTypeName" column="BusinessTypeName"/>
+			<!--single_in-->
+			<result property="BusinessType" column="BUSINESS_TYPE_ID" select="BusinessTypeBase.SelectByPk" nullValue="0" lazyLoad="true"/>
+		</resultMap>
+		<resultMap id="SelectOrderItemResult" class="OrderItem">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="BusinessTypeId" column="BUSINESS_TYPE_ID"/>
+			<result property="NeedRecordMachine" column="NEED_RECORD_MACHINE"/>
+			<result property="PriceFactorId" column="PRICE_FACTOR_ID"/>
+			<result property="Values" column="VALUE"/>
+			<result property="BusinessTypeName" column="BUSINESS_TYPE"/>
+			<result property="UnitPrice" column="UNIT_PRICE"/>
+			<result property="Amount" column="AMOUNT"/>
+			<result property="TargetTable" column="TARGET_TABLE"/>
+			<result property="TargetValueColumn" column="Target_value_column"/>
+			<result property="TargetTextColumn" column="Target_text_column"/>
+			<result property="BusinessTypeId" column="business_type_id"/>
+		</resultMap>
+		<resultMap id="GetNotFinishedOrderWithInfo" class="OrderItem">
+			<result property="Id" column="ID" dbType="bigint" />
+			<result property="Name" column="Name" dbType="nvarchar"/>
+			<result property="Values" column="VALUE" dbType="nvarchar" />
+			<result property="TargetTable" column="TARGET_TABLE" dbType="nvarchar" />
+			<result property="DisplayText" column="DISPLAY_TEXT" dbType="nvarchar" />
+			<result property="TargetValueColumn" column="TARGET_VALUE_COLUMN" dbType="nvarchar" />
+			<result property="TargetTextColumn" column="TARGET_TEXT_COLUMN" dbType="nvarchar" />
+		</resultMap>
+		<!--<resultMap id="selectArrearageResult" class="Order">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="No" column="NO" dbType="varchar"/>
+			<result property="SumAmount" column="SUM_AMOUNT" dbType="decimal"/>
+			<result property="PaidAmount" column="PAID_AMOUNT" dbType="decimal"/>
+			<result property="BalanceDateTime" column="BALANCE_DATE_TIME" dbType="datetime"/>
+			<result property="InsertDateTime" column="INSERT_DATE_TIME" dbType="datetime"/>
+			<result property="Zero" column="ZERO"/>
+			<result property="Concession" column="CONCESSION" />
+			<result property="RenderUp" column="CONCESSION1" />
+		</resultMap>-->
+		<resultMap id="SelectCustomerOweMoneyDetailMap" class="Order">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="No" column="NO" dbType="varchar"/>
+			<result property="SumAmount" column="SUM_AMOUNT" dbType="decimal"/>
+			<result property="PaidAmount" column="PAID_AMOUNT" dbType="decimal"/>
+			<result property="BalanceDateTime" column="BALANCE_DATE_TIME" dbType="datetime"/>
+			<result property="InsertDateTime" column="INSERT_DATE_TIME" dbType="datetime"/>
+			<result property="Zero" column="ZERO"/>
+			<result property="Concession" column="CONCESSION" />
+			<result property="RenderUp" column="CONCESSION1" />
+			<result property="NeedPrePay" column="diffAmount"/><!--冲减金额-->
+		</resultMap>
+		<resultMap id="SelectOrderPaidAmountDetailMap" class="Order">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="No" column="NO" dbType="varchar"/>
+			<result property="SumAmount" column="SUM_AMOUNT" dbType="decimal"/>
+			<result property="PaidAmount" column="PAID_AMOUNT" dbType="decimal"/>
+			<result property="Zero" column="ZERO"/><!--抹零-->
+			<result property="Concession" column="CONCESSION" /><!--优惠-->
+			<result property="RenderUp" column="CONCESSION1" /><!--折让-->
+			<result property="ConcessionAmount" column="Concession2"/><!--舍入少收-->
+			<result property="CurrentMoney" column="Concession3"/><!--舍入多收-->
+			<result property="ItemAmount" column="diffAmount"/><!--冲减金额-->
+		</resultMap>
+		<resultMap id="SelectCustomerPaidAmountDetailMap" class="Order">
+			<result property="CustomerId" column="Customer_Id"/>
+			<result property="InsertDateTimeString" column="Gathering_date_time"/>
+			<result property="PaidAmount" column="paidAmount" dbType="decimal"/>
+			<result property="PaidTicketAmount" column="PaidTicketAmount" dbType="decimal"/>
+			<result property="PrepareMoneyAmount" column="PrepareMoneyAmount" dbType="decimal"/><!--税费-->
+		</resultMap>
+		<resultMap id="MonthPaperMap" class="Order">
+		  <result property="PaidAmount" column="PaidAmount" dbType="decimal"/>
+		  <result property="AccountReceviableOweMomeyTotal" column="OweMomeyTotal" dbType="decimal"/>
+		  <result property="NotPayTicketAmount" column="NotPayTicketAmount" dbType="decimal"/>
+		  <result property="RealPaidAmount" column="RealPaidAmount"/><!--会员卡冲减-->
+		  <!--<result property="InsertDateTimeString" column="insert_Date_Time" dbType="nvarchar"/>-->
+		</resultMap>
+		<resultMap id="SelectCustomerPrepayMap" class="Order">
+			<result property="Id" column="Id"/>
+			<result property="No" column="No"/>
+			<result property="CustomerId" column="Customer_Id"/>
+			<result property="CustomerName" column="Customer_Name"/>
+			<result property="PrepareMoneyAmount" column="OweMomeyTotal"/>
+			<result property="Memo" column="Memo" />
+		</resultMap>
+		<resultMap id="SelectOrderTicketAmountInfoMap" class="Order">
+		  <result property="Id" column="Id"/>
+		  <result property="No" column="No"/>
+		  <result property="CustomerName" column="CustomerName"/>
+		  <result property="CustomerId" column="CustomerId"/>
+		  <result property="InsertDateTime" column="InsertDateTimeString"/>
+		  <result property="BalanceDateTime" column="BalanceDateTimeString"/>
+		  <result property="NotPayTicketAmount" column="Not_Pay_Ticket_Amount"/>
+		  <result property="CashName" column="CashName"/>
+		  <result property="PaidTicketAmount" column="Paid_Ticket_Amount"/>
+		</resultMap>
+		<resultMap id="selectListResult" class="OrderItem">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="OrdersId" column="ORDERS_ID" dbType="bigint"/>
+			<result property="BusinessTypeId" column="BUSINESS_TYPE_ID" dbType="bigint"/>
+			<result property="Amount" column="AMOUNT" dbType="decimal"/>
+			<result property="Name" column="NAME"/>
+			<result property="UnitPrice" column="UNIT_PRICE" dbType="decimal"/>
+			<result property="ForecastMoneyAmount" column="FORECAST_MONEY_AMOUNT" dbType="decimal"/>
+			<result property="IsUseSavedPaper" column="IS_USE_SAVED_PAPER" dbType="char"/>
+			<result property="PaperConsumeCount" column="PAPER_CONSUME_COUNT" dbType="decimal"/>
+			<result property="UnitDifferencePrice" column="UNIT_DIFFERENCE_PRICE" dbType="decimal"/>
+			<result property="ConsumePaperAmount" column="CONSUME_PAPER_AMOUNT" dbType="decimal"/>
+			<result property="CashConsumeCount" column="CASH_CONSUME_COUNT" dbType="decimal"/>
+			<result property="CashUnitPrice" column="CASH_UNIT_PRICE" dbType="decimal"/>
+			<result property="CashConsumeAmount" column="CASH_CONSUME_AMOUNT" dbType="decimal"/>
+			<result property="Deleted" column="DELETED" dbType="char"/>
+			<result property="InsertDateTime" column="INSERT_DATE_TIME" dbType="datetime"/>
+			<result property="InsertUser" column="INSERT_USER" dbType="bigint"/>
+			<result property="UpdateDateTime" column="UPDATE_DATE_TIME" dbType="datetime"/>
+			<result property="UpdateUser" column="UPDATE_USER" dbType="bigint"/>
+			<result property="Version" column="VERSION" dbType="int"/>
+			<result property="CompanyId" column="COMPANY_ID" dbType="bigint"/>
+			<result property="BranchShopId" column="BRANCH_SHOP_ID" dbType="bigint"/>
+			<result property="Memo" column="MEMO" dbType="nvarchar"/>
+			<!--list_out-->
+			<result property="PrintRequireDetailList" column="ID" select="OrderItemBase.SelectPrintRequireDetail" nullValue="0" lazyLoad="true"/>
+			<!--list_in-->
+			<result property="OrderItemFactorValueList" column="ID" select="OrderItemBase.SelectOrderItemFactorValue" nullValue="0" lazyLoad="true"/>
+		</resultMap>
+		<resultMap id="SearchMatureOrderListMap" class="Order">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="CustomerId" column="CUSTOMER_ID" dbType="bigint"/>
+			<result property="MemberCardId" column="MEMBER_CARD_ID" dbType="bigint"/>
+			<result property="No" column="NO" dbType="varchar"/>
+			<result property="CustomerType" column="CUSTOMER_TYPE" dbType="int"/>
+			<result property="CustomerName" column="CUSTOMER_NAME" dbType="nvarchar"/>
+			<result property="Name" column="NAME" dbType="nvarchar"/>
+			<result property="ProjectName" column="PROJECT_NAME" dbType="nvarchar"/>
+			<result property="SumAmount" column="SUM_AMOUNT" dbType="decimal"/>
+			<result property="Memo" column="MEMO" dbType="nvarchar"/>
+			<result property="BalanceDateTime" column="BALANCE_DATE_TIME" dbType="datetime"/>
+			<result property="InsertDateTime" column="INSERT_DATE_TIME" dbType="datetime"/>
+			<result property="UserName" column="EmployeeName" dbType="nvarchar"/>
+			<result property="CashName" column="CashName" dbType="nvarchar"/>
+		</resultMap>
+		<resultMap id="GetOrderItemByOrderNoMap" class="OrderItem">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="Name" column="NAME"/>
+			<result property="UnitPrice" column="UNIT_PRICE"/>
+			<result property="Amount" column="AMOUNT"/>
+			<result property="BusinessTypeId" column="business_type_id"/>
+			<result property="InsertDateTime" column="Insert_Date_Time"/>
+			<result property="Memo" column="MEMO"/>
+			<result property="Version" column="Version"/>
+			<!--single_in-->
+			<result property="BusinessType" column="BUSINESS_TYPE_ID" select="BusinessTypeBase.SelectByPk" nullValue="0" lazyLoad="true"/>
+		</resultMap>
+		<resultMap id="GetEmployeeReceptionOrderInfoMap" class="OrderItem">
+			<result property="StatusSubmited" column="StatusSubmited"/>
+			<result property="StatusNotSubmited" column="StatusNotSubmited"/>
+			<result property="StatusSucessed" column="StatusSucessed"/>
+		</resultMap>
+		<resultMap id="GetReceptionOrderDetailMap" class="Order">
+			<result property="Id" column="ID" />
+			<result property="No" column="NO" />
+			<result property="CustomerId" column="CustomerId"/>
+			<result property="CustomerName" column="CustomerName"/>
+			<result property="InsertDateTime" column="Insert_Date_Time" dbType="datetime"/>
+			<result property="CodeNo" column="CodeNo"/>
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="SelectOrderItemIDByOrderNo" parameterClass="OrderItem" resultMap="OrderItem.selectResult">
+			<![CDATA[
+				select OI.ID,bt.name,OI.Unit_Price,OI.Amount,OI.business_type_id,oi.Insert_Date_Time,OI.Memo,OI.Version,bt.Name BusinessTypeName from  order_Item  as OI
+				inner join Orders as O on OI.ORDERS_ID=o.ID
+				inner join Business_type bt on OI.Business_type_id=bt.id
+				where O.NO=#Values# and OI.Deleted='0' and OI.Company_Id=#CompanyId#
+			]]>
+			<dynamic>
+				<isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+					<![CDATA[
+					 OI.branch_shop_id=#BranchShopId#
+					]]>
+				</isNotEqual>
+			</dynamic>
+			order by OI.id
+		</select>
+		<update id="UpdateOrderItemForCloseOrder" parameterClass="OrderItem">
+			<![CDATA[
+			Update Order_Item set PAPER_CONSUME_COUNT=#PaperConsumeCount#,CONSUME_PAPER_AMOUNT=#ConsumePaperAmount#,IS_USE_SAVED_PAPER=#IsUseSavedPaper#,
+				UNIT_DIFFERENCE_PRICE=#UnitDifferencePrice#,CASH_CONSUME_COUNT=#CashConsumeCount#,CASH_UNIT_PRICE=#CashUnitPrice#,CASH_CONSUME_AMOUNT=#CashConsumeAmount#
+				Where Orders_id=#OrdersId# and Deleted='0' and Company_Id=#CompanyId#
+			]]>
+			<dynamic>
+				<isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+					<![CDATA[
+					 branch_shop_id=#BranchShopId#
+					]]>
+				</isNotEqual>
+			</dynamic>
+		</update>
+		<!--陈汝胤 2010-6-18 优化修改
+		
+		and a.Deleted='0' and a.Company_Id=#CompanyId#
+			
+			<dynamic>
+			 <isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+			 a.branch_shop_id=#BranchShopId#
+			 </isNotEqual>
+			</dynamic>
+		
+		-->
+		<select id="SelectOrderItemFactorValueByOrderNo" parameterClass="OrderItem" resultMap="SelectOrderItemResult">
+			select b.id,b.business_type_id,a.price_factor_id,a.value,b.unit_price,b.amount,
+			0 as Trash_Papers,d.target_table,d.Target_value_column,d.Target_text_column
+			,p.need_record_machine,p.name as business_type
+			from order_item_factor_value a inner join
+			order_Item b on b.id=a.order_item_id inner join
+			orders c on c.id=b.orders_id and c.no=#Values# inner join
+			price_factor d on d.id=a.price_factor_id
+			inner join
+			(
+			select b1.id,b3.need_record_machine,b3.name from  order_Item b1 inner join
+			orders b2 on b1.orders_id=b2.id and b2.no=#Values# inner join
+			business_type b3 on b1.business_type_id=b3.id
+			) as p on p.id=b.id
+			order by b.id,a.price_factor_id asc
+		</select>
+		<select id="SelectOrderItemByOrderNo" parameterClass="OrderItem" resultMap="selectListResult">
+			<![CDATA[
+			select a.*,bt.Name from order_item a 
+			inner join orders b on a.orders_id=b.id
+			inner join Business_type bt on a.Business_type_id=bt.id
+			where b.no=#Values# and a.Deleted='0' and a.Company_Id=#CompanyId#
+			]]>
+			<dynamic>
+				<isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+					<![CDATA[
+					 a.branch_shop_id=#BranchShopId#
+					]]>
+				</isNotEqual>
+			</dynamic>
+			order by a.id
+		</select>
+		<select id="SelectOrderItemCount" parameterClass="OrderItem" resultClass="int">
+			<![CDATA[
+			select count(*) from Order_Item a 
+			inner join orders b  on a.Orders_id=b.id
+			where b.no=#Values# and a.deleted='0' and a.Company_Id=#CompanyId#
+			]]>
+			<dynamic>
+				<isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+					<![CDATA[
+					 a.branch_shop_id=#BranchShopId#
+					]]>
+				</isNotEqual>
+			</dynamic>
+		</select>
+		<delete id="DeleteOrderItemByOrderNo" parameterClass="OrderItem">
+			<![CDATA[
+				delete Order_Item
+				from
+				Order_Item oi
+				inner join orders as o on oi.orders_id=o.id
+				where o.no=#Values# and oi.deleted='0' and oi.Company_Id=#CompanyId#
+			]]>
+			<isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+				<![CDATA[
+				 Oi.branch_shop_id=#BranchShopId#
+				]]>
+			</isNotEqual>
+		</delete>
+		<select id="SelectAmountByOrderId" parameterClass="int" resultClass="decimal">
+			<![CDATA[
+			select sum(amount) from order_item where orders_id = #Id#
+			]]>
+		</select>
+    
+		<!--获取前期和后期的制作人员参与制作订单的明细信息 张晓林 2009年5月11日13:56:08-->
+		<select id="GetOrderItemByOrderNo"  parameterClass="OrderItem" resultMap="GetOrderItemByOrderNoMap">
+		  <![CDATA[
+					select OI.ID,bt.name,OI.Unit_Price,OI.Amount,OI.business_type_id,oi.Insert_Date_Time,OI.Memo,OI.Version from  order_Item  as OI
+					inner join Orders as O on OI.ORDERS_ID=o.ID
+					inner join Business_type bt on OI.Business_type_id=bt.id
+					where O.NO=#Values# and OI.Deleted='0' and OI.Company_Id=#CompanyId#
+				]]>
+		  <dynamic>
+			<isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+			  <![CDATA[
+						 OI.branch_shop_id=#BranchShopId#
+						]]>
+			</isNotEqual>
+			<!-- 张晓林 2009-06-01注释:显示所有订单明细信息
+			And OI.Id in(
+			select
+			order_Item_Id
+			from order_Item_employee
+			where employee_Id in(select employee_Id from employee_position where (position_Id=#InsertUser# or position_id=#UpdateUser#)
+								)
+			)
+			-->
+		  </dynamic>
+		</select>
+
+		<!--月报-->
+		<!--张晓林 2009年4月13日14:17:45 修正
+		  以下Sql语句适应：1:抹零/折让；2：舍入；3：混合操作
+		  款项计算法则如下:
+		  1.现金=结算款+预付款冲减金额+收了的应收款+客户预存款冲减-订单冲减
+		  2.记账=订单总金额-现金-舍入少收-优惠-抹零+舍入多收-订单冲减
+		  3.发票=实付发票金额
+		-->
+		<select id="SelectMonthPaperPrint" parameterClass="map" resultMap="MonthPaperMap">
+			select Sum(PaidAmount) PaidAmount,Sum(OweMomeyTotal) OweMomeyTotal,sum(NotPayTicketAmount)NotPayTicketAmount,sum(RealPaidAmount) RealPaidAmount from (
+			select
+			Sum(isnull(g.amount,0)) as PaidAmount,
+			max(isnull(e.PAID_TICKET_AMOUNT,0))as NotPayTicketAmount,
+			e.insert_Date_Time,Sum(m.OweMomeyTotal) OweMomeyTotal,
+			Sum(isNull(ff.RealPaidAmount,0)) RealPaidAmount
+			from Orders as e
+			left join(
+				select bb.orders_Id,bb.amount from(
+				select
+				orders_Id,Sum(isnull(b.Amount,0)) as amount
+				from Gathering_Orders as a
+				left join Gathering as b on a.Gathering_Id=b.Id
+				where b.deleted='0'
+				and (a.Pay_Kind=#PayTypeBalance# or a.pay_Kind=#PayTypePreDiff# or a.Pay_Kind=#PayTypeMemberCardDiff# or a.pay_kind=#PreDeposits# or a.pay_kind=#PayTypeOrderDiff#) <!--付款类型为结算款+预付款冲减+会员卡冲减-->
+				Group by  Orders_Id
+				) bb
+		   )as g on e.Id=g.orders_ID
+		   left join(
+				select f1.orders_Id,sum(isNull(f2.Amount,0)) RealPaidAmount
+				from Gathering_Orders f1
+				left join Gathering f2 on f1.Gathering_Id=f2.Id
+				where f2.deleted='0' and f1.pay_Kind=#PayTypeMemberCardDiff#
+				Group by f1.Orders_Id
+		   )ff on ff.orders_Id=e.Id
+		  <!--Start:计算应收款-->
+			<dynamic>
+			left join(
+				select
+				e.Id,(sum(isnull(e.Sum_amount,0))-Sum(isnull(g.amount,0))-Sum(isnull(g.ConcessionAmount,0))) as OweMomeyTotal
+				from Orders as e
+				left join(
+					select bb.orders_Id,bb.amount,isnull((isnull(cc.ConcessionAmount,0)-isnull(dd.ConcessionAmount1,0)),0) ConcessionAmount from (
+						select
+						orders_Id,Sum(isnull(b.Amount,0)) as amount
+						from Gathering_Orders as a
+						left join Gathering as b on a.Gathering_Id=b.Id
+						where b.deleted='0'
+						and (a.Pay_Kind=#PayTypeBalance# or a.pay_Kind=#PayTypePreDiff# or a.Pay_Kind=#PayTypeMemberCardDiff# or a.pay_kind=#PreDeposits# or a.pay_kind=#PayTypeOrderDiff#) <!--付款类型为结算款+会员卡冲减+预付款冲减-->
+						Group by  Orders_Id
+					) bb
+					<!--不包含舍入多收的优惠-->
+					left join(
+						select aa.Orders_Id,aa.ConcessionAmount from (
+						select a.Orders_Id,sum(isnull(b.Concession_Amount,0)) as ConcessionAmount from Gathering_Orders as a
+						left join PayMent_ConCession as b on b.Gathering_Id=a.gathering_Id
+						where b.deleted='0'
+						and (a.Pay_Kind=#PayTypeBalance# or a.pay_Kind=#PayTypePreDiff# or a.Pay_Kind=#PayTypeMemberCardDiff# or a.pay_kind=#PreDeposits# or a.pay_kind=#PayTypeOrderDiff#)
+						and b.concession_type!=#ConcessionTypeRoundPositiveValue#
+						Group by a.Orders_Id
+						) aa
+					)cc on cc.Orders_Id=bb.Orders_ID
+					<!--舍入多收的优惠-->
+					left join(
+					select ee.orders_Id,ee.ConcessionAmount1 from(
+						select a.Orders_Id,sum(isnull(b.Concession_Amount,0)) as ConcessionAmount1 from Gathering_Orders as a
+						left join PayMent_ConCession as b on b.Gathering_Id=a.gathering_Id
+						where b.deleted='0'
+						and (a.Pay_Kind=#PayTypeBalance# or a.pay_Kind=#PayTypePreDiff# or a.Pay_Kind=#PayTypeMemberCardDiff# or a.pay_kind=#PreDeposits# or a.pay_kind=#PayTypeOrderDiff#)
+						and b.concession_type=#ConcessionTypeRoundPositiveValue#
+						Group by a.Orders_Id
+						)ee
+					)dd on dd.orders_Id=bb.orders_Id
+					)as g on e.Id=g.orders_ID
+					where DELETED = '0' and e.Company_Id=#CompanyId# And e.Status=#Status#
+					<dynamic>
+					  <isNotNull prepend="And" property="BranchShopId">
+						e.branch_shop_id=#BranchShopId#
+					  </isNotNull>
+					  <isNotNull prepend="And" property="BeginHandOverDateTime">
+						e.Balance_Date_Time>=#BeginHandOverDateTime#
+					  </isNotNull>
+					  <isNotNull prepend="And" property="EndHandOverDateTime">
+						<![CDATA[e.Balance_Date_Time<=#EndHandOverDateTime#]]>
+					  </isNotNull>
+					</dynamic>
+				group by e.iD
+				) m on m.Id=e.Id
+			</dynamic>
+		  <!--End:计算应收款-->
+		  where DELETED = '0' and e.Company_Id=#CompanyId# And e.Status=#Status#
+		  <dynamic>
+			<isNotNull prepend="And" property="BranchShopId">
+			  e.branch_shop_id=#BranchShopId#
+			</isNotNull>
+			<isNotNull prepend="And" property="BeginHandOverDateTime">
+			  e.Balance_Date_Time>=#BeginHandOverDateTime#
+			</isNotNull>
+			<isNotNull prepend="And" property="EndHandOverDateTime">
+			  <![CDATA[e.Balance_Date_Time<=#EndHandOverDateTime#]]>
+			</isNotNull>
+		 </dynamic>
+		  group by e.insert_Date_Time,e.iD
+		  )z
+		</select>
+
+		<!--预付款查询(分页)-->
+		<select id="SelectCustomerPrepay" parameterClass="Order" resultMap="SelectCustomerPrepayMap">
+			with temptbl as (
+			SELECT ROW_NUMBER() OVER (ORDER BY a.id desc)AS Row,
+			a.Id,a.No,a.Customer_Id,a.Customer_Name,b.SUM_AMOUNT AS OweMomeyTotal,a.Memo
+			from orders a inner join
+			(
+			select go.orders_id,sum(g.AMOUNT) as SUM_AMOUNT from GATHERING_ORDERS go inner join
+			GATHERING g on go.gathering_id=g.id
+			where go.pay_kind=#PayType#
+			<dynamic>
+				<isNotNull prepend="And" property="BeginBalanceDate">
+					<![CDATA[convert(nvarchar(10),g.INSERT_USER,120)>=convert(nvarchar(10),#BeginBalanceDate#,120)]]>
+				</isNotNull>
+				<isNotNull prepend="And" property="EndBalanceDate">
+					<![CDATA[convert(nvarchar(10),g.INSERT_USER,120)<=convert(nvarchar(10),#EndBalanceDate#,120)]]>
+				</isNotNull>
+			</dynamic>
+			group by go.orders_id
+
+			) b on a.id=b.orders_id
+			where  a.Branch_Shop_Id=#BranchShopId# and a.Company_Id=#CompanyId# and a.Deleted='0'
+			<dynamic>
+				<isNotNull prepend="And" property="CustomerName">
+					<![CDATA[a.customer_name like  #CustomerName# ]]>
+				</isNotNull>
+				<isNotNull prepend="And" property="No">
+					<![CDATA[a.No like  #No# ]]>
+				</isNotNull>
+				<iterate prepend="and" property="StatusList" open="" close=""  conjunction=" and ">
+					<![CDATA[ a.status<>#StatusList[]# ]]>
+				</iterate>
+			</dynamic>
+			)
+			select * from temptbl where  Row between #BeginRow# and #EndRow#;
+		</select>
+
+		<!--统计预付款总条数-->
+		<select id="SelectCustomerPrepayRowsCount" parameterClass="Order" resultClass="int">
+			SELECT count(a.Id)
+			from orders a inner join
+			(
+			select go.orders_id,sum(g.AMOUNT) as SUM_AMOUNT from GATHERING_ORDERS go inner join
+			GATHERING g on go.gathering_id=g.id
+			where go.pay_kind=#PayType#
+			<dynamic>
+				<isNotNull prepend="And" property="BeginBalanceDate">
+					<![CDATA[convert(nvarchar(10),g.INSERT_USER,120)>=convert(nvarchar(10),#BeginBalanceDate#,120)]]>
+				</isNotNull>
+				<isNotNull prepend="And" property="EndBalanceDate">
+					<![CDATA[convert(nvarchar(10),g.INSERT_USER,120)<=convert(nvarchar(10),#EndBalanceDate#,120)]]>
+				</isNotNull>
+			</dynamic>
+			group by go.orders_id
+
+			) b on a.id=b.orders_id
+			where  a.Branch_Shop_Id=#BranchShopId# and a.Company_Id=#CompanyId# and a.Deleted='0'
+			<dynamic>
+				<isNotNull prepend="And" property="CustomerName">
+					a.customer_name like  #CustomerName#
+				</isNotNull>
+				<isNotNull prepend="And" property="No">
+					a.No like  #No#
+				</isNotNull>
+				<iterate prepend="and" property="StatusList" open="" close=""  conjunction=" and ">
+					<![CDATA[ a.status<>#StatusList[]# ]]>
+				</iterate>
+			</dynamic>
+		</select>
+
+		<!--根据Order的Id更新订单的状态-->
+		<update id="UpdateOrdersStatusById" parameterClass="map">
+			Update Orders set Status=#Status# where id=#Id# And Deleted='0'
+			<dynamic>
+				<isNotNull prepend="AND" property="CompanyId">
+					Company_Id=#CompanyId#
+				</isNotNull>
+				<isNotNull prepend="And" property="BranchShopId">
+					branch_shop_id=#BranchShopId#
+				</isNotNull>
+			</dynamic>
+		</update>
+
+		<!--按照订单号获取 订单欠票信息(发票领取)-->
+		<select id="SelectTicketAmountInfo" parameterClass="Order" resultMap="SelectOrderTicketAmountInfoMap">
+      select top(#EveryPageCount#)
+      a.Id,a.No,
+      a.Insert_Date_Time as InsertDateTimeString,
+      a.BALANCE_DATE_TIME as BalanceDateTimeString,
+      e.Name as CashName,a.Not_Pay_Ticket_Amount,
+      a.customer_Name CustomerName,a.Paid_Ticket_Amount,cu.Id CustomerId
+      from orders as a
+      Inner join Customer cu on cu.Id=a.Customer_Id
+      inner join users u on u.Id=a.cash_User_Id
+      inner join Employee e on e.Id=u.Employee_Id
+      <dynamic>
+      <isNotNull  property="MemberCardNo">
+        INNER JOIN MEMBER_CARD AS MC ON MC.id = a.MEMBER_CARD_ID
+      </isNotNull>
+    </dynamic>
+    WHERE a.DELETED = '0' And a.Company_Id=#CompanyId#
+    and a.Not_Pay_Ticket_Amount>0 and a.pay_Type=#PayType#
+    <dynamic>
+        <isNotNull prepend="AND" property="MemberCardNo">
+          mc.MEMBER_CARD_NO = #MemberCardNo#
+        </isNotNull>
+				<isNotNull prepend="And" property="BranchShopId">
+					a.Branch_Shop_Id=#BranchShopId#
+				</isNotNull>
+				<isNotNull prepend="And" property="Status">
+					a.Status=#Status#
+				</isNotNull>
+				<isNotNull prepend="And" property="No">
+					a.No like #No#
+				</isNotNull>
+				<isNotNull prepend="And" property="Name">
+					a.Id=#Name#
+				</isNotNull>
+				<isNotNull prepend="And" property="PaidTicket">
+					a.Paid_Ticket=#PaidTicket#
+				</isNotNull>
+				<isNotNull prepend="and" property="CustomerName">
+					(cu.Name like #CustomerName# or a.customer_Name like #CustomerName#)
+				</isNotNull>
+			</dynamic>
+      And a.id not in(
+      select top(#CurrentPageIndex#*#EveryPageCount#) a.id
+      from orders as a
+      inner join users u on u.Id=a.cash_User_Id
+      Inner join Customer cu on cu.Id=a.Customer_Id
+      inner join Employee e on e.Id=u.Employee_Id
+     <dynamic>
+      <isNotNull  property="MemberCardNo">
+        INNER JOIN MEMBER_CARD AS MC ON MC.id = a.MEMBER_CARD_ID
+      </isNotNull>
+    </dynamic>
+      WHERE a.DELETED = '0' And a.Company_Id=#CompanyId#
+      and a.Not_Pay_Ticket_Amount>0 and a.pay_Type=#PayType#
+      <dynamic>
+        <isNotNull prepend="AND" property="MemberCardNo">
+          mc.MEMBER_CARD_NO = #MemberCardNo#
+        </isNotNull>
+				<isNotNull prepend="And" property="BranchShopId">
+					a.Branch_Shop_Id=#BranchShopId#
+				</isNotNull>
+				<isNotNull prepend="And" property="Status">
+					a.Status=#Status#
+				</isNotNull>
+				<isNotNull prepend="And" property="No">
+					a.No like #No#
+				</isNotNull>
+				<isNotNull prepend="And" property="PaidTicket">
+					a.Paid_Ticket=#PaidTicket#
+				</isNotNull>
+				<isNotNull prepend="and" property="CustomerName">
+					(cu.Name like #CustomerName# or a.customer_Name like #CustomerName#)
+				</isNotNull>
+			</dynamic>
+			order by a.id desc
+			)
+			order by a.id desc
+		</select>
+
+		<!--按照订单号获取 订单欠票总数(发票领取)-->
+		<select id="SelectTicketAmountInfoTotal" parameterClass="Order" resultClass="long">
+      select Count(*) from
+      (
+      select
+      a.Id,a.No,
+      a.Insert_Date_Time as InsertDateTimeString,
+      a.BALANCE_DATE_TIME as BalanceDateTimeString,
+      e.Name as CashName,a.Not_Pay_Ticket_Amount
+      from orders as a
+      inner join users u on u.Id=a.cash_User_Id
+      Inner join Customer cu on cu.Id=a.Customer_Id
+      inner join Employee e on e.Id=u.Employee_Id
+      <dynamic>
+      <isNotNull  property="MemberCardNo">
+        INNER JOIN MEMBER_CARD AS MC ON MC.id = a.MEMBER_CARD_ID
+      </isNotNull>
+    </dynamic>
+    WHERE a.DELETED = '0' And a.Company_Id=#CompanyId#
+    and a.Not_Pay_Ticket_Amount>0 and a.pay_Type=#PayType#
+    <dynamic>
+        <isNotNull prepend="AND" property="MemberCardNo">
+          mc.MEMBER_CARD_NO = #MemberCardNo#
+        </isNotNull>
+			<isNotNull prepend="And" property="BranchShopId">
+			  a.Branch_Shop_Id=#BranchShopId#
+			</isNotNull>
+			<isNotNull prepend="And" property="Status">
+			  a.Status=#Status#
+			</isNotNull>
+			<isNotNull prepend="And" property="No">
+			  a.No like #No#
+			</isNotNull>
+			<isNotNull prepend="And" property="PaidTicket">
+			  a.Paid_Ticket=#PaidTicket#
+			</isNotNull>
+			<isNotNull prepend="and" property="CustomerName">
+				(cu.Name like #CustomerName# or a.customer_Name like #CustomerName#)
+			</isNotNull>
+			</dynamic>
+		  )m
+		</select>
+		<select id="SearchTicketAmountInfoPrintByOrderNo" parameterClass="Order" resultMap="SelectOrderTicketAmountInfoMap">
+      select
+      a.Id,a.No,
+      a.Insert_Date_Time as InsertDateTimeString,
+      a.BALANCE_DATE_TIME as BalanceDateTimeString,
+      e.Name as CashName,a.Not_Pay_Ticket_Amount,
+      a.customer_Name CustomerName,a.Paid_Ticket_Amount,cu.Id CustomerId
+      from orders as a
+      Inner join Customer cu on cu.Id=a.Customer_Id
+      inner join users u on u.Id=a.cash_User_Id
+      inner join Employee e on e.Id=u.Employee_Id
+      <dynamic>
+      <isNotNull  property="MemberCardNo">
+        INNER JOIN MEMBER_CARD AS MC ON MC.id = a.MEMBER_CARD_ID
+      </isNotNull>
+    </dynamic>
+      WHERE a.DELETED = '0' And a.Company_Id=#CompanyId#
+      and a.Not_Pay_Ticket_Amount>0 and a.pay_Type=#PayType#
+      <dynamic>
+        <isNotNull prepend="AND" property="MemberCardNo">
+          mc.MEMBER_CARD_NO = #MemberCardNo#
+        </isNotNull>
+				<isNotNull prepend="And" property="BranchShopId">
+					a.Branch_Shop_Id=#BranchShopId#
+				</isNotNull>
+				<isNotNull prepend="And" property="Status">
+					a.Status=#Status#
+				</isNotNull>
+				<isNotNull prepend="And" property="No">
+					a.No like #No#
+				</isNotNull>
+				<isNotNull prepend="And" property="Name">
+					a.Id=#Name#
+				</isNotNull>
+				<isNotNull prepend="And" property="PaidTicket">
+					a.Paid_Ticket=#PaidTicket#
+				</isNotNull>
+				<isNotNull prepend="and" property="CustomerName">
+					(cu.Name like #CustomerName# or a.customer_Name like #CustomerName#)
+				</isNotNull>
+			</dynamic>
+			order by a.id desc
+		</select>
+		<!--(发票领取)-->
+		<update id="UpdateOrdersTicketStatus" parameterClass="Order">
+		  Update Orders
+		  set
+		  Not_Pay_Ticket_Amount=Not_Pay_Ticket_Amount-#NotPayTicketAmount#
+		  ,PAID_TICKET_AMOUNT=isnull(PAID_TICKET_AMOUNT,0)+#NotPayTicketAmount#
+		  <isNotNull prepend="," property="PaidTicket">
+			Paid_Ticket=#PaidTicket#
+		  </isNotNull>
+		  where Deleted='0'
+		  <dynamic>
+			<isNotNull prepend="And" property="Id">
+			  id=#Id#
+			</isNotNull>
+			<isNotNull prepend="AND" property="CompanyId">
+			  Company_Id=#CompanyId#
+			</isNotNull>
+			<isNotNull prepend="And" property="BranchShopId">
+			  branch_shop_id=#BranchShopId#
+			</isNotNull>
+		  </dynamic>
+		</update>
+	    
+		<select id="SelectCushUserNameByOrderNo" parameterClass="Order" resultClass="string">
+		  select distinct
+		  e.cashName
+		  from orders as a
+		  Inner join Users as u on u.id=a.Cash_User_Id
+		  Inner join Employee as em on em.id=u.Employee_Id
+		  left join(
+		  select f.Name as CashName,f.id from Employee as f where id in(select b.Employee_Id from Employee_Position as b where b.position_Id
+		  in(select id from position where id=#Status1#))
+		  )e on e.Id=em.ID
+		  where e.CashName is not null
+		  And a.No=#No# And a.Status=#Status# And a.Company_Id=#CompanyId#  And A.deleted='0'
+		  <dynamic>
+			  <isNotNull prepend="And" property="BranchShopId">
+				a.Branch_Shop_Id=#BranchShopId#
+			  </isNotNull>
+			</dynamic>
+		</select>
+		<!--获取未完成的订单及相关价格因素信息 Add Cry-->
+		<select id="GetNotFinishedOrderWithInfo" resultMap="GetNotFinishedOrderWithInfo">
+		select a.NO NAME,b.ID,c.VALUE ,p.TARGET_TABLE,p.DISPLAY_TEXT,p.TARGET_VALUE_COLUMN,p.TARGET_TEXT_COLUMN from orders a
+		inner join order_item b on a.id=b.orders_id
+		inner join order_item_factor_value c on b.id=c.order_item_id
+		inner join PRICE_FACTOR p on p.id=c.price_factor_id
+		order by b.ID ASC
+	</select>
+		<!--应收款订单付款明细-->
+		<select id="SelectOrderPaidAmountDetail" parameterClass="Order" resultMap="SelectOrderPaidAmountDetailMap">
+			select * from(
+				SELECT O.ID, O.NO,O.SUM_AMOUNT, (isnull(goo.amount,0)) PAID_AMOUNT, isnull(spc.ZERO,0) ZERO, isnull(spc.CONCESSION,0) Concession,isnull(spc.CONCESSION1,0)Concession1,isnull(spc.CONCESSION2,0)Concession2,isnull(spc.CONCESSION3,0)Concession3,isNull(diff.diffAmount,0) diffAmount
+				FROM (
+					SELECT ID, NO, SUM_AMOUNT, PAID_AMOUNT FROM dbo.ORDERS
+					WHERE (CUSTOMER_ID = #CustomerId#) AND (STATUS = #Status#) AND (DELETED = '0') and Company_Id=#CompanyId# and Branch_Shop_Id=#BranchShopId# and pay_type=#PayType#
+					and customer_Id=#CustomerId#
+					<dynamic>
+						<isNotNull prepend="and" property="MemberCardNo">Member_card_Id in(select Id from member_card where member_card_no=#MemberCardNo#)</isNotNull>
+					</dynamic>
+				) AS O
+				left outer JOIN(
+				SELECT  SUM(ISNULL(ZERO, 0)) AS ZERO, SUM(ISNULL(CONCESSION, 0)) AS CONCESSION,sum(ISNULL(CONCESSION1,0)) as CONCESSION1,sum(ISNULL(CONCESSION2,0)) as CONCESSION2,sum(ISNULL(CONCESSION3,0)) as CONCESSION3, ORDERS_ID FROM
+					(SELECT
+					(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION WHERE (CONCESSION_TYPE = #Status1#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS ZERO,
+					(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION AS PAYMENT_CONCESSION_1 WHERE (CONCESSION_TYPE = #Status2#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS CONCESSION,
+					(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION AS PAYMENT_CONCESSION_2 WHERE (CONCESSION_TYPE = #Status3#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS CONCESSION1,
+					(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION AS PAYMENT_CONCESSION_3 WHERE (CONCESSION_TYPE = #Status4#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS CONCESSION2,
+					(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION AS PAYMENT_CONCESSION_4 WHERE (CONCESSION_TYPE = #OrderNoDispatch#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS CONCESSION3,
+					dbo.GATHERING_ORDERS.ORDERS_ID FROM  dbo.GATHERING_ORDERS INNER JOIN dbo.GATHERING ON dbo.GATHERING_ORDERS.GATHERING_ID = dbo.GATHERING.ID
+					where 1=1 and (GATHERING_ORDERS.pay_Kind=#LastTelNo# or GATHERING_ORDERS.pay_Kind=#LinkManName# or GATHERING_ORDERS.pay_kind=#Memo# or GATHERING_ORDERS.pay_kind=#OrderWorking# or GATHERING_ORDERS.pay_kind=#Address# or GATHERING_ORDERS.pay_kind=#CashName# or GATHERING_ORDERS.pay_kind=#OrderFinished#)<!--付款类型为:1.预付款冲减;2.结算款;3.应收款;4会员卡冲减;5:预存款冲减(结算)；6:预存款冲减(应收款处理);7:订单冲减-->
+					) AS SumPayCon
+					GROUP BY ORDERS_ID
+				) AS spc ON spc.ORDERS_ID = O.ID
+				Inner join(
+					select go.orders_id,sum(isnull(g.amount,0)) amount from gathering g
+					inner join gathering_orders go on g.id=go.gathering_id
+					where g.deleted='0'
+					and (go.pay_Kind=#LastTelNo# or go.pay_Kind=#LinkManName# or go.pay_kind=#Memo# or go.pay_kind=#OrderWorking# or go.pay_kind=#Address# or go.pay_kind=#CashName# or go.pay_kind=#OrderFinished#)<!--付款类型为:1.预付款冲减;2.结算款;3.应收款;4会员卡冲减;5:预存款冲减(结算)；6:预存款冲减(应收款处理);7:订单冲减-->
+					and Convert(varchar(10),g.gathering_Date_Time,121)=#InsertDateTimeString#
+					group by go.orders_id
+				) as goo on goo.orders_id=o.id
+			<!--减去以记账方式结算而冲减的订单-->
+				left join(
+					select ordersId,diffAmount from(
+					select
+					a.src_Order_Id ordersId,sum(Abs(isNull(b.amount,0)*c.unit_price)) diffAmount
+					from ORDER_MORTGAGE_RECORD a
+					inner join ORDER_ITEM_MORTGAGE b on a.Id=b.Order_Mortgage_Record_Id
+					inner join order_item c on c.id=src_order_item_Id
+					group by a.src_Order_Id
+					)m
+				)diff on diff.ordersId=o.Id
+			) as a
+			where a.sum_amount>0
+			order by id
+
+		</select>
+		<!--应收款付款明细记录数-->
+		<select id="SelectCustomerPaidAmountDetailRowCount" parameterClass="Order" resultClass="long">
+			select count(id) from（
+			select Id from
+			(
+			SELECT O.ID, O.NO, O.INSERT_DATE_TIME, O.BALANCE_DATE_TIME, O.SUM_AMOUNT, (isnull(goo.amount,0)+isnull(diff.diffAmount,0)) PAID_AMOUNT, isnull(spc.ZERO,0) ZERO, isnull(spc.CONCESSION,0) Concession,isnull(spc.CONCESSION1,0)Concession1,isnull(spc.CONCESSION2,0)Concession2,isnull(spc.CONCESSION3,0)Concession3
+			FROM (SELECT ID, NO, INSERT_DATE_TIME, BALANCE_DATE_TIME, SUM_AMOUNT, PAID_AMOUNT, DELETED, COMPANY_ID, BRANCH_SHOP_ID FROM dbo.ORDERS
+			WHERE (CUSTOMER_ID = #CustomerId#) AND (STATUS = #Status#) AND (DELETED = '0') and Company_Id=#CompanyId# and Branch_Shop_Id=#BranchShopId# and pay_type=#PayType#) AS O
+			left outer JOIN(
+			SELECT  SUM(ISNULL(ZERO, 0)) AS ZERO, SUM(ISNULL(CONCESSION, 0)) AS CONCESSION,sum(ISNULL(CONCESSION1,0)) as CONCESSION1,sum(ISNULL(CONCESSION2,0)) as CONCESSION2,sum(ISNULL(CONCESSION3,0)) as CONCESSION3, ORDERS_ID FROM
+			(SELECT
+			(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION WHERE (CONCESSION_TYPE = #Status1#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS ZERO,
+			(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION AS PAYMENT_CONCESSION_1 WHERE (CONCESSION_TYPE = #Status2#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS CONCESSION,
+			(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION AS PAYMENT_CONCESSION_2 WHERE (CONCESSION_TYPE = #Status3#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS CONCESSION1,
+			(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION AS PAYMENT_CONCESSION_3 WHERE (CONCESSION_TYPE = #Status4#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS CONCESSION2,
+			(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION AS PAYMENT_CONCESSION_4 WHERE (CONCESSION_TYPE = #OrderNoDispatch#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS CONCESSION3,
+			dbo.GATHERING_ORDERS.ORDERS_ID FROM  dbo.GATHERING_ORDERS INNER JOIN dbo.GATHERING ON dbo.GATHERING_ORDERS.GATHERING_ID = dbo.GATHERING.ID
+			where 1=1 and (GATHERING_ORDERS.pay_Kind=#LastTelNo# or GATHERING_ORDERS.pay_Kind=#LinkManName# or GATHERING_ORDERS.pay_kind=#Memo# or GATHERING_ORDERS.pay_kind=#OrderWorking# or GATHERING_ORDERS.pay_kind=#Address# or GATHERING_ORDERS.pay_kind=#CashName# or GATHERING_ORDERS.pay_kind=#OrderFinished#)<!--付款类型为:1.预付款冲减;2.结算款;3.应收款;4会员卡冲减;5:预存款冲减(结算)；6:预存款冲减(应收款处理);7:订单冲减-->
+			) AS SumPayCon
+			GROUP BY ORDERS_ID
+			) AS spc ON spc.ORDERS_ID = O.ID
+			left outer  join
+			(select go.orders_id,sum(isnull(g.amount,0)) amount from gathering g
+			inner join gathering_orders go on g.id=go.gathering_id
+			where g.deleted='0'
+			and (go.pay_Kind=#LastTelNo# or go.pay_Kind=#LinkManName# or go.pay_kind=#Memo# or go.pay_kind=#OrderWorking# or go.pay_kind=#Address# or go.pay_kind=#CashName# or go.pay_kind=#OrderFinished#)<!--付款类型为:1.预付款冲减;2.结算款;3.应收款;4会员卡冲减;5:预存款冲减(结算)；6:预存款冲减(应收款处理);7:订单冲减-->
+			group by go.orders_id
+			) as goo on goo.orders_id=o.id
+			<!--减去以记账方式结算而冲减的订单-->
+			left join(
+			select ordersId,diffAmount from(
+			select
+			a.src_Order_Id ordersId,sum(Abs(isNull(b.amount,0)*c.unit_price)) diffAmount
+			from ORDER_MORTGAGE_RECORD a
+			inner join ORDER_ITEM_MORTGAGE b on a.Id=b.Order_Mortgage_Record_Id
+			inner join order_item c on c.id=src_order_item_Id
+			group by a.src_Order_Id
+			)m
+			Inner join orders f on f.Id=m.ordersId
+			where f.pay_type=#PayType#
+			)diff on diff.ordersId=o.Id
+			) as a
+			where (a.sum_amount-a.PAID_AMOUNT-a.ZERO-a.CONCESSION-a.CONCESSION1-a.CONCESSION2+a.CONCESSION3)=0
+			and a.sum_amount>0
+			)l
+		</select>
+		
+		<!--查找客户欠款明细-->
+		<select id="SelectCustomerOweMoneyDetail" parameterClass="Order" resultMap="SelectCustomerOweMoneyDetailMap">
+			select * from
+			(
+			SELECT O.ID, O.NO, O.INSERT_DATE_TIME, O.BALANCE_DATE_TIME, O.SUM_AMOUNT, (isnull(goo.amount,0)) PAID_AMOUNT, isnull(spc.ZERO,0) ZERO, isnull(spc.CONCESSION,0) Concession,isnull(spc.CONCESSION1,0)Concession1,isnull(spc.CONCESSION2,0)Concession2,isnull(spc.CONCESSION3,0)Concession3,isNull(diff.diffAmount,0) diffAmount
+			FROM (SELECT ID, NO, INSERT_DATE_TIME, BALANCE_DATE_TIME, SUM_AMOUNT, PAID_AMOUNT, DELETED, COMPANY_ID, BRANCH_SHOP_ID FROM dbo.ORDERS
+			WHERE
+			(
+			CUSTOMER_ID = #CustomerId#) AND (STATUS = #Status#) AND (DELETED = '0') and Company_Id=#CompanyId# and Branch_Shop_Id=#BranchShopId#
+			AND pay_type=#PayType#
+			<dynamic>
+				<isNotNull prepend="and" property="InsertDateTimeString">
+					balance_Date_time>=#InsertDateTimeString#
+				</isNotNull>
+				<isNotNull prepend="and" property="BalanceDateTimeString">
+					<![CDATA[balance_Date_time<=#BalanceDateTimeString#]]>
+				</isNotNull>
+			</dynamic>
+			) AS O
+			left outer JOIN(
+			SELECT  SUM(ISNULL(ZERO, 0)) AS ZERO, SUM(ISNULL(CONCESSION, 0)) AS CONCESSION,sum(ISNULL(CONCESSION1,0)) as CONCESSION1,sum(ISNULL(CONCESSION2,0)) as CONCESSION2,sum(ISNULL(CONCESSION3,0)) as CONCESSION3, ORDERS_ID FROM
+			(SELECT
+			(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION WHERE (CONCESSION_TYPE = #Status1#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS ZERO,
+			(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION AS PAYMENT_CONCESSION_1 WHERE (CONCESSION_TYPE = #Status2#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS CONCESSION,
+			(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION AS PAYMENT_CONCESSION_2 WHERE (CONCESSION_TYPE = #Status3#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS CONCESSION1,
+			(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION AS PAYMENT_CONCESSION_3 WHERE (CONCESSION_TYPE = #Status4#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS CONCESSION2,
+			(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION AS PAYMENT_CONCESSION_4 WHERE (CONCESSION_TYPE = #OrderNoDispatch#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS CONCESSION3,
+			dbo.GATHERING_ORDERS.ORDERS_ID FROM  dbo.GATHERING_ORDERS INNER JOIN dbo.GATHERING ON dbo.GATHERING_ORDERS.GATHERING_ID = dbo.GATHERING.ID
+			where 1=1 and (GATHERING_ORDERS.pay_Kind=#LastTelNo# or GATHERING_ORDERS.pay_Kind=#LinkManName# or GATHERING_ORDERS.pay_kind=#Memo# or GATHERING_ORDERS.pay_kind=#OrderWorking# or GATHERING_ORDERS.pay_kind=#Address# or GATHERING_ORDERS.pay_kind=#CashName# or GATHERING_ORDERS.pay_kind=#OrderFinished#)<!--付款类型为:1.预付款冲减;2.结算款;3.应收款;4会员卡冲减;5:预存款冲减(结算)；6:预存款冲减(应收款处理);7:订单冲减-->
+			) AS SumPayCon
+			GROUP BY ORDERS_ID
+			) AS spc ON spc.ORDERS_ID = O.ID
+			left outer  join
+			(select go.orders_id,sum(isnull(g.amount,0)) amount from gathering g
+			inner join gathering_orders go on g.id=go.gathering_id
+			where g.deleted='0'
+			and (go.pay_Kind=#LastTelNo# or go.pay_Kind=#LinkManName# or go.pay_kind=#Memo# or go.pay_kind=#OrderWorking# or go.pay_kind=#Address# or go.pay_kind=#CashName# or go.pay_kind=#OrderFinished#)<!--付款类型为:1.预付款冲减;2.结算款;3.应收款;4会员卡冲减;5:预存款冲减(结算)；6:预存款冲减(应收款处理);7:订单冲减-->
+			group by go.orders_id
+			) as goo on goo.orders_id=o.id
+			<!--减去以记账方式结算而冲减的订单-->
+			left join(
+			select ordersId,diffAmount from(
+			select
+			a.src_Order_Id ordersId,sum(Abs(isNull(b.amount,0)*c.unit_price)) diffAmount
+			from ORDER_MORTGAGE_RECORD a
+			inner join ORDER_ITEM_MORTGAGE b on a.Id=b.Order_Mortgage_Record_Id
+			inner join order_item c on c.id=src_order_item_Id
+			group by a.src_Order_Id
+			)m
+			)diff on diff.ordersId=o.Id
+			) as a
+			where (a.sum_amount-a.PAID_AMOUNT-a.ZERO-a.CONCESSION-a.CONCESSION1-a.CONCESSION2+a.CONCESSION3-diffAmount)!=0
+			and a.sum_amount>0
+			order by id
+		</select>
+		<!--查找客户欠款记录数-->
+		<select id="SelectCustomerOweMoneyDetailRowCount" parameterClass="Order" resultClass="long">
+			select count(Id) from(
+			select Id from
+			(
+			SELECT O.ID, O.NO, O.INSERT_DATE_TIME, O.BALANCE_DATE_TIME, O.SUM_AMOUNT, (isnull(goo.amount,0)+isnull(diff.diffAmount,0)) PAID_AMOUNT, isnull(spc.ZERO,0) ZERO, isnull(spc.CONCESSION,0) Concession,isnull(spc.CONCESSION1,0)Concession1,isnull(spc.CONCESSION2,0)Concession2,isnull(spc.CONCESSION3,0)Concession3
+			FROM (SELECT ID, NO, INSERT_DATE_TIME, BALANCE_DATE_TIME, SUM_AMOUNT, PAID_AMOUNT, DELETED, COMPANY_ID, BRANCH_SHOP_ID FROM dbo.ORDERS
+			WHERE (
+				CUSTOMER_ID = #CustomerId#) AND (STATUS = #Status#) AND (DELETED = '0') and Company_Id=#CompanyId# and Branch_Shop_Id=#BranchShopId#
+				AND pay_type=#PayType#
+				<dynamic>
+					<isNotNull prepend="and" property="InsertDateTimeString">
+						balance_Date_time>=#InsertDateTimeString#
+					</isNotNull>
+					<isNotNull prepend="and" property="BalanceDateTimeString">
+						<![CDATA[balance_Date_time<=#BalanceDateTimeString#]]>
+					</isNotNull>
+				</dynamic>
+			) AS O
+			left outer JOIN(
+			SELECT  SUM(ISNULL(ZERO, 0)) AS ZERO, SUM(ISNULL(CONCESSION, 0)) AS CONCESSION,sum(ISNULL(CONCESSION1,0)) as CONCESSION1,sum(ISNULL(CONCESSION2,0)) as CONCESSION2,sum(ISNULL(CONCESSION3,0)) as CONCESSION3, ORDERS_ID FROM
+			(SELECT
+			(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION WHERE (CONCESSION_TYPE = #Status1#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS ZERO,
+			(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION AS PAYMENT_CONCESSION_1 WHERE (CONCESSION_TYPE = #Status2#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS CONCESSION,
+			(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION AS PAYMENT_CONCESSION_2 WHERE (CONCESSION_TYPE = #Status3#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS CONCESSION1,
+			(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION AS PAYMENT_CONCESSION_3 WHERE (CONCESSION_TYPE = #Status4#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS CONCESSION2,
+			(SELECT SUM(isnull(CONCESSION_AMOUNT,0)) AS SumAmount FROM dbo.PAYMENT_CONCESSION AS PAYMENT_CONCESSION_4 WHERE (CONCESSION_TYPE = #OrderNoDispatch#) AND (GATHERING_ID = dbo.GATHERING.ID)) AS CONCESSION3,
+			dbo.GATHERING_ORDERS.ORDERS_ID FROM  dbo.GATHERING_ORDERS INNER JOIN dbo.GATHERING ON dbo.GATHERING_ORDERS.GATHERING_ID = dbo.GATHERING.ID
+			where 1=1 and (GATHERING_ORDERS.pay_Kind=#LastTelNo# or GATHERING_ORDERS.pay_Kind=#LinkManName# or GATHERING_ORDERS.pay_kind=#Memo# or GATHERING_ORDERS.pay_kind=#OrderWorking# or GATHERING_ORDERS.pay_kind=#Address# or GATHERING_ORDERS.pay_kind=#CashName# or GATHERING_ORDERS.pay_kind=#OrderFinished#)<!--付款类型为:1.预付款冲减;2.结算款;3.应收款;4会员卡冲减;5:预存款冲减(结算)；6:预存款冲减(应收款处理);7:订单冲减-->
+			) AS SumPayCon
+			GROUP BY ORDERS_ID
+			) AS spc ON spc.ORDERS_ID = O.ID
+			left outer  join
+			(select go.orders_id,sum(isnull(g.amount,0)) amount from gathering g
+			inner join gathering_orders go on g.id=go.gathering_id
+			where g.deleted='0'
+			and (go.pay_Kind=#LastTelNo# or go.pay_Kind=#LinkManName# or go.pay_kind=#Memo# or go.pay_kind=#OrderWorking# or go.pay_kind=#Address# or go.pay_kind=#CashName# or go.pay_kind=#OrderFinished#)<!--付款类型为:1.预付款冲减;2.结算款;3.应收款;4会员卡冲减;5:预存款冲减(结算)；6:预存款冲减(应收款处理);7:订单冲减-->
+			group by go.orders_id
+			) as goo on goo.orders_id=o.id
+			<!--减去以记账方式结算而冲减的订单-->
+			left join(
+			select ordersId,diffAmount from(
+			select
+			a.src_Order_Id ordersId,sum(Abs(isNull(b.amount,0)*c.unit_price)) diffAmount
+			from ORDER_MORTGAGE_RECORD a
+			inner join ORDER_ITEM_MORTGAGE b on a.Id=b.Order_Mortgage_Record_Id
+			inner join order_item c on c.id=src_order_item_Id
+			group by a.src_Order_Id
+			)m
+			)diff on diff.ordersId=o.Id
+			) as a
+			where (a.sum_amount-a.PAID_AMOUNT-a.ZERO-a.CONCESSION-a.CONCESSION1-a.CONCESSION2+a.CONCESSION3)!=0
+			and a.sum_amount>0
+			)l
+		</select>
+		<!--订单报红统计-->
+		<select id="SearchMatureOrderList" resultMap="SearchMatureOrderListMap">
+			select
+			top(#EveryPageCount#)
+			o.Id,o.customer_id,member_card_Id,
+			o.No,o.CUSTOMER_TYPE,o.customer_Name,
+			o.project_Name,o.sum_amount,o.memo,
+			o.balance_date_time,o.Insert_date_time,
+			cs.Name,em.Name EmployeeName,ey.Name cashName
+			from Order_timeout_Alarm_Record oar
+			left join Orders o on oar.orders_Id=o.Id
+			Inner join users u on u.Id=o.Insert_User
+			Inner join employee em on em.Id=u.employee_Id
+			inner join customer cs on cs.Id=o.customer_id
+			inner join users us on us.Id=o.cash_user_Id
+			inner join employee ey on ey.Id=us.Employee_Id
+			where o.deleted='0'
+			and o.company_Id=#CompanyId#
+			and o.branch_shop_Id=#BranchShopId#
+			and o.sum_amount>=0
+			<dynamic>
+				<isNotNull prepend="And" property="No">
+					o.No=#No#
+				</isNotNull>
+				<isNotNull prepend="and" property="InsertDateTimeString">
+					<![CDATA[o.Insert_Date_Time>=#InsertDateTimeString#]]>
+				</isNotNull>
+				<isNotNull prepend="and" property="BalanceDateTimeString">
+					<![CDATA[o.Insert_Date_Time<=#BalanceDateTimeString#]]>
+				</isNotNull>
+				<isNotNull prepend="and" property="CustomerTypeName">
+					<![CDATA[o.balance_date_time>=#CustomerTypeName#]]>
+				</isNotNull>
+				<isNotNull prepend="and" property="LinkManName">
+					<![CDATA[o.balance_Date_time<=#LinkManName#]]>
+				</isNotNull>
+			</dynamic>
+			and o.Id not in(
+			select
+			top(#EveryPageCount#*#Status4#)
+			oo.Id
+			from Order_timeout_Alarm_Record oarr
+			left join Orders oo on oarr.orders_Id=oo.Id
+			where oo.deleted='0'
+			and oo.company_Id=#CompanyId#
+			and oo.branch_shop_Id=#BranchShopId#
+			and oo.sum_amount>=0
+			<dynamic>
+				<isNotNull prepend="And" property="No">
+					oo.No=#No#
+				</isNotNull>
+				<isNotNull prepend="and" property="InsertDateTimeString">
+					<![CDATA[oo.Insert_Date_Time>=#InsertDateTimeString#]]>
+				</isNotNull>
+				<isNotNull prepend="and" property="BalanceDateTimeString">
+					<![CDATA[oo.Insert_Date_Time<=#BalanceDateTimeString#]]>
+				</isNotNull>
+				<isNotNull prepend="and" property="CustomerTypeName">
+					<![CDATA[oo.balance_date_time>=#CustomerTypeName#]]>
+				</isNotNull>
+				<isNotNull prepend="and" property="LinkManName">
+					<![CDATA[oo.balance_Date_time<=#LinkManName#]]>
+				</isNotNull>
+			</dynamic>
+			order by oo.Id
+			)
+			order by o.Id
+		</select>
+		<select id="SearchMatureOrderListRowCount" resultClass="long">
+			select
+			count(oar.Id)
+			from Order_timeout_Alarm_Record oar
+			left join Orders o on oar.orders_Id=o.Id
+			where o.deleted='0'
+			and o.company_Id=#CompanyId#
+			and o.branch_shop_Id=#BranchShopId#
+			and o.sum_amount>=0
+			<dynamic>
+				<isNotNull prepend="And" property="No">
+					o.No=#No#
+				</isNotNull>
+				<isNotNull prepend="and" property="InsertDateTimeString">
+					<![CDATA[o.Insert_Date_Time>=#InsertDateTimeString#]]>
+				</isNotNull>
+				<isNotNull prepend="and" property="BalanceDateTimeString">
+					<![CDATA[o.Insert_Date_Time<=#BalanceDateTimeString#]]>
+				</isNotNull>
+				<isNotNull prepend="and" property="CustomerTypeName">
+					<![CDATA[o.balance_date_time>=#CustomerTypeName#]]>
+				</isNotNull>
+				<isNotNull prepend="and" property="LinkManName">
+					<![CDATA[o.balance_Date_time<=#LinkManName#]]>
+				</isNotNull>
+			</dynamic>
+		</select>
+		<select id="SearchMatureOrderPrintList" resultMap="SearchMatureOrderListMap">
+			select
+			o.Id,o.customer_id,member_card_Id,
+			o.No,o.CUSTOMER_TYPE,o.customer_Name,
+			o.project_Name,o.sum_amount,o.memo,
+			o.balance_date_time,o.Insert_date_time,
+			cs.Name,em.Name EmployeeName,ey.Name cashName
+			from Order_timeout_Alarm_Record oar
+			left join Orders o on oar.orders_Id=o.Id
+			Inner join users u on u.Id=o.Insert_User
+			Inner join employee em on em.Id=u.employee_Id
+			inner join customer cs on cs.Id=o.customer_id
+			inner join users us on us.Id=o.cash_user_Id
+			inner join employee ey on ey.Id=us.Employee_Id
+			where o.deleted='0'
+			and o.company_Id=#CompanyId#
+			and o.branch_shop_Id=#BranchShopId#
+			and o.sum_amount>=0
+			<dynamic>
+				<isNotNull prepend="And" property="No">
+					o.No=#No#
+				</isNotNull>
+				<isNotNull prepend="and" property="InsertDateTimeString">
+					<![CDATA[o.Insert_Date_Time>=#InsertDateTimeString#]]>
+				</isNotNull>
+				<isNotNull prepend="and" property="BalanceDateTimeString">
+					<![CDATA[o.Insert_Date_Time<=#BalanceDateTimeString#]]>
+				</isNotNull>
+				<isNotNull prepend="and" property="CustomerTypeName">
+					<![CDATA[o.balance_date_time>=#CustomerTypeName#]]>
+				</isNotNull>
+				<isNotNull prepend="and" property="LinkManName">
+					<![CDATA[o.balance_Date_time<=#LinkManName#]]>
+				</isNotNull>
+			</dynamic>
+			order by o.Id
+		</select>
+		<!--应收款客户付款明细-->
+		<select id="SelectCustomerPaidAmountDetail" parameterClass="Order" resultMap="SelectCustomerPaidAmountDetailMap">
+			select Gathering_date_time,isNull(zz.paidAmount,0) paidAmount,zz.Customer_Id,isNull(k.PaidTicketAmount,0) PaidTicketAmount,isNull(k.PrepareMoneyAmount,0) PrepareMoneyAmount from(
+				select Gathering_date_time,sum(isNull(PAID_AMOUNT,0)) paidAmount,z.Customer_Id from(
+					SELECT
+					goo.Gathering_Date_Time, 
+					(isnull(goo.amount,0)) PAID_AMOUNT,
+					o.Id orderId,o.Customer_Id
+					FROM (
+					SELECT ID,Customer_Id,PAID_AMOUNT FROM dbo.ORDERS
+					WHERE (CUSTOMER_ID = #CustomerId#) AND (STATUS = #Status#) AND (DELETED = '0') and Company_Id=#CompanyId# and Branch_Shop_Id=#BranchShopId# and pay_type=#PayType#
+					and customer_Id=#CustomerId#
+					<dynamic>
+					<isNotNull prepend="and" property="MemberCardNo">Member_card_Id in(select Id from member_card where member_card_no=#MemberCardNo#)</isNotNull>
+				</dynamic>
+					) AS O
+					Inner join(
+					select go.orders_id,
+					sum(isnull(g.amount,0)) amount,
+					convert(varchar(16),g.Gathering_Date_Time,121) Gathering_Date_Time 
+					from gathering g
+					inner join gathering_orders go on g.id=go.gathering_id
+					where g.deleted='0'
+					and (go.pay_Kind=#LastTelNo# or go.pay_Kind=#LinkManName# or go.pay_kind=#Memo# or go.pay_kind=#OrderWorking# or go.pay_kind=#Address# or go.pay_kind=#CashName# or go.pay_kind=#OrderFinished#)
+					and Convert(varchar(10),g.gathering_Date_Time,121)=#InsertDateTimeString#
+					and g.Amount>0
+					group by go.orders_id,Gathering_Date_Time
+					) as goo on goo.orders_id=o.id
+				)z group by z.gathering_date_time,z.customer_id
+			)zz
+			left join(
+			select customer_Id,ticket_amount_sum PaidTicketAmount,amount PrepareMoneyAmount,convert(varchar(16),Insert_Date_Time,121) Insert_Date_Time from other_gathering_and_refundment_record where pay_kind=#Status1#
+			)k on k.customer_Id=zz.customer_Id and k.Insert_Date_Time=zz.Gathering_Date_time
+		</select>
+		<!--<update id="UpdateOrderItemPrintStatus">
+			Update order_Item set Version=#Memo# where deleted='0' and company_id=#CompanyId# and branch_shop_Id=#BranchShopId# and Id=#Id#
+		</update>-->
+		<!--功能: 获取订单明细修正的版本号,以此记录添加的先后顺序
+			作者: 张晓林
+			日期: 
+		-->
+		<select id="SelectOrderItemMaxVersion" resultClass="int">
+			select max(version) from order_item where deleted='0' and company_id=#CompanyId# and branch_shop_Id=#BranchShopId#
+			and orders_Id in(select Id from orders where no=#Memo#)
+		</select>
+		<insert id="InsertOrderItem" parameterClass="OrderItem">
+			INSERT INTO ORDER_ITEM
+			(
+			ID,
+			ORDERS_ID,
+			BUSINESS_TYPE_ID,
+			AMOUNT,
+			UNIT_PRICE,
+			FORECAST_MONEY_AMOUNT,
+			IS_USE_SAVED_PAPER,
+			PAPER_CONSUME_COUNT,
+			UNIT_DIFFERENCE_PRICE,
+			CONSUME_PAPER_AMOUNT,
+			CASH_CONSUME_COUNT,
+			CASH_UNIT_PRICE,
+			CASH_CONSUME_AMOUNT,
+			DELETED,
+			INSERT_DATE_TIME,
+			INSERT_USER,
+			UPDATE_DATE_TIME,
+			UPDATE_USER,
+			VERSION,
+			COMPANY_ID,
+			BRANCH_SHOP_ID,
+			MEMO
+			) VALUES
+			(
+			#Id#,
+			#OrdersId#,
+			#BusinessTypeId#,
+			#Amount#,
+			#UnitPrice#,
+			#ForecastMoneyAmount#,
+			#IsUseSavedPaper#,
+			#PaperConsumeCount#,
+			#UnitDifferencePrice#,
+			#ConsumePaperAmount#,
+			#CashConsumeCount#,
+			#CashUnitPrice#,
+			#CashConsumeAmount#,
+			#Deleted#,
+			#InsertDateTime#,
+			#InsertUser#,
+			#UpdateDateTime#,
+			#UpdateUser#,
+			#Version#,
+			#CompanyId#,
+			#BranchShopId#,
+			#Memo#
+			)
+		</insert>
+		<!--功能: 获取接待人员被分配，已提交，当前已完成的订单总数信息
+			作者: 张晓林
+			日期: 
+		-->
+		<select id="GetEmployeeReceptionOrderInfo" resultMap="GetEmployeeReceptionOrderInfoMap" parameterClass="OrderItem">
+			select * from (
+			select
+			(select count(Id) from orders where deleted='0' and company_Id=#CompanyId# and Branch_shop_Id=#BranchShopId# and Reception_User=#BusinessTypeId#
+			<iterate prepend="and" property="OrderStatusList" open="(" close=")" conjunction=" or ">
+				<![CDATA[status=#OrderStatusList[]#]]>
+			</iterate>
+			) StatusSubmited,
+			(select count(Id) from orders where deleted='0' and company_Id=#CompanyId# and Branch_shop_Id=#BranchShopId# and Reception_User=#BusinessTypeId# and Status=#StatusSucessed# and BALANCE_DATE_TIME between #BeginDateTime# and #EndDateTime#) StatusSucessed,
+			(select count(Id) from orders where deleted='0' and company_Id=#CompanyId# and Branch_shop_Id=#BranchShopId# and Status=#StatusNotSubmited# and Reception_User=#BusinessTypeId# ) StatusNotSubmited
+			)ta
+		</select>
+		<!--功能: 获取接待人员被分配的所有订单信息集合
+			作者: 张晓林
+			日期: 
+		-->
+		<select id="GetReceptionOrderDetail" resultMap="GetReceptionOrderDetailMap">
+			select
+			o.Id,o.No,o.Code_No CodeNo,o.Insert_date_time,c.Name CustomerName,c.Id CustomerId
+			from orders o Inner join Customer c on c.Id=o.Customer_Id
+			where o.Reception_User=#BusinessTypeId#
+			and o.deleted='0' and o.Company_Id=#CompanyId#
+			and o.branch_shop_Id=#BranchShopId#
+			<iterate prepend="and" property="OrderStatusList" open="(" close=")" conjunction=" OR ">
+				<![CDATA[
+					  o.status=#OrderStatusList[]#
+					  ]]>
+			</iterate>
+		</select>
+		<!--功能: 根据订单号模糊查询订单信息
+			作者: 张晓林
+			日期: 2010年4月10日10:04:21
+		-->
+		<select id="BluringSearchOrderByOrderNo" resultMap="OrderResultMap.selectResult">
+			select
+			top 1 *
+			from orders
+			where deleted='0'
+			and company_Id=#CompanyId#
+			and branch_shop_Id=#BranchShopId#
+			and no like #Name#
+			<isNotNull prepend="and" property="Memo">
+				status=#StatusSucessed#
+			</isNotNull>
+		</select>
+		<select id="GetOrderStatusByOrderId" parameterClass="long" resultClass="int">
+			select
+			Status
+			from orders
+			where deleted='0'
+			and Id=#orderId#
+		</select>
+	</statements>
+</sqlMap>

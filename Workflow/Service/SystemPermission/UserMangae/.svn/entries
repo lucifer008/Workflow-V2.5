@@ -1,0 +1,55 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Service/SystemPermission/UserMangae
+http://192.168.0.6/svn/workflow
+
+
+
+2010-05-20T03:04:15.000000Z
+3299
+baixiaoyu
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+Impl
+dir
+
+IUserPermissionCheckService.cs
+file
+
+
+
+
+2010-03-25T07:11:16.421875Z
+da0cebac031a56d85dedeb99ddc93b1c
+2009-12-15T09:41:29.890625Z
+2756
+zhangxiaolin
+
+IUserService.cs
+file
+
+
+
+
+2010-05-20T09:59:50.687500Z
+08c87b1c43fd8468009504f567825973
+2010-05-20T03:04:15.000000Z
+3299
+baixiaoyu
+

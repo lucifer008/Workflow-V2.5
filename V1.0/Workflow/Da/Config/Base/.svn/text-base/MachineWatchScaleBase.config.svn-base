@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="MachineWatchScaleBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="MachineWatchScaleResultMap.selectResult">
+			SELECT
+				ID, MACHINE_ID, MACHINE_WATCH_ID, LASTEST_NUMBER, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, DELETED, VERSION, BRANCH_SHOP_ID, COMPANY_ID
+			FROM MACHINE_WATCH_SCALE
+			Where DELETED = '0'
+				AND COMPANY_ID = #CompanyId#
+				AND BRANCH_SHOP_ID = #BranchShopId#
+			ORDER BY ID
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="MachineWatchScaleResultMap.selectResult">
+			SELECT
+				ID, MACHINE_ID, MACHINE_WATCH_ID, LASTEST_NUMBER, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, DELETED, VERSION, BRANCH_SHOP_ID, COMPANY_ID
+			FROM MACHINE_WATCH_SCALE
+			WHERE ID = #Id# AND DELETED = '0' 
+
+		</select>
+		<insert id="Insert" parameterClass="MachineWatchScale">
+			INSERT INTO MACHINE_WATCH_SCALE
+				(
+				  ID, MACHINE_ID, MACHINE_WATCH_ID, LASTEST_NUMBER, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, DELETED, VERSION, BRANCH_SHOP_ID, COMPANY_ID
+				)
+				VALUES
+				(
+				  #Id # , #MachineId# , #MachineWatchId# , #LastestNumber# , #InsertDateTime# , #InsertUser# , #UpdateDateTime# , #UpdateUser# , #Deleted# , #Version# , #BranchShopId# , #CompanyId# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="MachineWatchScale">
+			UPDATE MACHINE_WATCH_SCALE
+				SET
+					MACHINE_ID = #MachineId# ,MACHINE_WATCH_ID = #MachineWatchId#  ,LASTEST_NUMBER = #LastestNumber#  ,UPDATE_DATE_TIME = #UpdateDateTime#  ,UPDATE_USER = #UpdateUser#  ,VERSION = VERSION + 1  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE MACHINE_WATCH_SCALE
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM MACHINE_WATCH_SCALE WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

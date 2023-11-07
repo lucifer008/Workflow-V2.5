@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="UserResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="User" type="Workflow.Da.Domain.User, Workflow.Support" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="selectResult" class="User">
+			<result property="Id" column="ID" dbType="bigint"/> 
+			
+			<result property="EmployeeId" column="EMPLOYEE_ID" dbType="bigint"/> 
+			
+			<result property="UserName" column="USER_NAME" dbType="nvarchar"/> 
+			
+			<result property="Password" column="PASSWORD" dbType="char"/> 
+			
+			<result property="InsertDateTime" column="INSERT_DATE_TIME" dbType="datetime"/> 
+			
+			<result property="InsertUser" column="INSERT_USER" dbType="bigint"/> 
+			
+			<result property="UpdateDateTime" column="UPDATE_DATE_TIME" dbType="datetime"/> 
+			
+			<result property="UpdateUser" column="UPDATE_USER" dbType="bigint"/> 
+			
+			<result property="IsLogin" column="IS_LOGIN" dbType="char"/> 
+			
+			<result property="Version" column="VERSION" dbType="int"/> 
+			
+			<result property="Deleted" column="DELETED" dbType="char"/> 
+			
+			<result property="CompanyId" column="COMPANY_ID" dbType="bigint"/> 
+			
+			<result property="BranchShopId" column="BRANCH_SHOP_ID" dbType="bigint"/> 
+			
+
+<!--list_out-->
+			<result property="RoleList" column="ID" select="UserBase.SelectRole" nullValue="0" lazyLoad="true"/>
+<!--list_in-->
+			<result property="UserConcessionRangeList" column="ID" select="UserBase.SelectUserConcessionRange" nullValue="0" lazyLoad="true"/>
+			<!--single_in-->
+			<result property="Employee" column="EMPLOYEE_ID" select="EmployeeBase.SelectByPk" nullValue="0" lazyLoad="true"/>
+		</resultMap>
+	</resultMaps>
+</sqlMap>

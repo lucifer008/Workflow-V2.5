@@ -1,0 +1,52 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow/Service/SystemManage/PriceManage/Impl
+http://192.168.0.6/svn/workflow
+
+
+
+2009-08-10T02:01:34.187500Z
+2633
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+SelectActiveFactorServiceImpl.cs
+file
+
+
+
+
+2010-03-25T07:09:44.187500Z
+ffb979ec421fc2c5a17c36c455144617
+2009-02-01T08:55:27.328125Z
+2271
+chenruyin
+
+PriceServiceImpl.cs
+file
+
+
+
+
+2010-03-25T07:09:44.203125Z
+36d06f4aa1a7ae41ce44a5976b437ca4
+2009-08-10T02:01:34.187500Z
+2633
+zhangxiaolin
+

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/ManagePrice
+END
+PriceAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/ManagePrice/PriceAction.cs
+END
+BaseBusinessTypePriceSetAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/ManagePrice/BaseBusinessTypePriceSetAction.cs
+END
+BusinessTypePriceSetAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Action/ManagePrice/BusinessTypePriceSetAction.cs
+END

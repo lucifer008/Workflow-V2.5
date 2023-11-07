@@ -1,0 +1,52 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow.Web/base
+http://192.168.0.6/svn/workflow
+
+
+
+2010-05-18T03:20:03.468750Z
+3295
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+Master.master
+file
+
+
+
+
+2010-05-13T02:29:15.015625Z
+e36c2aa5288cde2dc26c7b369c5c727f
+2010-05-18T03:20:03.468750Z
+3295
+zhangxiaolin
+
+Master.master.cs
+file
+
+
+
+
+2010-03-25T07:11:02.312500Z
+31d061d24819137b8311193efe8a3c60
+2007-09-08T10:26:37.219530Z
+670
+zhuxinbin
+

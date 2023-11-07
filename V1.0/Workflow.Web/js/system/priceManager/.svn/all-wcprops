@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/system/priceManager
+END
+specialPriceSettings.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/system/priceManager/specialPriceSettings.js
+END
+memberCardPriceSettings.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/system/priceManager/memberCardPriceSettings.js
+END
+addPriceSet.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/system/priceManager/addPriceSet.js
+END
+basePriceSet.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/system/priceManager/basePriceSet.js
+END
+baseSetPrice.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/system/priceManager/baseSetPrice.js
+END
+editSpecialPrice.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/system/priceManager/editSpecialPrice.js
+END
+mangePrice.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/system/priceManager/mangePrice.js
+END
+batchAddPrice.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/system/priceManager/batchAddPrice.js
+END
+businessType.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/system/priceManager/businessType.js
+END
+setPrice.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/system/priceManager/setPrice.js
+END
+tradePriceSetting.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/system/priceManager/tradePriceSetting.js
+END
+selectStandardPriceNext.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/system/priceManager/selectStandardPriceNext.js
+END
+editBusinessType.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/system/priceManager/editBusinessType.js
+END
+selectStandardPrice.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/js/system/priceManager/selectStandardPrice.js
+END

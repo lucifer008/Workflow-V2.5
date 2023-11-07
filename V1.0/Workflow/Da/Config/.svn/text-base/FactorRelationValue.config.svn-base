@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="FactorRelationValue" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+    <cacheModels>
+        <cacheModel id="FactorRelationValueCache" implementation="LRU">
+            <flushInterval hours="24"/>
+            <property name="CacheSize" value="100" />
+            <flushOnExecute statement="FactorRelationValueBase.Insert"/>
+            <flushOnExecute statement="FactorRelationValueBase.Update"/>
+            <flushOnExecute statement="FactorRelationValueBase.LogicDelete"/>
+            <flushOnExecute statement="FactorRelationValueBase.Delete"/>
+        </cacheModel>
+    </cacheModels>
+	<resultMaps>
+    <resultMap id="SearchFactorRelationValueMap" class="FactorRelationValue">
+      <result property="Id" column="ID" dbType="bigint"/>
+      <result property="FactorRelationId" column="FACTOR_RELATION_ID" dbType="bigint"/>
+      <result property="SourceValue" column="SOURCE_VALUE" dbType="int"/>
+      <result property="TargetValue" column="TARGET_VALUE" dbType="int"/>
+      <result property="Memo" column="Memo"/>
+    </resultMap>
+	</resultMaps>
+	<statements>
+		<select id="SelectAll" resultMap="FactorRelationValueResultMap.selectResult">
+			SELECT
+				*
+			FROM FACTOR_RELATION_VALUES
+			ORDER BY ID ASC
+		</select>
+
+    <select id="SearchFactorRelationValue" resultMap="SearchFactorRelationValueMap">
+      select
+      top(#InsertUser#)
+      a.Id,a.Factor_relation_id,a.SOURCE_VALUE,
+      a.target_Value,b.Memo
+      from Factor_Relation_Values a
+      Inner join Factor_Relation b on a.factor_relation_Id=b.Id
+      where a.deleted='0'
+      and a.company_Id=#CompanyId#
+      and a.branch_shop_Id=#BranchShopId#
+      <dynamic>
+      <isNotNull prepend="and" property="Memo">
+        factor_relation_Id=#Memo#
+      </isNotNull>
+      <isNotNull property="ArrSourceValue">
+        <iterate prepend="and" property="ArrSourceValue" open="(" close=")" conjunction=" OR ">
+          <![CDATA[
+					  source_Value=#ArrSourceValue[]#
+					  ]]>
+        </iterate>
+      </isNotNull>
+      <isNotNull property="ArrTargetValue">
+        <iterate prepend="and" property="ArrTargetValue" open="(" close=")" conjunction=" OR ">
+          <![CDATA[
+					  target_Value=#ArrTargetValue[]#
+					  ]]>
+        </iterate>
+      </isNotNull>
+      </dynamic>
+      and a.Id not in(
+      select top(#InsertUser#*#UpdateUser#) Id
+      from factor_relation_Values
+      where deleted='0'
+      and company_Id=#CompanyId#
+      and branch_shop_Id=#BranchShopId#
+      <dynamic>
+      <isNotNull prepend="and" property="Memo">
+        factor_relation_Id=#Memo#
+      </isNotNull>
+      <isNotNull property="ArrSourceValue">
+        <iterate prepend="and" property="ArrSourceValue" open="(" close=")" conjunction=" OR ">
+          <![CDATA[
+					  source_Value=#ArrSourceValue[]#
+					  ]]>
+        </iterate>
+      </isNotNull>
+      <isNotNull property="ArrTargetValue">
+        <iterate prepend="and" property="ArrTargetValue" open="(" close=")" conjunction=" OR ">
+          <![CDATA[
+					  target_Value=#ArrTargetValue[]#
+					  ]]>
+        </iterate>
+      </isNotNull>
+      </dynamic>
+      order by factor_relation_Id
+      )
+      order by b.Id
+    </select>
+    <select id="SearchFactorRelationValueRowCount" resultClass="long">
+      select count(Id) from factor_relation_Values
+      where deleted='0'
+      and company_Id=#CompanyId#
+      and branch_shop_Id=#BranchShopId#
+      <dynamic>
+        <isNotNull prepend="and" property="Memo">
+          factor_relation_Id=#Memo#
+        </isNotNull>
+        <isNotNull property="ArrSourceValue">
+          <iterate prepend="and" property="ArrSourceValue" open="(" close=")" conjunction=" OR ">
+            <![CDATA[
+					  source_Value=#ArrSourceValue[]#
+					  ]]>
+          </iterate>
+        </isNotNull>
+        <isNotNull property="ArrTargetValue">
+          <iterate prepend="and" property="ArrTargetValue" open="(" close=")" conjunction=" OR ">
+            <![CDATA[
+					  target_Value=#ArrTargetValue[]#
+					  ]]>
+          </iterate>
+        </isNotNull>
+      </dynamic>
+    </select>
+    
+    <!--检查是否存在依赖关系-->
+    <select id="CheckFactorIsRelation" resultClass="long">
+      select
+      Count(Id)
+      from FACTOR_RELATION_VALUES
+      where (source_Value=#SourceValue# and target_Value=#TargetValue#)
+      and factor_relation_Id=#FactorRelationId#
+      and deleted='0'
+      and company_Id=#CompanyId#
+      and branch_Shop_Id=#BranchShopId#
+    </select>
+    
+    <!--获取业务类型下的多选因素-->
+    <!--<select id="GetBusinessTypeRelationPriceFactorCount"  resultClass="long">
+      select count(a.Id) from business_Type_Price_Factor a
+      inner join PRICE_FACTOR b on a.price_factor_Id=b.Id
+      and b.deleted='0'
+      and b.company_Id=#CompanyId#
+      and b.branch_Shop_Id=#BranchShopId#
+      and a.business_type_id=#FactorRelationId#
+      <dynamic>
+        <isNotNull property="MoreSeleText">
+          <iterate prepend="and" property="MoreSeleText" open="(" close=")" conjunction=" OR ">
+            <![CDATA[
+					  b.display_Text=#MoreSeleText[]#
+					  ]]>
+          </iterate>
+        </isNotNull>
+      </dynamic>
+    </select>-->
+    <select id="GetFactorRelationId" resultClass="long">
+      select Id from FACTOR_RELATION
+      where
+      deleted='0'
+      and company_Id=#CompanyId#
+      and branch_Shop_Id=#BranchShopId#
+      and business_type_id=#BusinessTypeId#
+      and price_factor_Id=#PriceFactorId#
+      and price_factor_Id2=#PriceFactorId2#
+    </select>
+    <select id="CheckFactorRelationValueIsExist" resultClass="long">
+      select count(Id) from FACTOR_RELATION_VALUES
+      where deleted='0'
+      and company_Id=#CompanyId#
+      and Branch_Shop_Id=#BranchShopId#
+      and Factor_Relation_Id=#FactorRelationId#
+      and Source_Value=#SourceValue#
+      and Target_Value=#TargetValue#
+    </select>
+	</statements>
+</sqlMap>

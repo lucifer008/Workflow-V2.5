@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="User" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+    <cacheModels>
+        <cacheModel id="UserCache" implementation="LRU">
+            <flushInterval hours="24"/>
+            <property name="CacheSize" value="100" />
+            <flushOnExecute statement="UserBase.Insert"/>
+            <flushOnExecute statement="UserBase.Update"/>
+            <flushOnExecute statement="UserBase.LogicDelete"/>
+            <flushOnExecute statement="UserBase.Delete"/>
+        </cacheModel>
+    </cacheModels>
+	<resultMaps>
+		<resultMap id="selectUserResult" class="User">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="EmployeeId" column="EMPLOYEE_ID" dbType="bigint"/>
+			<result property="UserName" column="USER_NAME" dbType="nvarchar"/>
+			<result property="Password" column="PASSWORD" dbType="char"/>
+			<result property="IsLogin" column="IS_LOGIN" dbType="char"/>
+			<result property="InsertDateTime" column="INSERT_DATE_TIME" dbType="datetime"/>
+			<result property="InsertUser" column="INSERT_USER" dbType="bigint"/>
+			<result property="UpdateDateTime" column="UPDATE_DATE_TIME" dbType="datetime"/>
+			<result property="UpdateUser" column="UPDATE_USER" dbType="bigint"/>
+			<result property="Version" column="VERSION" dbType="int"/>
+			<result property="Deleted" column="DELETED" dbType="char"/>
+			<result property="CompanyId" column="COMPANY_ID" dbType="bigint"/>
+			<result property="BranchShopId" column="BRANCH_SHOP_ID" dbType="bigint"/>
+			<result property="RoleId" column="ROLE_ID" dbType="bigint"/>
+			<result property="EmployeeName" column="EmployeeName" dbType="bigint"/>
+			<result property="PositionId" column="Position_Id" dbType="bigint"/>
+			<result property="UserConcessionRangeList" column="ID" select="UserBase.SelectUserConcessionRange" nullValue="0" lazyLoad="true"/>
+
+		</resultMap>
+		<resultMap id="selectPermissionResult" class="User">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="EmployeeId" column="EMPLOYEE_ID" dbType="bigint"/>
+			<result property="UserName" column="USER_NAME" dbType="nvarchar"/>
+			<result property="Password" column="PASSWORD" dbType="char"/>
+			<result property="InsertDateTime" column="INSERT_DATE_TIME" dbType="datetime"/>
+			<result property="InsertUser" column="INSERT_USER" dbType="bigint"/>
+			<result property="UpdateDateTime" column="UPDATE_DATE_TIME" dbType="datetime"/>
+			<result property="UpdateUser" column="UPDATE_USER" dbType="bigint"/>
+			<result property="Version" column="VERSION" dbType="int"/>
+			<result property="Deleted" column="DELETED" dbType="char"/>
+			<result property="CompanyId" column="COMPANY_ID" dbType="bigint"/>
+			<result property="BranchShopId" column="BRANCH_SHOP_ID" dbType="bigint"/>
+			<result property="RoleList" column="ID" select="UserBase.SelectRole" nullValue="0" lazyLoad="true"/>
+			<result property="PermissionName" column="PermissionName" dbType="nvarchar"/>
+		</resultMap>
+		<resultMap id="selectUserName" class="User">
+			<result property="UserName" column="username" dbType="nvarchar"/>
+			<result property="EmployeeName" column="Employeename" dbType="bigint"/>
+		</resultMap>
+    <resultMap id="GetAllUsersMap" class="User">
+      <result property="Id" column="Id" dbType="bigint"/>
+      <result property="EmployeeId" column="Employee_Id" dbType="bigint"/>
+      <result property="RoleId" column="RoleId" dbType="bigint"/>
+      <result property="UserName" column="User_Name" dbType="nvarchar"/>
+      <result property="IsLogin" column="IsLogin" dbType="nvarchar"/>
+      <result property="Password" column="PassWord" dbType="char"/>
+      <result property="InsertDateTime" column="Insert_date_Time" dbType="datetime"/>
+      <result property="InsertUserString" column="InsertUserName" dbType="nvarchar"/>
+      <result property="UpdateDateTime" column="Update_Date_Time" dbType="datetime"/>
+      <result property="UpdateUserString" column="UpdateUserName" dbType="nvarchar"/>
+      <result property="permissionName" column="Permission_Values" dbType="nvarchar"/>
+    </resultMap>
+    <resultMap id="SearchUserInfoMap" class="User">
+      <result property="Id" column="Id" dbType="bigint"/>
+      <result property="EmployeeId" column="Employee_Id" dbType="bigint"/>
+      <result property="UserName" column="User_Name" dbType="nvarchar"/>
+      <result property="IsLogin" column="IsLogin" dbType="nvarchar"/>
+      <result property="Password" column="PassWord" dbType="char"/>
+    </resultMap>
+    <resultMap id="SearchUserRoleMap" class="UserRole">
+      <result property="RoleId" column="Role_Id" dbType="bigint"/>
+      <result property="UsersId" column="Users_Id" dbType="bigint"/>
+      <result property="PermissionName" column="Permission_Values" dbType="nvarchar"/>
+    </resultMap>
+    <resultMap id="SearchDeleteUserIsUseMap" class="User">
+      <result property="Deleted" column="Deleted" dbType="nvarchar"/>
+    </resultMap>
+	</resultMaps>
+	<statements>
+		<select id="SelectAll" resultMap="UserResultMap.selectResult">
+			SELECT
+				*
+			FROM USERS where deleted='0'
+			ORDER BY ID ASC
+		</select>
+		<select id="SelectUserByUserNameAndPassword" resultMap="selectUserResult" parameterClass="User">
+			<![CDATA[
+				select u.*,ur.role_id,e.Name as EmployeeName,ep.position_id  from users u 
+				inner join user_role ur on u.id=ur.users_id
+				inner join employee e on u.Employee_id=e.id
+				inner join employee_position ep on e.id=ep.employee_id
+				where u.[user_name]=#UserName# and u.password=#Password#  and u.deleted='0' and u.company_Id=#CompanyId#
+				and u.branch_shop_id=#BranchShopId#
+			]]>
+		</select>
+		<select id="CheckUserIsLogin" retsultMap="selectUserResult" parameterClass="User">
+			<![CDATA[
+				select u.*,ur.role_id,e.Name as EmployeeName  from users u 
+				inner join user_role ur on u.id=ur.users_id
+				inner join employee e on u.Employee_id=e.id
+				where u.[user_name]=#UserName# and u.password=#Password# and u.IS_LOGIN=#IsLogin# and u.deleted='0' and u.company_Id=#CompanyId#
+				and u.branch_shop_id=#BranchShopId#
+			]]>
+		</select>
+		<select id="CheckUserPermissionbyUserNameAndPassword" resultMap="UserResultMap.selectResult" parameterClass="User">
+			<![CDATA[
+				select a.* from users a
+				inner join USER_ROLE b on a.id=b.users_id
+				inner join role c on b.role_id=c.id
+				inner join ROLE_PERMISSION_GROUP d on c.id=d.role_id
+				inner join PERMISSION_GROUP e on e.id=d.PERMISSION_GROUP_id
+				inner join PERMISSION_GROUP_DETAIL f on e.id=f.PERMISSION_GROUP_id
+				inner join PERMISSION g on f.permission_id=g.id
+				where a.user_name=#UserName# and a.password=#Password#
+				and e.id=#PermissionType# and g.PERMISSION_TYPE=#IsUsed#
+					and a.deleted='0' and a.Company_Id=#CompanyId# and a.Branch_Shop_Id=#BranchShopId#
+			]]>
+		</select>
+		<select id="CheckCurrentUserPermissionByUserId" resultMap="selectPermissionResult" parameterClass="User">
+			<![CDATA[
+				select a.*,e.name as PermissionName from users a
+				inner join USER_ROLE b on a.id=b.users_id
+				inner join role c on b.role_id=c.id
+				inner join ROLE_PERMISSION_GROUP d on c.id=d.role_id
+				inner join PERMISSION_GROUP e on e.id=d.PERMISSION_GROUP_id
+				inner join PERMISSION_GROUP_DETAIL f on e.id=f.PERMISSION_GROUP_id
+				inner join PERMISSION g on f.permission_id=g.id
+				where a.Id=#Id# and g.PERMISSION_TYPE=#IsUsed#
+					and a.deleted='0' and a.Company_Id=#CompanyId# and a.Branch_Shop_Id=#BranchShopId#
+			]]>
+		</select>
+		<select id="GetEmployeeNameByUserId" resultClass="string" parameterClass="User">
+			<![CDATA[
+				select b.name as Employeename from users a
+					inner  join employee b on a.employee_id=b.id
+				where a.Id=#Id# and a.company_id=#CompanyId# and a.Branch_shop_id=#BranchShopId#
+
+			]]>
+		</select>
+
+
+		<select id="GetUserNameByEmployeeName" resultMap="selectUserName" parameterClass="User">
+
+			select a.USER_NAME as username,b.name as Employeename from users a
+			inner  join employee b on a.employee_id=b.id
+			where a.deleted='0' and a.Company_Id=#CompanyId# and a.Branch_Shop_Id=#BranchShopId#
+		</select>
+		<update id="UpdateUserLoginStatus" parameterClass="User">
+			<![CDATA[
+				Update Users set Is_Login=#IsLogin# where ID=#Id# and Deleted='0' and Company_Id=#CompanyId# and Branch_Shop_Id=#BranchShopId#
+			]]>
+		</update>
+		
+    <!--修改当前用户密码-->
+    <update id="UpdateUserPassWord" parameterClass="User">
+      UPDATE USERS
+      SET
+      PASSWORD = #Password#
+      WHERE ID = #Id#
+    </update>
+    
+    <!--判断用户是否使用-->
+    <select id="SearchDeleteUserIsUse" parameterClass="User" resultClass="long">
+      select
+      count(*)
+      from Users
+      where employee_Id in(
+      select Id from employee 
+      where deleted='0' And Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">
+          Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        </dynamic>
+      )
+      And Deleted='0' And Company_Id=#CompanyId#
+      <dynamic>
+      <isNotNull prepend="And" property="BranchShopId">
+        Branch_Shop_Id=#BranchShopId#
+      </isNotNull>
+      <isNotNull prepend="And" property="Id">
+        Id=#Id#
+      </isNotNull>
+    </dynamic>
+    </select>
+    <select id="GetAllUsers" parameterClass="User" resultMap="GetAllUsersMap">
+      select
+      top(#RowCount#)
+      a.Id,a.Employee_Id,
+      c.Id as RoleId,
+      c.Permission_Values,
+      a.PassWord,
+      a.User_Name,
+      a.Insert_date_Time,d.User_Name as InsertUserName,
+      a.Update_Date_Time,e.User_Name as UpdateUserName,
+      IsLogin=Case a.Is_Login when 'N' then '否'
+      when 'Y' then '是'
+      else 'Error'
+      end
+      from Users as a
+      inner join User_Role as b on a.Id=b.Users_Id
+      inner join Role as c on b.Role_Id=c.Id
+      inner join Users as d on a.insert_User=d.Id
+      left join Users as e on a.Update_User=e.Id
+      where a.Deleted='0' And a.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">
+          a.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull prepend="And" property="UserName">
+          a.User_Name=#UserName#
+        </isNotNull>
+        <isNotNull prepend="And" property="UserRole">
+          c.Id=#UserRole#
+        </isNotNull>
+        <isNotNull prepend="And" property="EmployeeName">
+          a.Id=#EmployeeName#
+        </isNotNull>
+      </dynamic>
+      And a.Id not in(
+      select
+      top(#RowCount#*#CurrentPageIndex#)
+      a.Id
+      from Users as a
+      inner join User_Role as b on a.Id=b.Users_Id
+      inner join Role as c on b.Role_Id=c.Id
+      inner join Users as d on a.insert_User=d.Id
+      left join Users as e on a.Update_User=e.Id
+      where a.Deleted='0' And a.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">
+          a.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull prepend="And" property="UserName">
+          a.User_Name=#UserName#
+        </isNotNull>
+        <isNotNull prepend="And" property="UserRole">
+          c.Id=#UserRole#
+        </isNotNull>
+        <isNotNull prepend="And" property="EmployeeName">
+          a.Id=#EmployeeName#
+        </isNotNull>
+      </dynamic>
+      )
+    </select>
+    <select id="SearchUserInfo" parameterClass="User" resultMap="SearchUserInfoMap">
+      select
+      top(#RowCount#)
+      a.Id,a.Employee_Id,
+      a.PassWord,
+      a.User_Name,
+      IsLogin=Case a.Is_Login when 'N' then '否'
+      when 'Y' then '是'
+      else 'Error'
+      end
+      from Users as a
+      where a.Deleted='0' And a.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">
+          a.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull prepend="And" property="UserName">
+          a.User_Name=#UserName#
+        </isNotNull>
+        <isNotNull prepend="And" property="UserRole">
+          a.Id in(select users_Id from user_Role where role_Id=#UserRole#)
+        </isNotNull>
+        <isNotNull prepend="And" property="EmployeeName">
+          a.Id in #EmployeeName#
+        </isNotNull>
+      </dynamic>
+      And a.Id not in(
+      select
+      top(#RowCount#*#CurrentPageIndex#)
+      a.Id
+      from Users as a
+      where a.Deleted='0' And a.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">
+          a.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull prepend="And" property="UserName">
+          a.User_Name=#UserName#
+        </isNotNull>
+        <isNotNull prepend="And" property="UserRole">
+          a.Id in(select users_Id from user_Role where role_Id=#UserRole#)
+        </isNotNull>
+        <isNotNull prepend="And" property="EmployeeName">
+          a.Id=#EmployeeName#
+        </isNotNull>
+      </dynamic>
+      )
+    </select>
+    <select id="SearchUserInfoRowCount" parameterClass="User" resultClass="long">
+      select count(*) from (
+      select
+      a.Id,a.Employee_Id,
+      a.PassWord,
+      a.User_Name,
+      IsLogin=Case a.Is_Login when 'N' then '否'
+      when 'Y' then '是'
+      else 'Error'
+      end
+      from Users as a
+      where a.Deleted='0' And a.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">
+          a.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull prepend="And" property="UserName">
+          a.User_Name=#UserName#
+        </isNotNull>
+        <isNotNull prepend="And" property="UserRole">
+          a.Id in(select users_Id from user_Role where role_Id=#UserRole#)
+        </isNotNull>
+        <isNotNull prepend="And" property="EmployeeName">
+          a.Id in #EmployeeName#
+        </isNotNull>
+      </dynamic>
+      )m
+    </select>
+    <select id="SearchUserRole" parameterClass="Role" resultMap="SearchUserRoleMap">
+      Select
+      a.Role_Id,a.Users_Id,
+      b.permission_values
+      from User_Role as a
+      Inner join Role as b on a.Role_Id=b.Id
+      where b.Deleted='0'
+      And Company_Id=#CompanyId#
+      <dynamic>
+      <isNotNull prepend="And" property="BranchShopId">
+        Branch_Shop_Id=#BranchShopId#
+      </isNotNull>
+    </dynamic>
+    </select>
+    <update id="DeleteUserInfo" parameterClass="User">
+      Update Users set Deleted='1' where id>0
+      <isNotNull prepend="And" property="UserName">
+      Id=#UserName#
+    </isNotNull>
+    </update>
+    <delete id="DeleteUserRoleByUserId" parameterClass="User">
+      Delete User_Role Where id>0
+      <isNotNull prepend="And" property="UserName">
+        users_Id=#UserName#
+      </isNotNull>
+      <!--<isNotNull prepend="And" property="PermissionName">
+        role_Id=#PermissionName#
+      </isNotNull>-->
+    </delete>
+    
+    <!--根据用户Id删除用户所拥有的优惠范围-->
+    <delete id="DeleteUserConcessionRanceByUserId" parameterClass="UserConcessionRange">
+      delete USER_CONCESSION_RANGE 
+      where Users_Id=#UsersId#
+      And Company_Id=#CompanyId#
+      And Branch_Shop_Id=#BranchShopId#
+    </delete>
+    <update id="UpdateUserInfoByUserId" parameterClass="User">
+      Update Users 
+      set User_Name=#UserName#,
+      Employee_Id=#EmployeeId#,
+      PassWord=#Password#
+      where Id=#Id#
+    </update>
+    <select id="CheckUserNameIsExist" parameterClass="User" resultClass="long">
+      select count(*) from users
+      where deleted='0'
+      And Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">
+          Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull prepend="And" property="UserName">
+          User_Name=#UserName#
+        </isNotNull>
+      </dynamic>
+    </select>
+    
+    <!--查询用户是否有优惠范围-->
+    <select id="CheckUserIsNotConcessionRange" parameterClass="UserConcessionRange" resultClass="long">
+      select count(*) from USER_CONCESSION_RANGE
+      where deleted='0'
+      and users_Id=#UsersId#
+      and Company_Id=#CompanyId#
+      <dynamic>
+          <isNotNull prepend="And" property="BranchShopId">
+            Branch_Shop_Id=#BranchShopId#
+          </isNotNull>
+      </dynamic>
+    </select>
+    <select id="SearchUserConcessionRange" parameterClass="UserConcessionRange" resultMap="UserConcessionRangeResultMap.selectResult">
+      select * from USER_CONCESSION_RANGE
+      where deleted='0'
+      and users_Id=#UsersId#
+      and Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">
+          Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+      </dynamic>
+    </select>
+
+	<select id="GetDifferEmployeeAllUser" parameterClass="map" resultMap="UserResultMap.selectResult">
+		select a.* from users a inner join
+		(select EMPLOYEE_ID,max(insert_date_time) as insert_date_time from users group by employee_id) b
+		on a.employee_id=b.employee_id and a.insert_date_time=b.insert_date_time where deleted='0'
+		AND Company_Id=#companyid#
+		AND Branch_Shop_Id=#branchshopid#
+	</select>
+		
+	</statements>
+</sqlMap>

@@ -1,0 +1,79 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow/Service/OrderManage
+http://192.168.0.6/svn/workflow
+
+
+
+2009-10-26T01:32:18.140625Z
+2647
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+ISearchOrderService.cs
+file
+
+
+
+
+2010-03-25T07:09:41.062500Z
+16fa2c9bed51f1946b7ace98743e879d
+2009-04-30T03:44:38.796875Z
+2497
+chenruyin
+
+INoGenerator.cs
+file
+
+
+
+
+2010-03-25T07:09:41.078125Z
+ea92d5adc3ea1bed002bf6a12e6f7649
+2009-05-12T10:09:32.281250Z
+2550
+fuqiang
+
+Impl
+dir
+
+ITakeWorkService.cs
+file
+
+
+
+
+2010-03-25T07:09:41.093750Z
+3d784d99306c94263fb296cc2bd4e9af
+2009-01-22T01:55:48.937500Z
+2261
+fuqiang
+
+IOrderService.cs
+file
+
+
+
+
+2010-03-25T07:09:41.109375Z
+5cbfd9f00d955b02cfa3bbff3775b570
+2009-10-26T01:32:18.140625Z
+2647
+zhangxiaolin
+

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/workflow/!svn/ver/3396/trunk/v2.5/Workflow.Web/js/customer
+END
+customerConbination.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/customer/customerConbination.js
+END
+newCustomerLinkMan.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/customer/newCustomerLinkMan.js
+END
+searchCustomer.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3396/trunk/v2.5/Workflow.Web/js/customer/searchCustomer.js
+END
+modifyCustomer.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/customer/modifyCustomer.js
+END
+customerValidate.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/customer/customerValidate.js
+END
+newCustomer.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/customer/newCustomer.js
+END
+customerConsumeHistory.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/js/customer/customerConsumeHistory.js
+END
+customerList.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3396/trunk/v2.5/Workflow.Web/js/customer/customerList.js
+END
+selectCustomer.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/customer/selectCustomer.js
+END

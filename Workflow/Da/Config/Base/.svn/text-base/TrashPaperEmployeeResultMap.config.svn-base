@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="TrashPaperEmployeeResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="TrashPaperEmployee" type="Workflow.Da.Domain.TrashPaperEmployee, Workflow.Support" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="selectResult" class="TrashPaperEmployee">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="RealOrderItemId" column="REAL_ORDER_ITEM_ID" dbType="bigint"/>
+			<result property="EmployeeId" column="EMPLOYEE_ID" dbType="bigint"/>
+			<result property="TrashPapers" column="TRASH_PAPERS" dbType="decimal"/>
+		</resultMap>
+	</resultMaps>
+</sqlMap>

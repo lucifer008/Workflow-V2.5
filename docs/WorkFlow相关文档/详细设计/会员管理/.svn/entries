@@ -1,0 +1,60 @@
+8
+
+dir
+3546
+http://192.168.0.6/svn/workflow/trunk/v2.5/docs/WorkFlow%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1/%E4%BC%9A%E5%91%98%E7%AE%A1%E7%90%86
+http://192.168.0.6/svn/workflow
+
+
+
+2010-08-05T02:55:27.265625Z
+3453
+baixiaoyu
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+卡管理
+dir
+
+会员充值详细设计说明书.doc
+file
+
+
+
+
+2010-08-05T06:09:26.375000Z
+c31891cda4c7bc8eb32053866d853303
+2010-08-05T02:55:27.265625Z
+3453
+baixiaoyu
+has-props
+
+会员编辑详细设计说明书.doc
+file
+
+
+
+
+2010-08-05T06:09:26.390625Z
+cd1020210bbd077a3c52eaf8e1f49ce2
+2010-08-05T02:55:27.265625Z
+3453
+baixiaoyu
+has-props
+
+会员查询
+dir
+

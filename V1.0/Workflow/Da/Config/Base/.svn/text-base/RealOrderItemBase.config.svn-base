@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--表REAL_ORDER_ITEM [实际工单明细]的基本增删改查操作，此配置文件不允许修改-->
+<sqlMap namespace="RealOrderItemBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		
+			<!--查询表REAL_ORDER_ITEM [实际工单明细]的基本操作-->		 
+			<select id="SelectAll" resultMap="RealOrderItemResultMap.selectResult">
+			SELECT  ID,ORDERS_ID,ORDER_ITEM_ID,BUSINESS_TYPE_ID,AMOUNT,UNIT_PRICE,FORECAST_MONEY_AMOUNT,IS_USE_SAVED_PAPER,PAPER_CONSUME_COUNT,UNIT_DIFFERENCE_PRICE,CONSUME_PAPER_AMOUNT,CASH_CONSUME_COUNT,CASH_UNIT_PRICE,CASH_CONSUME_AMOUNT,TRASH_PAPERS,INSERT_DATE_TIME,INSERT_USER,UPDATE_DATE_TIME,UPDATE_USER,VERSION,DELETED,BRANCH_SHOP_ID,COMPANY_ID,MEMO	FROM REAL_ORDER_ITEM Order by ID
+			</select>
+
+			<!--按照主键查询表REAL_ORDER_ITEM [实际工单明细]的基本操作-->
+			<select id="SelectByPk" parameterClass="long" resultMap="RealOrderItemResultMap.selectResult">
+			SELECT 
+			ID,
+			ORDERS_ID,
+			ORDER_ITEM_ID,
+			BUSINESS_TYPE_ID,
+			AMOUNT,
+			UNIT_PRICE,
+			FORECAST_MONEY_AMOUNT,
+			IS_USE_SAVED_PAPER,
+			PAPER_CONSUME_COUNT,
+			UNIT_DIFFERENCE_PRICE,
+			CONSUME_PAPER_AMOUNT,
+			CASH_CONSUME_COUNT,
+			CASH_UNIT_PRICE,
+			CASH_CONSUME_AMOUNT,
+			TRASH_PAPERS,
+			INSERT_DATE_TIME,
+			INSERT_USER,
+			UPDATE_DATE_TIME,
+			UPDATE_USER,
+			VERSION,
+			DELETED,
+			BRANCH_SHOP_ID,
+			COMPANY_ID,
+			MEMO
+			FROM REAL_ORDER_ITEM
+			WHERE ID = #Id# 
+			</select>
+
+			<!--插入表REAL_ORDER_ITEM [实际工单明细]的基本操作-->
+			<insert id="Insert" parameterClass="RealOrderItem">
+			INSERT INTO REAL_ORDER_ITEM
+			(
+				ID,
+				ORDERS_ID,
+				ORDER_ITEM_ID,
+				BUSINESS_TYPE_ID,
+				AMOUNT,
+				UNIT_PRICE,
+				FORECAST_MONEY_AMOUNT,
+				IS_USE_SAVED_PAPER,
+				PAPER_CONSUME_COUNT,
+				UNIT_DIFFERENCE_PRICE,
+				CONSUME_PAPER_AMOUNT,
+				CASH_CONSUME_COUNT,
+				CASH_UNIT_PRICE,
+				CASH_CONSUME_AMOUNT,
+				TRASH_PAPERS,
+				INSERT_DATE_TIME,
+				INSERT_USER,
+				UPDATE_DATE_TIME,
+				UPDATE_USER,
+				VERSION,
+				DELETED,
+				BRANCH_SHOP_ID,
+				COMPANY_ID,
+				MEMO
+			) VALUES
+			( 
+				#Id#,
+				#OrdersId#,
+				#OrderItemId#,
+				#BusinessTypeId#,
+				#Amount#,
+				#UnitPrice#,
+				#ForecastMoneyAmount#,
+				#IsUseSavedPaper#,
+				#PaperConsumeCount#,
+				#UnitDifferencePrice#,
+				#ConsumePaperAmount#,
+				#CashConsumeCount#,
+				#CashUnitPrice#,
+				#CashConsumeAmount#,
+				#TrashPapers#,
+				#InsertDateTime#,
+				#InsertUser#,
+				#UpdateDateTime#,
+				#UpdateUser#,
+				#Version#,
+				#Deleted#,
+				#BranchShopId#,
+				#CompanyId#,
+				#Memo#
+			)
+			</insert>
+			
+			<!--更新表REAL_ORDER_ITEM [实际工单明细]的基本操作-->
+			<update id="Update" parameterClass="RealOrderItem">
+			UPDATE REAL_ORDER_ITEM
+			SET
+				ORDERS_ID=#OrdersId#,
+				ORDER_ITEM_ID=#OrderItemId#,
+				BUSINESS_TYPE_ID=#BusinessTypeId#,
+				AMOUNT=#Amount#,
+				UNIT_PRICE=#UnitPrice#,
+				FORECAST_MONEY_AMOUNT=#ForecastMoneyAmount#,
+				IS_USE_SAVED_PAPER=#IsUseSavedPaper#,
+				PAPER_CONSUME_COUNT=#PaperConsumeCount#,
+				UNIT_DIFFERENCE_PRICE=#UnitDifferencePrice#,
+				CONSUME_PAPER_AMOUNT=#ConsumePaperAmount#,
+				CASH_CONSUME_COUNT=#CashConsumeCount#,
+				CASH_UNIT_PRICE=#CashUnitPrice#,
+				CASH_CONSUME_AMOUNT=#CashConsumeAmount#,
+				TRASH_PAPERS=#TrashPapers#,
+				INSERT_DATE_TIME=#InsertDateTime#,
+				INSERT_USER=#InsertUser#,
+				UPDATE_DATE_TIME=#UpdateDateTime#,
+				UPDATE_USER=#UpdateUser#,
+				VERSION=#Version#,
+				DELETED=#Deleted#,
+				BRANCH_SHOP_ID=#BranchShopId#,
+				COMPANY_ID=#CompanyId#,
+				MEMO=#Memo#
+			WHERE ID = #Id#
+			</update>
+
+			<!--逻辑删除表REAL_ORDER_ITEM [实际工单明细]的基本操作-->
+			<update id="LogicDelete" parameterClass="long">
+				UPDATE REAL_ORDER_ITEM
+				SET	VERSION = VERSION + 1,DELETED = '1'	WHERE ID = #Id#
+			</update>
+
+			<!--物理删除表REAL_ORDER_ITEM [实际工单明细]的基本操作-->
+			<delete id="Delete" parameterClass="long">
+				DELETE FROM REAL_ORDER_ITEM WHERE ID = #Id#
+			</delete>
+
+			<!--目标表PRINT_REQUIRE_DETAIL的一览查询-->
+			<select id="SelectPrintRequireDetail" parameterClass="long" resultMap="PrintRequireDetailResultMap.selectResult" >
+				SELECT
+				PRINT_REQUIRE_DETAIL.*
+				FROM PRINT_REQUIRE_DETAIL
+				INNER JOIN REAL_ORDER_ITEM_PRINT_REQUIRE ON REAL_ORDER_ITEM_PRINT_REQUIRE.PRINT_REQUIRE_DETAIL_ID = PRINT_REQUIRE_DETAIL.ID
+				WHERE REAL_ORDER_ITEM_PRINT_REQUIRE.REAL_ORDER_ITEM_ID = #value#
+				ORDER BY PRINT_REQUIRE_DETAIL.ID
+			</select>
+			<!--目标表REAL_ORDER_ITEM_FACTOR_VALUE的信息查询-->
+			<select id="SelectRealOrderItemFactorValue" parameterClass="long" resultMap="RealOrderItemFactorValueResultMap.selectResult" >
+				SELECT
+				*
+				FROM REAL_ORDER_ITEM_FACTOR_VALUE
+				WHERE REAL_ORDER_ITEM_ID = #value#
+				ORDER BY ID
+			</select>			
+			<!--目标表TRASH_PAPER_EMPLOYEE的信息查询-->
+			<select id="SelectTrashPaperEmployee" parameterClass="long" resultMap="TrashPaperEmployeeResultMap.selectResult" >
+				SELECT
+				*
+				FROM TRASH_PAPER_EMPLOYEE
+				WHERE REAL_ORDER_ITEM_ID = #value#
+				ORDER BY ID
+			</select>			
+			<!--目标表REAL_ORDER_ITEM_TRASH_REASON的信息查询-->
+			<select id="SelectRealOrderItemTrashReason" parameterClass="long" resultMap="RealOrderItemTrashReasonResultMap.selectResult" >
+				SELECT
+				*
+				FROM REAL_ORDER_ITEM_TRASH_REASON
+				WHERE REAL_ORDER_ITEM_ID = #value#
+				ORDER BY ID
+			</select>			
+			<!--目标表REAL_ORDER_ITEM_EMPLOYEE的信息查询-->
+			<select id="SelectRealOrderItemEmployee" parameterClass="long" resultMap="RealOrderItemEmployeeResultMap.selectResult" >
+				SELECT
+				*
+				FROM REAL_ORDER_ITEM_EMPLOYEE
+				WHERE REAL_ORDER_ITEM_ID = #value#
+				ORDER BY ID
+			</select>			
+		</statements>
+</sqlMap>

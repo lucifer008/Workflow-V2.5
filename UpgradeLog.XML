@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="WorkflowSolution">
+</Property><Property Name="解决方案文件" Value="F:\myPro\Workflow V2.5\WorkflowSolution.sln">
+</Property><Property Name="Date" Value="2010年10月23日">
+</Property><Property Name="Time" Value="22:23">
+</Property><Property Name="Solution" Value="WorkflowSolution">
+</Property><Property Name="解决方案文件" Value="F:\myPro\Workflow V2.5\WorkflowSolution.sln">
+</Property><Property Name="Date" Value="2010年10月23日">
+</Property><Property Name="Time" Value="22:24">
+</Property></Properties><Event ErrorLevel="0" Project="Workflow" Source="Workflow\Workflow.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="Workflow" Source="Workflow\Workflow.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Workflow.FileCleaner" Source="Workflow.FileCleaner\Workflow.FileCleaner.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="Workflow.FileCleaner" Source="Workflow.FileCleaner\Workflow.FileCleaner.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="PhookPager" Source="PhookPager\PhookPager.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="PhookPager" Source="PhookPager\PhookPager.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Workflow" Source="Workflow\Workflow.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="Workflow" Source="Workflow\Workflow.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Workflow.FileCleaner" Source="Workflow.FileCleaner\Workflow.FileCleaner.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="Workflow.FileCleaner" Source="Workflow.FileCleaner\Workflow.FileCleaner.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="PhookPager" Source="PhookPager\PhookPager.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="PhookPager" Source="PhookPager\PhookPager.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Workflow" Source="Workflow\Workflow.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="Workflow" Source="Workflow\Workflow.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Workflow.FileCleaner" Source="Workflow.FileCleaner\Workflow.FileCleaner.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="Workflow.FileCleaner" Source="Workflow.FileCleaner\Workflow.FileCleaner.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="PhookPager" Source="PhookPager\PhookPager.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="PhookPager" Source="PhookPager\PhookPager.csproj" Description="Converted">
+</Event><Event ErrorLevel="2" Project="D:\...\Workflow.Web\" Source="Workflow.Web" Description="网站“F:\myPro\Workflow V2.5\Workflow.Web\”已在当前解决方案中打开。">
+</Event><Event ErrorLevel="0" Project="" Source="WorkflowSolution.sln" Description="成功转换解决方案">
+</Event><Event ErrorLevel="3" Project="" Source="WorkflowSolution.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Workflow" Source="Workflow\Workflow.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event><Event ErrorLevel="0" Project="Workflow.FileCleaner" Source="Workflow.FileCleaner\Workflow.FileCleaner.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event><Event ErrorLevel="0" Project="PhookPager" Source="PhookPager\PhookPager.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event></UpgradeLog>

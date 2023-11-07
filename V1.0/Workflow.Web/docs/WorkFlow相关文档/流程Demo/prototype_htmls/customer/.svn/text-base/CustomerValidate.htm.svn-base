@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>客户确认</title>
+    <link href="../css/css.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" src="../js/jquery.js"></script>
+	<script language="javascript" src="../js/default.js"></script>
+</head>
+<body style="text-align:center">
+<div align="center" style="width:99%; background-color:#FFFFFF;" id="container">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+	<tr>
+		<td width="11"><img alt="" src="../images/white_main_top_left.gif"></td>
+		<td width="99%"><img alt="" src="../images/spacer_10_x_10.gif" height="10"></td>
+		<td width="10"><img alt="" src="../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+	</tr>
+	<tr>
+		<td colspan="3" bgcolor="#FFFFFF">
+           <table width="100%" border="0" cellpadding="0" cellspacing="3" bgcolor="#FFFFFF">
+        <tr>
+			<td width="3%"></td>
+			<td align="left" bgcolor="#eeeeee">首页&nbsp;-&gt;&nbsp;客户管理&nbsp;-&gt;&nbsp;客户确认</td>
+			<td width="3%"></td>
+		</tr>
+		<tr>
+				<td colspan="3" class="caption" align="center">客户确认</td>
+			</tr>
+	   <tr>
+        <td width="3%">&nbsp;</td>
+        <td align="center">
+         <table border="1" cellpadding="3" cellspacing="1" width="100%"	align="left">
+          <tr>
+            <th nowrap>&nbsp;</th>
+            <th width="1%" nowrap>&nbsp;NO&nbsp;</th>
+            <th width="1%" nowrap>客户编号</th>
+            <th nowrap>客户名称</th>
+            <th width="1%" nowrap>所属行业</th>
+            <th width="1%" nowrap>级别</th>
+            <th width="1%" nowrap>状态</th>
+            <th width="1%" nowrap>联系人</th>
+            <th nowrap>联系电话</th>
+            <th nowrap>EMAIL</th>
+            <th nowrap>地址</th>
+            <th nowrap>备注</th>
+            <th nowrap>&nbsp;</th>
+          </tr>
+          <tr class="detailRow">
+            <td nowrap>
+                <input id="Checkbox1" class="checks" type="checkbox" checked="CHECKED" /></td>
+            <td nowrap>1</td>
+            <td nowrap><a href="#" onclick="showPage('CustomerDetail.html', null, 800, 550, false, true);">C000100</a></td>
+            <td nowrap align="left">西北建筑设计院</td>
+            <td nowrap align="center">印艺</td>
+            <td nowrap>VIP</td>
+            <td nowrap>未确认</td>
+            <td nowrap align="center">马六</td>
+            <td nowrap align="left">13002912123</td>
+            <td nowrap align="left">XiBeijianzhu@163.com</td>
+            <td nowrap align="left">西安建东街109号</td>
+            <td nowrap>&nbsp;</td>
+            <td nowrap><a href="ModifyCustomer.html">编辑</a> 删除</td>
+          </tr>
+          <tr class="detailRow"> 
+            <td nowrap><input id="Checkbox2" class="checks" type="checkbox" /></td>
+            <td nowrap>2</td>
+            <td nowrap><a href="#" onclick="showPage('CustomerDetail.html', null, 800, 550, false, true);">C000120</a></td>
+            <td nowrap align="left">中铁一局</td>
+            <td nowrap align="center">印艺</td>
+            <td nowrap>VIP</td>
+            <td nowrap>未确认</td>
+            <td nowrap align="center">钱伟民</td>
+            <td nowrap align="left">13892863665</td>
+            <td nowrap align="left">qianweimin@sina.com</td>
+            <td nowrap align="left">西安太乙路109号</td>
+            <td nowrap>&nbsp;</td>
+            <td nowrap><a href="ModifyCustomer.html">编辑</a> 删除</td>
+          </tr>
+          <tr class="detailRow">
+            <td nowrap><input id="Checkbox3" class="checks" type="checkbox" /></td>
+            <td nowrap>3</td>
+            <td nowrap><a href="#" onclick="showPage('CustomerDetail.html', null, 800, 550, false, true);">C000121</a></td>
+            <td nowrap align="left">中铁二十局</td>
+            <td nowrap align="center">印艺</td>
+            <td nowrap>VIP</td>
+            <td nowrap>未确认</td>
+            <td nowrap align="center">黄铭</td>
+            <td nowrap align="left">13892812123</td>
+            <td nowrap align="left">ZhongTieErShiJu@Sina.com</td>
+            <td nowrap align="left" >西安雁翔路2号</td>
+            <td nowrap>&nbsp;</td>
+            <td nowrap><a href="ModifyCustomer.html">编辑</a> 删除</td>
+          </tr>
+          <tr class="detailRow">
+            <td nowrap><input id="Checkbox4" class="checks" type="checkbox" /></td>
+            <td nowrap>4</td>
+            <td nowrap><a href="#" onclick="showPage('CustomerDetail.html', null, 800, 550, false, true);">C000122</a></td>
+            <td nowrap align="left">西安建筑科技大学</td>
+            <td nowrap align="center">印艺</td>
+            <td nowrap>VIP</td>
+            <td nowrap>未确认</td>
+            <td nowrap align="center">余冠侠</td>
+            <td nowrap align="left">13602962122</td>
+            <td nowrap align="left">JianZhuKeDa@Sohu.com</td>
+            <td nowrap align="left">西安建东街2号</td>
+            <td nowrap>&nbsp;</td>
+            <td nowrap><a href="ModifyCustomer.html">编辑</a> 删除</td>
+          </tr>
+          <tr class="detailRow">
+            <td nowrap><input id="Checkbox5" class="checks" type="checkbox" /></td>
+            <td nowrap>5</td>
+            <td nowrap><a href="#" onclick="showPage('CustomerDetail.html', null, 800, 550, false, true);">C000123</a></td>
+            <td nowrap align="left">西美术学院</td>
+            <td nowrap align="center">印艺</td>
+            <td nowrap>VIP</td>
+            <td nowrap>未确认</td>
+            <td nowrap align="center">李坤</td>
+            <td nowrap align="left">13002912123</td>
+            <td nowrap align="left">XiAnArtCollege@163.com</td>
+            <td nowrap align="left">西安含光南路129号</td>
+            <td nowrap>&nbsp;</td>
+            <td nowrap><a href="ModifyCustomer.html">编辑</a> 删除</td>
+          </tr>          
+          <tr>
+            <td nowrap></td>
+            <td >&nbsp;</td>
+            <td >&nbsp;</td>
+            <td >&nbsp;</td>
+            <td >&nbsp;</td>
+            <td >&nbsp;</td>
+            <td >&nbsp;</td>
+            <td >&nbsp;</td>
+            <td >&nbsp;</td>
+            <td >&nbsp;</td>
+            <td >&nbsp;</td>
+            <td >&nbsp;</td>
+            <td >&nbsp;</td>
+          </tr>
+        </table></td>
+        <td width="3%"></td>
+        </tr>
+        <tr class="emptyButtonsUpperRowHight">
+				<td colspan="3"></td>
+			</tr>
+        <tr>
+        <td width="3%">&nbsp;</td>
+        <td align="center" class="bottombuttons"><input type="button" class="buttons" value="合并" onclick="showPage('CustomerConbination.htm', null, 950, 630, false, true);" />
+            &nbsp;&nbsp;
+                        <input type="button" class="buttons" disabled="disabled" value="确定"/>
+                        </td>
+        <td width="3%">&nbsp;</td>
+      </tr>  
+        <tr height="5">
+				<td style="height: 5px"><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+				<td bgcolor="#eeeeee" style="height: 5px">&nbsp;</td>
+				<td style="height: 5px"><img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+		   </tr>    
+    </table>
+    
+    </td>
+	</tr>
+	<tr>
+		<td width="11"><img alt="" src="../images/white_main_bottom_left.gif"></td>
+		<td width="99%"><img alt="" src="../images/spacer_10_x_10.gif"></td>
+		<td width="10"><img alt="" src="../images/white_main_bottom_right.gif"></td>
+	</tr>
+</table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow/Action/ManagePrice
+http://192.168.0.6/svn/workflow
+
+
+
+2010-03-25T07:01:54.921875Z
+3146
+chenruyin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+Model
+dir
+
+PriceAction.cs
+file
+
+
+
+
+2010-03-25T07:11:43.640625Z
+8b1fda6c9e0cc31aae2469ac9e5685b7
+2009-02-05T03:09:54.484375Z
+2295
+zhangxiaolin
+
+BaseBusinessTypePriceSetAction.cs
+file
+
+
+
+
+2010-03-25T07:11:43.656250Z
+fbad7ce490f87df0c24fca12a1d7e9fa
+2010-02-08T07:59:37.968750Z
+3021
+chenruyin
+
+BusinessTypePriceSetAction.cs
+file
+
+
+
+
+2010-03-25T07:11:43.671875Z
+5cef1f6f37afa298fa326c49cbf6abe1
+2010-03-01T09:54:33.046875Z
+3085
+fuqiang
+

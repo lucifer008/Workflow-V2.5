@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/CustomerManager/Impl
+END
+CustomerServiceImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/CustomerManager/Impl/CustomerServiceImpl.cs
+END
+SearchCustomerServiceImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow/Service/CustomerManager/Impl/SearchCustomerServiceImpl.cs
+END

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="ChangeMemberCard" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+    <resultMap id="SearchChangeMemberCardMap" class="ChangeMemberCard">
+      <result property="CustomerName" column="CustomerName"/>
+      <result property="CustomerId" column="CustomerId"/>
+      <result property="OldMemberCardNo" column="old_member_Card_No"/>
+      <result property="NewMemberCardNo" column="New_Member_Card_No"/>
+      <result property="InsertDateTime" column="Insert_Date_Time"/>
+      <result property="Memo" column="Memo"/>
+    </resultMap>
+	</resultMaps>
+	<statements>
+		<select id="SelectChageMemberCard" parameterClass="map" resultMap ="ChangeMemberCardResultMap.selectResult">
+			select * from change_member_card
+			where deleted = '0'
+			<dynamic>
+			<isNotNull prepend="AND" property="MemberCardNo">
+				new_member_card_no = #MemberCardNo#
+			</isNotNull>
+			<isNotNull prepend="AND" property="BeginDate">
+				<![CDATA[
+                    insert_date_time between #BeginDate# and  #EndDate#
+                    ]]>
+			</isNotNull>
+		</dynamic>
+			order by member_card_id asc
+		</select>
+    
+    <!--会员换卡记录统计-->
+    <select id="SearchChangeMemberCard" parameterClass="map" resultMap="SearchChangeMemberCardMap">
+      select top(#RowCount#)
+      c.Name as CustomerName,c.Id as CustomerId,
+      a.old_member_Card_No,a.New_Member_Card_No,
+      a.Insert_Date_Time,a.Memo
+      from CHANGE_MEMBER_CARD a
+      Inner join Member_Card b on b.Id=a.Member_Card_Id
+      Inner join Customer c on c.Id=b.Customer_Id
+      where a.deleted='0'
+      And a.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">
+          a.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull prepend="And" property="BeginDate">
+          a.Insert_Date_Time>=#BeginDate#
+        </isNotNull>
+        <isNotNull prepend="And" property="EndDate">
+          <![CDATA[a.Insert_Date_Time<=#EndDate#]]>
+        </isNotNull>
+        <isNotNull prepend="And" property="NewMemberCardNo">
+          a.New_Member_Card_No like #NewMemberCardNo#
+        </isNotNull>
+      </dynamic>
+      And a.Id not in(
+        select top(#RowCount#*#CurrentPageIndex#)
+        a.Id
+        from CHANGE_MEMBER_CARD a
+        Inner join Member_Card b on b.Id=a.Member_Card_Id
+        where a.deleted='0'
+        And a.Company_Id=#CompanyId#
+        <dynamic>
+          <isNotNull prepend="And" property="BranchShopId">
+            a.Branch_Shop_Id=#BranchShopId#
+          </isNotNull>
+          <isNotNull prepend="And" property="BeginDate">
+            a.Insert_Date_Time>=#BeginDate#
+          </isNotNull>
+          <isNotNull prepend="And" property="EndDate">
+            <![CDATA[a.Insert_Date_Time<=#EndDate#]]>
+          </isNotNull>
+          <isNotNull prepend="And" property="NewMemberCardNo">
+            a.New_Member_Card_No like #NewMemberCardNo#
+          </isNotNull>
+        </dynamic>
+      )
+    </select>
+    <select id="SearchChangeMemberCardRowCount" parameterClass="map" resultClass="long">
+      select
+      count(*)
+      from Change_Member_card a
+      where a.deleted='0'
+      And a.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">
+          a.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull prepend="And" property="BeginDate">
+          a.Insert_Date_Time>=#BeginDate#
+        </isNotNull>
+        <isNotNull prepend="And" property="EndDate">
+          <![CDATA[a.Insert_Date_Time<=#EndDate#]]>
+        </isNotNull>
+        <isNotNull prepend="And" property="NewMemberCardNo">
+          a.New_Member_Card_No like #NewMemberCardNo#
+        </isNotNull>
+      </dynamic>
+    </select>
+    <select id="SearchChangeMemberCardPrint" parameterClass="map" resultMap="SearchChangeMemberCardMap">
+      select
+      c.Name as CustomerName,c.Id as CustomerId,
+      a.old_member_Card_No,a.New_Member_Card_No,
+      a.Insert_Date_Time,a.Memo
+      from CHANGE_MEMBER_CARD a
+      Inner join Member_Card b on b.Id=a.Member_Card_Id
+      Inner join Customer c on c.Id=b.Customer_Id
+      where a.deleted='0'
+      And a.Company_Id=#CompanyId#
+      <dynamic>
+        <isNotNull prepend="And" property="BranchShopId">
+          a.Branch_Shop_Id=#BranchShopId#
+        </isNotNull>
+        <isNotNull prepend="And" property="BeginDate">
+          a.Insert_Date_Time>=#BeginDate#
+        </isNotNull>
+        <isNotNull prepend="And" property="EndDate">
+          <![CDATA[a.Insert_Date_Time<=#EndDate#]]>
+        </isNotNull>
+        <isNotNull prepend="And" property="NewMemberCardNo">
+          a.New_Member_Card_No like #NewMemberCardNo#
+        </isNotNull>
+      </dynamic>
+    </select>
+	</statements>
+</sqlMap>

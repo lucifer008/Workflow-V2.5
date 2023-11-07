@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="OrderItemPrintRequireDetailBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="OrderItemPrintRequireDetailResultMap.selectResult">
+			SELECT
+				ID, ORDER_ITEM_ID, PRINT_REQUIRE_DETAIL_ID
+			FROM ORDER_ITEM_PRINT_REQUIRE_DETAIL
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="OrderItemPrintRequireDetailResultMap.selectResult">
+			SELECT
+				ID, ORDER_ITEM_ID, PRINT_REQUIRE_DETAIL_ID
+			FROM ORDER_ITEM_PRINT_REQUIRE_DETAIL
+			WHERE ID = #Id# 
+		</select>
+		<insert id="Insert" parameterClass="OrderItemPrintRequireDetail">
+			INSERT INTO ORDER_ITEM_PRINT_REQUIRE_DETAIL
+				(
+				  ID, ORDER_ITEM_ID, PRINT_REQUIRE_DETAIL_ID
+				)
+				VALUES
+				(
+				  #Id # , #OrderItemId# , #PrintRequireDetailId# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="OrderItemPrintRequireDetail">
+			UPDATE ORDER_ITEM_PRINT_REQUIRE_DETAIL
+				SET
+					ORDER_ITEM_ID = #OrderItemId# ,PRINT_REQUIRE_DETAIL_ID = #PrintRequireDetailId#  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE ORDER_ITEM_PRINT_REQUIRE_DETAIL
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM ORDER_ITEM_PRINT_REQUIRE_DETAIL WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

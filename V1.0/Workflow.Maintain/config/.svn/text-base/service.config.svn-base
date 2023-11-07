@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns='http://www.springframework.net' xmlns:db="http://www.springframework.net/database" default-autowire="byName" default-lazy-init="true">
+
+    <import resource="dao.config"/>
+    <object id="masterDataService" type="Workflow.Service.Impl.MasterDataServiceImpl,Workflow.Support"></object>
+    <!--<object id="applicationProperty" type="Workflow.Service.Impl.ApplicationPropertyImpl,Workflow.Support"></object>
+    <object id="orderService" type="Workflow.Service.OrderManage.OrderServiceImpl,Workflow.Support"></object>
+	<object id="searchOrderService" type="Workflow.Service.OrderManage.SearchOrderServiceImpl,Workflow.Support"></object>
+	
+	<object id="permissionService" type="Workflow.Service.SystemPermission.PermissionManage.Impl.PermissionServiceImpl,Workflow.Support"></object>
+	<object id="employeeService" type="Workflow.Service.SystemPermission.EmployeeManage.Impl.EmployeeServiceImpl, Workflow.Support"></object>
+	<object id="handOverService" type="Workflow.Service.Impl.HandOverServiceImpl, Workflow.Support"></object>
+  --><!--客户管理--><!--
+	<object id="customerService" type="Workflow.Service.Impl.CustomerServiceImpl, Workflow.Support"></object>
+	<object id="searchCustomerService" type="Workflow.Service.CustomerManager.Impl.SearchCustomerServiceImpl, Workflow.Support"></object>
+  
+  --><!--会员卡管理--><!--
+	<object id="memberCardService" type="Workflow.Service.Impl.MemberCardServiceImpl, Workflow.Support"></object>
+  <object id="searchMemberCardService" type="Workflow.Service.MemberCardManager.Impl.SearchMemberCardServiceImpl, Workflow.Support"></object>
+  --><!--用户管理--><!--
+  <object id="userService" type="Workflow.Service.SystemPermission.UserMangae.Impl.UserServiceImpl, Workflow.Support"></object>
+  <object id="searchCampaignService" type="Workflow.Service.CompaignManage.SearchCampaignServiceImpl, Workflow.Support"></object>
+	<object id="campaignService" type="Workflow.Service.CompaignManage.CampaignServiceImpl, Workflow.Support"></object>
+  <object id="takeWorkService" type="Workflow.Service.OrderManage.TakeWorkServiceImpl, Workflow.Support"></object>
+	<object id="logCountersService" type="Workflow.Service.LogCounterManage.LogCountersServiceImpl, Workflow.Support"></object>
+    <object id="noGenerator" type="Workflow.Service.Impl.NoGeneratorImpl, Workflow.Support">
+        <property name="prefix" value="S"/>
+    </object>
+  
+  --><!--财务处理--><!--
+	<object id="financeService" type="Workflow.Service.Impl.FinanceServiceImpl,Workflow.Support"></object>
+	<object id="findFinanceService" type="Workflow.Service.Impl.FindFinanceServiceImpl,Workflow.Support"></object>
+  
+  --><!--绩效管理--><!--
+  <object id="searchAchinevementService" type="Workflow.Service.Impl.SearchAchievementServiceImpl,Workflow.Support"></object>
+  <object id="achievementService" type="Workflow.Service.Impl.AchievementServiceImpl,Workflow.Support"></object>
+	--><!--Modify:Cry Service 整理--><!--
+	--><!--<object id="roleService" type="Workflow.Service.Impl.RoleServiceImpl,Workflow.Support"></object>--><!--
+	<object id="userPermissionCheckService" type="Workflow.Service.Impl.UserPermissionCheckServiceImpl,Workflow.Support"></object>
+
+	--><!--Add:Cry RoleService 整理--><!--
+	<object id="roleService" type="Workflow.Service.SystemPermission.RoleManage.RoleServiceImpl,Workflow.Support"></object>
+	<object id="positionService" type="Workflow.Service.SystemPermission.PositionManage.PositionServiceImpl,Workflow.Support"></object>
+
+	--><!--Add:Cry selectActiveFactorService整理--><!--
+	<object id="selectActiveFactorService" type="Workflow.Service.SystemManege.PriceManage.SelectActiveFactorServiceImpl,Workflow.Support"></object>
+	<object id="priceService" type="Workflow.Service.SystemManege.PriceManage.PriceServiceImpl,Workflow.Support"></object>
+
+	--><!--<object id="exceptionAdvice" type="Spring.Aop.Support.RegularExpressionMethodPointcutAdvisor,Spring.Aop">--><!--
+		--><!--<property name="Pattern" value="ReDoOrder"></property>--><!--
+	<object id="exceptinAdvice"	type="Spring.Aop.Support.AttributeMatchMethodPointcutAdvisor,Spring.Aop">
+		<property name="Advice">
+			<object type="Workflow.Support.Spring.SecurityThrowsAdvice,Workflow.Support"></object>
+		</property>
+		<property name="attribute" value="Workflow.Support.Attributes.UpdatePermissionAttribute,Workflow.Support"></property>
+	</object>
+	<object id="serviceObject" type="Spring.Aop.Framework.ProxyFactoryObject,Spring.Aop">
+		<property name="Target">
+			<object id="serviceObjectTarget"  type="Workflow.Service.OrderManage.OrderServiceImpl,Workflow.Support"></object>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>exceptionAdvice</value>
+			</list>
+		</property>
+	</object>-->
+  
+  <!--后台数据维护Service注入-->
+  <object id="priceBaseService" type="Workflow.Service.SystemMaintenance.PriceBaseData.Impl.PriceBaseServiceImpl,Workflow.Support"></object>
+  <object id="searchPriceBaseService" type="Workflow.Service.SystemMaintenance.PriceBaseData.Impl.SearchPriceBaseServiceImpl,Workflow.Support"></object>
+  
+  <object id="orderBaseDataService" type="Workflow.Service.SystemMaintenance.OrderBaseData.Impl.OrderBaseDataServiceImpl,Workflow.Support"></object>
+  <object id="searchOrderBaseDataService" type="Workflow.Service.SystemMaintenance.OrderBaseData.Impl.SearchOrderBaseDataServiceImpl,Workflow.Support"></object>
+
+  <object id="SearchSystemService"  type="Workflow.Service.SystemMaintenance.System.Impl.SearchSystemServiceImpl,Workflow.Support" singleton="false"></object>
+  <object id="SystemService"  type="Workflow.Service.SystemMaintenance.System.Impl.SystemServiceImpl,Workflow.Support" singleton="false"></object>
+</objects>

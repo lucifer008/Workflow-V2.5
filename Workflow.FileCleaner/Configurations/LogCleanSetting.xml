@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LogFiles>
+	<LogFile FullName="D:\workflow\Workflow.Web\reports\*.pdf" DateFormat=""  Enable="true">
+		<Clean CleanType="Delete" MaxDays="10"/>
+	</LogFile>
+</LogFiles> 

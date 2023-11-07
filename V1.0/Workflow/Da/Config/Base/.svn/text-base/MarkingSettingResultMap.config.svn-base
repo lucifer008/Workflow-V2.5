@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="MarkingSettingResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="MarkingSetting" type="Workflow.Da.Domain.MarkingSetting, Workflow.Support" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="selectResult" class="MarkingSetting">
+			<result property="Id" column="ID" dbType="bigint"/> 
+			
+			<result property="ProcessContentId" column="PROCESS_CONTENT_ID" dbType="bigint"/> 
+			
+			<result property="Amount" column="AMOUNT" dbType="decimal"/> 
+			
+			<result property="Marking" column="MARKING" dbType="decimal"/> 
+			
+			<result property="Memo" column="MEMO" dbType="nvarchar"/> 
+			
+
+		</resultMap>
+	</resultMaps>
+</sqlMap>

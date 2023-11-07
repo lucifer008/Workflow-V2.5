@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="LinkManBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		<select id="SelectAll" resultMap="LinkManResultMap.selectResult">
+			SELECT
+				ID, CUSTOMER_ID, NAME, SEX, AGE, POSITION, HOBBY, COMPANY_TEL_NO, MOBILE_NO, QQ, EMAIL, ADDRESS, MEMO, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, COMPANY_ID, BRANCH_SHOP_ID
+			FROM LINK_MAN
+			Where DELETED = '0'
+				AND COMPANY_ID = #CompanyId#
+				AND BRANCH_SHOP_ID = #BranchShopId#
+			ORDER BY ID
+		</select>
+		<select id="SelectByPk" parameterClass="long" resultMap="LinkManResultMap.selectResult">
+			SELECT
+				ID, CUSTOMER_ID, NAME, SEX, AGE, POSITION, HOBBY, COMPANY_TEL_NO, MOBILE_NO, QQ, EMAIL, ADDRESS, MEMO, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, COMPANY_ID, BRANCH_SHOP_ID
+			FROM LINK_MAN
+			WHERE ID = #Id# AND DELETED = '0' 
+
+		</select>
+		<insert id="Insert" parameterClass="LinkMan">
+			INSERT INTO LINK_MAN
+				(
+				  ID, CUSTOMER_ID, NAME, SEX, AGE, POSITION, HOBBY, COMPANY_TEL_NO, MOBILE_NO, QQ, EMAIL, ADDRESS, MEMO, INSERT_DATE_TIME, INSERT_USER, UPDATE_DATE_TIME, UPDATE_USER, VERSION, DELETED, COMPANY_ID, BRANCH_SHOP_ID
+				)
+				VALUES
+				(
+				  #Id # , #CustomerId# , #Name# , #Sex# , #Age# , #Position# , #Hobby# , #CompanyTelNo# , #MobileNo# , #Qq# , #Email# , #Address# , #Memo# , #InsertDateTime# , #InsertUser# , #UpdateDateTime# , #UpdateUser# , #Version# , #Deleted# , #CompanyId# , #BranchShopId# 
+				)
+		</insert>
+		
+		<update id="Update" parameterClass="LinkMan">
+			UPDATE LINK_MAN
+				SET
+					CUSTOMER_ID = #CustomerId# ,NAME = #Name#  ,SEX = #Sex#  ,AGE = #Age#  ,POSITION = #Position#  ,HOBBY = #Hobby#  ,COMPANY_TEL_NO = #CompanyTelNo#  ,MOBILE_NO = #MobileNo#  ,QQ = #Qq#  ,EMAIL = #Email#  ,ADDRESS = #Address#  ,MEMO = #Memo#  ,UPDATE_DATE_TIME = #UpdateDateTime#  ,UPDATE_USER = #UpdateUser#  ,VERSION = VERSION + 1  
+			WHERE ID = #Id#
+		</update>
+		<update id="LogicDelete" parameterClass="long">
+			UPDATE LINK_MAN
+				SET
+					VERSION = VERSION + 1,
+					DELETED = '1'
+			WHERE ID = #Id#
+		</update>
+		<delete id="Delete" parameterClass="long">
+			DELETE FROM LINK_MAN WHERE ID = #Id#
+		</delete>
+		
+  </statements>
+</sqlMap>

@@ -1,0 +1,79 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow/Action
+http://192.168.0.6/svn/workflow
+
+
+
+2009-11-17T01:02:13.390625Z
+2663
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+Employee
+dir
+
+Ajax
+dir
+
+Roles
+dir
+
+SystemMaintenance
+dir
+
+Positions
+dir
+
+Permission
+dir
+
+Achievement
+dir
+
+Membercard
+dir
+
+Customer
+dir
+
+Finance
+dir
+
+LogCounters
+dir
+
+Activities
+dir
+
+HandOver
+dir
+
+Login
+dir
+
+Order
+dir
+
+ManagePrice
+dir
+
+User
+dir
+

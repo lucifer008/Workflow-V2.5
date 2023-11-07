@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="PermissionGroupDetailResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="PermissionGroupDetail" type="Workflow.Da.Domain.PermissionGroupDetail, Workflow.Support" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="selectResult" class="PermissionGroupDetail">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="PermissionId" column="PERMISSION_ID" dbType="bigint"/>
+			<result property="PermissionGroupId" column="PERMISSION_GROUP_ID" dbType="bigint"/>
+		</resultMap>
+	</resultMaps>
+</sqlMap>

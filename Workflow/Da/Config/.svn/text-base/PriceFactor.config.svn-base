@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="PriceFactor" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+    <cacheModels>
+        <cacheModel id="PriceFactorCache" implementation="LRU">
+            <flushInterval hours="24"/>
+            <property name="CacheSize" value="100" />
+            <flushOnExecute statement="PriceFactorBase.Insert"/>
+            <flushOnExecute statement="PriceFactorBase.Update"/>
+            <flushOnExecute statement="PriceFactorBase.LogicDelete"/>
+            <flushOnExecute statement="PriceFactorBase.Delete"/>
+        </cacheModel>
+    </cacheModels>
+    <resultMaps>
+        <resultMap id="selectByUsedResult" class="PriceFactor">
+            <result property="Id" column="ID" dbType="int"/>
+            <result property="Name" column="NAME" dbType="nvarchar"/>
+            <result property="DisplayText" column="DISPLAY_TEXT" dbType="nvarchar"/>
+            <result property="TargetTable" column="TARGET_TABLE" dbType="varchar"/>
+            <result property="TargetValueColumn" column="TARGET_VALUE_COLUMN" dbType="varchar"/>
+            <result property="TargetTextColumn" column="TARGET_TEXT_COLUMN" dbType="varchar"/>
+			<result property="IsDisplay" column="IS_DISPLAY" dbType="char"/>
+        </resultMap>
+        <resultMap id="selectPriceFactorSetListResult" class="PriceFactor">
+            <result property="Id" column="ID" dbType="bigint"/>
+            <result property="Name" column="NAME" dbType="nvarchar"/>
+            <result property="DisplayText" column="DISPLAY_TEXT" dbType="nvarchar"/>
+            <!--<result property="TargetTable" column="TARGET_TABLE" dbType="varchar"/>
+			<result property="TargetValueColumn" column="TARGET_VALUE_COLUMN" dbType="varchar"/>
+			<result property="TargetTextColumn" column="TARGET_TEXT_COLUMN" dbType="varchar"/>
+			<result property="Used" column="USED" dbType="char"/>
+			<result property="InsertDateTime" column="INSERT_DATE_TIME" dbType="datetime"/>
+			<result property="InsertUser" column="INSERT_USER" dbType="int"/>
+			<result property="UpdateDateTime" column="UPDATE_DATE_TIME" dbType="datetime"/>
+			<result property="UpdateUser" column="UPDATE_USER" dbType="int"/>
+			<result property="Version" column="VERSION" dbType="int"/>
+			<result property="Deleted" column="DELETED" dbType="char"/>
+			<result property="CompanyId" column="COMPANY_ID" dbType="bigint"/>
+			<result property="BranchShopId" column="BRANCH_SHOP_ID" dbType="bigint"/>-->
+            <result property="PriceFactorId" column="PRICE_FACTOR_ID" dbType="int"/>
+            <result property="BusinessTypeId" column="BUSINESS_TYPE_ID" dbType="int"/>
+        </resultMap>
+      <resultMap id="GetPriceFactorValueListMap" class="PriceFactor">
+        <result property="Id" column="ID" dbType="int"/>
+        <result property="Name" column="NAME" dbType="nvarchar"/>
+      </resultMap>
+    </resultMaps>
+    <statements>
+        <select id="SelectByUsed" parameterClass="User" resultMap="selectByUsedResult" cacheModel="PriceFactor.PriceFactorCache">
+			<![CDATA[
+			SELECT
+			ID, NAME, DISPLAY_TEXT, TARGET_TABLE, TARGET_VALUE_COLUMN, TARGET_TEXT_COLUMN,IS_DISPLAY
+			FROM PRICE_FACTOR where (USED='Y' and IS_DISPLAY='Y') and COMPANY_ID=#CompanyId# and Deleted=0
+			]]>
+			<dynamic>
+				<isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+					<![CDATA[
+					BRANCH_SHOP_ID=#BranchShopId#		
+					]]>
+				</isNotEqual>
+			</dynamic>
+			<![CDATA[
+			ORDER BY SORT_NO ASC
+			]]>
+		</select>
+        <select id="SelectPriceFactorSetList" parameterClass="int" resultMap="selectPriceFactorSetListResult">
+			<![CDATA[
+          select t1.ID,t1.NAME,t1.DISPLAY_TEXT,t2.PRICE_FACTOR_ID,t2.BUSINESS_TYPE_ID from PRICE_FACTOR t1
+            left join
+            (select BUSINESS_TYPE_ID,PRICE_FACTOR_ID from BUSINESS_TYPE_PRICE_FACTOR where BUSINESS_TYPE_ID=#Id#) t2
+            on t1.ID=t2.PRICE_FACTOR_ID 
+			Where t1.Deleted=0 and t1.used='Y' and t1.company_id=#CompanyId# 
+			]]>
+			<dynamic>
+				<isNotEqual prepend="and" compareProperty="BranchShopId" compareValue="0">
+					<![CDATA[
+					t1.BRANCH_SHOP_ID=#BranchShopId#		
+					]]>
+				</isNotEqual>
+			</dynamic>
+			order by t1.ID
+		</select>
+
+		<select id="SelectUsedPriceFactor" parameterClass="int" resultMap="PriceFactorResultMap.selectResult">
+			select * from PRICE_FACTOR where id in (
+			select price_factor_id from BUSINESS_TYPE_PRICE_FACTOR where business_type_id=#value#)
+		</select>
+
+      <select id="SearchPriceFactor" resultMap="PriceFactorResultMap.selectResult">
+        select
+        top(#Id#)
+        *
+        from Price_Factor
+        where deleted='0'
+        and company_Id=#CompanyId#
+        and branch_Shop_Id=#BranchShopId#
+        and Id not in(
+        select
+        top(#Id#*#InsertUser#)
+        Id
+        from Price_Factor
+        where deleted='0'
+        and company_Id=#CompanyId#
+        and branch_Shop_Id=#BranchShopId#
+        )
+      </select>
+      <select id="SearchPriceFactorRowCount" resultClass="long">
+        select
+        count(Id)
+        from Price_Factor
+        where deleted='0'
+        and company_Id=#CompanyId#
+        and branch_Shop_Id=#BranchShopId#
+      </select>
+      
+      <!--价格因素值中是否使用价格因素-->
+      <select id="CheckPriceFactorIsUse" resultClass="long">
+        select
+        count(Id)
+        from Factor_Value
+        where Deleted='0'
+        and Company_Id=#CompanyId#
+        and branch_Shop_Id=#BranchShopId#
+        and price_Factor_Id=#Id#      
+      </select>
+      <!--业务类型中是否包含价格因素-->
+      <select id="CheckPriceFactorIsUse1" resultClass="long">
+        select count(b.Id)
+        from BUSINESS_TYPE_PRICE_FACTOR b
+        Inner join Price_Factor a on a.Id=b.price_Factor_Id
+        where a.Deleted='0'
+        and a.Company_Id=#CompanyId#
+        and a.branch_Shop_Id=#BranchShopId#
+        and a.Id=#Id#
+      </select>
+      <!--价格因素之间是否存在依赖关系-->
+      <select id="CheckPriceFactorIsUse2" resultClass="long">
+        select
+        count(Id) 
+        from FACTOR_RELATION
+        where price_Factor_Id=#Id#
+        and Deleted='0'
+        and Company_Id=#CompanyId#
+        and branch_Shop_Id=#BranchShopId#
+      </select>
+      
+      <!--获取价格因素详情-->
+      <select id="GetPriceFactorDetail" resultMap="PriceFactorResultMap.selectResult">
+        select * from Price_Factor
+        where Deleted='0'
+        and Company_Id=#CompanyId#
+        and branch_Shop_Id=#BranchShopId#
+        and Id=#Id#
+      </select>
+      <select id="GetPriceFactorValueList" resultMap="GetPriceFactorValueListMap">
+        select $TargetValueColumn$ as Id,$TargetTextColumn$ as Name from $TargetTable$
+        where deleted='0'
+        and company_Id=#CompanyId#
+        and branch_shop_Id=#BranchShopId#
+      </select>
+		<select id="SelectAllPriceFactorList" resultMap="PriceFactorResultMap.selectResult">
+			select * from Price_Factor
+			where Deleted='0'
+			and Company_Id=#CompanyId#
+			and branch_Shop_Id=#BranchShopId#
+			order by id
+		</select>
+	</statements>
+</sqlMap>

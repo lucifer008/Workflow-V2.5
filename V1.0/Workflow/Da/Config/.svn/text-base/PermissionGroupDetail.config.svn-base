@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="PermissionGroupDetail" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<resultMaps>
+	</resultMaps>
+	<statements>
+		<!--通过Permission.Id和PermissionGroupDetail.Id查询PermissionGroupDetail-->
+		<select id="GetPermissionGroupDetailByDoubleId" parameterClass="PermissionGroupDetail" resultMap="PermissionGroupDetailResultMap.selectResult">
+			select * from PERMISSION_GROUP_DETAIL
+			where permission_id = #PermissionId# and permission_group_id = #PermissionGroupId#
+		</select>
+		<!--通过PermissionGroup.Id删除PermissionGroupDetail中的信息-->
+		<delete id="DeleteByPermissionGroupId" parameterClass="long">
+			delete from permission_group_detail where permission_group_id = #Id#
+		</delete>
+		
+		<select id="GetExistRelationPermissionGroup" resultClass="long">
+			select permission_group_id from permission_group_detail
+		</select>
+
+	</statements>
+</sqlMap>

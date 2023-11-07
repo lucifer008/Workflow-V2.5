@@ -1,0 +1,665 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/workflow/!svn/ver/3408/trunk/v2.5/Workflow/Da/Config
+END
+PrintRequireDetail.config
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/PrintRequireDetail.config
+END
+OrdersForRecordMachineSum.config
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3344/trunk/v2.5/Workflow/Da/Config/OrdersForRecordMachineSum.config
+END
+Campaign.config
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/Campaign.config
+END
+DeliveryOrder.config
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/DeliveryOrder.config
+END
+Unit.config
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/Unit.config
+END
+OrderItemMortgage.config
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Config/OrderItemMortgage.config
+END
+MemberCardConcession.config
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/MemberCardConcession.config
+END
+OrderItemFactorValue.config
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Config/OrderItemFactorValue.config
+END
+BlankOutReason.config
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/BlankOutReason.config
+END
+RolePermissionGroup.config
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/RolePermissionGroup.config
+END
+Achievement.config
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3396/trunk/v2.5/Workflow/Da/Config/Achievement.config
+END
+MachineWatchRecordLog.config
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/MachineWatchRecordLog.config
+END
+BusinessType.config
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/BusinessType.config
+END
+ProcessContentAchievementRate.config
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/ProcessContentAchievementRate.config
+END
+RealOrderItem.config
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/RealOrderItem.config
+END
+HandOverOrder.config
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/HandOverOrder.config
+END
+MachineWatchScale.config
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/MachineWatchScale.config
+END
+MemberCardOrderItemCounteractLog.config
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Config/MemberCardOrderItemCounteractLog.config
+END
+PaperSpecification.config
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3268/trunk/v2.5/Workflow/Da/Config/PaperSpecification.config
+END
+ProcessContent.config
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3286/trunk/v2.5/Workflow/Da/Config/ProcessContent.config
+END
+TrashPaperEmployee.config
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/TrashPaperEmployee.config
+END
+BuySend.config
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3339/trunk/v2.5/Workflow/Da/Config/BuySend.config
+END
+MasterTrade.config
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/MasterTrade.config
+END
+PaperSpecificationSimilarity.config
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/PaperSpecificationSimilarity.config
+END
+ApplyAbate.config
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3408/trunk/v2.5/Workflow/Da/Config/ApplyAbate.config
+END
+BaseBusinessTypePriceSet.config
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3200/trunk/v2.5/Workflow/Da/Config/BaseBusinessTypePriceSet.config
+END
+PrintDemandDetail.config
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/PrintDemandDetail.config
+END
+MemberOperateLog.config
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/MemberOperateLog.config
+END
+TrashReason.config
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/TrashReason.config
+END
+DailyBusionessReport.config
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3193/trunk/v2.5/Workflow/Da/Config/DailyBusionessReport.config
+END
+RealOrderItemFactorValue.config
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/RealOrderItemFactorValue.config
+END
+RecordMachineWatch.config
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3395/trunk/v2.5/Workflow/Da/Config/RecordMachineWatch.config
+END
+MemberCardBuySend.config
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3227/trunk/v2.5/Workflow/Da/Config/MemberCardBuySend.config
+END
+BusinessTypePriceSet.config
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/BusinessTypePriceSet.config
+END
+OrderTimeoutAlarmRecord.config
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Config/OrderTimeoutAlarmRecord.config
+END
+CompensateEmployee.config
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/CompensateEmployee.config
+END
+MemberCardDiscountConcession.config
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/MemberCardDiscountConcession.config
+END
+OrderMortgageRecord.config
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow/Da/Config/OrderMortgageRecord.config
+END
+UserRole.config
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/UserRole.config
+END
+MemberCard.config
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3344/trunk/v2.5/Workflow/Da/Config/MemberCard.config
+END
+ConcessionDifferencePrice.config
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/ConcessionDifferencePrice.config
+END
+Customer.config
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/workflow/!svn/ver/3344/trunk/v2.5/Workflow/Da/Config/Customer.config
+END
+Role.config
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/Role.config
+END
+IdGenerator.config
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/IdGenerator.config
+END
+Concession.config
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/Concession.config
+END
+EmployeePosition.config
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/EmployeePosition.config
+END
+CashHandOver.config
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/CashHandOver.config
+END
+DiscountConcessionMachineTypePaperSpec.config
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/DiscountConcessionMachineTypePaperSpec.config
+END
+FactorRelationValue.config
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/FactorRelationValue.config
+END
+Order.config
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/workflow/!svn/ver/3397/trunk/v2.5/Workflow/Da/Config/Order.config
+END
+FactorRelation.config
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/FactorRelation.config
+END
+AccreditRecord.config
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/AccreditRecord.config
+END
+ConcessionMemberCardLevel.config
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/ConcessionMemberCardLevel.config
+END
+BusinessModuleGroup.config
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/BusinessModuleGroup.config
+END
+BusinessTypePriceFactor.config
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/BusinessTypePriceFactor.config
+END
+Employee.config
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/workflow/!svn/ver/3330/trunk/v2.5/Workflow/Da/Config/Employee.config
+END
+OtherGatheringAndRefundmentRecord.config
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/workflow/!svn/ver/3330/trunk/v2.5/Workflow/Da/Config/OtherGatheringAndRefundmentRecord.config
+END
+AmountSegment.config
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/AmountSegment.config
+END
+BranchShop.config
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/BranchShop.config
+END
+OrderItemPrintRequireDetail.config
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/OrderItemPrintRequireDetail.config
+END
+TakeWork.config
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/TakeWork.config
+END
+Permission.config
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/Permission.config
+END
+PermissionGroupDetail.config
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/PermissionGroupDetail.config
+END
+OrderItemEmployee.config
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3331/trunk/v2.5/Workflow/Da/Config/OrderItemEmployee.config
+END
+MachineWatch.config
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/MachineWatch.config
+END
+ReportLossMemberCard.config
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/ReportLossMemberCard.config
+END
+LogoffMemberCard.config
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/LogoffMemberCard.config
+END
+CashHandOverOrder.config
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/CashHandOverOrder.config
+END
+PaymentConcession.config
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3396/trunk/v2.5/Workflow/Da/Config/PaymentConcession.config
+END
+PriceFactor.config
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3197/trunk/v2.5/Workflow/Da/Config/PriceFactor.config
+END
+CustomerType.config
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/CustomerType.config
+END
+RequireAccountingInfo.config
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/RequireAccountingInfo.config
+END
+Machine.config
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/Machine.config
+END
+Position.config
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/Position.config
+END
+PrintDemand.config
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/PrintDemand.config
+END
+HandOver.config
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/workflow/!svn/ver/3321/trunk/v2.5/Workflow/Da/Config/HandOver.config
+END
+ChangeMemberCard.config
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/ChangeMemberCard.config
+END
+ApplicationProperty.config
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3401/trunk/v2.5/Workflow/Da/Config/ApplicationProperty.config
+END
+RealOrderItemPrintRequire.config
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/RealOrderItemPrintRequire.config
+END
+DailyBusionessReportItem.config
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3330/trunk/v2.5/Workflow/Da/Config/DailyBusionessReportItem.config
+END
+FactorValue.config
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/FactorValue.config
+END
+DiscountConcession.config
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/DiscountConcession.config
+END
+RelationEmployee.config
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/RelationEmployee.config
+END
+MemberCardConcessionGathering.config
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/MemberCardConcessionGathering.config
+END
+User.config
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/workflow/!svn/ver/3299/trunk/v2.5/Workflow/Da/Config/User.config
+END
+UserConcessionRange.config
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/UserConcessionRange.config
+END
+DutyEmployee.config
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/DutyEmployee.config
+END
+MarkingSetting.config
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/MarkingSetting.config
+END
+DailyRecordMachine.config
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/DailyRecordMachine.config
+END
+HandOverMemberCard.config
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/HandOverMemberCard.config
+END
+MemberCardLevel.config
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/MemberCardLevel.config
+END
+MachineWatchConversionPaper.config
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/MachineWatchConversionPaper.config
+END
+LinkMan.config
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/LinkMan.config
+END
+CustomerLevel.config
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/CustomerLevel.config
+END
+OrderItem.config
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3361/trunk/v2.5/Workflow/Da/Config/OrderItem.config
+END
+OrdersStatusAlter.config
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/OrdersStatusAlter.config
+END
+RealOrderItemEmployee.config
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/RealOrderItemEmployee.config
+END
+BusinessModule.config
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/BusinessModule.config
+END
+UncompleteOrdersUsedPaper.config
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/UncompleteOrdersUsedPaper.config
+END
+GatheringOrder.config
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3396/trunk/v2.5/Workflow/Da/Config/GatheringOrder.config
+END
+OrdersDuty.config
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/OrdersDuty.config
+END
+PermissionGroup.config
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/PermissionGroup.config
+END
+MachineType.config
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/MachineType.config
+END
+Company.config
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/Company.config
+END
+CompensateUsedPaper.config
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3268/trunk/v2.5/Workflow/Da/Config/CompensateUsedPaper.config
+END
+ReportLessMode.config
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/ReportLessMode.config
+END
+SecondaryTrade.config
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/SecondaryTrade.config
+END
+Gathering.config
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3330/trunk/v2.5/Workflow/Da/Config/Gathering.config
+END
+RealOrderItemTrashReason.config
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/RealOrderItemTrashReason.config
+END
+PaperType.config
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Da/Config/PaperType.config
+END

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>新增联系人</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.STYLE1 {color: #FF0000}
+-->
+</style>
+</head>
+
+<body>
+<div align="center" style="width:100%; background-color:#FFFFFF;"  id="container">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+	<tr>
+		<td width="11"><img alt="" src="../images/white_main_top_left.gif"></td>
+		<td width="99%"><img alt="" src="../images/spacer_10_x_10.gif" height="10"></td>
+		<td width="10"><img alt="" src="../images/white_main_top_right.gif"
+			width="12" height="11"></td>
+	</tr>
+  <tr>
+    <td colspan="3" bgcolor="#FFFFFF">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td></td>
+		<td align="left" bgcolor="#eeeeee">首页&nbsp;-&gt;&nbsp;客户管理&nbsp;-&gt;&nbsp;新增联系人</td>
+		<td></td>
+      </tr>
+      <tr>
+	    <td colspan="3" class="caption" align="center">新增联系人</td>
+			</tr>
+      <tr>
+        <td width="3%">&nbsp;</td>
+        <td align="center">
+         <table  border="1" cellpadding="3" cellspacing="1" width="100%" align="left">
+              <tr>
+                <td nowrap class="item_caption">客户编号:</td>
+                <td class="item_content">
+                    C0001</td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">客户名称:</td>
+                <td class="item_content">
+                    西安建大</td>
+              </tr>              
+              <tr>
+                <td nowrap class="item_caption">姓名<span class="STYLE1">*</span>:</td>
+                <td class="item_content">
+                  <input class="texts" name="textfield" type="text" value="钱伟民" />
+                    </td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">单位电话<span class="STYLE1">*</span>:</td>
+                <td class="item_content"><input class="texts" name="textfield2" type="text" value="029-85663211" />
+                  </td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">手机:</td>
+                <td class="item_content"><input class="texts" name="textfield3" type="text" value="13892863665" /></td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">QQ号码:</td>
+                <td class="item_content"><input class="texts" type="text" name="textfield4" /></td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">E-Mail:</td>
+                <td class="item_content"><input class="texts" name="textfield5" type="text" value="qianweimin@sina.com" /></td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">地址:</td>
+                <td class="item_content"><input class="texts" name="textfield6" type="text" value="西安市太乙路109号" /></td>
+              </tr>
+              <tr>
+                <td nowrap class="item_caption">备注:</td>
+                <td class="item_content"><textarea name="textfield7" style="width:100%" rows="3" cols="95"></textarea></td>
+              </tr>
+            </table>
+            </td>
+         <td></td>
+      </tr>
+      <tr class="emptyButtonsUpperRowHight">
+				<td colspan="3"></td>
+			</tr>
+      <tr>
+        <td width="3%">&nbsp;</td>
+        <td align="center" class="bottombuttons"><input type="button" onclick="window.close();" class="buttons" value="确定" />
+            &nbsp;&nbsp;
+          <input type="button" class="buttons" onclick="window.close();" value="取消" /></td>
+        <td>&nbsp;</td>
+      </tr>      
+    </table></td>
+  </tr>
+	<tr>
+		<td width="11"><img alt="" src="../images/white_main_bottom_left.gif"></td>
+		<td width="99%"><img alt="" src="../images/spacer_10_x_10.gif"></td>
+		<td width="10"><img alt="" src="../images/white_main_bottom_right.gif"></td>
+	</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Master.master.cs" Inherits="base_Master" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <%
+        String url = Request.Url.Scheme + "://" + Request.Url.Host + ":" + Request.Url.Port.ToString() + Request.ApplicationPath;
+     %>
+    <base href="<%= url %>/" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css" media="all">@import "css/css.css";</style>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/default.js"></script>
+    <script type="text/javascript">
+		$().ready(function(){$("form:first-child").attr("action", "<%=Request.Path %>");});
+    </script>
+    <asp:contentplaceholder id="TitleMetaContentplaceholder" runat="server" />
+</head>
+<body onload="">
+<div align="center" style="width:99%" bgcolor="#ffffff" id="container">
+<form id="masterForm" method="post" runat=server>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"">	
+	<tr>
+		<td width="11"><img alt="" src="images/white_main_top_left.gif"></td>
+		<td width="99%"><img alt="" src="images/spacer_10_x_10.gif" height="10"></td>
+		<td width="10"><img alt="" src="images/white_main_top_right.gif"
+			width="12" height="11"></td>
+	</tr>
+	<tr>
+		<td colspan="3" bgcolor="#FFFFFF">
+		<table width="100%" border="0" cellspacing="0" cellpadding="5">
+			<!--tr>
+				<td></td>
+				<td align="left" bgcolor="#eeeeee">首页 -&gt; 本日订单 -&gt; 新增订单</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="3" class="caption">新增订单</td>
+			</tr-->
+			<asp:contentplaceholder id="TitleContentplaceholder" runat="server" />
+			<tr>
+				<td>&nbsp;</td>
+				<td align="center">
+				<!--table border="1" cellpadding="3" cellspacing="1" width="100%"
+					align="left">
+					<tr>
+						<td nowrap class="item_caption">会员卡号:</td>
+						<td colspan="5" class="item_content"><input type="text" /></td>
+					</tr>
+				</table-->
+				<asp:contentplaceholder id="InputContentplaceholder" runat="server" />
+				</td>
+				<td>&nbsp;</td>
+			</tr>
+			<!--tr>
+				<td>&nbsp;</td>
+				<td align="center">
+				<table border="1" cellpadding="3" cellspacing="1" width="100%"
+					align="left">
+					<tr>
+						<th width="1%" nowrap>&nbsp;NO&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;业务类型&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;加工内容&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;机器&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;纸型&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;纸质&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;数量&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;单价&nbsp;</th>
+						<th width="1%" nowrap>&nbsp;金额&nbsp;</th>
+						<th>制作要求</th>
+						<th width="1%" nowrap></th>
+					</tr>
+				</table>
+				</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr class="emptyButtonsUpperRowHight">
+				<td colspan="3"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><input name="Submit34" class="btn"
+					onclick="printOrderForm()" value="保存" type="submit">&nbsp;&nbsp;&nbsp;<input
+					name="Submit3342" class="buttons" onclick="prepareOrderForm()"
+					value="分配&amp;打印" type="button"></td>
+			</tr-->
+			<asp:contentplaceholder id="ContextContentplaceholder" runat="server" />
+			<tr height="5">
+				<td><img alt="" src="images/spacer_5_x_5.gif" width="5" height="5"></td>
+				<td bgcolor="#eeeeee">&nbsp;</td>
+				<td><img alt="" src="images/spacer_5_x_5.gif" width="5" height="5"></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td width="11"><img alt="" src="images/white_main_bottom_left.gif"></td>
+		<td width="99%"><img alt="" src="images/spacer_10_x_10.gif"></td>
+		<td width="10"><img alt="" src="images/white_main_bottom_right.gif"></td>
+	</tr>
+</table>
+</form>
+</div>
+</body>
+</html>

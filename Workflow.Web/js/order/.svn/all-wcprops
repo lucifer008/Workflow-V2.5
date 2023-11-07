@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/workflow/!svn/ver/3519/trunk/v2.5/Workflow.Web/js/order
+END
+selectPrintDemand.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/order/selectPrintDemand.js
+END
+prepayMoney.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/js/order/prepayMoney.js
+END
+checkOrder.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/js/order/checkOrder.js
+END
+dailyOrderFilterCondition.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/js/order/dailyOrderFilterCondition.js
+END
+order.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/workflow/!svn/ver/3402/trunk/v2.5/Workflow.Web/js/order/order.js
+END
+todayOrder.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3319/trunk/v2.5/Workflow.Web/js/order/todayOrder.js
+END
+dispatchOrderForOrderItem.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/js/order/dispatchOrderForOrderItem.js
+END
+blankOutRecord.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/order/blankOutRecord.js
+END
+cancelAfterVerificationDelivery.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/order/cancelAfterVerificationDelivery.js
+END
+blankOut.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/js/order/blankOut.js
+END
+finish.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/js/order/finish.js
+END
+phophaseOrderConfirm.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/js/order/phophaseOrderConfirm.js
+END
+delivery.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/order/delivery.js
+END
+newGetOrder.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/js/order/newGetOrder.js
+END
+phophaseConfirm.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/js/order/phophaseConfirm.js
+END
+optionsCard.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3519/trunk/v2.5/Workflow.Web/js/order/optionsCard.js
+END
+reDo.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/order/reDo.js
+END
+realFactureOrder.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/workflow/!svn/ver/3429/trunk/v2.5/Workflow.Web/js/order/realFactureOrder.js
+END
+dispatchOrder.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/js/order/dispatchOrder.js
+END
+finishOrderForOrderItem.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/order/finishOrderForOrderItem.js
+END
+patchUpOrder.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Web/js/order/patchUpOrder.js
+END
+searchOrder.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3396/trunk/v2.5/Workflow.Web/js/order/searchOrder.js
+END
+newRealFactureOrder.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3295/trunk/v2.5/Workflow.Web/js/order/newRealFactureOrder.js
+END

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="MemberCardConcessionResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="MemberCardConcession" type="Workflow.Da.Domain.MemberCardConcession, Workflow.Support" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="selectResult" class="MemberCardConcession">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="MemberCardId" column="MEMBER_CARD_ID" dbType="bigint"/>
+			<result property="JoinDateTime" column="JOIN_DATE_TIME" dbType="datetime"/>
+			<result property="RestPaperCount" column="REST_PAPER_COUNT" dbType="decimal"/>
+			<result property="PaperCount" column="PAPER_COUNT" dbType="decimal"/>
+			<result property="Amount" column="AMOUNT" dbType="decimal"/>
+			<result property="Concession" column="CONCESSION_ID" select="ConcessionBase.SelectByPk" nullValue="0" lazyLoad="true"/>
+		</resultMap>
+	</resultMaps>
+</sqlMap>

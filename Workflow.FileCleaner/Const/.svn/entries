@@ -1,0 +1,40 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/Workflow.FileCleaner/Const
+http://192.168.0.6/svn/workflow
+
+
+
+2008-12-08T07:11:17.625000Z
+1868
+fuqiang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+Constants.cs
+file
+
+
+
+
+2010-03-25T07:08:46.593750Z
+5b87f6e99cae93546f5d55211d8468ca
+2008-12-08T07:11:17.625000Z
+1868
+fuqiang
+

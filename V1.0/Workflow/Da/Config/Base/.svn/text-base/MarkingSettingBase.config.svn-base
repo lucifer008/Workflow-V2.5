@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--表MARKING_SETTING [积分设置]的基本增删改查操作，此配置文件不允许修改-->
+<sqlMap namespace="MarkingSettingBase" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+  	<statements>
+		
+			<!--查询表MARKING_SETTING [积分设置]的基本操作-->		 
+			<select id="SelectAll" resultMap="MarkingSettingResultMap.selectResult"  cacheModel="MarkingSetting.MarkingSettingCache">
+			SELECT  ID,PROCESS_CONTENT_ID,AMOUNT,MARKING,MEMO	FROM MARKING_SETTING Order by ID
+			</select>
+
+			<!--按照主键查询表MARKING_SETTING [积分设置]的基本操作-->
+			<select id="SelectByPk" parameterClass="long" resultMap="MarkingSettingResultMap.selectResult" cacheModel="MarkingSetting.MarkingSettingCache">
+			SELECT 
+			ID,
+			PROCESS_CONTENT_ID,
+			AMOUNT,
+			MARKING,
+			MEMO
+			FROM MARKING_SETTING
+			WHERE ID = #Id# 
+			</select>
+
+			<!--插入表MARKING_SETTING [积分设置]的基本操作-->
+			<insert id="Insert" parameterClass="MarkingSetting">
+			INSERT INTO MARKING_SETTING
+			(
+				ID,
+				PROCESS_CONTENT_ID,
+				AMOUNT,
+				MARKING,
+				MEMO
+			) VALUES
+			( 
+				#Id#,
+				#ProcessContentId#,
+				#Amount#,
+				#Marking#,
+				#Memo#
+			)
+			</insert>
+			
+			<!--更新表MARKING_SETTING [积分设置]的基本操作-->
+			<update id="Update" parameterClass="MarkingSetting">
+			UPDATE MARKING_SETTING
+			SET
+				PROCESS_CONTENT_ID=#ProcessContentId#,
+				AMOUNT=#Amount#,
+				MARKING=#Marking#,
+				MEMO=#Memo#
+			WHERE ID = #Id#
+			</update>
+
+			<!--逻辑删除表MARKING_SETTING [积分设置]的基本操作-->
+			<update id="LogicDelete" parameterClass="long">
+				UPDATE MARKING_SETTING
+				SET	VERSION = VERSION + 1,DELETED = '1'	WHERE ID = #Id#
+			</update>
+
+			<!--物理删除表MARKING_SETTING [积分设置]的基本操作-->
+			<delete id="Delete" parameterClass="long">
+				DELETE FROM MARKING_SETTING WHERE ID = #Id#
+			</delete>
+
+		</statements>
+</sqlMap>

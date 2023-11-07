@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/order/UserControls
+END
+DailyOrderList.ascx
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/order/UserControls/DailyOrderList.ascx
+END
+OrderItem.ascx
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/order/UserControls/OrderItem.ascx
+END
+DailyOrderList.ascx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/order/UserControls/DailyOrderList.ascx.cs
+END
+OrderItem.ascx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/order/UserControls/OrderItem.ascx.cs
+END

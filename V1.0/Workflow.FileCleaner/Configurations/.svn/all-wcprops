@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.FileCleaner/Configurations
+END
+LogCleanSetting.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.FileCleaner/Configurations/LogCleanSetting.xsd
+END
+LogCleanSetting.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.FileCleaner/Configurations/LogCleanSetting.xml
+END
+LogCleanSetting.xsx
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.FileCleaner/Configurations/LogCleanSetting.xsx
+END
+log.config
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.FileCleaner/Configurations/log.config
+END
+Logconfig.xsx
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.FileCleaner/Configurations/Logconfig.xsx
+END

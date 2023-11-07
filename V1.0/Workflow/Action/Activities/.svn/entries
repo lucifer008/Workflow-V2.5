@@ -1,0 +1,67 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow/Action/Activities
+http://192.168.0.6/svn/workflow
+
+
+
+2009-05-12T10:04:05.156250Z
+2548
+chenruyin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+Model
+dir
+
+CampaignAction.cs
+file
+
+
+
+
+2010-03-25T07:10:11.640625Z
+7f2f0f69564aa5a6b71a8b8da6923c35
+2009-02-18T10:08:44.968750Z
+2334
+zhangxiaolin
+
+ConcessionAction.cs
+file
+
+
+
+
+2010-03-25T07:10:11.656250Z
+8624f764c1bc9d1efc9366518a81ceb3
+2009-03-19T10:36:18.875000Z
+2403
+zhangxiaolin
+
+DiscountConcessionAction.cs
+file
+
+
+
+
+2010-03-25T07:10:11.671875Z
+610e659be7bf016ea759580d5dd9d95e
+2009-05-12T10:04:05.156250Z
+2548
+chenruyin
+

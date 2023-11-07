@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/handover
+END
+HandOver.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/handover/HandOver.aspx
+END
+HandOver.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/handover/HandOver.aspx.cs
+END
+StageHandOver.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/handover/StageHandOver.aspx
+END
+CasherHandOver.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/handover/CasherHandOver.aspx
+END
+SearchHandOver.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/handover/SearchHandOver.aspx
+END
+StageHandOverDetail.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/handover/StageHandOverDetail.aspx
+END
+StageHandOver.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/handover/StageHandOver.aspx.cs
+END
+CasherHandOverDetail.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/handover/CasherHandOverDetail.aspx
+END
+CasherHandOver.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/handover/CasherHandOver.aspx.cs
+END
+SearchHandOver.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/handover/SearchHandOver.aspx.cs
+END
+StageHandOverDetail.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/handover/StageHandOverDetail.aspx.cs
+END
+CasherHandOverDetail.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/workflow/!svn/ver/3145/trunk/v2.5/V1.0/Workflow.Web/handover/CasherHandOverDetail.aspx.cs
+END

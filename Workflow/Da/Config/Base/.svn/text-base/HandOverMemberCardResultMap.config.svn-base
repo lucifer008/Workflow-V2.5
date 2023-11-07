@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="HandOverMemberCardResultMap" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+	<alias>
+		<typeAlias alias="HandOverMemberCard" type="Workflow.Da.Domain.HandOverMemberCard, Workflow.Support" />
+	</alias>
+	
+	<resultMaps>
+		<resultMap id="selectResult" class="HandOverMemberCard">
+			<result property="Id" column="ID" dbType="bigint"/>
+			<result property="HandOverId" column="HAND_OVER_ID" dbType="bigint"/>
+			<result property="MemberCardId" column="MEMBER_CARD_ID" dbType="bigint"/>
+			<result property="MemberCardNo" column="MEMBER_CARD_NO" dbType="varchar"/>
+		</resultMap>
+	</resultMaps>
+</sqlMap>

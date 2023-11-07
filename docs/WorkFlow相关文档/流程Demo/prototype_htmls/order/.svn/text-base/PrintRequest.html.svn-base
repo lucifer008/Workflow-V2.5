@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>印制要求</title>
+    <link href="../css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="text-align: center">
+    <div align="center" style="width: 100%" bgcolor="#ffffff" id="container">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+            <tr>
+                <td width="11">
+                    <img alt="" src="../images/white_main_top_left.gif"></td>
+                <td width="99%">
+                    <img alt="" src="../images/spacer_10_x_10.gif" height="10"></td>
+                <td width="10">
+                    <img alt="" src="../images/white_main_top_right.gif" width="12" height="11"></td>
+            </tr>
+            <tr>
+                <td colspan="3" bgcolor="#FFFFFF">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="3%">
+                            </td>
+                            <td align="left" bgcolor="#eeeeee">
+                                首页 -&gt; 本日工单 -&gt; 新增工单 -&gt; 印制要求</td>
+                            <td width="3%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="caption" align="center">
+                                印制要求</td>
+                        </tr>
+                        <tr>
+                            <td width="3%">&nbsp;
+                                </td>
+                            <td align="center">
+                                <table border="0" cellpadding="3" cellspacing="1" width="100%" align="left">
+                                    <tr>
+                                        <td width="3%">
+                                        </td>
+                                        <td>
+                                            <table border="1" cellpadding="3" cellspacing="1" width="100%" align="left">
+                                                <tr>
+                                                    <td nowrap class="item_caption" rowspan="3">
+                                                        印制要求</td>
+                                                    <td class="item_content">
+                                                        <input type="radio" class="radios" name="rdbtPage" id="rdbtn1" value="radiobutton" />
+                                                        <label for="rdbtn1">
+                                                            单面</label>
+                                                        <input type="radio" class="radios" name="rdbtPage" id="rdbtn2" value="radiobutton" />
+                                                        <label for="rdbtn2">
+                                                            双面
+                                                        </label>
+                                                    </td>
+                                                    <td nowrap width="1%">
+                                                        <input type="button" disabled="disabled" class="buttons" value="重置" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="item_content">
+                                                        <input type="radio" class="radios" name="rdbtZoom" id="rdbtn3" value="radiobutton" />
+                                                        <label for="rdbtn3">
+                                                            原文件尺寸</label>
+                                                        <input type="radio" class="radios" name="rdbtZoom" id="rdbtn4" value="radiobutton" />
+                                                        <label for="rdbtn4">
+                                                            缩放</label>
+                                                    </td>
+                                                    <td nowrap width="1%">
+                                                        <input type="button" disabled="disabled" class="buttons" value="重置" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="item_content">
+                                                        <input type="radio" class="radios" name="rdbtBind" id="rdbtn5" value="radiobutton" />
+                                                        <label for="rdbtn5">
+                                                            骑马订</label>
+                                                        <input type="radio" class="radios" name="rdbtBind" value="radiobutton" />
+                                                        <label for="rdbt6">
+                                                            跨蝴蝶装</label>
+                                                    </td>
+                                                    <td nowrap width="1%">
+                                                        <input type="button" disabled="disabled" class="buttons" value="重置" /></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td width="3%">&nbsp;
+                                            </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="3%">&nbsp;
+                                            </td>
+                                        <td align="center">
+                                            <table border="1" cellpadding="3" cellspacing="1" width="100%" align="left">
+                                                <tr>
+                                                    <td nowrap class="item_caption" rowspan="5">
+                                                        制作工艺</td>
+                                                    <td nowrap class="item_caption">
+                                                        附膜</td>
+                                                    <td class="item_content" nowrap>
+                                                        <input type="radio" class="radios" name="rdbtAttach" value="radiobutton" />
+                                                        A1亚光
+                                                        <input type="radio" class="radios" name="rdbtAttach" value="radiobutton" />
+                                                        A2高光
+                                                        <input type="radio" class="radios" name="rdbtAttach" value="radiobutton" />
+                                                        A3蚕丝
+                                                        <input type="radio" class="radios" name="rdbtAttach" value="radiobutton" />
+                                                        A4细十字
+                                                        <input type="radio" class="radios" name="rdbtAttach" value="radiobutton" />
+                                                        A5钻石
+                                                        <input type="radio" class="radios" name="rdbtAttach" value="radiobutton" />
+                                                        A6其它
+                                                    </td>
+                                                    <td nowrap width="1%">
+                                                        <input type="button" disabled="disabled" class="buttons" value="重置"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td nowrap class="item_caption">
+                                                        隔页</td>
+                                                    <td class="item_content" nowrap>
+                                                        <input type="radio" class="radios" name="rdbtPartition" value="radiobutton" />
+                                                        B1白色
+                                                        <input type="radio" class="radios" name="rdbtPartition" value="radiobutton" />
+                                                        B2黄色
+                                                        <input type="radio" class="radios" name="rdbtPartition" value="radiobutton" />
+                                                        B3黑色
+                                                        <input type="radio" class="radios" name="rdbtPartition" value="radiobutton" />
+                                                        B4蓝风尾
+                                                        <input type="radio" class="radios" name="rdbtPartition" value="radiobutton" />
+                                                        彩色皮纹纸</td>
+                                                    <td nowrap width="1%">
+                                                        <input type="button" disabled="disabled" class="buttons" value="重置"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td nowrap class="item_caption">
+                                                        丝带</td>
+                                                    <td class="item_content" nowrap>
+                                                        <input type="radio" class="radios" name="rdbtRibind" value="radiobutton" />
+                                                        C1红色
+                                                        <input type="radio" class="radios" name="rdbtRibind" value="radiobutton" />
+                                                        C2黄色
+                                                        <input type="radio" class="radios" name="rdbtRibind" value="radiobutton" />
+                                                        C3兰色
+                                                        <input type="radio" class="radios" name="rdbtRibind" value="radiobutton" />
+                                                        C4其他</td>
+                                                    <td nowrap width="1%">
+                                                        <input type="button" disabled="disabled" class="buttons" value="重置"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td nowrap class="item_caption">
+                                                        裱版</td>
+                                                    <td class="item_content" nowrap>
+                                                        <input type="radio" class="radios" name="rdbtBackup" value="radiobutton" />
+                                                        D1居中裱
+                                                        <input type="radio" class="radios" name="rdbtBackup" value="radiobutton" />
+                                                        D2满裱
+                                                        <input type="radio" class="radios" name="rdbtBackup" value="radiobutton" />
+                                                        D3不留白边
+                                                        <input type="radio" class="radios" name="rdbtBackup" value="radiobutton" />
+                                                        D4留白边</td>
+                                                    <td nowrap width="1%">
+                                                        <input type="button" disabled="disabled" class="buttons" value="重置"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td nowrap class="item_caption">
+                                                        喷绘</td>
+                                                    <td class="item_content" nowrap>
+                                                        <input type="radio" class="radios" name="rdbtPaint" value="radiobutton" />
+                                                        E1粗边条
+                                                        <input type="radio" class="radios" name="rdbtPaint" value="radiobutton" />
+                                                        E2细边条
+                                                        <input type="radio" class="radios" name="rdbtPaint" value="radiobutton" />
+                                                        E3挂轴
+                                                        <input type="radio" class="radios" name="rdbtPaint" value="radiobutton" />
+                                                        E4 X展架
+                                                        <input type="radio" class="radios" name="rdbtPaint" value="radiobutton" />
+                                                        E5易拉宝</td>
+                                                    <td nowrap width="1%">
+                                                        <input type="button" disabled="disabled" class="buttons" value="重置"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td width="3%">&nbsp;
+                                            </td>
+                                    </tr>
+                                    <tr class="emptyButtonsUpperRowHight">
+                                        <td colspan="4">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="3%">&nbsp;
+                                            </td>
+                                        <td align="center" class="bottombuttons">
+                                            <input type="button" name="Submit" class="buttons" onclick="window.close()" value="确定" />&nbsp;&nbsp;&nbsp;
+                                            <input type="button" onclick="window.close();" name="Submit2" class="buttons" value="取消" />
+                                        </td>
+                                        <td width="3%">&nbsp;
+                                            </td>
+                                    </tr>
+                                    <tr height="5">
+                                        <td>
+                                            <img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+                                        <td bgcolor="#eeeeee">&nbsp;
+                                            </td>
+                                        <td>
+                                            <img alt="" src="../images/spacer_5_x_5.gif" width="5" height="5"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        
+                    </table>
+                    </td>
+                    </tr>
+                    <tr>
+                            <td width="11">
+                                <img alt="" src="../images/white_main_bottom_left.gif"></td>
+                            <td width="99%">
+                                <img alt="" src="../images/spacer_10_x_10.gif"></td>
+                            <td width="10">
+                                <img alt="" src="../images/white_main_bottom_right.gif"></td>
+                        </tr>
+                    </table>
+    </div>
+</body>
+</html>

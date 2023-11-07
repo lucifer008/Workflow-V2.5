@@ -1,0 +1,100 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/docs
+http://192.168.0.6/svn/workflow
+
+
+
+2010-08-24T09:55:24.156250Z
+3513
+baixiaoyu
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+副本兰克流程基础数据[1][1].xls2.xls
+file
+
+
+
+
+2010-04-21T05:05:07.906250Z
+70ddca1856ceb19f02689b75f5b923c9
+2009-01-21T02:25:20.515625Z
+2242
+fuqiang
+has-props
+
+Bug 管理
+dir
+
+进度控制
+dir
+
+项目风险控制
+dir
+
+PHOOK_C#编程规范.doc
+file
+
+
+
+
+2010-04-21T05:05:07.921875Z
+65f66860411c4b5a560ea68914b44bc4
+2008-11-04T03:13:10.453125Z
+1623
+fuqiang
+has-props
+
+数据库设计文档.doc
+file
+
+
+
+
+2010-08-02T02:09:51.671875Z
+71431b9cc39f8b2f18c25381bf1ad105
+2010-07-27T10:00:40.703125Z
+3422
+fuqiang
+
+DBScript
+dir
+
+需求变更记录
+dir
+
+analyse
+dir
+
+PHOOK_JS编程规范.doc
+file
+
+
+
+
+2010-04-21T05:05:07.937500Z
+aa9c429d654a599200bbca2d1e86b42e
+2008-11-04T03:13:10.453125Z
+1623
+fuqiang
+has-props
+
+WorkFlow相关文档
+dir
+

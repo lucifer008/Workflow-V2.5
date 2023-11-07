@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/workflow/!svn/ver/3219/trunk/v2.5/Workflow.Maintain/Bin
+END
+JSONSharp.dll
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/Bin/JSONSharp.dll
+END
+AspNetPager.dll
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/Bin/AspNetPager.dll
+END
+IBatisNet.Common.dll
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/Bin/IBatisNet.Common.dll
+END
+Spring.Data.dll
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/Bin/Spring.Data.dll
+END
+log4net.dll
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/Bin/log4net.dll
+END
+Common.Logging.dll
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/Bin/Common.Logging.dll
+END
+Spring.Web.dll
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/Bin/Spring.Web.dll
+END
+Spring.Aop.dll
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/Bin/Spring.Aop.dll
+END
+Spring.Data.IBatis.dll
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/Bin/Spring.Data.IBatis.dll
+END
+Common.Logging.Log4Net.dll.refresh
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/Bin/Common.Logging.Log4Net.dll.refresh
+END
+Workflow.Support.dll
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/workflow/!svn/ver/3219/trunk/v2.5/Workflow.Maintain/Bin/Workflow.Support.dll
+END
+Common.Logging.Log4Net.dll
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/Bin/Common.Logging.Log4Net.dll
+END
+Spring.Core.dll
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/Bin/Spring.Core.dll
+END
+itextsharp.dll
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/Bin/itextsharp.dll
+END
+IBatisNet.DataMapper.dll
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/Bin/IBatisNet.DataMapper.dll
+END
+Castle.DynamicProxy.dll
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/Bin/Castle.DynamicProxy.dll
+END
+antlr.runtime.dll
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow.Maintain/Bin/antlr.runtime.dll
+END

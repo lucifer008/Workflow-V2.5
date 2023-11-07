@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqlMap namespace="MemberCardLevel" xmlns="http://ibatis.apache.org/mapping"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="SqlMap.xsd">
+    <cacheModels>
+        <cacheModel id="MemberCardLevelCache" implementation="LRU">
+            <flushInterval hours="24"/>
+            <property name="CacheSize" value="100" />
+            <flushOnExecute statement="MemberCardLevelBase.Insert"/>
+            <flushOnExecute statement="MemberCardLevelBase.Update"/>
+            <flushOnExecute statement="MemberCardLevelBase.LogicDelete"/>
+            <flushOnExecute statement="MemberCardLevelBase.Delete"/>
+        </cacheModel>
+    </cacheModels>
+	<resultMaps>
+	</resultMaps>
+	<statements>
+		<select id="SelectAll" resultMap="MemberCardLevelResultMap.selectResult">
+			SELECT
+			*
+			FROM MEMBER_CARD_LEVEL where id>0 and deleted='0'
+			ORDER BY ID ASC
+		</select>
+    <select id="SearchMemberCardLevel" resultMap="MemberCardLevelResultMap.selectResult">
+      select top(#InsertUser#) * from Member_Card_Level
+      where company_Id=#CompanyId#
+      and deleted='0'
+      and branch_Shop_Id=#BranchShopId#
+      and Id not in(
+      select top(#InsertUser#*#UpdateUser#) Id from Member_Card_Level
+      where company_Id=#CompanyId#
+      and deleted='0'
+      and branch_Shop_Id=#BranchShopId#
+      )
+    </select>
+    <select id="SearchMemberCardLevelRowCount" resultClass="long">
+      select count(id) from Member_Card_Level
+      where company_Id=#CompanyId#
+      and deleted='0'
+      and branch_Shop_Id=#BranchShopId#
+    </select>
+    <select id="CheckMemberCardLevelIsUse" resultClass="long">
+      select count(id) from member_Card
+      where company_Id=#CompanyId#
+      and deleted='0'
+      and branch_Shop_Id=#BranchShopId#
+      and Member_Card_Level_Id=#Id#
+    </select>
+	</statements>
+</sqlMap>

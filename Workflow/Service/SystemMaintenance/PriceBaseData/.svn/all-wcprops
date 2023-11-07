@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Service/SystemMaintenance/PriceBaseData
+END
+ISearchPriceBaseService.cs
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Service/SystemMaintenance/PriceBaseData/ISearchPriceBaseService.cs
+END
+IPriceBaseService.cs
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/workflow/!svn/ver/3145/trunk/v2.5/Workflow/Service/SystemMaintenance/PriceBaseData/IPriceBaseService.cs
+END

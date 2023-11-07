@@ -1,0 +1,79 @@
+8
+
+dir
+3519
+http://192.168.0.6/svn/workflow/trunk/v2.5/V1.0/Workflow.Web/js/finance
+http://192.168.0.6/svn/workflow
+
+
+
+2009-11-17T01:02:13.390625Z
+2663
+zhangxiaolin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0537922-a683-489a-9ae4-d9961e73b52f
+
+find
+dir
+
+selectOrder.js
+file
+
+
+
+
+2010-03-25T07:09:22.906250Z
+7b3357a8dedef119ac10699b05404b5a
+2009-11-09T08:14:19.312500Z
+2653
+zhangxiaolin
+
+prepayHandler.js
+file
+
+
+
+
+2010-03-25T07:09:22.921875Z
+d4ea18e8150edb8fb08eea93098b5906
+2009-09-02T03:12:18.921875Z
+2640
+zhangxiaolin
+
+drawticket.js
+file
+
+
+
+
+2010-03-25T07:09:22.921875Z
+6a31cb11847feda139fbfd60ee86603a
+2009-11-09T08:14:19.312500Z
+2653
+zhangxiaolin
+
+finance.js
+file
+
+
+
+
+2010-03-25T07:09:22.937500Z
+fb2ad8fcb4c59080be6ddcb0b85a3388
+2009-11-12T09:17:13.734375Z
+2658
+zhangxiaolin
+
